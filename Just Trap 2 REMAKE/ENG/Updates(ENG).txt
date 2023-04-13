@@ -1,0 +1,92 @@
+v0.3.6
+- Justularity bug fix.
+- Gravity switching changed and fixed.
+- Justist second attack reworked.
+- JR & Justist warning fixed.
+- Healing effect for all bosses.
+- Minor changes and fixes.
+==================================================
+v0.3.5
+- JR & Justist healing effect updated.
+- JR & Justist brick physics updated.
+- JR & Justist face directing fixed.
+- JR & Justist final explosion changed.
+- Justination music pitch changed.
+- Justularity rocks attack changed...again.
+- PB bug fix.
+==================================================
+v0.3.4
+- Huge rebalancing for all bosses.
+- New [Personal Best Attempt] feature.
+- Bug fix.
+==================================================
+v0.3.3
+- Reworked pause menu.
+- Added warning delay for JR & Justist when they're planning to change their flying state.
+- Shadows of JR & Justist now have background lighting to make it easier to see them.
+- Floor in JR & Justist room was changed.
+- Minor JR & Justist visual improvements.
+==================================================
+v0.3.2
+- Bug fixing Justularity.
+- Reworked menu.
+- Reworked and updated game settings.
+==================================================
+v0.3.1
+- Justularity visual and bug fix.
+==================================================
+v0.3.0
+- Justularity was added.
+- Upward shooting tip reworked.
+- Neutral background in hub room changed.
+- Justination' white and dark parts buffed.
+- Clear label fixed.
+- JR & Justist attacks on phase 2 fixed.
+- Music from main menu is now full.
+- Shadows no longer can kill you...unless you're happilous.
+==================================================
+v0.2.7
+- Bug fixing.
+- Justination visual improvements.
+- JR & Justist revive ability buffed.
+- Justularity isn't available yet.
+==================================================
+v0.2.6
+- Ability to shoot upward was added.
+- Bosses now have title cards.
+==================================================
+v0.2.5
+- JR & Justist guns reloading sound added to prevent unfair attacks, also warnings appear before they starting moving.
+- Justination dark attack at phase 2 nerfed, final attack speed decreased but fruits now have random moving angle as in original game.
+- Stage selecting room design reworked.
+==================================================
+v0.2.4
+- JR & Justist icons fixed.
+- Patch applied to fix FPS for WIndows 10.
+==================================================
+v0.2.3
+- Justination's final attack transition fixed.
+- More bug fixes.
+==================================================
+v0.2.2
+- Some more nerfing and fixing.
+==================================================
+v0.2.1
+- Some hot bug fix.
+- All attacks was nerfed.
+==================================================
+v0.2.0
+- First public release.
+- Justination was added.
+- Just has returned(!!!).
+==================================================
+v0.1.1+
+- Some boss fixes.
+- Hub room style and music was changed.
+==================================================
+v0.1.0
+- First private release.
+- JR & Justist was added.
+==================================================
+v0.0.0
+- Original game was decompiled and I created that project.
