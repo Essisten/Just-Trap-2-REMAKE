@@ -63,6 +63,9 @@ if (loadFile)
             global.bossClear[i] = ds_map_find_value(saveMap, "bossClear["+string(i)+"]");
         global.saveGameClear = ds_map_find_value(saveMap,"saveGameClear");
         
+        for (var i = 0; i < array_length_1d(global.skip); i++)
+            global.skip[i] = ds_map_find_value(saveMap, "skip["+string(i)+"]");
+            
         for (var i = 0; i < array_length_1d(global.pb); i++)
         {
             var tut = ds_map_find_value(saveMap, "pb["+string(i)+"]");

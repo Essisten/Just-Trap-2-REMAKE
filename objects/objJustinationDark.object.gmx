@@ -29,6 +29,7 @@
 colorHP = c_gray;
 spin = 0;
 edge = 0;
+rotate = 0;
 </string>
           </argument>
         </arguments>
@@ -131,9 +132,13 @@ if (!active)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (active)
+            <string>if (active and rotate &lt; 8)
+   rotate += 0.1;
+else if (!active and rotate &gt; 0)
+     rotate -= 0.1
+if (rotate &gt; 0)
 {
-    image_angle -= 8;
+    image_angle -= rotate;
     if (image_angle &lt;= 0)
         image_angle += 360;
 }

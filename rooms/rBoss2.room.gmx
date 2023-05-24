@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="objPlayerStart" x="64" y="544" name="inst_8274438A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="0" y="576" name="inst_87CDF97C" locked="0" code="" scaleX="25" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="-16" y="576" name="inst_87CDF97C" locked="0" code="" scaleX="25.5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="-32" name="inst_3F9FDE11" locked="0" code="" scaleX="24" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="-32" y="-32" name="inst_F69A679E" locked="0" code="" scaleX="2" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="768" y="0" name="inst_3779DE94" locked="0" code="" scaleX="2" scaleY="18" colour="4294967295" rotation="0"/>
@@ -60,6 +60,7 @@
     <instance objName="objJustularity" x="672" y="536" name="inst_4EAC6F4A" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objCard" x="800" y="0" name="inst_781815FE" locked="0" code="image_index = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBoss2HP" x="48" y="48" name="inst_2495F9AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRoomChanger" x="-16" y="416" name="inst_4C1E6AE9" locked="0" code="roomTo = rStageSelect;&#xA;" scaleX="0.5" scaleY="5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="&lt;undefined&gt;" x="32" y="416" w="32" h="160" xo="32" yo="96" id="10002867" name="inst_896F5989" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

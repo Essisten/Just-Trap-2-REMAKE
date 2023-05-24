@@ -44,6 +44,7 @@ strSelect[2] = "Title cards";
 strSelect[3] = "Particles";
 strSelect[4] = "Fix bow";
 strSelect[5] = "Personal best";
+strSelect[6] = "Show names";
 optionsNum = array_length_1d(strSelect);
 </string>
           </argument>
@@ -140,6 +141,9 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
         case 5:
             global.showPB = !global.showPB;
             break;
+        case 6:
+            global.showNames = !global.showNames;
+            break;
     }
 }
 </string>
@@ -209,6 +213,11 @@ for(var i = 0; i &lt; optionsNum; i++)
             if (global.showPB)
                 value = "On";
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*5),value, clr, c_black);
+            break;
+        case 6:
+            if (global.showNames)
+                value = "On";
+            scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*6),value, clr, c_black);
             break;
     }
 }

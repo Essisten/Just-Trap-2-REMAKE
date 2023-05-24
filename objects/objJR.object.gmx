@@ -48,6 +48,13 @@ nextFlyHight = flyHight;
 nextFlying = flying;
 warnDelay = 80 - global.difficulty * 20;
 instance_create(x, y, objBoss1Bow);
+with (instance_create(x, y, objBossName))
+{
+    name = "JR";
+    xflip = true;
+    yflip = true;
+    owner = objJR;
+}
 event_user(0);
 event_user(1);
 event_user(4);

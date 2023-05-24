@@ -43,6 +43,16 @@ alarm[2] = 160;
 seed = irandom(2)
 alarm[4] = 80;
 instance_create(0, 0, objLightEffect);
+name = instance_create(x, y, objBossName);
+with (name)
+{
+    from = "Happil 1";
+    owner = objViridian;
+}
+if (type == 128)
+   name.name = "Gugudian";
+else
+    name.name = "Gugulion";
 alarm[6] = 1;
 </string>
           </argument>

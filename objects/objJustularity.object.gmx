@@ -80,6 +80,12 @@ with (instance_create(32, 32, objShowLabel))
     else
         text += "intro";
 }
+with (instance_create(x, y, objBossName))
+{
+    name = "Justularity";
+    owner = other;
+    yflip = true;
+}
 </string>
           </argument>
         </arguments>
@@ -1110,8 +1116,6 @@ if (instance_number(objJustularity) == 0)
 {
     audio_stop_sound(global.currentMusic);
     objWorld.alarm[2] = 300;
-    if (global.difficulty &lt; 3)
-        global.difficulty--;
     with (objBoss2HP)
     {
         play = false;
@@ -1120,8 +1124,7 @@ if (instance_number(objJustularity) == 0)
 }
 else
 {
-    if (global.difficulty &lt; 3)
-        global.difficulty++;
+    //idk add some buff here later
 }
 </string>
           </argument>

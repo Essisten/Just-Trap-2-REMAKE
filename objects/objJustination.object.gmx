@@ -52,6 +52,12 @@ var siz = 4;
 part_emitter_region(global.portalParticleSystem, emitter, x - siz, x + siz, y - siz, y + siz, pt_shape_circle, ps_distr_gaussian);
 event_user(0);
 alarm[3] = 60;
+
+with (instance_create(x, y, objBossName))
+{
+    name = "Justination";
+    owner = objJustination;
+}
 </string>
           </argument>
         </arguments>
@@ -163,13 +169,14 @@ alarm[3] = 600;
           <argument>
             <kind>1</kind>
             <string>///Changing pitch
-
-if (pitch &gt;= audio_sound_get_pitch(global.currentMusic))
+var p = audio_sound_get_pitch(global.currentMusic);
+if (pitch &gt;= p)
 {
     alarm[2] = -1;
     exit;
 }
-audio_sound_pitch(global.currentMusic, audio_sound_get_pitch(global.currentMusic) - 1/256);
+show_debug_message(p);
+audio_sound_pitch(global.currentMusic, p - 1/256);
 alarm[2] = 5;
 </string>
           </argument>
@@ -195,19 +202,47 @@ alarm[2] = 5;
             <kind>1</kind>
             <string>///Attacking
 
-repeat (global.difficulty + 1)
+if (HP &gt; 50)
 {
-    with (instance_create(x, y, objCherry))
+    repeat (global.difficulty + 1)
     {
-        sprite_index = choose(sprCherry, sprCherryWhite, sprCherryCyan, sprCherryGray);
-        direction = random_range(200, 340);
-        speed = random_range(2, 3 + global.difficulty * 2);
-        change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
-        image_xscale = 0.5;
-        image_yscale = 0.5;
+        with (instance_create(x, y, objCherry))
+        {
+            sprite_index = choose(sprCherry, sprCherryWhite, sprCherryCyan, sprCherryGray);
+            direction = random_range(200, 340);
+            speed = random_range(2, 3 + global.difficulty * 2);
+            change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
+            image_xscale = 0.5;
+            image_yscale = 0.5;
+        }
     }
+    alarm[0] = 8 - global.difficulty * 2;
 }
-alarm[0] = 8 - global.difficulty * 2;
+else
+{
+    repeat (global.difficulty + 1)
+    {
+        with (instance_create(0, 0, objCherry))
+        {
+            sprite_index = choose(sprCherry, sprCherryWhite, sprCherryCyan, sprCherryGray);
+            direction = random_range(270, 320);
+            speed = random_range(2, 3 + global.difficulty * 2);
+            change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
+            image_xscale = 0.5;
+            image_yscale = 0.5;
+        }
+        with (instance_create(800, 0, objCherry))
+        {
+            sprite_index = choose(sprCherry, sprCherryWhite, sprCherryCyan, sprCherryGray);
+            direction = random_range(270, 220);
+            speed = random_range(2, 3 + global.difficulty * 2);
+            change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
+            image_xscale = 0.5;
+            image_yscale = 0.5;
+        }
+    }
+    alarm[0] = 16 - global.difficulty * 4;
+}
 </string>
           </argument>
         </arguments>

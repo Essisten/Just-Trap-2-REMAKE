@@ -52,10 +52,10 @@ colorHP = c_red;
             <string>if (!instance_exists(objPlayer) or !active)
     return -1;
 
-alarm[0] = 10 - global.difficulty * 3;
+alarm[0] = 13 - global.difficulty * 4;
 var f = instance_create(objJustination.x, objJustination.y, objCherry);
 f.direction = random_range(210, 330);
-f.speed = random_range(3, 5) + global.difficulty;
+f.speed = random_range(2, 4) + global.difficulty + 0.5;
 if (HP &lt;= 50)
 {
     f.speed++;

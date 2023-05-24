@@ -63,7 +63,13 @@ if (hText &gt; 1000)
     global.pb[stage - 1] = 100;
     instance_destroy();
     if (!instance_exists(objPlayer))
-        return -1;
+        exit;
+    if (room == rBoss2)
+    {
+        with (objBoss2Door)
+             event_user(0);
+        exit;
+    }
     with (objPlayer)
         instance_destroy();
     room_goto(rStageSelect);

@@ -9,6 +9,7 @@ global.showCard = ini_read_real("Settings","Show_card", true);
 global.smoothingMode = ini_read_real("Settings","Smoothing_mode",false);
 global.particles = ini_read_real("Settings","Particles", true);
 global.vsyncMode = ini_read_real("Settings","Vsync_mode",false);
+global.showNames = ini_read_real("Settings","Show_names", true);
 if (global.vsyncMode)   //only need to set vsync mode if it's on since it's off by default
     scrSetVsync();
 global.delayBow = ini_read_real("Settings","Fix_bow",false);

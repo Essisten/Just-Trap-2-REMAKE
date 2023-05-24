@@ -43,6 +43,7 @@
         <sound>sound\sndWarningV</sound>
         <sound>sound\sndWarpV</sound>
         <sound>sound\sndAppearV</sound>
+        <sound>sound\sndDoor</sound>
       </sounds>
       <sound>sound\sndMonster1</sound>
       <sound>sound\sndMenuMove</sound>
@@ -140,6 +141,7 @@
       <sprite>sprites\sprGravityDown</sprite>
       <sprite>sprites\sprCard</sprite>
       <sprite>sprites\sprCardH</sprite>
+      <sprite>sprites\sprBossName</sprite>
     </sprites>
     <sprites name="platforms">
       <sprite>sprites\sprPlatform</sprite>
@@ -423,6 +425,7 @@
       <object>objects\objClear</object>
       <object>objects\objShowLabel</object>
       <object>objects\objTutorial1</object>
+      <object>objects\objBossName</object>
     </objects>
     <objects name="saves">
       <object>objects\objSaveMedium</object>
