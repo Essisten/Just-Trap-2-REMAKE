@@ -40,10 +40,16 @@ for (var i = 0; i &lt; block_count; i++)
 {
     blocks[i] = instance_find(objBoss4_Ground, i);
 }
+normal[0] = sprJustination;
+normal[1] = sprJustination_Old;
+
+crazy[0] = sprJustinationCrazy;
+crazy[1] = sprJustinationCrazy_Old;
+
 part_alpha = 0.5;
 fantom = part_type_create();
 part_type_alpha2(fantom, 0, 0);
-part_type_sprite(fantom, sprJustination, false, false, false);
+part_type_sprite(fantom, normal[global.spriteStyle], false, false, false);
 part_type_life(fantom, 4, 20);
 part_type_speed(fantom, 1, 2, 0, 0);
 part_type_direction(fantom, 0, 360, 0, 0);
@@ -52,7 +58,7 @@ var siz = 4;
 part_emitter_region(global.portalParticleSystem, emitter, x - siz, x + siz, y - siz, y + siz, pt_shape_circle, ps_distr_gaussian);
 event_user(0);
 alarm[3] = 60;
-
+sprite_index = normal[global.spriteStyle];
 with (instance_create(x, y, objBossName))
 {
     name = "Justination";
@@ -387,10 +393,10 @@ if (dead &gt;= 4)
         view_visible[2] = false;
         final = true;
     }
-    part_type_sprite(fantom, sprJustinationCrazy, false, false, false);
+    part_type_sprite(fantom, crazy[global.spriteStyle], false, false, false);
     part_type_life(fantom, 10, 20);
     part_emitter_stream(global.portalParticleSystem, emitter, fantom, 1);
-    sprite_index = sprJustinationCrazy;
+    sprite_index = crazy[global.spriteStyle];
     image_alpha = 0.4;
     for (var i = 0; i &lt; block_count; i++)
     {

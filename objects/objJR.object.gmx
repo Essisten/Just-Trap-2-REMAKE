@@ -47,7 +47,8 @@ flyHight = random_range(200, 250);
 nextFlyHight = flyHight;
 nextFlying = flying;
 warnDelay = 80 - global.difficulty * 20;
-instance_create(x, y, objBoss1Bow);
+if (global.spriteStyle == 0)
+   instance_create(x, y, objBoss1Bow);
 with (instance_create(x, y, objBossName))
 {
     name = "JR";

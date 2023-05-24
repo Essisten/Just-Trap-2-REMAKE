@@ -211,13 +211,24 @@ for (var i = 1; i &lt; 5; i++)
           <argument>
             <kind>1</kind>
             <string>scrCheckBossClear(0);
-draw_sprite_ext(sprJR_Idle, 0, 138, 440, 2, 2, 0, blend, image_alpha);
-draw_sprite_ext(sprJustist_Idle, 0, 242, 440, -2, 2, 0, blend, image_alpha);
+if (global.spriteStyle == 0)
+{
+    draw_sprite_ext(sprJR_Idle, 0, 138, 440, 2, 2, 0, blend, image_alpha);
+    draw_sprite_ext(sprJustist_Idle, 0, 242, 440, -2, 2, 0, blend, image_alpha);
+}
+else
+{
+    draw_sprite_ext(sprJR_Idle, 0, 138, 440, 2, 2, 0, blend, image_alpha);
+    draw_sprite_ext(sprJustist_Idle, 0, 242, 440, -2, 2, 0, blend, image_alpha);
+}
 scrCheckBossClear(1);
 draw_sprite_ext(sprJustularityIdleRed, 0, 554, 448, -2, 2, 0, blend, image_alpha);
 draw_sprite_ext(sprJustularityIdleBlue, 0, 658, 448, 2, 2, 0, blend, image_alpha);  
 scrCheckBossClear(3);
-draw_sprite_ext(sprJustination_Mini, 0, 608, 278, 1, 1, 0, blend, image_alpha);
+if (global.spriteStyle == 0)
+   draw_sprite_ext(sprJustination_Mini, 0, 608, 278, 1, 1, 0, blend, image_alpha);
+else
+    draw_sprite_ext(sprJustination_Mini, 1, 608, 278, 1, 1, 0, blend, image_alpha);
 </string>
           </argument>
         </arguments>

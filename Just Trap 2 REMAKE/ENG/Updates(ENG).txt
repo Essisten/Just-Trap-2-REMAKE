@@ -1,3 +1,13 @@
+v0.3.7
+- Justination Red part nerfed.
+- Justination Dark part rotation animation improved.
+- New attack for the final phase of Justination.
+- Justularity ending is nerfed.
+- Justularity phase skip can be saved.
+- Justularity difficulty manipulation is fixed.
+- Boss names added. You can disable that in settings.
+- Sprite style added. You can switch it in settings.
+==================================================
 v0.3.6
 - Justularity bug fix.
 - Gravity switching changed and fixed.

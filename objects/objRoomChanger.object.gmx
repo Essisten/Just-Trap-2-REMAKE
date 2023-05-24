@@ -30,12 +30,19 @@ image_speed = 0;
 warpX = 0;
 warpY = 0;
 roomTo = rTemplate;
-spinDir = choose(-1, 1);
-color = c_purple;
-portalEmitter = part_emitter_create(global.portalParticleSystem);
-part_emitter_region(global.portalParticleSystem, portalEmitter, x - 8, x + 8, y - 8, y + 8, pt_shape_circle, ps_distr_linear);
 ready = false;
 alarm[0] = 25;
+spinDir = choose(-1, 1);
+color = c_purple;
+if (global.spriteStyle == 1)
+{
+    sprite_index = sprWarp_Old;
+    spinDir = 0;
+    color = c_white;
+    exit;
+}
+portalEmitter = part_emitter_create(global.portalParticleSystem);
+part_emitter_region(global.portalParticleSystem, portalEmitter, x - 8, x + 8, y - 8, y + 8, pt_shape_circle, ps_distr_linear);
 portalParticles = part_type_create();
 part_type_life(portalParticles, 5, 40);
 part_type_alpha3(portalParticles, 0.8, 0.4, 0);
@@ -127,7 +134,7 @@ room_goto(roomTo);
           <argument>
             <kind>1</kind>
             <string>///Particle starting
-if (!global.particles)
+if (!global.particles or global.spriteStyle == 1)
     exit;
 part_type_colour1(portalParticles, color);
 part_emitter_stream(global.portalParticleSystem, portalEmitter, portalParticles, 2);
@@ -153,12 +160,12 @@ part_emitter_stream(global.portalParticleSystem, portalEmitter, portalParticles,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle += spinDir;
+            <string>draw_self();
+image_angle += spinDir;
 if (image_angle &gt; 360)
     image_angle = 0;
 else if (image_angle &lt; 0)
     image_angle = 360;
-draw_self();
 </string>
           </argument>
         </arguments>

@@ -7,8 +7,8 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>11</bbox_left>
-  <bbox_right>221</bbox_right>
+  <bbox_left>16</bbox_left>
+  <bbox_right>226</bbox_right>
   <bbox_top>1</bbox_top>
   <bbox_bottom>158</bbox_bottom>
   <HTile>0</HTile>
@@ -17,7 +17,7 @@
     <TextureGroup0>3</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>224</width>
+  <width>234</width>
   <height>160</height>
   <frames>
     <frame index="0">images\sprJustination_0.png</frame>

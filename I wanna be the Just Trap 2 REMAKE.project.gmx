@@ -113,6 +113,8 @@
       <sprite>sprites\sprCherryCyan</sprite>
       <sprite>sprites\sprCherryWhite</sprite>
       <sprite>sprites\sprJustinationCrazy</sprite>
+      <sprite>sprites\sprJustination_Old</sprite>
+      <sprite>sprites\sprJustinationCrazy_Old</sprite>
     </sprites>
     <sprites name="items">
       <sprite>sprites\sprSecretItem</sprite>
@@ -193,6 +195,7 @@
     </sprites>
     <sprites name="warps">
       <sprite>sprites\sprWarp</sprite>
+      <sprite>sprites\sprWarp_Old</sprite>
     </sprites>
     <sprites name="world">
       <sprite>sprites\sprCamera</sprite>

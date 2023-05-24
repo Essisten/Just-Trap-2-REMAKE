@@ -45,6 +45,7 @@ strSelect[3] = "Particles";
 strSelect[4] = "Fix bow";
 strSelect[5] = "Personal best";
 strSelect[6] = "Show names";
+strSelect[7] = "Sprite style";
 optionsNum = array_length_1d(strSelect);
 </string>
           </argument>
@@ -144,6 +145,11 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
         case 6:
             global.showNames = !global.showNames;
             break;
+        case 7:
+            global.spriteStyle++;
+            if (global.spriteStyle &gt; 1)
+               global.spriteStyle = 0;
+            break;
     }
 }
 </string>
@@ -218,6 +224,18 @@ for(var i = 0; i &lt; optionsNum; i++)
             if (global.showNames)
                 value = "On";
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*6),value, clr, c_black);
+            break;
+        case 7:
+            switch (global.spriteStyle)
+            {
+                case 0:
+                     value = "New";
+                     break;
+                case 1:
+                     value = "Old";
+                     break;
+            }
+            scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*7),value, clr, c_black);
             break;
     }
 }

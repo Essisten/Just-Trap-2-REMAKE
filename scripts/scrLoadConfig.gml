@@ -14,6 +14,7 @@ if (global.vsyncMode)   //only need to set vsync mode if it's on since it's off 
     scrSetVsync();
 global.delayBow = ini_read_real("Settings","Fix_bow",false);
 global.showPB = ini_read_real("Settings","Show_PB",true);
+global.spriteStyle = ini_read_real("Settings","Sprite_style", 0);
 //keyboard controls
 global.leftButton[0] = ini_read_real("Controls","Left",vk_left);
 global.rightButton[0] = ini_read_real("Controls","Right",vk_right);
