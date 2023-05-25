@@ -196,6 +196,7 @@ draw_set_valign(fa_center);
 scrDrawTextOutline(x + xoffset, y + yoffset_name, name, c_white, c_black);
 scrDrawTextOutline(x + xoffset, y + yoffset_from, from, c_white, c_black);
 draw_set_alpha(1);
+draw_set_valign(fa_top);
 </string>
           </argument>
         </arguments>

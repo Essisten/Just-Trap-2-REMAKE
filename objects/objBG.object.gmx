@@ -400,7 +400,6 @@ scrHideBoss1(objJustist, true);
 {
     draw_set_font(fDefault18);
     draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
     var clr1 = c_red;
     var clr2 = c_maroon;
     if (objJustist.HP &lt;= 0)
