@@ -50,8 +50,8 @@ part_alpha = 0.5;
 fantom = part_type_create();
 part_type_alpha2(fantom, 0, 0);
 part_type_sprite(fantom, normal[global.spriteStyle], false, false, false);
-part_type_life(fantom, 4, 20);
-part_type_speed(fantom, 1, 2, 0, 0);
+part_type_life(fantom, 4, 12);
+part_type_speed(fantom, 0.1, 2, 0, 0);
 part_type_direction(fantom, 0, 360, 0, 0);
 emitter = part_emitter_create(global.portalParticleSystem);
 var siz = 4;
@@ -175,13 +175,12 @@ alarm[3] = 600;
           <argument>
             <kind>1</kind>
             <string>///Changing pitch
-var p = audio_sound_get_pitch(global.currentMusic);
+var p = min(audio_sound_get_pitch(global.currentMusic), 1);
 if (pitch &gt;= p)
 {
     alarm[2] = -1;
     exit;
 }
-show_debug_message(p);
 audio_sound_pitch(global.currentMusic, p - 1/256);
 alarm[2] = 5;
 </string>
@@ -343,7 +342,7 @@ if (dead &gt; 0)
 {
     alarm[2] = 5;
     pitch = (256 - dead * 8) / 256;
-    part_alpha = dead / 5;
+    part_alpha = dead / 12;
     part_type_alpha2(fantom, part_alpha, 0);
     part_emitter_stream(global.portalParticleSystem, emitter, fantom, -4 +  dead);
 }
@@ -467,8 +466,6 @@ if (active)
 {
     if (HP &gt; 0)
         draw_healthbar(x - 32, oldY - 90, x + 32, oldY - 86, HP, c_black, colorHP, colorHP, 0, true, true);
-    else
-        draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_black, 1);
 }
 else
     draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_black, 1);

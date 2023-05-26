@@ -184,7 +184,9 @@ if (image_yscale &gt; 0.1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrSetGrav(3);
+            <string>///Ending
+with (objPlayer)
+     scrSetGrav(3);
 alarm[0] = 100;
 alarm[4] = alarm[0];
 </string>
