@@ -185,8 +185,11 @@ if (image_yscale &gt; 0.1)
           <argument>
             <kind>1</kind>
             <string>///Ending
-with (objPlayer)
-     scrSetGrav(3);
+if (global.grav != 1 or global.gravH == true)
+{
+    with (objPlayer)
+         scrSetGrav(3);
+}
 alarm[0] = 100;
 alarm[4] = alarm[0];
 </string>

@@ -59,11 +59,11 @@ else
     vGrad = 0;
 if (hText &gt; 1000)
 {
+    if (!instance_exists(objPlayer))
+        exit;
     global.bossClear[stage - 1] = true;
     global.pb[stage - 1] = 100;
     instance_destroy();
-    if (!instance_exists(objPlayer))
-        exit;
     if (room == rBoss2)
     {
         with (objBoss2Door)

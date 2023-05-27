@@ -47,6 +47,16 @@ flyHight = random_range(200, 250);
 nextFlyHight = flyHight;
 nextFlying = flying;
 warnDelay = 80 - global.difficulty * 20;
+
+idle[0] = sprJR_Idle;
+idle[1] = sprJR_Idle_Old;
+run[0] = sprJR_Run;
+run[1] = sprJR_Run_Old;
+fall[0] = sprJR_Fall;
+fall[1] = sprJR_Fall_Old;
+jump[0] = sprJR_Jump;
+jump[1] = sprJR_Jump_Old;
+
 if (global.spriteStyle == 0)
    instance_create(x, y, objBoss1Bow);
 with (instance_create(x, y, objBossName))
@@ -606,19 +616,19 @@ if (flying)
     {
         y = max(y - spd - 1, flyHight);
         oldY = y;
-        sprite_index = sprJR_Jump;
+        sprite_index = jump[global.spriteStyle];
     }
     else if (flyHight &gt; oldY)
     {
         y = min(y + spd + 1, flyHight);
         oldY = y;
-        sprite_index = sprJR_Fall;
+        sprite_index = fall[global.spriteStyle];
     }
     else
     {
         y = oldY + 8 * sin(degtorad(dick));
         dick += 8;
-        sprite_index = sprJR_Fall;
+        sprite_index = fall[global.spriteStyle];
     }
 }
 else
@@ -627,15 +637,15 @@ else
     {
         y = min(y + spd + 1, 464);
         oldY = y;
-        sprite_index = sprJR_Fall;
+        sprite_index = fall[global.spriteStyle];
     }
     else
     {
         dick = 0;
         if (x == destinationX or !canWalk)
-            sprite_index = sprJR_Idle;
+            sprite_index = idle[global.spriteStyle];
         else
-            sprite_index = sprJR_Run;
+            sprite_index = run[global.spriteStyle];
     }
 }
 if (x == destinationX)

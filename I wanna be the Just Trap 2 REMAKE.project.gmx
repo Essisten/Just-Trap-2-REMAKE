@@ -97,6 +97,16 @@
       <sprite>sprites\sprWarningDark</sprite>
       <sprite>sprites\sprWarningJR</sprite>
       <sprite>sprites\sprWarningJustist</sprite>
+      <sprites name="Old sprites">
+        <sprite>sprites\sprJR_Fall_Old</sprite>
+        <sprite>sprites\sprJR_Idle_Old</sprite>
+        <sprite>sprites\sprJR_Jump_Old</sprite>
+        <sprite>sprites\sprJR_Run_Old</sprite>
+        <sprite>sprites\sprJustist_Fall_Old</sprite>
+        <sprite>sprites\sprJustist_Idle_Old</sprite>
+        <sprite>sprites\sprJustist_Jump_Old</sprite>
+        <sprite>sprites\sprJustist_Run_Old</sprite>
+      </sprites>
     </sprites>
     <sprites name="Boss4">
       <sprite>sprites\sprBoss4_Ground</sprite>

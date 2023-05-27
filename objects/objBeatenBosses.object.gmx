@@ -218,8 +218,8 @@ if (global.spriteStyle == 0)
 }
 else
 {
-    draw_sprite_ext(sprJR_Idle, 0, 138, 440, 2, 2, 0, blend, image_alpha);
-    draw_sprite_ext(sprJustist_Idle, 0, 242, 440, -2, 2, 0, blend, image_alpha);
+    draw_sprite_ext(sprJR_Idle_Old, 0, 138, 440, 2, 2, 0, blend, image_alpha);
+    draw_sprite_ext(sprJustist_Idle_Old, 0, 242, 440, -2, 2, 0, blend, image_alpha);
 }
 scrCheckBossClear(1);
 draw_sprite_ext(sprJustularityIdleRed, 0, 554, 448, -2, 2, 0, blend, image_alpha);

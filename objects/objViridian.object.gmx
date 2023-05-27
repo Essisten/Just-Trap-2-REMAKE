@@ -52,7 +52,7 @@ with (name)
 if (type == 128)
    name.name = "Gugudian";
 else
-    name.name = "Gugulion";
+    name.name = "Gugumillion";
 alarm[6] = 1;
 </string>
           </argument>

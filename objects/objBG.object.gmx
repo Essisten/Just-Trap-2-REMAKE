@@ -95,6 +95,7 @@ if (timer &lt; 2)
         tile_set_alpha(tiles[i], 0);
     }
     objWorld.alarm[2] = 400;
+    global.frozen = true;
     instance_destroy();
     return -1;
 }
