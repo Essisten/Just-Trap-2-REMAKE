@@ -14,6 +14,7 @@ ini_write_real("Settings","Fix_bow", global.delayBow);
 ini_write_real("Settings","Show_PB", global.showPB);
 ini_write_real("Settings","Show_names", global.showNames);
 ini_write_real("Settings","Sprite_style", global.spriteStyle);
+ini_write_real("Settings","GameOver_type", global.GameOverType);
 //keyboard controls
 ini_write_real("Controls","Left",global.leftButton[0]);
 ini_write_real("Controls","Right",global.rightButton[0]);

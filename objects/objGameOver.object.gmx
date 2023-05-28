@@ -31,6 +31,8 @@ x = view_wview[0] / 2;
 y = view_hview[0] / 2;
 percent = 0;
 old = 0;
+image_speed = 0;
+image_index = global.GameOverType;
 if (!global.showPB)
     exit;
 switch (room)
@@ -176,6 +178,15 @@ draw_set_blend_mode(bm_add);
 draw_rectangle_colour(0, h / 2 ,w ,(h - h * (image_alpha + 0.2)) / 2, c_black, c_black, c_red, c_red, false);
 draw_rectangle_colour(0, h / 2, w ,(h + h * (image_alpha + 0.2)) / 2, c_red, c_red, c_black, c_black, false);
 draw_set_blend_mode(bm_normal);
+if (image_index &lt; 3)
+{
+    draw_set_font(fDefault24);
+    draw_set_halign(fa_center);
+    draw_set_alpha(image_alpha);
+    draw_set_valign(fa_top);
+    scrDrawTextOutline(x, y + 55, "Press '" + scrGetKeybind(global.restartButton[0]) + "' to restart", c_maroon, c_black);
+    draw_set_alpha(1);
+}
 draw_self();
 if (old &lt; percent)
 {

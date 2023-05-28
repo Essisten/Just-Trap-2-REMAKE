@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>select = 0;
 alarm[0] = 1;
-xSelector = 100;
-ySelector = 160;
-xSeperation = 600;
+xSelector = 80;
+ySelector = 64;
+xSeperation = 640;
 ySeperation = 48;
 offset = 40;
 alarm[0] = 10;
@@ -46,6 +46,7 @@ strSelect[4] = "Fix bow";
 strSelect[5] = "Personal best";
 strSelect[6] = "Show names";
 strSelect[7] = "Sprite style";
+strSelect[8] = "Game Over screen";
 optionsNum = array_length_1d(strSelect);
 </string>
           </argument>
@@ -150,6 +151,11 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
             if (global.spriteStyle &gt; 1)
                global.spriteStyle = 0;
             break;
+        case 8:
+            global.GameOverType++;
+            if (global.GameOverType &gt; 3)
+               global.GameOverType = 0;
+            break;
     }
 }
 </string>
@@ -226,17 +232,19 @@ for(var i = 0; i &lt; optionsNum; i++)
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*6),value, clr, c_black);
             break;
         case 7:
-            switch (global.spriteStyle)
-            {
-                case 0:
-                     value = "New";
-                     break;
-                case 1:
-                     value = "Old";
-                     break;
-            }
+             style[0] = "New";
+             style[1] = "Old";
+             value = style[global.spriteStyle];
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*7),value, clr, c_black);
             break;
+        case 8:
+             GameOver[0] = "New";
+             GameOver[1] = "New (dots)";
+             GameOver[2] = "New (shiny)";
+             GameOver[3] = "Old";
+             value = GameOver[global.GameOverType];
+            scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*8),value, clr, c_black);
+             break;
     }
 }
 </string>
