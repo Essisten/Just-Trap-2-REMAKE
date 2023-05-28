@@ -16,7 +16,10 @@ if (instance_exists(objPlayer) && (!global.noDeath && !global.debugNoDeath))
             with (objWorld)
                 event_user(0);  //fades out and stops the current music
             
-            global.gameOverMusic = audio_play_sound(musOnDeath, 1, false);
+            if (global.GameOverType == 4)
+               global.gameOverMusic = scrPlaySound(musOnDeath2, 1);
+            else
+                global.gameOverMusic = scrPlaySound(musOnDeath, 1);
         }
         global.frozen = false;
         with (objPlayer)

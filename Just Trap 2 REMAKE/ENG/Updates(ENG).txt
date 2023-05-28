@@ -1,3 +1,10 @@
+v0.3.8
+- Justination fantom intensity reduced.
+- Justularity huge bug fix.
+- Justularity music slows down after killing.
+- New game over screens and ability to change it.
+- Light effect removed from the intro of the game.
+==================================================
 v0.3.7
 - Justination Red part nerfed.
 - Justination Dark part rotation animation improved.

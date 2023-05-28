@@ -153,7 +153,7 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
             break;
         case 8:
             global.GameOverType++;
-            if (global.GameOverType &gt; 3)
+            if (global.GameOverType &gt; 4)
                global.GameOverType = 0;
             break;
     }
@@ -242,6 +242,7 @@ for(var i = 0; i &lt; optionsNum; i++)
              GameOver[1] = "New (dots)";
              GameOver[2] = "New (shiny)";
              GameOver[3] = "Old";
+             GameOver[4] = "Happil 2";
              value = GameOver[global.GameOverType];
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*8),value, clr, c_black);
              break;

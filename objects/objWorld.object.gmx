@@ -33,6 +33,35 @@ if (instance_number(object_index) &gt; 1)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///happil 2 slowdown
+if (audio_sound_get_pitch(global.currentMusic) &lt;= 8/256)
+{
+    exit;
+}
+audio_sound_pitch(global.currentMusic, audio_sound_get_pitch(global.currentMusic) - 2/256);
+alarm[3] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -392,6 +421,11 @@ if (keyboard_check_pressed(vk_f5) &amp;&amp; !global.gamePaused)    //reset wind
           <argument>
             <kind>1</kind>
             <string>///fade current music out
+if (global.GameOverType == 4)
+{
+    alarm[3] = 1;
+    exit;
+}
 global.musicFading = true;
 global.currentGain = audio_sound_get_gain(global.currentMusic);     //get current gain
 audio_sound_gain(global.currentMusic,0,1000);                       //fade out music over 1 second

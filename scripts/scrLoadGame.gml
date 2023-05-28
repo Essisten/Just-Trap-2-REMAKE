@@ -105,9 +105,8 @@ if (loadFile)
         exit;
     }
 }
-
+objWorld.alarm[3] = -1;
 //set game variables and set the player's position
-
 with (objPlayer) //destroy player if it exists
     instance_destroy();
 global.gameStarted = true;  //sets game in progress (enables saving, restarting, etc.)

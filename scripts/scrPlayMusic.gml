@@ -15,5 +15,6 @@ if (global.currentMusicID != songID)  //checks if the song to play is already pl
     if (songID != -1)
         global.currentMusic = audio_play_sound(global.currentMusicID,1,loopSong);
 }
+audio_sound_pitch(global.currentMusic, 1);
 audio_sound_gain(global.currentMusic, global.musicVol/100, 0);
 return global.currentMusic;

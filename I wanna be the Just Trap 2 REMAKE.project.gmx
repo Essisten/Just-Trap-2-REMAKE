@@ -61,6 +61,7 @@
       <sound>sound\musStage2D</sound>
       <sound>sound\musTitleA</sound>
       <sound>sound\musTitleB</sound>
+      <sound>sound\musOnDeath2</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -177,6 +178,7 @@
       <sprite>sprites\sprPlayerSlideUp</sprite>
       <sprite>sprites\sprGameOver</sprite>
       <sprite>sprites\sprPlayerParalyzed</sprite>
+      <sprite>sprites\sprBloodH2</sprite>
     </sprites>
     <sprites name="saves">
       <sprite>sprites\sprSaveMask</sprite>
@@ -256,7 +258,6 @@
         <sprite>sprites\sprJustularityBullet2</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprite158</sprite>
     <sprites name="Boss3">
       <sprite>sprites\sprJustrimsonA</sprite>
       <sprite>sprites\sprJustrimsonB</sprite>
@@ -369,6 +370,7 @@
       <object>objects\objBloodEmitter</object>
       <object>objects\objBlood</object>
       <object>objects\objGameOver</object>
+      <object>objects\objBloodH2</object>
     </objects>
     <objects name="blocks">
       <object>objects\objBlock</object>

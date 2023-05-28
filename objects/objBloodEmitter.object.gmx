@@ -71,14 +71,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (var i = 0; i &lt; 36; i++)
+            <string>if (global.GameOverType == 4)
 {
-    if (random(1) &lt; 0.3)
+    repeat (40)
     {
-        repeat (10)
+        bl = instance_create(x, y, objBloodH2);
+        bl.speed = random(12);
+        bl.direction = random(360);
+        bl.gravity_direction = 90 + global.gravH * 90 + max(global.grav, 0) * 180;
+    }
+}
+else
+{
+    for (var i = 0; i &lt; 36; i++)
+    {
+        if (random(1) &lt; 0.3)
         {
-            tmp = instance_create(x, y, objBlood);
-            tmp.direction = i * 10;
+            repeat (10)
+            {
+                tmp = instance_create(x, y, objBlood);
+                tmp.direction = i * 10;
+            }
         }
     }
 }
