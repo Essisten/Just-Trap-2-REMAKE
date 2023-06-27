@@ -24,5 +24,6 @@
     <frame index="1">images\sprWarp_1.png</frame>
     <frame index="2">images\sprWarp_2.png</frame>
     <frame index="3">images\sprWarp_3.png</frame>
+    <frame index="4">images\sprWarp_4.png</frame>
   </frames>
 </sprite>

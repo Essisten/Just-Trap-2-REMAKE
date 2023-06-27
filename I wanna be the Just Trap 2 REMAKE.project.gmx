@@ -247,6 +247,7 @@
         <sprite>sprites\sprJustularityWater</sprite>
         <sprite>sprites\sprJustularityBullet</sprite>
         <sprite>sprites\sprJustularityCoal</sprite>
+        <sprite>sprites\sprJustularityTornado</sprite>
       </sprites>
       <sprites name="Gray attacks">
         <sprite>sprites\sprJustularityBall2</sprite>
@@ -263,6 +264,7 @@
       <sprite>sprites\sprJustrimsonB</sprite>
       <sprite>sprites\sprJustrimsonC</sprite>
       <sprite>sprites\sprJustrimsonD</sprite>
+      <sprite>sprites\sprBloss3_Block</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -282,7 +284,8 @@
     <background>background\bBoss2Wall2</background>
     <background>background\bBoss2Floor</background>
     <background>background\bBoss2_BG</background>
-    <background>background\background16</background>
+    <background>background\bBoss3_Tiles</background>
+    <background>background\bBoss3_BG</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -506,6 +509,7 @@
       <object>objects\objViridian</object>
       <object>objects\objStarV</object>
       <object>objects\objJustularityStarCenter</object>
+      <object>objects\objTornado</object>
     </objects>
     <objects name="Boss3">
       <object>objects\objJustrimsonParent</object>
@@ -524,6 +528,7 @@
     <room>rooms\rBoss4</room>
     <room>rooms\rStageSelect</room>
     <room>rooms\rTemplate</room>
+    <room>rooms\rBoss3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

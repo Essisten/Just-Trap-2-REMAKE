@@ -26,6 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 10;
+type = 1;
+if (global.GameOverType == 4)
+   type = 2;
+image_blend = c_red;
+H2_Amount = 40;
+H2_Speed = 12;
 </string>
           </argument>
         </arguments>
@@ -71,12 +77,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.GameOverType == 4)
+            <string>if (type == 2)
 {
-    repeat (40)
+    repeat (H2_Amount)
     {
         bl = instance_create(x, y, objBloodH2);
-        bl.speed = random(12);
+        bl.image_blend = image_blend;
+        bl.speed = random(H2_Speed);
         bl.direction = random(360);
         bl.gravity_direction = 90 + global.gravH * 90 + max(global.grav, 0) * 180;
     }
@@ -91,6 +98,7 @@ else
             {
                 tmp = instance_create(x, y, objBlood);
                 tmp.direction = i * 10;
+                tmp.image_blend = image_blend;
             }
         }
     }

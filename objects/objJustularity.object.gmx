@@ -30,10 +30,10 @@ image_speed = 0.2;
 image_xscale = 3;
 image_yscale = image_xscale;
 mask_index = sprJustularityMask;
-RedHP = 100;
-BlueHP = 100;
-maxHP[0] = 100;
-maxHP[1] = 100;
+RedHP = 1;
+BlueHP = 1;
+maxHP[0] = 1;
+maxHP[1] = 1;
 phase = 1;
 alarm[0] = 60;
 god = true;
@@ -273,8 +273,8 @@ if (instance_exists(objPlayer))
         }
         else
         {
-            if (shootCounter &lt;= (global.difficulty + 1) * 2)
-                time = 20 - global.difficulty * 5;
+            if (shootCounter &lt;= (global.difficulty + 1) * 3)
+                time = 16 - global.difficulty * 5;
             for (var i = 0; i &lt; 3; i++)
             {
                 with (instance_create(x, y, objParalyzer))
@@ -1154,7 +1154,11 @@ if (instance_number(objJustularity) == 0)
 }
 else
 {
-    //idk add some buff here later
+    for (i = 0; i &lt; global.difficulty+1; i++)
+    {
+        tornado = instance_create(x, y, objTornado);
+        tornado.gravity_direction = gravity_direction + 90 * i;
+    }
     with (objJustularity)
     {
         pitch -= 32/256;

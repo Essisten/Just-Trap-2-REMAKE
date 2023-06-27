@@ -9,6 +9,8 @@ if (argument1)
         hidden = false;
         showing = true;
         canWalk = true;
+        nextFlying = true;
+        flying = true;
         x = hole.x;
         y = hole.y;
         oldY = y;

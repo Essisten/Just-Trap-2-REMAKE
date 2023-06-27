@@ -121,6 +121,7 @@ event_inherited();
             <string>///Particle starting
 if (!global.particles or global.spriteStyle == 1)
     exit;
+image_blend = color;
 part_type_colour1(portalParticles, color);
 part_emitter_stream(global.portalParticleSystem, portalEmitter, portalParticles, 2);
 </string>

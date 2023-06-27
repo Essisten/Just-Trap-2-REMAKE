@@ -45,7 +45,7 @@ normal[1] = sprJustination_Old;
 
 crazy[0] = sprJustinationCrazy;
 crazy[1] = sprJustinationCrazy_Old;
-
+xx = x;
 part_alpha = 0.5;
 fantom = part_type_create();
 part_type_alpha2(fantom, 0, 0);
@@ -54,7 +54,7 @@ part_type_life(fantom, 4, 12);
 part_type_speed(fantom, 0.1, 2, 0, 0);
 part_type_direction(fantom, 0, 360, 0, 0);
 emitter = part_emitter_create(global.portalParticleSystem);
-var siz = 4;
+siz = 2;
 part_emitter_region(global.portalParticleSystem, emitter, x - siz, x + siz, y - siz, y + siz, pt_shape_circle, ps_distr_gaussian);
 event_user(0);
 alarm[3] = 60;
@@ -461,14 +461,11 @@ ds_list_add(parts, objJustinationFire);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Copy pasting because of god damn square issue
+            <string>event_inherited();
 if (active)
 {
-    if (HP &gt; 0)
-        draw_healthbar(x - 32, oldY - 90, x + 32, oldY - 86, HP, c_black, colorHP, colorHP, 0, true, true);
+    part_emitter_region(global.portalParticleSystem, emitter, x - siz + random_range(-4, 0), x + siz + random_range(0, 4), oldY - siz, oldY + siz, pt_shape_circle, ps_distr_gaussian);
 }
-else
-    draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_black, 1);
 </string>
           </argument>
         </arguments>

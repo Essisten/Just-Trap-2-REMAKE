@@ -150,6 +150,10 @@ switch (global.selectedBoss)
         if (background_index[1] != bBoss2_BG)
             background_index[1] = bBoss2_BG;
         break;
+    case 3:
+        if (background_index[1] != bBoss3_BG)
+            background_index[1] = bBoss3_BG;
+        break;
     case 4:
         if (background_index[1] != bBoss4)
             background_index[1] = bBoss4;
@@ -180,7 +184,6 @@ switch (global.selectedBoss)
             <string>///Hiding other tiles
 for (var i = 1; i &lt; 5; i++)
 {
-    if (i == global.selectedBoss or i == 3) continue;
     var l = array_length_1d(tiles[i]);
     var temp = tiles[i];
     for (var j = 0; j &lt; l; j++)
