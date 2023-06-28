@@ -117,6 +117,7 @@
       <sprite>sprites\sprJustinationFire</sprite>
       <sprite>sprites\sprJustinationIce</sprite>
       <sprite>sprites\sprJustinationLight</sprite>
+      <sprite>sprites\sprJustinationPiece</sprite>
       <sprite>sprites\sprBoss4_Spike</sprite>
       <sprite>sprites\sprBoss4_BigBullet</sprite>
       <sprite>sprites\sprCherryDark</sprite>
@@ -334,12 +335,13 @@
       <script>scripts\scrCheckBossClear.gml</script>
       <script>scripts\scrRefreshBulletSkin.gml</script>
       <script>scripts\scrCreateFade.gml</script>
+      <script>scripts\scrStartSlowdown.gml</script>
+      <script>scripts\scrHideBoss1.gml</script>
     </scripts>
     <scripts name="Boss 2">
       <script>scripts\scrJustularitySkin.gml</script>
       <script>scripts\scrJustularityAttack.gml</script>
     </scripts>
-    <script>scripts\scrHideBoss1.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -451,6 +453,7 @@
       <object>objects\objShowLabel</object>
       <object>objects\objTutorial1</object>
       <object>objects\objBossName</object>
+      <object>objects\objSlowdownEffect</object>
     </objects>
     <objects name="saves">
       <object>objects\objSaveMedium</object>
@@ -495,6 +498,7 @@
       <object>objects\objBoss4_FruitBomb</object>
       <object>objects\objBoss4_Ground</object>
       <object>objects\objBoss4_Effects</object>
+      <object>objects\objJustinationPiece</object>
     </objects>
     <objects name="Boss2">
       <object>objects\objBoss2Door</object>

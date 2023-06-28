@@ -30,8 +30,8 @@ image_speed = 0.2;
 image_xscale = 3;
 image_yscale = image_xscale;
 mask_index = sprJustularityMask;
-RedHP = 1;
-BlueHP = 1;
+RedHP = 100;
+BlueHP = 100;
 maxHP[0] = 1;
 maxHP[1] = 1;
 phase = 1;
@@ -1151,6 +1151,8 @@ if (instance_number(objJustularity) == 0)
         play = false;
         alarm[3] = 300;
     }
+    with (objTornado)
+         alarm[2] = 5;
 }
 else
 {

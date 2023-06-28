@@ -295,6 +295,28 @@ if (HP &lt;= 0)
     part_emitter_clear(global.portalParticleSystem, emitter);
     scrStopMusic();
     scrPlaySound(sndMonster1, 1.2);
+    scrStartSlowdown(50, 25);
+    with (instance_create(x, y, objShakeEffect))
+    {
+        shake_mag = 10;
+        shake_mag_acc = 0.2;
+    }
+    for (var i = 1; i &lt; 9; i++)
+    {
+        piece = instance_create(x, y, objJustinationPiece);
+        piece.direction = 360 - 90 * i + random_range(-35, 35);
+        if ((i mod 2) == 1 and i &lt; 5)
+           piece.image_index = 7;
+        else
+           piece.image_index = 6;
+        piece.speed = random(4);
+        if (i == 1)
+           piece.image_yscale = -1;
+        else if (i == 4)
+           piece.image_xscale = -1;
+        else if (i &gt; 4)
+             piece.image_angle = random(360);
+    }
 }
 else if (HP &lt; 50 and surprise)
 {
@@ -353,16 +375,24 @@ if (dead &gt;= 4)
     global.swapControls = true;
     scrSwapControls();
     alarm[3] = -1;
-    for (var i = 0; i &lt; 4; i++)
+    repeat (4)
+        ds_list_add(parts, instance_create(x + random_range(-128, 128), y + random_range(-128, 128), objJustinationPiece));
+    for (var i = 0; i &lt; 8; i++)
     {
-        with (ds_list_find_value(parts, i))
+        piece = ds_list_find_value(parts, i);
+        with (piece)
         {
             vspeed = -irandom(4);
             hspeed = irandom_range(-4, 4);
             gravity = random_range(0.2, 0.4);
             alarm[11] = 5;
+            sprite_index = sprJustinationPiece;
             active = false;
         }
+        if (i &lt; 4)
+            piece.image_index = i;
+        else
+            piece.image_index = irandom_range(4, 5);
     }
     ds_list_clear(active_parts);
     ds_list_clear(parts);

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-HP = 100;
+HP = 1;
 active = false;
 godmode = false;
 colorHP = c_yellow;
@@ -313,10 +313,10 @@ alarm[0] = 100 - global.difficulty * 30;
         draw_healthbar(x - 32, oldY - 90, x + 32, oldY - 86, HP, c_black, colorHP, colorHP, 0, true, true);
     }
     else
-        draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_black, 1);
+        draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_black, 1);
 }
 else
-    draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_black, 1);
+    draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_black, 1);
 </string>
           </argument>
         </arguments>
