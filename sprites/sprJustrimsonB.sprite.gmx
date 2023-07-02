@@ -9,7 +9,7 @@
   <bboxmode>0</bboxmode>
   <bbox_left>6</bbox_left>
   <bbox_right>154</bbox_right>
-  <bbox_top>5</bbox_top>
+  <bbox_top>55</bbox_top>
   <bbox_bottom>144</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -21,7 +21,5 @@
   <height>160</height>
   <frames>
     <frame index="0">images\sprJustrimsonB_0.png</frame>
-    <frame index="1">images\sprJustrimsonB_1.png</frame>
-    <frame index="2">images\sprJustrimsonB_2.png</frame>
   </frames>
 </sprite>

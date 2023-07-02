@@ -62,6 +62,7 @@
       <sound>sound\musTitleA</sound>
       <sound>sound\musTitleB</sound>
       <sound>sound\musOnDeath2</sound>
+      <sound>sound\musStage3</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -262,10 +263,14 @@
     </sprites>
     <sprites name="Boss3">
       <sprite>sprites\sprJustrimsonA</sprite>
+      <sprite>sprites\sprJustrimsonA2</sprite>
       <sprite>sprites\sprJustrimsonB</sprite>
+      <sprite>sprites\sprJustrimsonB_Head</sprite>
       <sprite>sprites\sprJustrimsonC</sprite>
+      <sprite>sprites\sprJustrimsonC_Heart</sprite>
       <sprite>sprites\sprJustrimsonD</sprite>
       <sprite>sprites\sprBloss3_Block</sprite>
+      <sprite>sprites\sprJustrimsonA_blade</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -287,6 +292,7 @@
     <background>background\bBoss2_BG</background>
     <background>background\bBoss3_Tiles</background>
     <background>background\bBoss3_BG</background>
+    <background>background\bBoss3_BG2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -517,6 +523,15 @@
     </objects>
     <objects name="Boss3">
       <object>objects\objJustrimsonParent</object>
+      <object>objects\objJustrimsonA</object>
+      <object>objects\objJustrimsonB</object>
+      <object>objects\objJustrimsonC</object>
+      <object>objects\objJustrimsonD</object>
+      <object>objects\objJustrimsonA_blade</object>
+      <object>objects\objJustrimsonB_Head</object>
+      <object>objects\objJustrimsonC_Heart</object>
+      <object>objects\objJustrimsonController</object>
+      <object>objects\objJustrimson_Block</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -15,7 +15,7 @@ switch (room)                       //determines which song to play
         roomSong = musStage1;
         break;
     case rBoss3:
-        roomSong = -1//musStage3;
+        roomSong = musStage3;
         break;
     case rBoss4:
         scrPlayMusic(musStage4, true); //play the song for the current room

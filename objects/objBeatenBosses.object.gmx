@@ -151,8 +151,8 @@ switch (global.selectedBoss)
             background_index[1] = bBoss2_BG;
         break;
     case 3:
-        if (background_index[1] != bBoss3_BG)
-            background_index[1] = bBoss3_BG;
+        if (background_index[1] != bBoss3_BG2)
+            background_index[1] = bBoss3_BG2;
         break;
     case 4:
         if (background_index[1] != bBoss4)
