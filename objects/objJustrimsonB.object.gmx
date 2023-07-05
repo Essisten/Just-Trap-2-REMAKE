@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 color = c_white;
+color2 = c_olive;
 </string>
           </argument>
         </arguments>
@@ -58,6 +59,40 @@ objJustrimsonB_Head.image_alpha = image_alpha;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (nohit_challenge &gt;= 8)
+{
+    if (!instance_exists(objJustrimsonB_Halo))
+       instance_create(x, y, objJustrimsonB_Halo);
+    else
+    {
+        with (objJustrimsonB_Halo)
+        {
+            event_user(15);
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -76,11 +111,25 @@ objJustrimsonB_Head.image_alpha = image_alpha;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+var beam = instance_create(0, 0, objJustrimsonB_Laser);
 if (HP &lt;= 50)
+{
+    var beam2 = instance_create(0, 0, objJustrimsonB_Laser);
+    if (beam.side == 1 or beam.side == 3)
+       beam2.side = choose(2, 4);
+    else
+        beam2.side = choose(1, 3);
+}
+
+if (HP &gt; 50)
+{
+    
+}
+else if (HP &gt; 0)
 {
     objJustrimsonB_Head.image_index = 1;
 }
-if (HP &lt;= 0)
+else
 {
     objJustrimsonB_Head.image_blend = c_black;
 }

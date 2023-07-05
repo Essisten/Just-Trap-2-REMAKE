@@ -79,11 +79,7 @@ if (timer &lt; 2)
     with (objJustist)
         instance_destroy();
     final = false;
-    with (instance_create(x, y, objShakeEffect))
-    {
-        shake_mag = 20;
-        shake_mag_acc = 0.5;
-    }
+    scrShakeEffect(20, 0.5);
     for (var i = 0; i &lt; holes_count; i++)
     {
         with (instance_find(objWallHole, i))

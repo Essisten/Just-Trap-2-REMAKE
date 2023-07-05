@@ -296,11 +296,7 @@ if (HP &lt;= 0)
     scrStopMusic();
     scrPlaySound(sndMonster1, 1.2);
     scrStartSlowdown(50, 25);
-    with (instance_create(x, y, objShakeEffect))
-    {
-        shake_mag = 10;
-        shake_mag_acc = 0.2;
-    }
+    scrShakeEffect(10, 0.2);
     for (var i = 1; i &lt; 9; i++)
     {
         piece = instance_create(x, y, objJustinationPiece);

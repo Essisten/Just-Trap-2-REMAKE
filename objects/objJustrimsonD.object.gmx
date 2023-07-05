@@ -28,6 +28,7 @@
             <string>event_inherited();
 oldY = y;
 color = c_red;
+color2 = c_maroon;
 </string>
           </argument>
         </arguments>
@@ -56,7 +57,14 @@ if (x != xdest)
 else if (oldY != ydest)
    oldY += sign(ydest - oldY) * 5.3;
 else
+{
+    if (nohit_challenge &lt; 8)
+        nohit_challenge++;
+    if (circle_width &lt; 8 and nohit_challenge &gt; 4)
+       alarm[3] = 1;
+    event_user(1);
     exit;
+}
 
 if (abs(xdest - x) &lt; 8)
    x = xdest;

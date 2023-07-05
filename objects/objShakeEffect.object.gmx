@@ -28,7 +28,6 @@
             <string>leaveRoom = true;  //sets whether the camera can follow the player outside of the room's boundaries
 shake_mag = 0;
 shake_mag_acc = 0;
-scrPlaySound(sndBreak);
 xFollow = 0
 yFollow = 0;
 if (instance_exists(objPlayer))

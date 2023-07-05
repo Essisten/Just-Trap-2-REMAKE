@@ -174,12 +174,7 @@ for (var i = 0; i &lt; 20; i++)
 
 if (!visible)
 {
-    var shake = instance_create(0, 0, objShakeEffect);
-    with (shake)
-    {
-        shake_mag = 10;
-        shake_mag_acc = 0.5;
-    }
+    scrShakeEffect(10, 0.5);
     visible = true;
     event_user(1);
 }

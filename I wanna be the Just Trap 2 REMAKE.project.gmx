@@ -271,6 +271,8 @@
       <sprite>sprites\sprJustrimsonD</sprite>
       <sprite>sprites\sprBloss3_Block</sprite>
       <sprite>sprites\sprJustrimsonA_blade</sprite>
+      <sprite>sprites\sprJustrimsonB_Circle</sprite>
+      <sprite>sprites\sprJustrimsonB_Laser</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -343,6 +345,7 @@
       <script>scripts\scrCreateFade.gml</script>
       <script>scripts\scrStartSlowdown.gml</script>
       <script>scripts\scrHideBoss1.gml</script>
+      <script>scripts\scrShakeEffect.gml</script>
     </scripts>
     <scripts name="Boss 2">
       <script>scripts\scrJustularitySkin.gml</script>
@@ -532,6 +535,9 @@
       <object>objects\objJustrimsonC_Heart</object>
       <object>objects\objJustrimsonController</object>
       <object>objects\objJustrimson_Block</object>
+      <object>objects\objJustrimsonB_Laser</object>
+      <object>objects\objJustrimsonB_LaserBeam</object>
+      <object>objects\objJustrimsonB_Halo</object>
     </objects>
   </objects>
   <rooms name="rooms">

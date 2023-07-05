@@ -3,7 +3,7 @@
   <spriteName>sprJustrimsonB_Head</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>objPlayerKiller</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -49,6 +49,8 @@
           <argument>
             <kind>1</kind>
             <string>instance_destroy(other);
+if (objJustrimsonB.alarm[0] != -1)
+   exit;
 with (objJustrimsonB)
      event_user(0);
 </string>
