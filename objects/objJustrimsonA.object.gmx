@@ -3,7 +3,7 @@
   <spriteName>sprJustrimsonA</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>objJustrimsonParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,6 +29,9 @@
 bm = bm_subtract;
 black = c_black;
 color2 = c_white;
+friends[0] = objJustrimsonB;
+friends[1] = objJustrimsonC;
+friends[2] = objJustrimsonD;
 </string>
           </argument>
         </arguments>
@@ -53,6 +56,41 @@ color2 = c_white;
             <kind>1</kind>
             <string>///Temporary skin change
 image_index = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+if (nohit_challenge &lt; 8)
+   exit;
+var target = objJustrimsonB;
+for (i = 0; i &lt; 3; i++)
+{
+    if (friends[i].HP &lt; 100 and friends[i].HP &lt; target.HP)
+       target = friends[i];
+}
+if (objJustrimsonB.HP &gt;= 100 and objJustrimsonC.HP &gt;= 100 and objJustrimsonD.HP &gt;= 100)
+   target = objJustrimsonA;
+var soul = instance_create(x, y, objJustrimson_Soul);
+soul.target = target;
 </string>
           </argument>
         </arguments>
@@ -105,11 +143,11 @@ else if (HP &lt;= 0)
     {
        blade.endless = true;
        phase_counter++;
-       with (objJustrimsonA_blade)
-       {
-            image_blend = c_black;
-       }
     }
+   with (objJustrimsonA_blade)
+   {
+        image_blend = c_black;
+   }
 }
 </string>
           </argument>

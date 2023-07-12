@@ -130,6 +130,7 @@ var tmp = global.leftButton[0];
 global.leftButton[0] = global.rightButton[0]
 global.rightButton[0] = tmp;
 image_index = !image_index;
+scrPlaySound(sndBlockChange);
 </string>
           </argument>
         </arguments>

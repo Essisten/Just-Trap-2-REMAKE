@@ -14,9 +14,6 @@ switch (room)                       //determines which song to play
     case rBoss1:
         roomSong = musStage1;
         break;
-    case rBoss3:
-        roomSong = musStage3;
-        break;
     case rBoss4:
         scrPlayMusic(musStage4, true); //play the song for the current room
         audio_sound_set_track_position(global.currentMusic, 13.1);

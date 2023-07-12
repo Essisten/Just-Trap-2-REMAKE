@@ -3,7 +3,7 @@
   <spriteName>sprJustrimsonB</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>objJustrimsonParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,7 @@
             <string>event_inherited();
 color = c_white;
 color2 = c_olive;
+laser_sound = -1;
 </string>
           </argument>
         </arguments>
@@ -54,6 +55,7 @@ color2 = c_olive;
 objJustrimsonB_Head.y = y + sin(degtorad(dick)) * 3;
 objJustrimsonB_Head.x = x;
 objJustrimsonB_Head.image_alpha = image_alpha;
+objJustrimsonB_Head.image_blend = image_blend;
 </string>
           </argument>
         </arguments>
@@ -76,16 +78,15 @@ objJustrimsonB_Head.image_alpha = image_alpha;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (nohit_challenge &gt;= 8)
+            <string>if (nohit_challenge &lt; 8)
+   exit;
+if (!instance_exists(objJustrimsonB_Halo))
+   instance_create(x, y, objJustrimsonB_Halo);
+else
 {
-    if (!instance_exists(objJustrimsonB_Halo))
-       instance_create(x, y, objJustrimsonB_Halo);
-    else
+    with (objJustrimsonB_Halo)
     {
-        with (objJustrimsonB_Halo)
-        {
-            event_user(15);
-        }
+        event_user(15);
     }
 }
 </string>
@@ -111,10 +112,10 @@ objJustrimsonB_Head.image_alpha = image_alpha;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-var beam = instance_create(0, 0, objJustrimsonB_Laser);
+var beam = instance_create(x, y, objJustrimsonB_Laser);
 if (HP &lt;= 50)
 {
-    var beam2 = instance_create(0, 0, objJustrimsonB_Laser);
+    var beam2 = instance_create(x, y, objJustrimsonB_Laser);
     if (beam.side == 1 or beam.side == 3)
        beam2.side = choose(2, 4);
     else

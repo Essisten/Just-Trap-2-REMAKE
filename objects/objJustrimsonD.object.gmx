@@ -3,7 +3,7 @@
   <spriteName>sprJustrimsonD</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>objJustrimsonParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,6 +29,13 @@
 oldY = y;
 color = c_red;
 color2 = c_maroon;
+rot_spd = 0;
+rot_sum = 0;
+old_ang = image_angle;
+amount_angl = 0;
+dir = choose(1, -1);
+image_xscale = 8;
+image_yscale = image_xscale;
 </string>
           </argument>
         </arguments>
@@ -53,9 +60,9 @@ color2 = c_maroon;
             <kind>1</kind>
             <string>///Movivng
 if (x != xdest)
-   x += sign(xdest - x) * 8;
+   x += sign(xdest - x) * hspd;
 else if (oldY != ydest)
-   oldY += sign(ydest - oldY) * 5.3;
+   oldY += sign(ydest - oldY) * vspd;
 else
 {
     if (nohit_challenge &lt; 8)
@@ -66,9 +73,9 @@ else
     exit;
 }
 
-if (abs(xdest - x) &lt; 8)
+if (abs(xdest - x) &lt; hspd)
    x = xdest;
-if (abs(ydest - oldY) &lt; 5.3)
+if (abs(ydest - oldY) &lt; vspd)
    oldY = ydest;
 
 alarm[2] = 1;
@@ -96,6 +103,54 @@ alarm[2] = 1;
             <kind>1</kind>
             <string>event_inherited();
 y = oldY + sin(degtorad(dick)) * 8;
+if (rot_sum &lt; rot_spd)
+{
+    //image_angle += rot_sum;
+    //var shit = (image_angle mod 180);
+    //if (shit &gt; 90)
+       //shit = 180 + shit;
+    //image_angle += shit;
+    image_angle = old_angl + amount_angl;
+    rot_sum = 0;
+    rot_spd = 0;
+}
+else if (rot_sum &gt; 0)
+{
+    rot_spd = round(max((rot_sum / 180) * 4, 4)) * 2;
+}
+if (rot_spd &gt; 0)
+{
+   image_angle += rot_spd * dir;
+   rot_sum -= rot_spd;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (nohit_challenge &lt; 8)
+   exit;
+scrFlipGrav();
+rot_sum += 360 * 1.5 + (rot_sum mod 360);
+amount_angl = rot_sum;
+old_angl = image_angle;
 </string>
           </argument>
         </arguments>
@@ -123,6 +178,9 @@ if (HP &lt;= 50)
 {
     image_index = 1;
 }
+rot_sum = 360 * 2 + (rot_sum mod 360);
+amount_angl = rot_sum;
+old_angl = image_angle;
 </string>
           </argument>
         </arguments>

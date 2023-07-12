@@ -3,7 +3,7 @@
   <spriteName>sprJustrimsonC</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>objJustrimsonParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -61,6 +61,56 @@ if (instance_exists(objJustrimsonC_Heart))
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (nohit_challenge &lt; 8)
+   exit;
+var obj = objJustrimson_Block;
+var obj2 = objJustrimson_Water;
+if (objJustrimsonController.block_type)
+{
+   obj = objJustrimson_Water;
+   obj2 = objJustrimson_Block;
+}
+for (i = 0; i &lt; instance_number(obj); i++)
+{
+    var tmp = instance_find(obj, i);
+    with (tmp)
+    {
+        alarm[1] = 1;
+    }
+    var new = instance_create(tmp.x, tmp.y, obj2);
+    with (new)
+    {
+        alarm[0] = 1;
+        image_alpha = 0;
+        if (objJustrimsonController.block_type and y &lt; 300)
+           image_index = 1;
+    }
+    new.hspeed = tmp.hspeed;
+}
+with (objJustrimsonController)
+     block_type = !block_type;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -84,6 +134,7 @@ if (HP &lt;= 50 and !instance_exists(objJustrimsonC_Heart))
    instance_create(x, y, objJustrimsonC_Heart);
    image_index = 1;
 }
+instance_create(x, y, objJustrimsonC_Center);
 </string>
           </argument>
         </arguments>

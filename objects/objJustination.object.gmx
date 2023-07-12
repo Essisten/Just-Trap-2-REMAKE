@@ -314,7 +314,7 @@ if (HP &lt;= 0)
              piece.image_angle = random(360);
     }
 }
-else if (HP &lt; 50 and surprise)
+else if (HP &lt;= 50 and surprise)
 {
     surprise = false;
     scrPlaySound(sndBlockChange);

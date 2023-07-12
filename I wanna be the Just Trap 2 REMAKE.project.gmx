@@ -48,6 +48,7 @@
       <sound>sound\sndMonster1</sound>
       <sound>sound\sndMenuMove</sound>
       <sound>sound\sndMenuSelect</sound>
+      <sound>sound\sndAngelLaser</sound>
     </sounds>
     <sounds name="music">
       <sound>sound\musOnDeath</sound>
@@ -62,7 +63,8 @@
       <sound>sound\musTitleA</sound>
       <sound>sound\musTitleB</sound>
       <sound>sound\musOnDeath2</sound>
-      <sound>sound\musStage3</sound>
+      <sound>sound\musStage3A</sound>
+      <sound>sound\musStage3B</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -273,6 +275,7 @@
       <sprite>sprites\sprJustrimsonA_blade</sprite>
       <sprite>sprites\sprJustrimsonB_Circle</sprite>
       <sprite>sprites\sprJustrimsonB_Laser</sprite>
+      <sprite>sprites\sprJustrimson_Soul</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -535,9 +538,13 @@
       <object>objects\objJustrimsonC_Heart</object>
       <object>objects\objJustrimsonController</object>
       <object>objects\objJustrimson_Block</object>
+      <object>objects\objJustrimson_Water</object>
       <object>objects\objJustrimsonB_Laser</object>
       <object>objects\objJustrimsonB_LaserBeam</object>
       <object>objects\objJustrimsonB_Halo</object>
+      <object>objects\objJustrimsonC_Center</object>
+      <object>objects\objJustrimsonC_Cherry</object>
+      <object>objects\objJustrimson_Soul</object>
     </objects>
   </objects>
   <rooms name="rooms">

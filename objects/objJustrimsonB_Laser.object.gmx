@@ -3,7 +3,7 @@
   <spriteName>sprJustrimsonB_Circle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-30</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,8 +29,7 @@
 type = 1;
 aim = true;
 beam = noone;
-size[0] = 4;
-size[1] = 8;
+size = 2 + 2 * global.difficulty;
 alarm[0] = 150 - global.difficulty * 25;
 alarm[2] = 1;
 image_speed = 0;
@@ -143,10 +142,17 @@ if (!instance_exists(beam))
     beam.image_angle = image_angle;
     alarm[1] = 1;
     scrShakeEffect(5, 0.1);
+    with (objJustrimsonB)
+    {
+        if (HP &gt; 0)
+            laser_sound = scrPlaySound(sndAngelLaser, 0.9);
+        else
+            laser_sound = scrPlaySound(sndAngelLaser, 0.6);
+    }
 }
 else
 {
-    if (beam.image_xscale &lt; size[type - 1])
+    if (beam.image_xscale &lt; size)
     {
         with (beam)
             image_xscale += 0.5;
