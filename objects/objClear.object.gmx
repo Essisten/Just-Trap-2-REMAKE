@@ -64,6 +64,8 @@ if (hText &gt; 1000)
     global.bossClear[stage - 1] = true;
     global.pb[stage - 1] = 100;
     instance_destroy();
+    if (room == rBoss3_Fall)
+       exit;
     if (room == rBoss2)
     {
         with (objBoss2Door)
@@ -99,14 +101,14 @@ if (hText &gt; 1000)
             <string>draw_set_blend_mode(bm_add);
 if (vGrad &gt; 0)
 {
-    draw_rectangle_colour(0, view_hview[0] / 2, view_wview[0], view_hview[0] / 2 - vGrad, c_black, c_black, c_ltgray, c_ltgray, false);
-    draw_rectangle_colour(0, view_hview[0] / 2, view_wview[0], view_hview[0] / 2 + vGrad, c_ltgray, c_ltgray, c_black, c_black, false);
+    draw_rectangle_colour(view_xview[0], view_yview[0] + view_hview[0] / 2, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] / 2 - vGrad, c_black, c_black, c_ltgray, c_ltgray, false);
+    draw_rectangle_colour(view_xview[0], view_yview[0] + view_hview[0] / 2, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] / 2 + vGrad, c_ltgray, c_ltgray, c_black, c_black, false);
 }
 draw_set_blend_mode(bm_normal);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_font(fBoss1_46);
-scrDrawTextOutline(hText, view_hview[0] / 2, "Stage   " + string(stage) + "#Clear", c_white, c_red);
+scrDrawTextOutline(view_xview[0] + hText, view_yview[0] + view_hview[0] / 2, "Stage   " + string(stage) + "#Clear", c_white, c_red);
 </string>
           </argument>
         </arguments>

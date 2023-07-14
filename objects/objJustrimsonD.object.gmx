@@ -41,6 +41,33 @@ image_yscale = image_xscale;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///My main goal is to blow up
+with (objJustrimsonD_Star)
+{
+    event_user(15);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -102,6 +129,8 @@ alarm[2] = 1;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+if (objJustrimsonController.dead)
+   exit;
 y = oldY + sin(degtorad(dick)) * 8;
 if (rot_sum &lt; rot_spd)
 {
@@ -151,6 +180,7 @@ scrFlipGrav();
 rot_sum += 360 * 1.5 + (rot_sum mod 360);
 amount_angl = rot_sum;
 old_angl = image_angle;
+scrPlaySound(sndVJump, 1);
 </string>
           </argument>
         </arguments>
@@ -174,6 +204,8 @@ old_angl = image_angle;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+if (objJustrimsonController.dead)
+   exit;
 if (HP &lt;= 50)
 {
     image_index = 1;
@@ -181,6 +213,12 @@ if (HP &lt;= 50)
 rot_sum = 360 * 2 + (rot_sum mod 360);
 amount_angl = rot_sum;
 old_angl = image_angle;
+for (i = 0; i &lt; 6 * (global.difficulty + 1); i++)
+{
+    with (instance_create(x, y, objJustrimsonD_Star))
+         image_blend = c_black;
+}
+alarm[11] = 400;
 </string>
           </argument>
         </arguments>

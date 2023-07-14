@@ -33,6 +33,29 @@ color2 = c_purple;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy(objJustrimsonC_Heart);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -86,7 +109,10 @@ if (objJustrimsonController.block_type)
 {
    obj = objJustrimson_Water;
    obj2 = objJustrimson_Block;
+   scrPlaySound(sndCrunchy, 1);
 }
+else
+   scrPlaySound(sndWater, 1);
 for (i = 0; i &lt; instance_number(obj); i++)
 {
     var tmp = instance_find(obj, i);
@@ -129,12 +155,14 @@ with (objJustrimsonController)
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+instance_create(x, y, objJustrimsonC_Center);
+if (objJustrimsonController.dead)
+   exit;
 if (HP &lt;= 50 and !instance_exists(objJustrimsonC_Heart))
 {
    instance_create(x, y, objJustrimsonC_Heart);
    image_index = 1;
 }
-instance_create(x, y, objJustrimsonC_Center);
 </string>
           </argument>
         </arguments>

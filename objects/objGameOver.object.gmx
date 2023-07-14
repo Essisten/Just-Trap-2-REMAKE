@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>alarm[0] = 6;
 image_alpha = 0;
-x = view_wview[0] / 2;
-y = view_hview[0] / 2;
+x = view_xview[0] + view_wview[0] / 2;
+y = view_yview[0] + view_hview[0] / 2;
 percent = 0;
 old = 0;
 image_speed = 0;

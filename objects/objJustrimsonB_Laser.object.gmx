@@ -34,9 +34,12 @@ alarm[0] = 150 - global.difficulty * 25;
 alarm[2] = 1;
 image_speed = 0;
 image_alpha = 0;
-//image_blend = c_aqua;
 if (global.difficulty == 3)
    type = 2;
+if (!instance_exists(objJustrimsonB))
+   exit;
+if (objJustrimsonB.HP &lt;= 0)
+   image_blend = c_red;
 </string>
           </argument>
         </arguments>
@@ -144,7 +147,7 @@ if (!instance_exists(beam))
     scrShakeEffect(5, 0.1);
     with (objJustrimsonB)
     {
-        if (HP &gt; 0)
+        if (HP &gt; 50)
             laser_sound = scrPlaySound(sndAngelLaser, 0.9);
         else
             laser_sound = scrPlaySound(sndAngelLaser, 0.6);

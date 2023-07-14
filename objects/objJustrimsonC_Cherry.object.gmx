@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 done = false;
+if (!instance_exists(objJustrimsonC))
+   exit;
 if (objJustrimsonC.HP &lt;= 0)
    image_blend = c_black;
 </string>

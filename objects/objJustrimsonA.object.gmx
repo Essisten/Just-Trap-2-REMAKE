@@ -130,7 +130,8 @@ if (HP &lt;= 50 and HP &gt; 0)
     {
        blade.endless = true;
        phase_counter++;
-       sprite_index = sprJustrimsonA2;
+       if (!objJustrimsonController.lmao)
+          sprite_index = sprJustrimsonA2;
     }
 }
 else if (HP &lt;= 0)
@@ -149,6 +150,7 @@ else if (HP &lt;= 0)
         image_blend = c_black;
    }
 }
+//scrPlaySound(sndMiss, 1);
 </string>
           </argument>
         </arguments>

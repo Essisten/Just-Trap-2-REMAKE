@@ -48,7 +48,12 @@
       <sound>sound\sndMonster1</sound>
       <sound>sound\sndMenuMove</sound>
       <sound>sound\sndMenuSelect</sound>
-      <sound>sound\sndAngelLaser</sound>
+      <sounds name="Boss 3">
+        <sound>sound\sndCrunchy</sound>
+        <sound>sound\sndMiss</sound>
+        <sound>sound\sndWater</sound>
+        <sound>sound\sndAngelLaser</sound>
+      </sounds>
     </sounds>
     <sounds name="music">
       <sound>sound\musOnDeath</sound>
@@ -271,11 +276,13 @@
       <sprite>sprites\sprJustrimsonC</sprite>
       <sprite>sprites\sprJustrimsonC_Heart</sprite>
       <sprite>sprites\sprJustrimsonD</sprite>
-      <sprite>sprites\sprBloss3_Block</sprite>
+      <sprite>sprites\sprBoss3_Block</sprite>
       <sprite>sprites\sprJustrimsonA_blade</sprite>
       <sprite>sprites\sprJustrimsonB_Circle</sprite>
       <sprite>sprites\sprJustrimsonB_Laser</sprite>
       <sprite>sprites\sprJustrimson_Soul</sprite>
+      <sprite>sprites\sprJustrimsonD_Pixel</sprite>
+      <sprite>sprites\sprLeslie</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -545,6 +552,8 @@
       <object>objects\objJustrimsonC_Center</object>
       <object>objects\objJustrimsonC_Cherry</object>
       <object>objects\objJustrimson_Soul</object>
+      <object>objects\objJustrimsonD_Star</object>
+      <object>objects\objJustrimson_Fall</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -560,6 +569,7 @@
     <room>rooms\rBoss4</room>
     <room>rooms\rStageSelect</room>
     <room>rooms\rTemplate</room>
+    <room>rooms\rBoss3_Fall</room>
     <room>rooms\rBoss3</room>
   </rooms>
   <help>
