@@ -148,9 +148,9 @@ if (!instance_exists(beam))
     with (objJustrimsonB)
     {
         if (HP &gt; 50)
-            laser_sound = scrPlaySound(sndAngelLaser, 0.9);
+            laser_sound = scrPlaySound(sndAngelLaser, 1);
         else
-            laser_sound = scrPlaySound(sndAngelLaser, 0.6);
+            laser_sound = scrPlaySound(sndAngelLaser2, 1);
     }
 }
 else
