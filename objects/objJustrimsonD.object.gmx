@@ -177,7 +177,7 @@ if (rot_spd &gt; 0)
             <string>if (nohit_challenge &lt; 8)
    exit;
 scrFlipGrav();
-rot_sum = 360 * 1.5 + (rot_sum mod 360);
+rot_sum += 360 * 1.5 + (rot_sum mod 360);
 amount_angl = rot_sum;
 old_angl = image_angle;
 scrPlaySound(sndVJump, 1);
@@ -218,7 +218,7 @@ for (i = 0; i &lt; 6 * (global.difficulty + 1); i++)
     with (instance_create(x, y, objJustrimsonD_Star))
          image_blend = c_black;
 }
-alarm[11] = 350 - 50 * global.difficulty;
+alarm[11] = 400;
 </string>
           </argument>
         </arguments>

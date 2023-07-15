@@ -155,16 +155,6 @@ switch (room)
         if (old &lt; percent)
             global.pb[3] = percent;
         break;
-    case rBoss3:
-        old = global.pb[2];
-        if (!objJustrimsonController.dead)
-        {
-            percent = (400 - (objJustrimsonA.HP + objJustrimsonB.HP + objJustrimsonC.HP + objJustrimsonD.HP)) / 4;
-        }
-        else
-            percent = 99.99;
-        if (old &lt; percent)
-            global.pb[2] = percent;
 }
 </string>
           </argument>

@@ -28,7 +28,6 @@
             <string>with (objSpikeUp)
      image_blend = c_red;
 objWorld.alarm[2] = 100;
-global.frozen = true;
 </string>
           </argument>
         </arguments>

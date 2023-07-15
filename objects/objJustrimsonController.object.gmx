@@ -247,10 +247,7 @@ with (objJustrimsonB_Laser)
 }
 with (objJustrimsonA_blade)
      endless = false;
-with (objJustrimsonC_Heart)
-     instance_destroy();
 audio_stop_sound(global.currentMusic);
-scrLoadConfig();
 alarm[2] = -1;
 dead = true;
 </string>

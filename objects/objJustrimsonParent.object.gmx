@@ -164,8 +164,6 @@ alarm[2] = 1;
           <argument>
             <kind>1</kind>
             <string>///Changing spot
-if (!instance_exists(objPlayer))
-   exit;
 spot++;
 if (spot &gt; 4)
    spot -= 4;
@@ -267,7 +265,7 @@ alarm[0] = 5;
           <argument>
             <kind>1</kind>
             <string>instance_destroy(other);
-if (alarm[0] != -1 or (global.difficulty == 3 and HP &lt;= 0))
+if (alarm[0] != -1)
    exit;
 nohit_challenge = 0;
 circle_width = 0;
@@ -329,7 +327,6 @@ if (HP &lt;= 0)
 {
     image_blend = c_black;
     scrPlaySound(sndDeath, 1);
-    HP = 0;
 }
 else
     scrPlaySound(sndBossHit, 1);

@@ -52,11 +52,7 @@
 if (objJustrimsonB.alarm[0] != -1)
    exit;
 with (objJustrimsonB)
-{
      event_user(0);
-    nohit_challenge = 0;
-    circle_width = 0;
-}
 </string>
           </argument>
         </arguments>
