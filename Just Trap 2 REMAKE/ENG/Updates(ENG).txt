@@ -1,3 +1,8 @@
+v0.4.0
+- Justrimson was added.
+- Justularity's end at the phase 2 was buffed.
+- Minor bug fix.
+==================================================
 v0.3.8
 - Justination fantom intensity reduced.
 - Justularity huge bug fix.
