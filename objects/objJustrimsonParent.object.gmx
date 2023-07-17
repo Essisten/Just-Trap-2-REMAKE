@@ -39,6 +39,7 @@ color2 = color;
 black = c_black;
 bm = bm_add;
 circle_width = 0;
+max_circle = 12;
 phase_counter = 0;
 nohit_challenge = 0;
 alarm[1] = 500;
@@ -94,7 +95,7 @@ if (circle_width &gt; 0)
           <argument>
             <kind>1</kind>
             <string>///Smooth animation
-if (circle_width &gt;= 14)
+if (circle_width &gt;= max_circle)
    exit;
 circle_width += 0.1;
 alarm[3] = 1;
@@ -164,6 +165,8 @@ alarm[2] = 1;
           <argument>
             <kind>1</kind>
             <string>///Changing spot
+if (!instance_exists(objPlayer))
+   exit;
 spot++;
 if (spot &gt; 4)
    spot -= 4;
@@ -351,6 +354,7 @@ if (HP &lt;= 0)
 {
     image_blend = c_black;
     scrPlaySound(sndDeath, 1);
+    HP = 0;
 }
 else
     scrPlaySound(sndBossHit, 1);

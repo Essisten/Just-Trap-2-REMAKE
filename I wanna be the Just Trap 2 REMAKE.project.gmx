@@ -268,6 +268,7 @@
         <sprite>sprites\sprJustularityCoal2</sprite>
         <sprite>sprites\sprJustularityBullet2</sprite>
       </sprites>
+      <sprite>sprites\sprWaterWarning</sprite>
     </sprites>
     <sprites name="Boss3">
       <sprite>sprites\sprJustrimsonA</sprite>

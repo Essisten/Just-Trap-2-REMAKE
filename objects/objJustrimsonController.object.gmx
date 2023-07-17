@@ -126,7 +126,7 @@ with (instance_create(800, 224, obj))
     image_index = 1;
 }
 instance_create(-32, 352, obj);
-alarm[2] = 100 - global.difficulty * 20;
+alarm[2] = 80 - global.difficulty * 20;
 </string>
           </argument>
         </arguments>
@@ -224,6 +224,7 @@ with (objBlock)
 }
 with (objJustrimsonParent)
 {
+    alarm[0] = -1;
     alarm[1] = -1;
     alarm[2] = -1;
     alarm[4] = 1;
@@ -240,6 +241,7 @@ with (objJustrimsonB_Halo)
     gravity = 0.1;
     gravity_direction = 270;
 }
+instance_destroy(objJustrimsonC_Heart);
 with (objJustrimsonB_Laser)
 {
     if (side == 1 or side == 3)

@@ -128,6 +128,7 @@ if (place_meeting(x, y, target))
         if (nohit_challenge &lt; 8)
            nohit_challenge++;
     }
+    scrPlaySound(sndHeal, 1);
     alarm[1] = 1;
 }
 </string>
@@ -157,11 +158,11 @@ HP -= 4 - global.difficulty;
 if (HP &lt;= 0)
 {
    instance_destroy();
-   scrPlaySound(sndDeath, 1.5);
+   scrPlaySound(sndDeath, 1.2);
 }
 else
 {
-    scrPlaySound(sndBossHit, 1.5);
+    scrPlaySound(sndBossHit, 1.2);
 }
 </string>
           </argument>

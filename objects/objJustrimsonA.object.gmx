@@ -32,6 +32,7 @@ color2 = c_white;
 friends[0] = objJustrimsonB;
 friends[1] = objJustrimsonC;
 friends[2] = objJustrimsonD;
+max_circle = 22;
 </string>
           </argument>
         </arguments>

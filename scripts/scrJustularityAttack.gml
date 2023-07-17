@@ -53,7 +53,7 @@ switch (argument0)
                 image_xscale = 2;
                 image_yscale = image_xscale;
             }
-            c.direction = tmpD;
+            c.direction = tmpD + random(global.difficulty * 10) * choose(1, -1);
             c.image_angle = tmpD - 270;
         }
         alarm[7] = 32 - global.difficulty * 6;
@@ -80,55 +80,17 @@ switch (argument0)
         alarm[7] = 400 - global.difficulty * 100;
         break;
     case 4:
-        var s = 3 + global.difficulty;
-        scrPlaySound(sndBoss2_Water);
-        var w = instance_create(0, 576, objJustularityWater);   //bottom
-        w.hspeed = s;
-        if (image_blend == c_black)
-            w.sprite_index = sprJustularityWater2;
-        
-        w = instance_create(800, 32, objJustularityWater);  //top
-        w.hspeed = -s;
-        w.image_yscale = -1;
-        if (image_blend == c_black)
-            w.sprite_index = sprJustularityWater2;
-        
-        w = instance_create(32, 0, objJustularityWater);  //left
-        w.vspeed = s;
-        w.image_angle = 270;
-        if (image_blend == c_black)
-            w.sprite_index = sprJustularityWater2;
-        
-        w = instance_create(768, 608, objJustularityWater); //right
-        w.vspeed = -s;
-        w.image_angle = 90;
-        if (image_blend == c_black)
-            w.sprite_index = sprJustularityWater2;
-        if (global.difficulty == 3)
-        {
-            w = instance_create(800, 576, objJustularityWater); //bottom
-            w.hspeed = -s;
-            if (image_blend == c_black)
-                w.sprite_index = sprJustularityWater2;
-            
-            w = instance_create(0, 32, objJustularityWater); //top
-            w.hspeed = s;
-            w.image_yscale = -1;
-            if (image_blend == c_black)
-                w.sprite_index = sprJustularityWater2;
-            
-            w = instance_create(32, 608, objJustularityWater);  //left
-            w.vspeed = -s;
-            w.image_angle = 270;
-            if (image_blend == c_black)
-                w.sprite_index = sprJustularityWater2;
-            
-            w = instance_create(768, 32, objJustularityWater);  //right
-            w.vspeed = s;
-            w.image_angle = 90;
-            if (image_blend == c_black)
-                w.sprite_index = sprJustularityWater2;
-        }
+         if (global.difficulty < 3)
+         {
+             with (instance_create(400, 304, objWarning))
+             {
+                sprite_index = sprWaterWarning;
+                image_xscale = 1;
+                image_yscale = image_xscale;
+             }
+         }
+         objBoss2Door.alarm[5] = 100;          //gently ask the door to help out
+        objBoss2Door.black_water = (image_blend == c_black);
         alarm[7] = 200 - global.difficulty * 50;
         break;
     case 5:

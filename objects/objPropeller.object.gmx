@@ -33,6 +33,65 @@ if (global.difficulty == 3)
     image_yscale = image_xscale;
 }
 alarm[0] = 25;
+spd = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change direction #2
+if (!instance_exists(objPlayer))
+   exit;
+hspeed = spd;
+if (objPlayer.x &lt; x)
+    hspeed *= -1;
+vspeed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change direction #1
+if (!instance_exists(objPlayer))
+   exit;
+vspeed = spd;
+if (objPlayer.y &lt; y)
+    vspeed *= -1;;
+hspeed = 0;
 </string>
           </argument>
         </arguments>
@@ -87,10 +146,9 @@ if (hspeed != 0)
     if (distH * 4 &lt; distV)
     {
         used = true;
-        vspeed = speed;
-        if (objPlayer.y &lt; y)
-            vspeed *= -1;;
-        hspeed = 0;
+        alarm[1] = 40 - global.difficulty * 13;
+        spd = speed;
+        speed = 0;
     }
 }
 else
@@ -98,10 +156,9 @@ else
     if (distV * 4 &lt; distH)
     {
         used = true;
-        hspeed = speed;
-        if (objPlayer.x &lt; x)
-            hspeed *= -1;
-        vspeed = 0;
+        alarm[2] = 40 - global.difficulty * 13;
+        spd = speed;
+        speed = 0;
     }
 }
 </string>

@@ -38,8 +38,6 @@ if (global.difficulty == 3)
    type = 2;
 if (!instance_exists(objJustrimsonB))
    exit;
-if (objJustrimsonB.HP &lt;= 0)
-   image_blend = c_red;
 </string>
           </argument>
         </arguments>
