@@ -41,6 +41,7 @@ for (i = 32; i &lt;= 736; i+=32)
         sprite_index = sprBoss3_Block;
         visible = true;
         image_speed = 0;
+        depth = 9;
     }
 }
 </string>
@@ -126,7 +127,7 @@ with (instance_create(800, 224, obj))
     image_index = 1;
 }
 instance_create(-32, 352, obj);
-alarm[2] = 80 - global.difficulty * 20;
+alarm[2] = 80 - global.difficulty * 15;
 </string>
           </argument>
         </arguments>
@@ -228,6 +229,7 @@ with (objJustrimsonParent)
     alarm[1] = -1;
     alarm[2] = -1;
     alarm[4] = 1;
+    image_alpha = 1;
     direction = point_direction(x, y, objPlayer.x, objPlayer.y) + 180;
     speed = 2;
     circle_width = 0;
@@ -252,6 +254,7 @@ with (objJustrimsonA_blade)
 audio_stop_sound(global.currentMusic);
 alarm[2] = -1;
 dead = true;
+scrLoadConfig();
 </string>
           </argument>
         </arguments>

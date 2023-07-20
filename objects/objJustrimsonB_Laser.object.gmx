@@ -142,7 +142,13 @@ if (!instance_exists(beam))
     beam = instance_create(x, y, objJustrimsonB_LaserBeam);
     beam.image_angle = image_angle;
     alarm[1] = 1;
-    scrShakeEffect(5, 0.1);
+    if (instance_exists(objShakeEffect))
+    {
+        instance_destroy(objShakeEffect);
+        view_xview[0] = 0;
+        view_yview[0] = 0;
+    }
+    scrShakeEffect(5 * (global.difficulty + 1), 0.1 * (global.difficulty + 1));
     with (objJustrimsonB)
     {
         if (HP &gt; 50)
