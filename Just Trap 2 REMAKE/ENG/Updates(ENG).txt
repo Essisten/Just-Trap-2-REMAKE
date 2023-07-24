@@ -1,3 +1,9 @@
+v0.4.2
+- Justrimson buffed on Happilous difficulty. You can no longer escape your fate.
+- Justrimson's platforms changed a bit.
+- Flip buffed.
+- Minor Justrimson improvements.
+==================================================
 v0.4.1
 - Justrimson slightly nerfed.
 - Justularity rebalanced (an attempt).

@@ -32,7 +32,7 @@ block_type = false;
 dead = false;
 global.noPause = true;
 lmao = (irandom_range(1, 100) == 1);
-if (lmao)
+if (lmao and global.difficulty &lt; 3)
    objJustrimsonA.sprite_index = sprLeslie;
 for (i = 32; i &lt;= 736; i+=32)
 {

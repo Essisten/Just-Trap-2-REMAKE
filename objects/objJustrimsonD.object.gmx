@@ -221,7 +221,7 @@ if (instance_number(objJustrimsonD_Star) &gt; 600)
         event_user(15);
     }
 }
-for (i = 0; i &lt; 6 * (global.difficulty + 1); i++)
+for (i = 0; i &lt; 8 * (global.difficulty + 1); i++)
 {
     with (instance_create(x, y, objJustrimsonD_Star))
          image_blend = c_black;

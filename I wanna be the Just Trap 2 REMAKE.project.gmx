@@ -285,6 +285,7 @@
       <sprite>sprites\sprJustrimson_Soul</sprite>
       <sprite>sprites\sprJustrimsonD_Pixel</sprite>
       <sprite>sprites\sprLeslie</sprite>
+      <sprite>sprites\sprBoss3_Platform</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
