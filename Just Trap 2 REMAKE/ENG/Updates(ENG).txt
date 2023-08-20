@@ -1,3 +1,9 @@
+v0.4.3
+- Justrimson extra abilities rebalanced.
+- Justrimson glowing changed.
+- Justrimson minor rebalancing and fixing.
+- Now you can sprint. The key is "X" by default.
+==================================================
 v0.4.2
 - Justrimson buffed on Happilous difficulty. You can no longer escape your fate.
 - Justrimson's platforms changed a bit.

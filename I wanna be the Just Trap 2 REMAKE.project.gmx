@@ -286,6 +286,11 @@
       <sprite>sprites\sprJustrimsonD_Pixel</sprite>
       <sprite>sprites\sprLeslie</sprite>
       <sprite>sprites\sprBoss3_Platform</sprite>
+      <sprite>sprites\sprJustrimsonOutline</sprite>
+    </sprites>
+    <sprites name="Shop">
+      <sprite>sprites\sprShopSign</sprite>
+      <sprite>sprites\sprEntrance</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -557,6 +562,10 @@
       <object>objects\objJustrimson_Soul</object>
       <object>objects\objJustrimsonD_Star</object>
       <object>objects\objJustrimson_Fall</object>
+    </objects>
+    <objects name="Shop">
+      <object>objects\objShopSign</object>
+      <object>objects\objShopEntrance</object>
     </objects>
   </objects>
   <rooms name="rooms">

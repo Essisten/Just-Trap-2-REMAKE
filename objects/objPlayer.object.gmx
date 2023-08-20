@@ -52,6 +52,7 @@ if (global.autosave) //save the game if currently set to autosave
     scrSaveGame(true);
     global.autosave = false;
 }
+
 </string>
           </argument>
         </arguments>
@@ -68,7 +69,7 @@ if (global.autosave) //save the game if currently set to autosave
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>objPlayer</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -77,6 +78,8 @@ if (global.autosave) //save the game if currently set to autosave
             <string>//when the player is destroyed, also destroy the bow
 with (objBow)
     instance_destroy();
+part_type_clear(global.sprintParticles);
+part_emitter_clear(global.sprintParticleSystem, global.sprintEmitter);
 </string>
           </argument>
         </arguments>
@@ -193,6 +196,25 @@ if (scrButtonCheck(global.upButton) &amp;&amp; !frozen)
             sprt = sprPlayerSlideUp;
             break;
     }
+}
+if (!part_emitter_exists(global.sprintParticleSystem, global.sprintEmitter))
+{
+    global.sprintEmitter = part_emitter_create(global.sprintParticleSystem);
+    show_message(global.sprintEmitter);
+}
+if (scrButtonCheck(global.sprintButton))
+{
+   maxSpeed = 6;
+   part_type_sprite(global.sprintParticles, sprite_index, false, false, false);
+   part_type_scale(global.sprintParticles, image_xscale*xScale,image_yscale*global.grav);
+   part_type_orientation(global.sprintParticles, image_angle, image_angle, 0, 0, 0);
+   part_emitter_region(global.sprintParticleSystem, global.sprintEmitter, x, x, y, y, global.sprintParticles, ps_distr_linear);
+   part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
+}
+else
+{
+   maxSpeed = 3;
+   part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 0);
 }
 sprite_index = sprt;
 if (paralyzed)
@@ -345,8 +367,6 @@ if (global.gravH)
             scrPlayerJump();
         if (scrButtonCheckReleased(global.jumpButton))
             scrPlayerVJump();
-        if (scrButtonCheckPressed(global.suicideButton) and !global.frozen)
-            scrKillPlayer();
     }
     
     if (global.adAlign &amp;&amp; place_meeting(x +(global.grav), y,objBlock) &amp;&amp; !frozen)  // A/D align
@@ -645,8 +665,6 @@ else
             scrPlayerJump();
         if (scrButtonCheckReleased(global.jumpButton))
             scrPlayerVJump();
-        if (scrButtonCheckPressed(global.suicideButton) and !global.frozen)
-            scrKillPlayer();
     }
     
     if (global.adAlign &amp;&amp; place_meeting(x,y+(global.grav),objBlock) &amp;&amp; !frozen)  // A/D align
@@ -1040,6 +1058,31 @@ if (!place_free(x,y+vspeed))
 }
 
 if (!place_free(x+hspeed,y+vspeed)) {hspeed = 0;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clean up from fantoms
+part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 0);
+part_emitter_clear(global.sprintParticleSystem, global.sprintEmitter);
 </string>
           </argument>
         </arguments>

@@ -36,7 +36,7 @@ amount_angl = 0;
 dir = choose(1, -1);
 image_xscale = 8;
 image_yscale = image_xscale;
-max_circle = 18;
+glow_index = 4;
 </string>
           </argument>
         </arguments>
@@ -93,10 +93,8 @@ else if (oldY != ydest)
    oldY += sign(ydest - oldY) * vspd;
 else
 {
-    if (nohit_challenge &lt; 8)
-        nohit_challenge++;
-    if (circle_width &lt; 8 and nohit_challenge &gt; 4)
-       alarm[3] = 1;
+    nohit_challenge++;
+    alarm[3] = 1;
     event_user(1);
     exit;
 }
@@ -175,12 +173,13 @@ if (rot_spd &gt; 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (nohit_challenge &lt; 8)
+            <string>if (nohit_challenge &lt; 8 - global.difficulty * 2)
    exit;
 scrFlipGrav();
 rot_sum += 360 * 1.5 + (rot_sum mod 360);
 amount_angl = rot_sum;
 old_angl = image_angle;
+nohit_challenge = 0;
 scrPlaySound(sndVJump, 1);
 </string>
           </argument>

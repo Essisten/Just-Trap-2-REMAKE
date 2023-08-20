@@ -176,7 +176,7 @@ if (gravity_direction &gt; 360)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (alarm[1] == -1 and !endless)
+            <string>if ((alarm[1] == -1 and !endless) or !instance_exists(objJustrimsonA))
 {
    instance_destroy();
 }

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -38,8 +38,8 @@ color = c_gray;
 color2 = color;
 black = c_black;
 bm = bm_add;
-circle_width = 0;
-max_circle = 12;
+glow_thicc = 0;
+glow_index = 0;
 phase_counter = 0;
 nohit_challenge = 0;
 alarm[1] = 500;
@@ -70,8 +70,8 @@ image_speed = 0;
 if (image_alpha &gt; 0)
    alarm[4] = 1;
 image_alpha -= 0.05;
-if (circle_width &gt; 0)
-   circle_width -= 0.5;
+if (glow_thicc &gt; 0)
+   glow_thicc -= 0.5;
 </string>
           </argument>
         </arguments>
@@ -95,9 +95,13 @@ if (circle_width &gt; 0)
           <argument>
             <kind>1</kind>
             <string>///Smooth animation
-if (circle_width &gt;= max_circle)
+var max_glow_thicc = nohit_challenge / (8 - global.difficulty * 2);
+if (glow_thicc == max_glow_thicc)
    exit;
-circle_width += 0.1;
+if (glow_thicc &lt; max_glow_thicc)
+   glow_thicc += 0.01;
+else
+    glow_thicc -= 0.01;
 alarm[3] = 1;
 </string>
           </argument>
@@ -128,10 +132,8 @@ else if (y != ydest)
    y += sign(ydest - y) * vspd;
 else
 {
-    if (nohit_challenge &lt; 8)
-        nohit_challenge++;
-    if (circle_width &lt; 8 and nohit_challenge &gt; 4)
-       alarm[3] = 1;
+    nohit_challenge++;
+    alarm[3] = 1;
     event_user(1);
     exit;
 }
@@ -215,7 +217,7 @@ if (image_alpha == 1)
    image_alpha = 0.2;
 else
     image_alpha = 1;
-if (iframes &gt;= 10)
+if (iframes &gt;= 10 - 3 * global.difficulty)
 {
     image_alpha = 1;
     iframes = 0;
@@ -270,11 +272,9 @@ alarm[0] = 5;
             <string>instance_destroy(other);
 if (alarm[0] != -1)
    exit;
-if (global.difficulty &lt; 3)
-{
-    nohit_challenge = 0;
-    circle_width = 0;
-}
+if (nohit_challenge &gt; 0)
+   nohit_challenge--;
+alarm[3] = 1;
 event_user(0);
 </string>
           </argument>
@@ -411,11 +411,9 @@ if (objJustrimsonA.HP &lt;= 0 and objJustrimsonD.HP &lt;= 0 and objJustrimsonB.H
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (nohit_challenge &gt; 4 and circle_width &gt; 0)
+            <string>if (glow_thicc &gt; 0)
 {
-    draw_set_blend_mode(bm);
-    draw_circle_colour(x, y, circle_width * nohit_challenge + (sin(degtorad(dick)) * 4), color2, black, false);
-    draw_set_blend_mode(bm_normal);
+    draw_sprite_ext(sprJustrimsonOutline, glow_index, x, y, image_xscale, image_yscale, image_angle, c_white, glow_thicc);
 }
 draw_self();
 var offset = 72;

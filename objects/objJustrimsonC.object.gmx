@@ -28,6 +28,7 @@
             <string>event_inherited();
 color = c_aqua;
 color2 = c_purple;
+glow_index = 3;
 </string>
           </argument>
         </arguments>
@@ -101,7 +102,7 @@ if (instance_exists(objJustrimsonC_Heart))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (nohit_challenge &lt; 8)
+            <string>if (nohit_challenge &lt; 8 - global.difficulty * 2)
    exit;
 var obj = objJustrimson_Block;
 var obj2 = objJustrimson_Water;
@@ -132,6 +133,7 @@ for (i = 0; i &lt; instance_number(obj); i++)
 }
 with (objJustrimsonController)
      block_type = !block_type;
+nohit_challenge = 0;
 </string>
           </argument>
         </arguments>

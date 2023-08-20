@@ -32,7 +32,6 @@ color2 = c_white;
 friends[0] = objJustrimsonB;
 friends[1] = objJustrimsonC;
 friends[2] = objJustrimsonD;
-max_circle = 22;
 </string>
           </argument>
         </arguments>
@@ -80,7 +79,7 @@ image_index = 0;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-if (nohit_challenge &lt; 8)
+if (nohit_challenge &lt; 8 - global.difficulty * 2)
    exit;
 var target = objJustrimsonB;
 for (i = 0; i &lt; 3; i++)
@@ -92,6 +91,7 @@ if (objJustrimsonB.HP &gt;= 100 and objJustrimsonC.HP &gt;= 100 and objJustrimso
    target = objJustrimsonA;
 var soul = instance_create(x, y, objJustrimson_Soul);
 soul.target = target;
+nohit_challenge = 0;
 </string>
           </argument>
         </arguments>

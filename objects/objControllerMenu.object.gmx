@@ -44,7 +44,7 @@ strSelect[5] = "Jump Button";
 strSelect[6] = "Shoot Button";
 strSelect[7] = "Restart Button";
 strSelect[8] = "Skip Button";
-strSelect[9] = "Suicide Button";
+strSelect[9] = "Sprint Button";
 strSelect[10] = "Pause Button";
 strSelect[11] = "Reset Controls";
 optionsNum = array_length_1d(strSelect);
@@ -58,7 +58,7 @@ strButton[5] = scrGetControllerBind(global.jumpButton[1]);
 strButton[6] = scrGetControllerBind(global.shootButton[1]);
 strButton[7] = scrGetControllerBind(global.restartButton[1]);
 strButton[8] = scrGetControllerBind(global.skipButton[1]);
-strButton[9] = scrGetControllerBind(global.suicideButton[1]);
+strButton[9] = scrGetControllerBind(global.sprintButton[1]);
 strButton[10] = scrGetControllerBind(global.pauseButton[1]);
 strButton[11] = "";
 
@@ -177,7 +177,7 @@ alarm[1] = 10;
                 global.shootButton[1] = gp_face3;
                 global.restartButton[1] = gp_face4;
                 global.skipButton[1] = gp_face2;
-                global.suicideButton[1] = gp_select;
+                global.sprintButton[1] = gp_select;
                 global.pauseButton[1] = gp_start;
                 
                 resetPrompt = true;
@@ -218,7 +218,7 @@ else
         else if (select == 6) {global.shootButton[1] = buttonChange;}
         else if (select == 7) {global.restartButton[1] = buttonChange;}
         else if (select == 8) {global.skipButton[1] = buttonChange;}
-        else if (select == 9) {global.suicideButton[1] = buttonChange;}
+        else if (select == 9) {global.sprintButton[1] = buttonChange;}
         else if (select == 10) {global.pauseButton[1] = buttonChange;}
         
         settingButton = false;
@@ -239,7 +239,7 @@ strButton[5] = scrGetControllerBind(global.jumpButton[1]);
 strButton[6] = scrGetControllerBind(global.shootButton[1]);
 strButton[7] = scrGetControllerBind(global.restartButton[1]);
 strButton[8] = scrGetControllerBind(global.skipButton[1]);
-strButton[9] = scrGetControllerBind(global.suicideButton[1]);
+strButton[9] = scrGetControllerBind(global.sprintButton[1]);
 strButton[10] = scrGetControllerBind(global.pauseButton[1]);
 strButton[11] = "";
 

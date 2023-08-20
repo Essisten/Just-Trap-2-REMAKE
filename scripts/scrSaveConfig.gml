@@ -24,7 +24,7 @@ ini_write_real("Controls","Jump",global.jumpButton[0]);
 ini_write_real("Controls","Shoot",global.shootButton[0]);
 ini_write_real("Controls","Restart",global.restartButton[0]);
 ini_write_real("Controls","Skip",global.skipButton[0]);
-ini_write_real("Controls","Suicide",global.suicideButton[0]);
+ini_write_real("Controls","Sprint",global.sprintButton[0]);
 ini_write_real("Controls","Pause",global.pauseButton[0]);
 ini_write_real("Controls","Align_left",global.alignLeftButton[0]);
 ini_write_real("Controls","Align_right",global.alignRightButton[0]);
