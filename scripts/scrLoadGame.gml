@@ -39,10 +39,7 @@ if (loadFile)
         global.savePlayerX = ds_map_find_value(saveMap,"savePlayerX");
         global.savePlayerY = ds_map_find_value(saveMap,"savePlayerY");
         global.saveGrav = ds_map_find_value(saveMap,"saveGrav");
-        var tut = ds_map_find_value(saveMap,"gravH");
-        if (is_undefined(tut))
-            tut = false;
-        global.gravH = tut;
+        global.gravH = scrSafeLoad(saveMap, "gravH", false);
         if (is_string(global.saveRoom))   //check if the saved room loaded properly
         {
             if (!room_exists(asset_get_index(global.saveRoom)))  //check if the room index in the save is valid
@@ -54,24 +51,24 @@ if (loadFile)
             saveValid = false;
         for (var i = 0; i < array_length_1d(global.tutorial); i++)
         {
-            var tut = ds_map_find_value(saveMap, "tutorial["+string(i)+"]");
-            if (is_undefined(tut))
-                tut = true;
-            global.tutorial[i] = tut;
+            global.tutorial[i] = scrSafeLoad(saveMap, "tutorial["+string(i)+"]", true);
         }
         for (var i = 0; i < array_length_1d(global.bossClear); i++)
-            global.bossClear[i] = ds_map_find_value(saveMap, "bossClear["+string(i)+"]");
-        global.saveGameClear = ds_map_find_value(saveMap,"saveGameClear");
+            global.bossClear[i] = scrSafeLoad(saveMap, "bossClear["+string(i)+"]", false);
+        global.saveGameClear = scrSafeLoad(saveMap,"saveGameClear", false);
         
         for (var i = 0; i < array_length_1d(global.skip); i++)
-            global.skip[i] = ds_map_find_value(saveMap, "skip["+string(i)+"]");
+            global.skip[i] = scrSafeLoad(saveMap, "skip["+string(i)+"]", false);
             
         for (var i = 0; i < array_length_1d(global.pb); i++)
         {
-            var tut = ds_map_find_value(saveMap, "pb["+string(i)+"]");
-            if (is_undefined(tut))
-                tut = 1;
-            global.pb[i] = tut;
+            global.pb[i] = scrSafeLoad(saveMap, "pb["+string(i)+"]", 1);
+        }
+        global.currentWeapon = scrSafeLoad(saveMap, "currentWeapon", 0);
+        for (var i = 0; i < 2; i++)
+        {
+            global.unlockedWeapons[i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(i)+"]", false);
+            global.obtainedWeapons[i] = scrSafeLoad(saveMap, "obtainedWeapons["+string(i)+"]", false);
         }
         //load md5 string from the save map
         var mapMd5 = ds_map_find_value(saveMap,"mapMd5");

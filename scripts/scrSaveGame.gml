@@ -62,6 +62,13 @@ for (var i = 0; i < array_length_1d(global.pb); i++)
     
 for (var i = 0; i < array_length_1d(global.skip); i++)
     ds_map_add(saveMap,"skip["+string(i)+"]", global.skip[i]);
+    
+ds_map_add(saveMap, "currentWeapon", global.currentWeapon);
+for (var i = 0; i < 2; i++)
+{
+    ds_map_add(saveMap, "unlockedWeapons["+string(i)+"]", global.unlockedWeapons[i]);
+    ds_map_add(saveMap, "obtainedWeapons["+string(i)+"]", global.obtainedWeapons[i]);
+}
 
 //add md5 hash to verify saves and make them harder to hack
 ds_map_add(saveMap,"mapMd5",md5_string_unicode(json_encode(saveMap)+global.md5StrAdd));

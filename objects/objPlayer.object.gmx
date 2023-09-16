@@ -38,10 +38,16 @@ onPlatform = false; //sets if player is currently standing on a platform
 paralyzed = false;
 xScale = 1; //sets the direction the player is facing (1 is facing right, -1 is facing left)
 sprt = sprite_index;
+Just[0] = sprPlayerIdle;
+Just[1] = sprPlayerRunning;
+Just[2] = sprPlayerJump;
+Just[3] = sprPlayerFall;
+Just[4] = sprPlayerSliding;
+state = 0;
+//0 - idle, 1 - run, 2 - jump, 3 - fall, 4 - sliding
 global.gravH = false;
 if (global.grav == -1)
     scrFlipGrav();
-//scrSetGrav(3);
 scrSetPlayerMask(); //set the player's hitbox
 
 if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create the player's bow
@@ -52,7 +58,8 @@ if (global.autosave) //save the game if currently set to autosave
     scrSaveGame(true);
     global.autosave = false;
 }
-
+if (!instance_exists(objWeaponPlayer))
+   instance_create(x, y, objWeaponPlayer);
 </string>
           </argument>
         </arguments>
@@ -147,12 +154,12 @@ if (global.playerAnimationFix)
             var R = (scrButtonCheck(global.rightButton) || (global.directionalTapFix &amp;&amp; scrButtonCheckPressed(global.rightButton)));
             if ((L || R) &amp;&amp; !frozen)
             {
-                sprt = sprPlayerRunning;
+                state = 1;
                 image_speed = 1/2;
             }
             else
             {
-                sprt = sprPlayerIdle;
+                state = 0;
                 image_speed = 1/5;
             }
         }
@@ -160,41 +167,20 @@ if (global.playerAnimationFix)
         { 
             if ((vspeed * global.grav) &lt; 0)
             {
-                sprt = sprPlayerJump;
+                state = 2;
                 image_speed = 1/2;
             }
             else
             {
-                sprt = sprPlayerFall;
+                state = 3;
                 image_speed = 1/2;
             }
         }
     }
     else    //touching a vine
     {
-        sprt = sprPlayerSliding;
+        state = 4;
         image_speed = 1/2;
-    }
-}
-if (scrButtonCheck(global.upButton) &amp;&amp; !frozen)
-{
-    switch (sprt)
-    {
-        case sprPlayerIdle:
-            sprt = sprPlayerIdleUp;
-            break;
-        case sprPlayerRunning:
-            sprt = sprPlayerRunUp;
-            break;
-        case sprPlayerFall:
-            sprt = sprPlayerFallUp;
-            break;
-        case sprPlayerJump:
-            sprt = sprPlayerJumpUp;
-            break;
-        case sprPlayerSliding:
-            sprt = sprPlayerSlideUp;
-            break;
     }
 }
 if (!part_emitter_exists(global.sprintParticleSystem, global.sprintEmitter))
@@ -216,7 +202,30 @@ else
    maxSpeed = 3;
    part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 0);
 }
-sprite_index = sprt;
+sprite_index = Just[state];
+/*
+if (scrButtonCheck(global.upButton) &amp;&amp; !frozen)
+{
+    switch (sprt)
+    {
+        case sprPlayerIdle:
+            sprt = sprPlayerIdleUp;
+            break;
+        case sprPlayerRunning:
+            sprt = sprPlayerRunUp;
+            break;
+        case sprPlayerFall:
+            sprt = sprPlayerFallUp;
+            break;
+        case sprPlayerJump:
+            sprt = sprPlayerJumpUp;
+            break;
+        case sprPlayerSliding:
+            sprt = sprPlayerSlideUp;
+            break;
+    }
+}
+sprite_index = sprt;*/
 if (paralyzed)
 {
     image_speed = 0;
@@ -310,7 +319,7 @@ if (global.gravH)
                 if (abs(vspeed) &gt; maxSpeed)
                     vspeed = maxSpeed * h;
             }
-            sprt = sprPlayerRunning;
+            state = 1;
             image_speed = 0.5;
         }
     }
@@ -335,15 +344,17 @@ if (global.gravH)
                     vspeed = 0;
             }
         }
-        sprt = sprPlayerIdle;
+        state = 0;
         image_speed = 0.2;
     }
 
     
     if (!onPlatform)    //check if standing on a platform
     {
-        if((hspeed * global.grav) &lt; -0.05) {sprt = sprPlayerJump;}
-        else if((hspeed * global.grav) &gt; 0.05) {sprt = sprPlayerFall;}
+        if((hspeed * global.grav) &lt; -0.05)
+           state = 2;
+        else if((hspeed * global.grav) &gt; 0.05)
+           state = 3;
     }
     else
     {
@@ -409,8 +420,7 @@ if (global.gravH)
                     vspeed = -3;
                 else
                     vspeed = 3;
-                
-                sprt = sprPlayerFall;
+                state = 3;
             }
         }
     }
@@ -608,8 +618,7 @@ else
                 if (abs(hspeed) &gt; maxSpeed)
                     hspeed = maxSpeed * h;
             }
-            
-            sprt = sprPlayerRunning;
+            state = 1;
             image_speed = 0.5;
         }
     }
@@ -634,16 +643,17 @@ else
                     hspeed = 0;
             }
         }
-      
-        sprt = sprPlayerIdle;
+        state = 0;
         image_speed = 0.2;
     }
     
     
     if (!onPlatform)    //check if standing on a platform
     {
-        if((vspeed * global.grav) &lt; -0.05) {sprt = sprPlayerJump;}
-        else if((vspeed * global.grav) &gt; 0.05) {sprt = sprPlayerFall;}
+        if((vspeed * global.grav) &lt; -0.05)
+           state = 2;
+        else if((vspeed * global.grav) &gt; 0.05)
+           state = 3;
     }
     else
     {
@@ -684,7 +694,7 @@ else
             xScale = 1;
         
         vspeed = 2 * global.grav;
-        sprt = sprPlayerSliding;
+        state = 4;
         image_speed = 1/2;
         
         //pressed away from the vine
@@ -699,7 +709,7 @@ else
                 
                 vspeed = -9 * global.grav;
                 audio_play_sound(sndWallJump,0,false);
-                sprt = sprPlayerJump;
+                state = 2;
             }
             else    //moving off vine
             {
@@ -707,8 +717,7 @@ else
                     hspeed = -3;
                 else
                     hspeed = 3;
-                
-                sprt = sprPlayerFall;
+                state = 3;
             }
         }
     }

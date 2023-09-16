@@ -24,9 +24,12 @@ global.downButton[0] = ini_read_real("Controls","Down",vk_down);
 global.jumpButton[0] = ini_read_real("Controls","Jump",vk_shift);
 global.shootButton[0] = ini_read_real("Controls","Shoot",ord("Z"));
 global.restartButton[0] = ini_read_real("Controls","Restart",ord("R"));
-global.skipButton[0] = ini_read_real("Controls","Skip",ord("S"));
-global.sprintButton[0] = ini_read_real("Controls","Sprint",ord("X"));
+global.skipButton[0] = ini_read_real("Controls","Skip",ord("T"));
+global.sprintButton[0] = ini_read_real("Controls","Sprint",vk_down);
 global.pauseButton[0] = ini_read_real("Controls","Pause",ord("P"));
+global.prevWeaponButton[0] = ini_read_real("Controls","Previous_weapon",ord("A"));
+global.nextWeaponButton[0] = ini_read_real("Controls","Next_weapon",ord("S"));
+
 global.alignLeftButton[0] = ini_read_real("Controls","Align_left",ord("A"));
 global.alignRightButton[0] = ini_read_real("Controls","Align_right",ord("D"));
 

@@ -94,6 +94,8 @@ if (timer &lt; 2)
     global.frozen = true;
     instance_destroy();
     scrStartSlowdown(25, 25);
+    repeat (3)
+        scrPlaySound(sndDeath, 0.7);
     exit;
 }
 if (!instance_exists(objPlayer))
