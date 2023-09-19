@@ -243,6 +243,29 @@ else
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message_async("Press arrow keys to move# Press Shift to jump. You can double jump in air. Holding jump button will make you jump higher.# Press Z to shoot. Holding Up key will allow you to shoot upwards.# Press A and S to switch weapon (experimental).# Press X to sprint.# You can change controls and many other things in settings. Shoot yellow SAVE boxes to save your progress.# Press F4 for fullscreen. F2 to restart the game. Esc to pause.");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>

@@ -30,8 +30,13 @@ image_index = global.currentWeapon;
 state_sprites[0] = sprWeaponIdle;
 state_sprites[1] = sprWeaponIdle;
 state_sprites[2] = sprWeaponJump;
-state_sprites[3] = sprWeaponJump;
+state_sprites[3] = sprWeaponIdle;
 state_sprites[4] = sprWeaponSliding;
+CD[0] = 0;
+CD[1] = 0;
+max_weapons = array_length_1d(global.obtainedWeapons);
+maxCD[0] = 20;
+maxCD[1] = 50;
 </string>
           </argument>
         </arguments>
@@ -63,16 +68,79 @@ x = objPlayer.x;
 y = objPlayer.y;
 image_angle = objPlayer.image_angle;
 image_xscale = objPlayer.xScale;
+image_yscale = global.grav;
 sprite_index = state_sprites[objPlayer.state];
+if (objPlayer.shootUpward)
+   sprite_index = sprWeaponUp;
 if (scrButtonCheckPressed(global.prevWeaponButton))
 {
     global.currentWeapon--;
+    if (global.currentWeapon &lt; 0)
+       global.currentWeapon += max_weapons;
 }
 else if (scrButtonCheckPressed(global.nextWeaponButton))
 {
     global.currentWeapon++;
+    if (global.currentWeapon &gt;= max_weapons)
+       global.currentWeapon = 0;
 }
 image_index = global.currentWeapon;
+for (i = 0; i &lt; max_weapons; i++)
+{
+    if (CD[i] &gt; 0)
+       CD[i]--;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reloading
+CD[global.currentWeapon] = maxCD[global.currentWeapon];
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shoot them up!
+if (CD[global.currentWeapon] &gt; 0)
+   exit;
+scrPlayerShoot();
+event_user(1);
 </string>
           </argument>
         </arguments>

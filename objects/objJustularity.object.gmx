@@ -434,8 +434,8 @@ if (speed &gt; 0)
 else
     part_type_direction(smoke, 0, 360, 0, 0);
 part_emitter_region(global.saveParticleSystem, emitter, x - rad + upH, x + rad + upH, y + rad + upV, y - rad + upV, pt_shape_circle, ps_distr_gaussian);
-part_emitter_burst(global.saveParticleSystem, emitter, smoke, 1);
-alarm[3] = 2;
+part_emitter_burst(global.saveParticleSystem, emitter, smoke, 10);
+//alarm[3] = 2;
 </string>
           </argument>
         </arguments>
@@ -731,14 +731,14 @@ if (!place_free(x,y+vspeed+distV))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy(other);
-if (god)
-    return -1;
+            <string>if (god)
+    exit;
 alarm[3] = 1;
-alarm[1] = 6;
-alarm[2] = 80;
-god = true;
-var dmg = (11 - global.difficulty * 3);
+//alarm[1] = 6;
+//alarm[2] = 80;
+//god = true;
+var dmg = other.dmg * 2;//(11 - global.difficulty * 3);
+instance_destroy(other);
 var heal = (5 + global.difficulty * 5);
 var temp1 = RedHP;
 var temp2 = BlueHP;

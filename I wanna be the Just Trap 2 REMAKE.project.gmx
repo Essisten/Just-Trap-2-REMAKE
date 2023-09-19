@@ -9,22 +9,16 @@
   </NewExtensions>
   <sounds name="sound">
     <sounds name="sfx">
-      <sound>sound\sndBlockChange</sound>
-      <sound>sound\sndBossHit</sound>
-      <sound>sound\sndBreak</sound>
-      <sound>sound\sndCherry</sound>
-      <sound>sound\sndDeath</sound>
-      <sound>sound\sndDJump</sound>
-      <sound>sound\sndGlass</sound>
-      <sound>sound\sndItem</sound>
-      <sound>sound\sndJump</sound>
-      <sound>sound\sndShoot</sound>
-      <sound>sound\sndWallJump</sound>
-      <sound>sound\sndBoss1</sound>
-      <sound>sound\sndHeal</sound>
-      <sound>sound\sndBoss1_Reload</sound>
-      <sound>sound\sndBulletBounce</sound>
-      <sound>sound\sndVJump</sound>
+      <sounds name="player">
+        <sound>sound\sndVJump</sound>
+        <sound>sound\sndBulletBounce</sound>
+        <sound>sound\sndShoot</sound>
+        <sound>sound\sndWallJump</sound>
+        <sound>sound\sndDJump</sound>
+        <sound>sound\sndJump</sound>
+        <sound>sound\sndDeath</sound>
+        <sound>sound\sndShotgunShoot</sound>
+      </sounds>
       <sounds name="Boss 2">
         <sound>sound\sndBoss2_Bomb</sound>
         <sound>sound\sndBoss2_Damage</sound>
@@ -45,9 +39,6 @@
         <sound>sound\sndAppearV</sound>
         <sound>sound\sndDoor</sound>
       </sounds>
-      <sound>sound\sndMonster1</sound>
-      <sound>sound\sndMenuMove</sound>
-      <sound>sound\sndMenuSelect</sound>
       <sounds name="Boss 3">
         <sound>sound\sndCrunchy</sound>
         <sound>sound\sndMiss</sound>
@@ -55,6 +46,18 @@
         <sound>sound\sndAngelLaser</sound>
         <sound>sound\sndAngelLaser2</sound>
       </sounds>
+      <sound>sound\sndBlockChange</sound>
+      <sound>sound\sndBossHit</sound>
+      <sound>sound\sndBreak</sound>
+      <sound>sound\sndCherry</sound>
+      <sound>sound\sndGlass</sound>
+      <sound>sound\sndItem</sound>
+      <sound>sound\sndBoss1</sound>
+      <sound>sound\sndHeal</sound>
+      <sound>sound\sndBoss1_Reload</sound>
+      <sound>sound\sndMonster1</sound>
+      <sound>sound\sndMenuMove</sound>
+      <sound>sound\sndMenuSelect</sound>
     </sounds>
     <sounds name="music">
       <sound>sound\musOnDeath</sound>
@@ -407,12 +410,15 @@
       <object>objects\objPlayerStart</object>
       <object>objects\objPlayer</object>
       <object>objects\objBow</object>
-      <object>objects\objBullet</object>
       <object>objects\objBloodEmitter</object>
       <object>objects\objBlood</object>
       <object>objects\objGameOver</object>
       <object>objects\objBloodH2</object>
-      <object>objects\objWeaponPlayer</object>
+      <objects name="Weapon">
+        <object>objects\objWeaponPlayer</object>
+        <object>objects\objBullet</object>
+        <object>objects\objBulletShotgun</object>
+      </objects>
     </objects>
     <objects name="blocks">
       <object>objects\objBlock</object>

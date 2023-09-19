@@ -92,6 +92,8 @@ if (timer &lt; 2)
     }
     objWorld.alarm[2] = 400;
     global.frozen = true;
+    with (objBoss1Bullet)
+         can_kill = false;
     instance_destroy();
     scrStartSlowdown(25, 25);
     repeat (3)

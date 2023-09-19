@@ -151,6 +151,11 @@ else if (HP &lt;= 0)
         image_blend = c_black;
    }
 }
+if (instance_number(objJustrimsonA_blade) &gt; 4)
+{
+   blade.direction += instance_number(objJustrimsonA_blade) * 4 * choose(-1, 1);
+   blade.gravity_direction = blade.direction;
+}
 //scrPlaySound(sndMiss, 1);
 </string>
           </argument>

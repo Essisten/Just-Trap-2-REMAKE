@@ -43,6 +43,7 @@ Just[1] = sprPlayerRunning;
 Just[2] = sprPlayerJump;
 Just[3] = sprPlayerFall;
 Just[4] = sprPlayerSliding;
+shootUpward = false;
 state = 0;
 //0 - idle, 1 - run, 2 - jump, 3 - fall, 4 - sliding
 global.gravH = false;
@@ -203,29 +204,7 @@ else
    part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 0);
 }
 sprite_index = Just[state];
-/*
-if (scrButtonCheck(global.upButton) &amp;&amp; !frozen)
-{
-    switch (sprt)
-    {
-        case sprPlayerIdle:
-            sprt = sprPlayerIdleUp;
-            break;
-        case sprPlayerRunning:
-            sprt = sprPlayerRunUp;
-            break;
-        case sprPlayerFall:
-            sprt = sprPlayerFallUp;
-            break;
-        case sprPlayerJump:
-            sprt = sprPlayerJumpUp;
-            break;
-        case sprPlayerSliding:
-            sprt = sprPlayerSlideUp;
-            break;
-    }
-}
-sprite_index = sprt;*/
+shootUpward = scrButtonCheck(global.upButton) &amp;&amp; !frozen;
 if (paralyzed)
 {
     image_speed = 0;
@@ -285,6 +264,18 @@ if (!frozen)    //don't move if frozen
         h = 1;
     else if (L)
         h = -1;
+}
+if (!frozen)    //check if frozen before doing anything
+{
+    if (scrButtonCheckPressed(global.shootButton) and instance_exists(objWeaponPlayer))
+    {
+        with (objWeaponPlayer)
+             event_user(0);
+    }
+    if (scrButtonCheckPressed(global.jumpButton))
+        scrPlayerJump();
+    if (scrButtonCheckReleased(global.jumpButton))
+        scrPlayerVJump();
 }
 if (global.gravH)
 {
@@ -369,16 +360,6 @@ if (global.gravH)
     
     if (abs(hspeed) &gt; maxVspeed)
         hspeed = sign(hspeed)*maxVspeed;    //check if moving vertically faster than max speed
-    
-    if (!frozen)    //check if frozen before doing anything
-    {
-        if (scrButtonCheckPressed(global.shootButton))
-            scrPlayerShoot();
-        if (scrButtonCheckPressed(global.jumpButton))
-            scrPlayerJump();
-        if (scrButtonCheckReleased(global.jumpButton))
-            scrPlayerVJump();
-    }
     
     if (global.adAlign &amp;&amp; place_meeting(x +(global.grav), y,objBlock) &amp;&amp; !frozen)  // A/D align
     {
@@ -666,17 +647,7 @@ else
         hspeed += slideBlockTouching.h;
     
     if (abs(vspeed) &gt; maxVspeed) {vspeed = sign(vspeed)*maxVspeed;} //check if moving vertically faster than max speed
-    
-    if (!frozen)    //check if frozen before doing anything
-    {
-        if (scrButtonCheckPressed(global.shootButton))
-            scrPlayerShoot();
-        if (scrButtonCheckPressed(global.jumpButton))
-            scrPlayerJump();
-        if (scrButtonCheckReleased(global.jumpButton))
-            scrPlayerVJump();
-    }
-    
+
     if (global.adAlign &amp;&amp; place_meeting(x,y+(global.grav),objBlock) &amp;&amp; !frozen)  // A/D align
     {
         if (scrButtonCheckPressed(global.alignLeftButton)) {hspeed -= 1;}

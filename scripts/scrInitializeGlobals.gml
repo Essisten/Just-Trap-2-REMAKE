@@ -14,11 +14,17 @@ global.saveGrav = 1;
 global.gameClear = false;
 global.saveGameClear = false;
 global.frozen = false;  //not allowing restart and suicide
-for (var i = 99; i >= 0; i--)
+for (i = 99; i >= 0; i--)
 {
     global.trigger[i] = false;
 }
-for (var i = 0; i < 7; i++)
+global.currentWeapon = 0;
+for (i = 0; i < 2; i++)
+{
+    global.unlockedWeapons[i] = false;
+    global.obtainedWeapons[i] = false;
+}
+for (i = 0; i < 7; i++)
 {
     global.bossClear[i] = false;
     global.saveBossClear[i] = false;

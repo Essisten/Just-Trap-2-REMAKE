@@ -252,6 +252,7 @@ else
     {
         direction = point_direction(x, y, objJustularity.x, objJustularity.y);
         alarm[1] = 20;
+        alarm[7] = -1;
     }
     else
     {

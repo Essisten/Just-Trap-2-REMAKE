@@ -514,7 +514,6 @@ image_alpha = 1;
           <argument>
             <kind>1</kind>
             <string>///I-framing
-
 if (image_alpha == 1)
     image_alpha = 0.2;
 else
@@ -710,8 +709,6 @@ else if (canWalk)
             <kind>1</kind>
             <string>if (hidden)
     return -1;
-with (other)
-    instance_destroy();
 if (HP &lt;= 0 and objJustist.HP &gt; 0)
 {
     energy++;
@@ -720,11 +717,14 @@ if (HP &lt;= 0 and objJustist.HP &gt; 0)
 }
 if (godmode or HP &lt;= 0)
     return -1;
-scrPlaySound(sndBossHit);
-godmode = true;
-alarm[2] = 1;
-alarm[3] = 40;
-HP -= 4 - global.difficulty;
+if (!sound_isplaying(sndBossHit))
+   scrPlaySound(sndBossHit);
+//godmode = true;
+//alarm[2] = 1;
+//alarm[3] = 40;
+HP -= other.dmg;
+with (other)
+    instance_destroy();
 if (HP &lt;= 0)
     scrPlaySound(sndDeath);
 if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or

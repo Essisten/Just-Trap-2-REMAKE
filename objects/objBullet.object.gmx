@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>//get the bullet's direction based off the direction the player is facing
-
-var bulletDir;
+dmg = 4 - global.difficulty;
+spd = 16;
+bulletDir = 1;
 if (instance_exists(objPlayer))
     bulletDir = objPlayer.xScale;
 else
@@ -37,19 +38,19 @@ else
 if (global.gravH)
 {
     if (scrButtonCheck(global.upButton))
-        hspeed = -16 * global.grav;
+        hspeed = -spd * global.grav;
     else
-        vspeed = bulletDir * -16;
+        vspeed = bulletDir * -spd;
 }
 else
 {
     if (scrButtonCheck(global.upButton))
-        vspeed = -16 * global.grav;
+        vspeed = -spd * global.grav;
     else
-        hspeed = bulletDir * 16;
+        hspeed = bulletDir * spd;
 }
 
-alarm[0] = 50;
+alarm[0] = 30;
 </string>
           </argument>
         </arguments>
@@ -72,7 +73,14 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>///Slow destroying
+if (image_alpha &gt; 0)
+{
+   image_alpha -= 0.1;
+   alarm[0] = 1;
+}
+else
+    instance_destroy();
 </string>
           </argument>
         </arguments>

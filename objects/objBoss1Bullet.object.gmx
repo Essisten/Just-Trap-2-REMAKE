@@ -31,6 +31,7 @@ owner = objJR;
 image_xscale = 4;
 image_yscale = image_xscale;
 event_user(0);
+can_kill = true;
 </string>
           </argument>
         </arguments>
@@ -109,7 +110,8 @@ else if (y &lt; -100 or y &gt; 900 or x &lt; -100 or x &gt; 900)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrKillPlayer();
+            <string>if (can_kill)
+   scrKillPlayer();
 </string>
           </argument>
         </arguments>

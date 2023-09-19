@@ -192,9 +192,9 @@ if (HP &gt; 0 and !heal)
                 event_user(0);
         }
     }
-    godmode = true;
-    alarm[10] = 50;
-    alarm[9] = 5;
+    //godmode = true;
+    //alarm[10] = 50;
+    //alarm[9] = 5;
 }
 else if (!objJustination.active)
 {

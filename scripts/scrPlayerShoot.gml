@@ -1,5 +1,13 @@
-if (instance_number(objBullet) < 4)
+switch (global.currentWeapon)
 {
-    instance_create(x,y,objBullet);
-    scrPlaySound(sndShoot);
+    case 0:
+        instance_create(x,y,objBullet);
+        scrPlaySound(sndShoot);
+        break;
+    case 1:
+         repeat (8)
+            instance_create(x, y, objBulletShotgun);
+        scrPlaySound(sndShotgunShoot);
+         break;
 }
+

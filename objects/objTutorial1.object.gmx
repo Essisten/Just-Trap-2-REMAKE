@@ -29,7 +29,7 @@
 spd = 0.05;
 alarmSpd = 2;
 w = 100;
-h = 150;
+h = 50;
 alarm[0] = alarmSpd;
 </string>
           </argument>
@@ -90,34 +90,6 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (scrButtonCheckPressed(global.upButton) and global.tutorial[0])
-{
-    global.tutorial[0] = false;
-    alarm[0] = -1;
-    alarm[1] = alarmSpd;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -142,9 +114,37 @@ draw_set_colour(c_black);
 draw_set_alpha(alpha * 0.5);
 draw_rectangle(x - w, y, x + w, y + h, false);
 draw_set_alpha(alpha);
-scrDrawTextOutline(x, y, "Up + Shoot", c_white, c_black);
-draw_sprite_ext(sprPlayerIdleUp, 0, x, y + 96, 4, 4, 0, c_white, alpha);
+scrDrawTextOutline(x, y, "F1 for help", c_white, c_black);
+//draw_sprite_ext(sprPlayerIdleUp, 0, x, y + 96, 4, 4, 0, c_white, alpha);
 draw_set_alpha(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.tutorial[0])
+{
+    global.tutorial[0] = false;
+    alarm[0] = -1;
+    alarm[1] = alarmSpd;
+}
 </string>
           </argument>
         </arguments>

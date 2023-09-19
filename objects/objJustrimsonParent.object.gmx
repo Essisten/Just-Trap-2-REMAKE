@@ -269,7 +269,9 @@ alarm[0] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy(other);
+            <string>if (HP &gt; 0)
+   HP -= other.dmg * 2;
+instance_destroy(other);
 if (alarm[0] != -1)
    exit;
 if (nohit_challenge &gt; 0)
@@ -346,13 +348,14 @@ event_user(0);
           <argument>
             <kind>1</kind>
             <string>///My honest reaction
+/*
 if (global.difficulty &lt; 3)
 {
     alarm[0] = 5;
     HP -= (4 - global.difficulty) * 2;
 }
 else
-    HP--;
+    HP--;*/
 if (HP &lt;= 0)
 {
     image_blend = c_black;
