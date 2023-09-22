@@ -9,9 +9,8 @@ if (global.gravH)
     else if (djump == 1 || place_meeting(x +(global.grav), y,objWater2) || (global.infJump || global.debugInfJump))
     {
         hspeed = -jump2;
-        sprt = sprPlayerJump;
+        state = 2;
         scrPlaySound(sndDJump);
-        
         if (!place_meeting(x +(global.grav), y,objWater3))
             djump = 0;  //take away the player's double jump
         else
@@ -29,7 +28,7 @@ else
     else if (djump == 1 || place_meeting(x,y+(global.grav),objWater2) || (global.infJump || global.debugInfJump))
     {
         vspeed = -jump2;
-        sprt = sprPlayerJump;
+        state = 2;
         scrPlaySound(sndDJump);
         
         if (!place_meeting(x,y+(global.grav),objWater3))

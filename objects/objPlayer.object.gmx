@@ -1011,8 +1011,8 @@ else
 {
     if (global.grav == 1)   //normal
     {
-        if(hspeed &lt;= 0){move_contact_solid(180,abs(hspeed));}
-        if(hspeed &gt; 0){move_contact_solid(0,abs(hspeed));}
+        if(hspeed &lt;= 0)move_contact_solid(180,abs(hspeed))
+        if(hspeed &gt; 0) move_contact_solid(0,abs(hspeed))
     }
     else    //flipped
     {
@@ -1021,18 +1021,17 @@ else
     }
     hspeed = 0;
 }
- 
 if (!place_free(x,y+vspeed))
 {
     if (global.grav == 1)   //normal
     {
-        if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));}
-        if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));djump=1;}
+        if(vspeed &lt;= 0)move_contact_solid(90,abs(vspeed));
+        if(vspeed &gt; 0) move_contact_solid(270,abs(vspeed));
     }
     else    //flipped
     {
-        if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));djump=1;}
-        if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));}
+        if(vspeed &lt;= 0)move_contact_solid(90,abs(vspeed))
+        if(vspeed &gt; 0) move_contact_solid(270,abs(vspeed))
     }
     vspeed = 0;
 }

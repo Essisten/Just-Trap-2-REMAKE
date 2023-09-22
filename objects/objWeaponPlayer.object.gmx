@@ -35,7 +35,7 @@ state_sprites[4] = sprWeaponSliding;
 CD[0] = 0;
 CD[1] = 0;
 max_weapons = array_length_1d(global.obtainedWeapons);
-maxCD[0] = 20;
+maxCD[0] = 10;
 maxCD[1] = 50;
 </string>
           </argument>
@@ -74,12 +74,14 @@ if (objPlayer.shootUpward)
    sprite_index = sprWeaponUp;
 if (scrButtonCheckPressed(global.prevWeaponButton))
 {
+    scrPlaySound(sndBoss1_Reload, 1);
     global.currentWeapon--;
     if (global.currentWeapon &lt; 0)
        global.currentWeapon += max_weapons;
 }
 else if (scrButtonCheckPressed(global.nextWeaponButton))
 {
+    scrPlaySound(sndBoss1_Reload, 1);
     global.currentWeapon++;
     if (global.currentWeapon &gt;= max_weapons)
        global.currentWeapon = 0;

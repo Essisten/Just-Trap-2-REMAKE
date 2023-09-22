@@ -1,3 +1,9 @@
+v0.4.4
+- Shotgun added. Huge damage rebalancing. (experimental)
+- Gugudian ending nerfed.
+- JR & Justist ending nerfed.
+- The shop is still closed (searching for a worker).
+==================================================
 v0.4.3
 - Justrimson extra abilities rebalanced.
 - Justrimson glowing changed.
