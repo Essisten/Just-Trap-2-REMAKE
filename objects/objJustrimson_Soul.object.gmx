@@ -32,7 +32,7 @@ image_xscale = 2;
 image_yscale = image_xscale;
 alarm[0] = 1;
 image_speed = 0.05;
-HP = 6;
+HP = 2 * (global.difficulty + 1);
 </string>
           </argument>
         </arguments>
@@ -153,8 +153,8 @@ if (place_meeting(x, y, target))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy(other);
-HP -= 4 - global.difficulty;
+            <string>HP -= other.dmg;
+instance_destroy(other);
 if (HP &lt;= 0)
 {
    instance_destroy();

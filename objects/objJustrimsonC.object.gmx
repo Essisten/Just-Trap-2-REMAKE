@@ -134,6 +134,7 @@ for (i = 0; i &lt; instance_number(obj); i++)
 with (objJustrimsonController)
      block_type = !block_type;
 nohit_challenge = 0;
+dmg_in = 3 - global.difficulty;
 </string>
           </argument>
         </arguments>

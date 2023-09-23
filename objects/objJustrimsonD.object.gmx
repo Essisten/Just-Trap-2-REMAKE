@@ -69,6 +69,36 @@ with (objJustrimsonD_Star)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Real gravity change
+scrFlipGrav();
+rot_sum += 360 * 1.5 + (rot_sum mod 360);
+amount_angl = rot_sum;
+old_angl = image_angle;
+nohit_challenge = 0;
+dmg_in = 3 - global.difficulty;
+scrPlaySound(sndVJump, 1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -175,12 +205,12 @@ if (rot_spd &gt; 0)
             <kind>1</kind>
             <string>if (nohit_challenge &lt; 8 - global.difficulty * 2)
    exit;
-scrFlipGrav();
-rot_sum += 360 * 1.5 + (rot_sum mod 360);
-amount_angl = rot_sum;
-old_angl = image_angle;
-nohit_challenge = 0;
-scrPlaySound(sndVJump, 1);
+with (instance_create(400, 304, objBoss2Warning))
+{
+    image_angle = 90 + 90 * -global.grav;
+    direction = image_angle + 90;
+}
+alarm[10] = 100 - 25 * global.difficulty;
 </string>
           </argument>
         </arguments>

@@ -56,8 +56,15 @@ instance_destroy(other);
 with (objJustrimsonB)
 {
      event_user(0);
-     if (nohit_challenge &gt; 0)
-        nohit_challenge -= 2;
+    if (nohit_challenge &lt; 0)
+       nohit_challenge = 0;
+    else
+    {
+        nohit_challenge -= dmg_in;
+        //dmg_in--;
+        if (nohit_challenge &lt; 0)
+           nohit_challenge = 0;
+    }
      //alarm[3] = 1;
 }
 </string>

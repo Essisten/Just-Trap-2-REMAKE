@@ -92,6 +92,7 @@ if (objJustrimsonB.HP &gt;= 100 and objJustrimsonC.HP &gt;= 100 and objJustrimso
 var soul = instance_create(x, y, objJustrimson_Soul);
 soul.target = target;
 nohit_challenge = 0;
+dmg_in = 3 - global.difficulty;
 </string>
           </argument>
         </arguments>

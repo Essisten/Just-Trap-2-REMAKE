@@ -65,6 +65,7 @@ if (loadFile)
             global.pb[i] = scrSafeLoad(saveMap, "pb["+string(i)+"]", 1);
         }
         global.currentWeapon = scrSafeLoad(saveMap, "currentWeapon", 0);
+        global.saveCurrentWeapon = global.currentWeapon;
         for (var i = 0; i < 2; i++)
         {
             global.unlockedWeapons[i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(i)+"]", false);
@@ -113,6 +114,7 @@ global.selectedBoss = 0;
 global.grav = global.saveGrav;
 global.gameClear = global.saveGameClear;
 global.swapControls = false;
+global.currentWeapon = global.saveCurrentWeapon;
 scrSwapControls();
-instance_create(global.savePlayerX,global.savePlayerY,objPlayer);
 room_goto(asset_get_index(global.saveRoom));
+instance_create(global.savePlayerX,global.savePlayerY,objPlayer);

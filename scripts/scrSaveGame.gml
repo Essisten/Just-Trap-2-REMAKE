@@ -10,6 +10,7 @@ if (savePosition)
     global.savePlayerX = objPlayer.x;    
     global.savePlayerY = objPlayer.y;
     global.saveGrav = global.grav;
+    global.saveCurrentWeapon = global.currentWeapon;
     
     //check if player is saving inside of a wall or in the ceiling when the player's position is floored to prevent save locking
     with (objPlayer)
@@ -62,7 +63,6 @@ for (var i = 0; i < array_length_1d(global.pb); i++)
     
 for (var i = 0; i < array_length_1d(global.skip); i++)
     ds_map_add(saveMap,"skip["+string(i)+"]", global.skip[i]);
-    
 ds_map_add(saveMap, "currentWeapon", global.currentWeapon);
 for (var i = 0; i < 2; i++)
 {

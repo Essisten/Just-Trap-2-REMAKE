@@ -114,6 +114,7 @@ else
     }
 }
 nohit_challenge = 0;
+dmg_in = 3 - global.difficulty;
 </string>
           </argument>
         </arguments>
