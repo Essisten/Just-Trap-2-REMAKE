@@ -168,7 +168,7 @@ if (rot_sum &lt; rot_spd)
     //if (shit &gt; 90)
        //shit = 180 + shit;
     //image_angle += shit;
-    image_angle = old_angl + amount_angl;
+    image_angle = old_angl + amount_angl * dir;
     rot_sum = 0;
     rot_spd = 0;
 }
