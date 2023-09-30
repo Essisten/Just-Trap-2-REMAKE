@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-12</depth>
   <persistent>0</persistent>
-  <parentName>objWater3</parentName>
+  <parentName>objWater</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">

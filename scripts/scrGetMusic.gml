@@ -6,6 +6,8 @@ var doLoop = true;
 switch (room)                       //determines which song to play
 {               //make sure to always put a break after setting the song
     case rStageSelect:
+    case rShop:
+    case rTemplate:
         var oldMusic = global.currentMusic;
         scrPlayMusic(musStageSelect, true); //play the song for the current room
         if (oldMusic != global.currentMusic)

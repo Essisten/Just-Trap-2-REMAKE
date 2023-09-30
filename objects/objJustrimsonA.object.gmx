@@ -88,7 +88,12 @@ for (i = 0; i &lt; 3; i++)
        target = friends[i];
 }
 if (objJustrimsonB.HP &gt;= 100 and objJustrimsonC.HP &gt;= 100 and objJustrimsonD.HP &gt;= 100)
-   target = objJustrimsonA;
+{
+    if (HP &gt;= 100)
+       target = objPlayer;
+    else
+       target = objJustrimsonA;
+}
 var soul = instance_create(x, y, objJustrimson_Soul);
 soul.target = target;
 nohit_challenge = 0;

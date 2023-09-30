@@ -45,6 +45,7 @@
         <sound>sound\sndWater</sound>
         <sound>sound\sndAngelLaser</sound>
         <sound>sound\sndAngelLaser2</sound>
+        <sound>sound\sndJustrimsonRage</sound>
       </sounds>
       <sound>sound\sndBlockChange</sound>
       <sound>sound\sndBossHit</sound>
@@ -376,6 +377,7 @@
       <script>scripts\scrStartSlowdown.gml</script>
       <script>scripts\scrHideBoss1.gml</script>
       <script>scripts\scrShakeEffect.gml</script>
+      <script>scripts\scrCreateShopItem.gml</script>
     </scripts>
     <scripts name="Boss 2">
       <script>scripts\scrJustularitySkin.gml</script>
@@ -582,6 +584,9 @@
     <objects name="Shop">
       <object>objects\objShopSign</object>
       <object>objects\objShopEntrance</object>
+      <object>objects\objShopMain</object>
+      <object>objects\objShopWeapon</object>
+      <object>objects\objShopItem</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -599,6 +604,7 @@
     <room>rooms\rTemplate</room>
     <room>rooms\rBoss3_Fall</room>
     <room>rooms\rBoss3</room>
+    <room>rooms\rShop</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

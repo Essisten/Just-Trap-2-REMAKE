@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>5066061</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>scrCreateFade(c_black, 0.01, false);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
