@@ -280,10 +280,12 @@ if (nohit_challenge &gt; 0)
     nohit_challenge -= dmg_in;
     if (nohit_challenge &lt; 0)
        nohit_challenge = 0;
-    if (dmg_in &lt;= 0)
-       scrPlaySound(sndJustrimsonRage, 1);
-    else
+    if (dmg_in &gt; 0)
+    {
         dmg_in--;
+        if (dmg_in &lt;= 0)
+           scrPlaySound(sndJustrimsonRage, 1);
+    }
 }
 alarm[3] = 1;
 event_user(0);
