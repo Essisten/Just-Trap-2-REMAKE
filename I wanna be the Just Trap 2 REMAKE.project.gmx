@@ -301,6 +301,7 @@
     <sprites name="Shop">
       <sprite>sprites\sprShopSign</sprite>
       <sprite>sprites\sprEntrance</sprite>
+      <sprite>sprites\sprWeaponImage</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -390,6 +391,7 @@
     <font>fonts\fDefault18</font>
     <font>fonts\fDefault12</font>
     <font>fonts\fBoss1_46</font>
+    <font>fonts\fDetermination14</font>
   </fonts>
   <objects name="objects">
     <objects name="world">

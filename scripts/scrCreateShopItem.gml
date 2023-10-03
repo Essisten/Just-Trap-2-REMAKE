@@ -5,4 +5,5 @@ tmp.description = argument1;
 tmp.spd = argument2;
 tmp.dmg = argument3;
 tmp.range = argument4;
+tmp.price = argument5;
 return tmp;

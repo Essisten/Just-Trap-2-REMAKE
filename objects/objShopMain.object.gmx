@@ -27,28 +27,23 @@
             <kind>1</kind>
             <string>select = 0;
 level = 1;
+dick = 0;
 main[0] = "Weapons";
 main[1] = "Advices";
 main[2] = "Talk";
 main[3] = "Leave";
-weapons[0] = scrCreateShopItem("The gun",
-"The classic default gun of our well known kid. Many years have passed since it's original user had a use on this, before Just have obtained it.",
-"fast",
-"pathetic",
-"far");
-weapons[1] = scrCreateShopItem("Shotgun",
-"Our favourite shotgun which we all love. It breaks bullets right before shooting to multiply their amount, which also lowers the damage of each. Due to self-damage, shred's fly distance is lowered.",
-"slow",
-"good",
-"short");
+unlocked[0] = true;
+unlocked[1] = false;
+unlocked[2] = false;
+unlocked[3] = true;
 global.noPause = true;
-
+submenu = noone;
+lineSeperation = 48;
+optionsNum = array_length_1d(main);
 boxStartX = 550;
 boxStartY = 250;
 boxEndX = 780;
-boxEndY = 600;
-lineSeperation = 64;
-optionsNum = array_length_1d(main);
+boxEndY = boxStartY + lineSeperation * (optionsNum + 1);
 lineCenter = boxStartX + (boxEndX - boxStartX) / 2;
 </string>
           </argument>
@@ -97,7 +92,7 @@ instance_create(64, 560, objPlayer);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (alarm[0] &gt; 0)
+            <string>if (alarm[0] &gt; 0 or instance_exists(submenu))
    exit;
 if (scrButtonCheckPressed(global.menuUpButton))
 {
@@ -125,14 +120,20 @@ else if (scrButtonCheckPressed(global.menuBackButton))
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
 {
-    scrPlaySound(sndBoss1_Reload);
      switch (select)
      {
+        case 0:
+             submenu = instance_create(x, y, objShopWeapon);
+             break;
         case 3:
              scrCreateFade(c_black, 0.02, true);
              alarm[0] = 50;
              break;
+        default:
+            scrPlaySound(sndGlass, 1);
+            exit;
      }
+    scrPlaySound(sndBoss1_Reload);
 }
 </string>
           </argument>
@@ -158,15 +159,18 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed
             <kind>1</kind>
             <string>draw_set_alpha(0.8);
 draw_rectangle_colour(boxStartX, boxStartY, boxEndX, boxEndY, c_black, c_black, c_black, c_black, false);
+dick += 2;
+draw_set_font(fDefault24);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
+draw_sprite_ext(sprSpikeRight, 0, boxStartX + 10 + (sin(degtorad(dick)) * 6), boxStartY - 16 + lineSeperation * (select + 1), 1, 1, 0, c_white, 1);
 for (var i = 0; i &lt; optionsNum; i++)
 {
     var color;
-    if (i == select)
-       color = c_red;
-    else
+    if (unlocked[i])
        color = c_white;
+    else
+       color = c_gray;
     scrDrawTextOutline(lineCenter, boxStartY + lineSeperation * (i + 1), main[i], color, c_black);
 }
 </string>
