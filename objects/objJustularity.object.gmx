@@ -281,7 +281,7 @@ if (instance_exists(objPlayer))
                 {
                     image_speed = 4 / room_speed;
                     sprite_index = sprJustularityRing;
-                    direction = point_direction(x, y, objPlayer.x, objPlayer.y) + (i - 1) * 30;
+                    direction = point_direction(x, y, objPlayer.x, objPlayer.y) + (i - 1) * 20;
                     image_angle = direction;
                     speed = 8 + (global.difficulty) * 2;
                     image_xscale = 2;

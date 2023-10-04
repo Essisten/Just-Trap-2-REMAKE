@@ -3,84 +3,11 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>100030</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>stars = ds_list_create();
-counter = 0;
-rad = 64;
-owner = instance_find(objJustularity, 0);
-alarm[0] = 1;
-done = false;
-dir = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!instance_exists(objPlayer))
-    exit;
-counter++;
-if (counter &lt; 3 + global.difficulty)
-    alarm[0] = 100 - global.difficulty * 20;
-else
-{
-    direction = point_direction(x, y, objPlayer.x, objPlayer.y);
-    speed = min((global.difficulty + 1) * 4, 8);
-    done = true;
-    exit;
-}
-var star = instance_create(x, y, objCherry);
-with (star)
-{
-    sprite_index = sprJustularityStar;
-    image_speed = 0;
-    image_xscale = 2;
-    image_yscale = image_xscale;
-    rad = 0;
-}
-ds_list_add(stars, star);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -98,37 +25,62 @@ ds_list_add(stars, star);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var length = ds_list_size(stars);
-dir += (global.difficulty + 1) * 2;
-for (var i = 0; i &lt; length; i++)
+            <string>if (speed &lt;= 3 or !instance_exists(objPlayer))
 {
-    var star = ds_list_find_value(stars, i);
-    if (is_undefined(star) || !instance_exists(star))
-    {
-        ds_list_delete(stars, i);
-        break;
-    }
-    with (star)
-    {
-        if (rad &lt; other.rad)
-            rad += 2;
-    }
-    star.x = x + lengthdir_x(star.rad, dir + i * (360 / length));
-    star.y = y + lengthdir_y(star.rad, dir + i * (360 / length));
+   instance_destroy();
+   exit;
 }
-if (!done)
-{
-    if (!instance_exists(owner))
-    {
-        counter = 7
-        alarm[0] = 1;
-        exit;
-    }
-    x = owner.x;
-    y = owner.y;
-}
-else if (x &lt; -200 or x &gt; 1000 or y &lt; -200 or y &gt; 800)
-    instance_destroy();
+objPlayer.x = x;
+objPlayer.y = y;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBlock">
+      <action>
+        <libid>1</libid>
+        <id>115</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>

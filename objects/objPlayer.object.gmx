@@ -877,7 +877,7 @@ else
 instance_destroy(other);
 frozen = true;
 paralyzed = true;
-alarm[0] = 100 + global.difficulty * 50;
+alarm[0] = 50 + global.difficulty * 25;
 </string>
           </argument>
         </arguments>

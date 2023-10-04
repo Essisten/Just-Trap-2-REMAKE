@@ -423,6 +423,7 @@
         <object>objects\objBullet</object>
         <object>objects\objBulletShotgun</object>
       </objects>
+      <object>objects\objPlayerThrower</object>
     </objects>
     <objects name="blocks">
       <object>objects\objBlock</object>
