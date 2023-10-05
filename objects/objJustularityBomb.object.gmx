@@ -108,7 +108,7 @@ for (var i = 0; i &lt; 10; i++)
     {
         sprite_index = other.sprite_index;
         image_speed = other.image_speed * 2;
-        speed = other.speed * 2;
+        speed = other.speed * 1.5;
         depth = 100030;
         sprite_index = other.sprite_index;
     }

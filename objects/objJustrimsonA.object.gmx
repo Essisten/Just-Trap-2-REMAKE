@@ -154,7 +154,7 @@ else if (HP &lt;= 0)
     }
    with (objJustrimsonA_blade)
    {
-        image_blend = c_black;
+        image_blend = c_maroon;
    }
 }
 if (instance_number(objJustrimsonA_blade) &gt; 4)

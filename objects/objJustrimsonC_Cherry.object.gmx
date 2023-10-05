@@ -30,7 +30,7 @@ done = false;
 if (!instance_exists(objJustrimsonC))
    exit;
 if (objJustrimsonC.HP &lt;= 0)
-   image_blend = c_black;
+   sprite_index = sprCherryGray;
 </string>
           </argument>
         </arguments>

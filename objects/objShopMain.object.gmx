@@ -173,6 +173,7 @@ for (var i = 0; i &lt; optionsNum; i++)
        color = c_gray;
     scrDrawTextOutline(lineCenter, boxStartY + lineSeperation * (i + 1), main[i], color, c_black);
 }
+
 </string>
           </argument>
         </arguments>

@@ -64,6 +64,7 @@ if (loadFile)
         {
             global.pb[i] = scrSafeLoad(saveMap, "pb["+string(i)+"]", 1);
         }
+        global.coins = scrSafeLoad(saveMap, "coins", 0);
         global.currentWeapon = scrSafeLoad(saveMap, "currentWeapon", 0);
         global.saveCurrentWeapon = global.currentWeapon;
         for (var i = 0; i < 2; i++)

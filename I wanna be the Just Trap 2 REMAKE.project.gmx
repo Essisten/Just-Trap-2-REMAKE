@@ -291,6 +291,7 @@
       <sprite>sprites\sprBoss3_Block</sprite>
       <sprite>sprites\sprJustrimsonA_blade</sprite>
       <sprite>sprites\sprJustrimsonB_Circle</sprite>
+      <sprite>sprites\sprJustrimsonB_Circle2</sprite>
       <sprite>sprites\sprJustrimsonB_Laser</sprite>
       <sprite>sprites\sprJustrimson_Soul</sprite>
       <sprite>sprites\sprJustrimsonD_Pixel</sprite>

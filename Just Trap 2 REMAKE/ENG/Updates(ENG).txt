@@ -1,3 +1,9 @@
+v0.4.6
+- Justrimson shadow attacks sprites were changed.
+- Yet another attempt to balance Justularity by nerfing.
+- The shop is open, but isn't yet available to use.
+- Minor general bug fix.
+==================================================
 v0.4.5
 - Smooth screen transitions added.
 - Justrimson rebalance and update.

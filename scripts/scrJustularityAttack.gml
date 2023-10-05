@@ -71,11 +71,13 @@ switch (argument0)
             with (r)
             {
                 speed = (global.difficulty + 2) * 3;
+                spd = speed;
                 if (other.image_blend == c_black)
                     sprite_index = sprJustularityPropeller2;
                 image_angle = other.image_angle;
             }
             r.direction = 90 * i;
+            r.gravity_direction = r.direction;
         }
         alarm[7] = 400 - global.difficulty * 100;
         break;

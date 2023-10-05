@@ -239,11 +239,6 @@ if (aim)
              y += (objPlayer.y - y) / 8;
              break;
     }
-    /*
-    if (y &lt; (304 - (offset / 2)))
-       image_blend = c_red;
-    else if (y &gt; (304 + offset / 2))
-         image_blend = c_aqua;*/
     if (image_alpha &lt; 0.8)
        image_alpha += 0.05;
 }

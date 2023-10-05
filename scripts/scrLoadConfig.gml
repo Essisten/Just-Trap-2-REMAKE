@@ -54,7 +54,7 @@ if (global.controllerEnabled)
     global.shootButton[1] = ini_read_real("Controller","Shoot",gp_face3);
     global.restartButton[1] = ini_read_real("Controller","Restart",gp_face4);
     global.skipButton[1] = ini_read_real("Controller","Skip",gp_face2);
-    global.suicideButton[1] = ini_read_real("Controller","Suicide",gp_select);
+    global.sprintButton[1] = ini_read_real("Controller","Sprint",gp_select);
     global.pauseButton[1] = ini_read_real("Controller","Pause",gp_start);
     global.alignLeftButton[1] = ini_read_real("Controller","Align_left",gp_shoulderl);
     global.alignRightButton[1] = ini_read_real("Controller","Align_right",gp_shoulderr);

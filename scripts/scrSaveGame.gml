@@ -49,6 +49,8 @@ ds_map_add(saveMap,"savePlayerX",global.savePlayerX);
 ds_map_add(saveMap,"savePlayerY",global.savePlayerY);
 ds_map_add(saveMap,"saveGrav",global.saveGrav);
 ds_map_add(saveMap,"gravH",global.gravH);
+ds_map_add(saveMap, "currentWeapon", global.currentWeapon);
+ds_map_add(saveMap, "coins", global.coins);
 
 for (var i = 0; i < array_length_1d(global.bossClear); i++)
     ds_map_add(saveMap,"bossClear["+string(i)+"]", global.bossClear[i]);
@@ -60,10 +62,8 @@ for (var i = 0; i < array_length_1d(global.tutorial); i++)
     
 for (var i = 0; i < array_length_1d(global.pb); i++)
     ds_map_add(saveMap,"pb["+string(i)+"]", global.pb[i]);
-    
 for (var i = 0; i < array_length_1d(global.skip); i++)
     ds_map_add(saveMap,"skip["+string(i)+"]", global.skip[i]);
-ds_map_add(saveMap, "currentWeapon", global.currentWeapon);
 for (var i = 0; i < 2; i++)
 {
     ds_map_add(saveMap, "unlockedWeapons["+string(i)+"]", global.unlockedWeapons[i]);

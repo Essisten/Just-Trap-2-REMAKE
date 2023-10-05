@@ -43,7 +43,7 @@ if (global.controllerEnabled)
     ini_write_real("Controller","Shoot",global.shootButton[1]);
     ini_write_real("Controller","Restart",global.restartButton[1]);
     ini_write_real("Controller","Skip",global.skipButton[1]);
-    ini_write_real("Controller","Suicide",global.suicideButton[1]);
+    ini_write_real("Controller","Sprint",global.sprintButton[1]);
     ini_write_real("Controller","Pause",global.pauseButton[1]);
     ini_write_real("Controller","Align_left",global.alignLeftButton[1]);
     ini_write_real("Controller","Align_right",global.alignRightButton[1]);
