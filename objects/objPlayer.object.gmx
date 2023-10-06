@@ -1059,11 +1059,7 @@ if (!place_free(x+hspeed,y+vspeed)) {hspeed = 0;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Clean up from fantoms
-part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 0);
-part_emitter_clear(global.sprintParticleSystem, global.sprintEmitter);
-
-if (!instance_exists(objWeaponPlayer))
+            <string>if (!instance_exists(objWeaponPlayer))
    instance_create(x, y, objWeaponPlayer);
 </string>
           </argument>

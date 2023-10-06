@@ -41,9 +41,10 @@ if (!global.controllerEnabled)  //remove controller settings menu if controllers
 strSelect[0] = "Music"
 strSelect[1] = "Sound";
 strSelect[2] = "Vsync";
-strSelect[3] = "Graphics";
-strSelect[4] = "Set Keyboard Controls";
-strSelect[5] = "Controller Options";
+strSelect[3] = "Gravity controls";
+strSelect[4] = "Graphics";
+strSelect[5] = "Set Keyboard Controls";
+strSelect[6] = "Controller Options";
 optionsNum = array_length_1d(strSelect);
 </string>
           </argument>
@@ -183,17 +184,20 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
             scrSetVsync();
             break;
         case 3:
+            global.gravityControls = !global.gravityControls;
+            break;
+        case 4:
             scrSaveConfig();
             instance_create(x, y, objGraphicMenu);
             instance_destroy();
             break;
-        case 4:
+        case 5:
             scrSaveConfig();    //save changes
             global.menuSelectPrev[1] = select;
             instance_create(x,y,objKeyboardControlsMenu);
             instance_destroy();
             break;
-        case 5:
+        case 6:
             scrSaveConfig();    //save changes
             global.menuSelectPrev[1] = select;
             instance_create(x,y,objControllerMenu);
@@ -250,6 +254,12 @@ for(var i = 0; i &lt; optionsNum; i++)
                 scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*2),"On", clr, c_black);
             else
                 scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*2),"Off", clr, c_black);
+            break;
+        case 3:
+            if (global.gravityControls)
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*3),"New", clr, c_black);
+            else
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*3),"Old", clr, c_black);
             break;
     }
 }

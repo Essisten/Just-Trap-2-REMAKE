@@ -5,13 +5,39 @@ var dist = 14;
 var down = 10;
 var up = 14;
 djump = 1;
+if (global.gravityControls)
+{
+    scrLoadConfig();
+    var tmpUp = global.upButton;
+    var tmpDown = global.downButton;
+    var tmpLeft = global.leftButton;
+    var tmpRight = global.rightButton;
+    switch (argument0)
+    {
+        case 1:
+            global.upButton = tmpDown;
+            global.downButton = tmpUp;
+            break;
+        case 2:
+            global.upButton = tmpLeft;
+            global.downButton = tmpRight;
+            global.leftButton = tmpDown;
+            global.rightButton = tmpUp;
+            break;
+        case 4:
+            global.upButton = tmpRight;
+            global.downButton = tmpLeft;
+            global.leftButton = tmpUp;
+            global.rightButton = tmpDown;
+            break;
+    }
+}
 switch (argument0)
 {
     case 1:
         global.gravH = false;
         if (global.grav == 1)
             scrFlipGrav();
-        break;
     case 2:
         global.gravH = true;
         if (global.grav == -1)
