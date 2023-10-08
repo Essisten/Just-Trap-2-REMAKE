@@ -35,7 +35,7 @@ degree = random_range(-2, 2);
 //set the bullet's speed
 if (global.gravH)
 {
-    if (scrButtonCheck(global.upButton))
+    if (objPlayer.shootUpward)
     {
         hspeed = -spd * global.grav;
         vspeed = degree;
@@ -48,7 +48,7 @@ if (global.gravH)
 }
 else
 {
-    if (scrButtonCheck(global.upButton))
+    if (objPlayer.shootUpward)
     {
         vspeed = -spd * global.grav;
         hspeed = degree;

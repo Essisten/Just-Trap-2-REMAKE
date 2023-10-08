@@ -34,9 +34,11 @@ state_sprites[3] = sprWeaponIdle;
 state_sprites[4] = sprWeaponSliding;
 CD[0] = 0;
 CD[1] = 0;
+CD[2] = 0;
 max_weapons = array_length_1d(global.obtainedWeapons);
 maxCD[0] = 10;
 maxCD[1] = 50;
+maxCD[2] = 5;
 </string>
           </argument>
         </arguments>
@@ -85,6 +87,17 @@ else if (scrButtonCheckPressed(global.nextWeaponButton))
     global.currentWeapon++;
     if (global.currentWeapon &gt;= max_weapons)
        global.currentWeapon = 0;
+}
+else if (scrButtonCheck(global.shootButton))
+{
+    if (global.currentWeapon == 2)
+    {
+        event_user(0);
+    }
+    else if (scrButtonCheckPressed(global.shootButton))
+    {
+        event_user(0);
+    }
 }
 image_index = global.currentWeapon;
 for (i = 0; i &lt; max_weapons; i++)

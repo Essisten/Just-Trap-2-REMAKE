@@ -67,7 +67,7 @@ if (loadFile)
         global.coins = scrSafeLoad(saveMap, "coins", 0);
         global.currentWeapon = scrSafeLoad(saveMap, "currentWeapon", 0);
         global.saveCurrentWeapon = global.currentWeapon;
-        for (var i = 0; i < 2; i++)
+        for (var i = 0; i < 3; i++)
         {
             global.unlockedWeapons[i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(i)+"]", false);
             global.obtainedWeapons[i] = scrSafeLoad(saveMap, "obtainedWeapons["+string(i)+"]", false);

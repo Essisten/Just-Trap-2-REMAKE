@@ -40,7 +40,7 @@ weapons[0] = scrCreateShopItem("The Gun",
 "    The classic standard pistol of our famous Kid. It had been many years since the original user used it before Just got it.
 #    Initially, it has only a manual firing method, but it is possible to install an auto-firing module.",
 "fast",
-"pathetic",
+"middle",
 "far",
 0);
 weapons[1] = scrCreateShopItem("Shotgun",
@@ -50,13 +50,91 @@ weapons[1] = scrCreateShopItem("Shotgun",
 "good",
 "short",
 1000);
+weapons[2] = scrCreateShopItem("Machine gun",
+"    An extremely lethal and heavy weapon. Combining multiple the guns together made it possible to create a weapon with a high rate of fire, while maintaining the power of each bullet.
+#    Disadvantages include reduced accuracy, as well as reduced user mobility.",
+"TRA-TA-TA",
+"middle",
+"far",
+5000);
 lineSeperation = 48;
 optionsNum = array_length_1d(weapons);
 boxStartX = 300;
 boxStartY = 250;
 boxEndX = 540;
-boxEndY = boxStartY + lineSeperation * (optionsNum + 1);
+boxEndY = boxStartY + lineSeperation * (optionsNum);
 lineCenter = boxStartX + (boxEndX - boxStartX) / 2;
+selectBoxOffset = 4;
+slideOffset = 160;
+alarm[0] = 1;
+image_alpha = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Epic sliding out
+if (slideOffset &gt; 300)
+{
+    instance_destroy();
+    exit;
+}
+slideOffset += 8;
+if (image_alpha &gt; 0)
+   image_alpha -= 0.05;
+alarm[1] = 1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Epic sliding in
+if (slideOffset &lt;= 0)
+{
+    slideOffset = 0;
+    image_alpha = 1;
+    exit;
+}
+slideOffset -= 8;
+if (image_alpha &lt; 1)
+   image_alpha += 0.05;
+alarm[0] = 1;
+
 </string>
           </argument>
         </arguments>
@@ -96,7 +174,8 @@ else if (scrButtonCheckPressed(global.menuDownButton))
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
     scrPlaySound(sndBoss1_Reload);
-    instance_destroy();
+    alarm[0] = -1;
+    alarm[1] = 1;
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton))
 {
@@ -129,27 +208,30 @@ else if (scrButtonCheckPressed(global.menuAcceptButton))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.8);
-draw_rectangle_colour(weaponStartX, weaponStartY, weaponEndX, weaponEndY, c_black, c_black, c_black, c_black, false);
-draw_rectangle_colour(boxStartX, boxStartY, boxEndX, boxEndY, c_black, c_black, c_black, c_black, false);
-draw_set_alpha(1);
+            <string>draw_set_alpha(0.8 * image_alpha);
+draw_rectangle_colour(weaponStartX, weaponStartY -  + slideOffset, weaponEndX, weaponEndY -  + slideOffset, c_black, c_black, c_black, c_black, false);
+draw_rectangle_colour(boxStartX + slideOffset, boxStartY, boxEndX + slideOffset, boxEndY, c_black, c_black, c_black, c_black, false);
+draw_set_alpha(image_alpha);
 draw_set_halign(fa_left);
-draw_set_valign(fa_center);
-draw_sprite_ext(sprWeaponImage, select, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2, 3.5, 3.5, 0, c_white, 1);
-draw_text_ext_transformed(weaponNameX, weaponNameY, "[" + weapons[select].name + "]", 32, weaponDescriptionX - weaponNameX, 1, 1, 0);
+draw_set_valign(fa_top);
+draw_set_colour(c_white);
+draw_line_width(boxStartX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxEndX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, 4);
+draw_line_width(boxStartX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), boxEndX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_line_width(boxStartX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxStartX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_line_width(boxEndX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxEndX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_text_ext_transformed(weaponNameX, weaponNameY - slideOffset, weapons[select].name, 32, weaponDescriptionX - weaponNameX, 1, 1, 0);
 draw_set_font(fDefault12);
-scrDrawTextOutline(weaponNameX, weaponNameY + 64, "Damage: " + weapons[select].dmg, c_red, c_maroon);
-scrDrawTextOutline(weaponNameX, weaponNameY + 80, "Range:   " + weapons[select].range, c_yellow, c_orange);
-scrDrawTextOutline(weaponNameX, weaponNameY + 96, "Speed:   " + weapons[select].spd, c_aqua, c_blue);
+scrDrawTextOutline(weaponNameX, weaponNameY + 64 - slideOffset, "Damage: " + weapons[select].dmg, c_red, c_maroon);
+scrDrawTextOutline(weaponNameX, weaponNameY + 80 - slideOffset, "Range:   " + weapons[select].range, c_yellow, c_orange);
+scrDrawTextOutline(weaponNameX, weaponNameY + 96 - slideOffset, "Speed:   " + weapons[select].spd, c_aqua, c_blue);
 draw_set_colour(c_white);
 draw_set_font(fDetermination14);
-draw_set_valign(fa_top);
-draw_text_ext_transformed(weaponDescriptionX, weaponDescriptionY, weapons[select].description, 20, 780 - weaponDescriptionX, 1, 1, 0);
+draw_text_ext_transformed(weaponDescriptionX, weaponDescriptionY - slideOffset, weapons[select].description, 20, 780 - weaponDescriptionX, 1, 1, 0);
 draw_set_font(fDefault24);
 if (true)//global.obtainedWeapons[select])
 {
     draw_set_colour(c_green);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 160, "Obtained", c_lime, c_green);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 160 - slideOffset, "Obtained", c_lime, c_green);
 }
 else
 {
@@ -157,10 +239,11 @@ else
 }
 dick += 2;
 draw_set_colour(c_white);
-draw_set_halign(fa_center);
 draw_set_valign(fa_center);
+draw_sprite_ext(sprWeaponImage, select, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 3.4, 3.4, 0, c_white, image_alpha);
+draw_set_halign(fa_center);
+draw_set_valign(fa_top);
 draw_set_font(fDefault24);
-draw_sprite_ext(sprSpikeRight, 0, boxStartX + 10 + (sin(degtorad(dick)) * 6), boxStartY - 16 + lineSeperation * (select + 1), 1, 1, 0, c_white, 1);
 for (var i = 0; i &lt; optionsNum; i++)
 {
     var color;
@@ -170,7 +253,7 @@ for (var i = 0; i &lt; optionsNum; i++)
        color = c_white;
     else
        color = c_gray;
-    scrDrawTextOutline(lineCenter, boxStartY + lineSeperation * (i + 1), weapons[i].name, color, c_black);
+    scrDrawTextOutline(lineCenter + slideOffset, boxStartY + selectBoxOffset * 2 + lineSeperation * (i), weapons[i].name, color, c_black);
 }
 </string>
           </argument>

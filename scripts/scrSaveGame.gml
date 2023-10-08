@@ -64,7 +64,7 @@ for (var i = 0; i < array_length_1d(global.pb); i++)
     ds_map_add(saveMap,"pb["+string(i)+"]", global.pb[i]);
 for (var i = 0; i < array_length_1d(global.skip); i++)
     ds_map_add(saveMap,"skip["+string(i)+"]", global.skip[i]);
-for (var i = 0; i < 2; i++)
+for (var i = 0; i < 3; i++)
 {
     ds_map_add(saveMap, "unlockedWeapons["+string(i)+"]", global.unlockedWeapons[i]);
     ds_map_add(saveMap, "obtainedWeapons["+string(i)+"]", global.obtainedWeapons[i]);

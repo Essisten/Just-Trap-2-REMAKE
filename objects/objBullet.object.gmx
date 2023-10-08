@@ -37,14 +37,14 @@ else
 //set the bullet's speed
 if (global.gravH)
 {
-    if (scrButtonCheck(global.upButton))
+    if (objPlayer.shootUpward)
         hspeed = -spd * global.grav;
     else
         vspeed = bulletDir * -spd;
 }
 else
 {
-    if (scrButtonCheck(global.upButton))
+    if (objPlayer.shootUpward)
         vspeed = -spd * global.grav;
     else
         hspeed = bulletDir * spd;

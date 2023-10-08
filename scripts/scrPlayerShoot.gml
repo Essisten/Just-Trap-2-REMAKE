@@ -9,5 +9,12 @@ switch (global.currentWeapon)
             instance_create(x, y, objBulletShotgun);
         scrPlaySound(sndShotgunShoot);
          break;
+    case 2:
+        with (instance_create(x,y,objBullet))
+        {
+            direction += random_range(-5, 5);
+        }
+        scrPlaySound(sndShoot, 1.5);
+        break;
 }
 

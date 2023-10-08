@@ -229,6 +229,18 @@ if (paralyzed)
     }
     sprite_index = sprt;
 }
+if (global.currentWeapon == 2)
+{
+    jump = 6 * global.grav;
+    jump2 = 5 * global.grav;
+    maxSpeed = 3;
+    shootUpward = false;
+}
+else
+{
+    jump = 8.5 * global.grav;
+    jump2 = 7 * global.grav;
+}
 
 </string>
           </argument>
@@ -267,11 +279,6 @@ if (!frozen)    //don't move if frozen
 }
 if (!frozen)    //check if frozen before doing anything
 {
-    if (scrButtonCheckPressed(global.shootButton) and instance_exists(objWeaponPlayer))
-    {
-        with (objWeaponPlayer)
-             event_user(0);
-    }
     if (scrButtonCheckPressed(global.jumpButton))
         scrPlayerJump();
     if (scrButtonCheckReleased(global.jumpButton))

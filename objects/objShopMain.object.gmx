@@ -43,8 +43,78 @@ optionsNum = array_length_1d(main);
 boxStartX = 550;
 boxStartY = 250;
 boxEndX = 780;
-boxEndY = boxStartY + lineSeperation * (optionsNum + 1);
+boxEndY = boxStartY + lineSeperation * (optionsNum);
 lineCenter = boxStartX + (boxEndX - boxStartX) / 2;
+selectBoxOffset = 4;
+slideOffset = 160;
+alarm[1] = 1;
+image_alpha = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Epic sliding out
+if (slideOffset &gt; 300)
+{
+    exit;
+}
+slideOffset += 8;
+if (image_alpha &gt; 0)
+   image_alpha -= 0.05;
+alarm[2] = 1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Epic sliding in
+if (slideOffset &lt;= 0)
+{
+    slideOffset = 0;
+    image_alpha = 1;
+    exit;
+}
+slideOffset -= 8;
+if (image_alpha &lt; 1)
+   image_alpha += 0.05;
+alarm[1] = 1;
+
 </string>
           </argument>
         </arguments>
@@ -116,6 +186,8 @@ else if (scrButtonCheckPressed(global.menuBackButton))
     {
          scrCreateFade(c_black, 0.02, true);
          alarm[0] = 50;
+         alarm[1] = -1;
+         alarm[2] = 1;
     }
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
@@ -128,6 +200,8 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed
         case 3:
              scrCreateFade(c_black, 0.02, true);
              alarm[0] = 50;
+             alarm[1] = -1;
+             alarm[2] = 1;
              break;
         default:
             scrPlaySound(sndGlass, 1);
@@ -157,13 +231,17 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.8);
-draw_rectangle_colour(boxStartX, boxStartY, boxEndX, boxEndY, c_black, c_black, c_black, c_black, false);
+            <string>draw_set_alpha(0.8 * image_alpha);
+draw_rectangle_colour(boxStartX + slideOffset, boxStartY, boxEndX + slideOffset, boxEndY, c_black, c_black, c_black, c_black, false);
 dick += 2;
 draw_set_font(fDefault24);
 draw_set_halign(fa_center);
-draw_set_valign(fa_center);
-draw_sprite_ext(sprSpikeRight, 0, boxStartX + 10 + (sin(degtorad(dick)) * 6), boxStartY - 16 + lineSeperation * (select + 1), 1, 1, 0, c_white, 1);
+draw_set_valign(fa_top);
+draw_set_colour(c_white);
+draw_line_width(boxStartX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxEndX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, 4);
+draw_line_width(boxStartX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), boxEndX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_line_width(boxStartX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxStartX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_line_width(boxEndX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxEndX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
 for (var i = 0; i &lt; optionsNum; i++)
 {
     var color;
@@ -171,7 +249,7 @@ for (var i = 0; i &lt; optionsNum; i++)
        color = c_white;
     else
        color = c_gray;
-    scrDrawTextOutline(lineCenter, boxStartY + lineSeperation * (i + 1), main[i], color, c_black);
+    scrDrawTextOutline(lineCenter + slideOffset, boxStartY + lineSeperation * (i) + selectBoxOffset * 2, main[i], color, c_black);
 }
 
 </string>

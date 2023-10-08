@@ -8,7 +8,7 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>7</bbox_left>
-  <bbox_right>31</bbox_right>
+  <bbox_right>35</bbox_right>
   <bbox_top>17</bbox_top>
   <bbox_bottom>27</bbox_bottom>
   <HTile>0</HTile>
@@ -17,10 +17,11 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>32</width>
+  <width>40</width>
   <height>32</height>
   <frames>
     <frame index="0">images\sprWeaponJump_0.png</frame>
     <frame index="1">images\sprWeaponJump_1.png</frame>
+    <frame index="2">images\sprWeaponJump_2.png</frame>
   </frames>
 </sprite>
