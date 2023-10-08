@@ -303,6 +303,7 @@
       <sprite>sprites\sprShopSign</sprite>
       <sprite>sprites\sprEntrance</sprite>
       <sprite>sprites\sprWeaponImage</sprite>
+      <sprite>sprites\sprCoin</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -380,6 +381,8 @@
       <script>scripts\scrHideBoss1.gml</script>
       <script>scripts\scrShakeEffect.gml</script>
       <script>scripts\scrCreateShopItem.gml</script>
+      <script>scripts\quad.gml</script>
+      <script>scripts\scrGiveMoney.gml</script>
     </scripts>
     <scripts name="Boss 2">
       <script>scripts\scrJustularitySkin.gml</script>

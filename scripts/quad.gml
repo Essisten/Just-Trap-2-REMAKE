@@ -1,0 +1,15 @@
+/// quad(x1, y1, x2, y2, x3, y3, x4, y4);
+var x1 = argument[0];
+var y1 = argument[1];
+var x2 = argument[2];
+var y2 = argument[3];
+var x3 = argument[4];
+var y3 = argument[5];
+var x4 = argument[6];
+var y4 = argument[7];
+draw_primitive_begin(pr_trianglestrip);
+    draw_vertex_texture(x1, y1, 0, 0);
+    draw_vertex_texture(x3, y3, 0, 1);
+    draw_vertex_texture(x2, y2, 1, 0);
+    draw_vertex_texture(x4, y4, 1, 1);
+draw_primitive_end();

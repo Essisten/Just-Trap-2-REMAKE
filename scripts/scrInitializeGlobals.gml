@@ -19,6 +19,7 @@ for (i = 99; i >= 0; i--)
     global.trigger[i] = false;
 }
 global.coins = 0;
+global.fakeCoins = 0;
 global.currentWeapon = 0;
 for (i = 0; i < 3; i++)
 {

@@ -210,15 +210,27 @@ else if (scrButtonCheckPressed(global.menuAcceptButton))
             <kind>1</kind>
             <string>draw_set_alpha(0.8 * image_alpha);
 draw_rectangle_colour(weaponStartX, weaponStartY -  + slideOffset, weaponEndX, weaponEndY -  + slideOffset, c_black, c_black, c_black, c_black, false);
-draw_rectangle_colour(boxStartX + slideOffset, boxStartY, boxEndX + slideOffset, boxEndY, c_black, c_black, c_black, c_black, false);
 draw_set_alpha(image_alpha);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_colour(c_white);
-draw_line_width(boxStartX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxEndX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, 4);
-draw_line_width(boxStartX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), boxEndX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
-draw_line_width(boxStartX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxStartX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
-draw_line_width(boxEndX + selectBoxOffset + slideOffset, boxStartY + selectBoxOffset + lineSeperation * select, boxEndX - selectBoxOffset + slideOffset, boxStartY - selectBoxOffset + lineSeperation * (select + 1), 4);
+
+draw_set_alpha(0.6 * image_alpha);
+draw_rectangle_colour(boxStartX + slideOffset, boxStartY, boxEndX + slideOffset, boxEndY, c_black, c_black, c_black, c_black, false);
+dick += 2;
+
+draw_set_alpha(image_alpha);
+draw_set_colour(c_black);
+quad(boxStartX + slideOffset, boxStartY + lineSeperation * select,
+boxEndX + selectBoxOffset * 2 + slideOffset, boxStartY + lineSeperation * select,
+boxStartX - selectBoxOffset * 2 + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1),
+boxEndX + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1));
+draw_set_colour(c_white);
+draw_line_width(boxStartX + slideOffset, boxStartY + lineSeperation * select, boxEndX + selectBoxOffset * 2 + slideOffset, boxStartY + lineSeperation * select, 4);
+draw_line_width(boxStartX - selectBoxOffset * 2 + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1), boxEndX + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_line_width(boxStartX + slideOffset, boxStartY + lineSeperation * select, boxStartX - selectBoxOffset * 2 + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1), 4);
+draw_line_width(boxEndX + selectBoxOffset * 2 + slideOffset, boxStartY + lineSeperation * select, boxEndX + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1), 4);
+
 draw_text_ext_transformed(weaponNameX, weaponNameY - slideOffset, weapons[select].name, 32, weaponDescriptionX - weaponNameX, 1, 1, 0);
 draw_set_font(fDefault12);
 scrDrawTextOutline(weaponNameX, weaponNameY + 64 - slideOffset, "Damage: " + weapons[select].dmg, c_red, c_maroon);

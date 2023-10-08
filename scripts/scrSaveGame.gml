@@ -51,6 +51,7 @@ ds_map_add(saveMap,"saveGrav",global.saveGrav);
 ds_map_add(saveMap,"gravH",global.gravH);
 ds_map_add(saveMap, "currentWeapon", global.currentWeapon);
 ds_map_add(saveMap, "coins", global.coins);
+ds_map_add(saveMap, "superCoins", global.fakeCoins);
 
 for (var i = 0; i < array_length_1d(global.bossClear); i++)
     ds_map_add(saveMap,"bossClear["+string(i)+"]", global.bossClear[i]);
