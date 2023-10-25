@@ -84,11 +84,21 @@ switch (argument0)
     case 4:
          if (global.difficulty < 3)
          {
-             with (instance_create(400, 304, objWarning))
+             with (instance_create(64, 64, objWarning))
              {
-                sprite_index = sprWaterWarning;
-                image_xscale = 1;
-                image_yscale = image_xscale;
+                sprite_index = sprWarningJustist;
+             }
+             with (instance_create(742, 64, objWarning))
+             {
+                sprite_index = sprWarningJustist;
+             }
+             with (instance_create(64, 544, objWarning))
+             {
+                sprite_index = sprWarningJR;
+             }
+             with (instance_create(742, 544, objWarning))
+             {
+                sprite_index = sprWarningJR;
              }
          }
          objBoss2Door.alarm[5] = 100;          //gently ask the door to help out

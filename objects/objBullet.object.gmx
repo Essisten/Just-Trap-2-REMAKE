@@ -50,7 +50,7 @@ else
         hspeed = bulletDir * spd;
 }
 
-alarm[0] = 30;
+alarm[0] = 35;
 </string>
           </argument>
         </arguments>

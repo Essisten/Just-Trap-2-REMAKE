@@ -106,7 +106,7 @@ else
     else
         target = objJR;
 }
-if (instance_position(x, y, target))
+if (abs(x - target.x) &lt; 4 and abs(y - target.y) &lt; 4)
     instance_destroy();
 if (!global.particles)
     exit;

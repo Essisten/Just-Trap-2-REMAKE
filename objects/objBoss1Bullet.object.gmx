@@ -79,12 +79,25 @@ if (instance_exists(objPlayer))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (wrap and instance_exists(objJR))
+            <string>if (wrap and instance_exists(owner))
 {
+    var b = objBulletJR
+    if (owner == objJustist)
+       b = objBulletJustist;
+    var num = instance_number(b);
+    var count = 0;
+    for (var i = 0; i &lt; num; i++)
+    {
+        var tmp = instance_find(b, i);
+        if (tmp.wrap)
+           count++;
+    }
+    if (owner.extraBulletsCounter &lt; count)
+       wrap = false;
     move_wrap(true, true, 10);
     event_user(0);
 }
-else if (y &lt; -100 or y &gt; 900 or x &lt; -100 or x &gt; 900)
+if (y &lt; -20 or y &gt; 620 or x &lt; -20 or x &gt; 820)
 {
     instance_destroy();
 }

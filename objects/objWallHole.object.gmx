@@ -60,7 +60,7 @@ once = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objJustist">
+    <event eventtype="4" ename="objBoss1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -77,46 +77,11 @@ once = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!other.hidden or !once or other.oldY != y or other.x != x)
-    return -1;
+            <string>if (!other.hidden or !once or abs(other.oldY - y) &gt; 4 or abs(other.x - x) &gt; 4)
+    exit;
 event_user(0);
-with (objJustist)
-{
-    alarm[6] = 2;
-    counter = 0;
-}
-once = false;
-alarm[1] = 450;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objJR">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!other.hidden or !once or other.oldY != y or other.x != x)
-    return -1;
-event_user(0);
-with (objJR)
-{
-    alarm[6] = 2;
-    counter = 0;
-}
+other.alarm[6] = 2;
+other.counter = 0;
 once = false;
 alarm[1] = 450;
 </string>

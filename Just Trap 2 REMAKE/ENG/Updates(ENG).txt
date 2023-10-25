@@ -1,3 +1,11 @@
+v0.4.7
+- Machine gun added.
+- New way of controlling Just with switched gravity. You can go back to the old way of controls in settings.
+- Improved shop UI. We've found an employee, but they still need to figure out stuff before working.
+- Fixed visual glitch where after changing room player's after-images were turned into white dots.
+- JR and Justist fixed issues where the final timer never starts.
+- JR and Justist healing strengh and sound changed.
+==================================================
 v0.4.6
 - Justrimson shadow attacks sprites were changed.
 - Yet another attempt to balance Justularity by nerfing.

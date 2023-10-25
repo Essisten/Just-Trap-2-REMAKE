@@ -38,6 +38,7 @@ switch (argument0)
         global.gravH = false;
         if (global.grav == 1)
             scrFlipGrav();
+        break;
     case 2:
         global.gravH = true;
         if (global.grav == -1)

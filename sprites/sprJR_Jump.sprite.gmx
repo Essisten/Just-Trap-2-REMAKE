@@ -21,8 +21,5 @@
   <height>32</height>
   <frames>
     <frame index="0">images\sprJR_Jump_0.png</frame>
-    <frame index="1">images\sprJR_Jump_1.png</frame>
-    <frame index="2">images\sprJR_Jump_2.png</frame>
-    <frame index="3">images\sprJR_Jump_3.png</frame>
   </frames>
 </sprite>

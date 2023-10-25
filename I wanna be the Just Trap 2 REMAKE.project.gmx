@@ -97,20 +97,8 @@
       <sprite>sprites\sprBoss1BowLight</sprite>
       <sprite>sprites\sprBrick</sprite>
       <sprite>sprites\sprDark_Bullet</sprite>
-      <sprite>sprites\sprJR_Bullet</sprite>
-      <sprite>sprites\sprJR_Fall</sprite>
-      <sprite>sprites\sprJR_Idle</sprite>
-      <sprite>sprites\sprJR_Jump</sprite>
-      <sprite>sprites\sprJR_Run</sprite>
-      <sprite>sprites\sprJustist_Bullet</sprite>
-      <sprite>sprites\sprJustist_Fall</sprite>
-      <sprite>sprites\sprJustist_Idle</sprite>
-      <sprite>sprites\sprJustist_Jump</sprite>
-      <sprite>sprites\sprJustist_Run</sprite>
       <sprite>sprites\sprWallHole</sprite>
       <sprite>sprites\sprWarningDark</sprite>
-      <sprite>sprites\sprWarningJR</sprite>
-      <sprite>sprites\sprWarningJustist</sprite>
       <sprites name="Old sprites">
         <sprite>sprites\sprJR_Fall_Old</sprite>
         <sprite>sprites\sprJR_Idle_Old</sprite>
@@ -120,6 +108,44 @@
         <sprite>sprites\sprJustist_Idle_Old</sprite>
         <sprite>sprites\sprJustist_Jump_Old</sprite>
         <sprite>sprites\sprJustist_Run_Old</sprite>
+      </sprites>
+      <sprites name="Justist">
+        <sprite>sprites\sprJustist_Idle</sprite>
+        <sprite>sprites\sprJustist_Fall</sprite>
+        <sprite>sprites\sprJustist_Jump</sprite>
+        <sprite>sprites\sprJustist_Run</sprite>
+        <sprite>sprites\sprWarningJustist</sprite>
+        <sprite>sprites\sprJustist_Reload</sprite>
+        <sprite>sprites\sprJustistArms_Idle</sprite>
+        <sprite>sprites\sprJustistArms_Fall</sprite>
+        <sprite>sprites\sprJustistArms_Jump</sprite>
+        <sprite>sprites\sprJustist_Bullet</sprite>
+        <sprite>sprites\sprJustistWings_Idle</sprite>
+        <sprite>sprites\sprJustistWings_Fall</sprite>
+        <sprite>sprites\sprJustistWings_Jump</sprite>
+        <sprite>sprites\sprJustistWings_Run</sprite>
+        <sprite>sprites\sprJustistHead_Idle</sprite>
+        <sprite>sprites\sprJustistHead_Jump</sprite>
+        <sprite>sprites\sprJustistHead_Fall</sprite>
+      </sprites>
+      <sprites name="JR">
+        <sprite>sprites\sprJR_Idle</sprite>
+        <sprite>sprites\sprJR_Fall</sprite>
+        <sprite>sprites\sprJR_Jump</sprite>
+        <sprite>sprites\sprJR_Run</sprite>
+        <sprite>sprites\sprWarningJR</sprite>
+        <sprite>sprites\sprJR_Reload</sprite>
+        <sprite>sprites\sprJRArms_Idle</sprite>
+        <sprite>sprites\sprJRArms_Fall</sprite>
+        <sprite>sprites\sprJRArms_Jump</sprite>
+        <sprite>sprites\sprJR_Bullet</sprite>
+        <sprite>sprites\sprJRWings_Idle</sprite>
+        <sprite>sprites\sprJRWings_Fall</sprite>
+        <sprite>sprites\sprJRWings_Jump</sprite>
+        <sprite>sprites\sprJRWings_Run</sprite>
+        <sprite>sprites\sprJRHead_Idle</sprite>
+        <sprite>sprites\sprJRHead_Jump</sprite>
+        <sprite>sprites\sprJRHead_Fall</sprite>
       </sprites>
     </sprites>
     <sprites name="Boss4">
@@ -184,6 +210,7 @@
       <sprite>sprites\sprPlayerSliding</sprite>
       <sprite>sprites\sprBow</sprite>
       <sprite>sprites\sprBullet</sprite>
+      <sprite>sprites\sprBullet2</sprite>
       <sprite>sprites\sprBlood</sprite>
       <sprite>sprites\sprPlayerIdleUp</sprite>
       <sprite>sprites\sprPlayerRunUp</sprite>
@@ -388,6 +415,7 @@
       <script>scripts\scrJustularitySkin.gml</script>
       <script>scripts\scrJustularityAttack.gml</script>
     </scripts>
+    <script>scripts\scrAddBodyPart.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -524,10 +552,11 @@
       <object>objects\objOutsideRoomChanger</object>
     </objects>
     <objects name="Boss1">
+      <object>objects\objBoss1</object>
       <object>objects\objBG</object>
       <object>objects\objJR</object>
       <object>objects\objJustist</object>
-      <object>objects\objBoss1Bow</object>
+      <object>objects\objBoss1_Follower</object>
       <object>objects\objWallHole</object>
       <object>objects\objWarning</object>
       <object>objects\objWarningJR</object>
@@ -537,6 +566,10 @@
       <object>objects\objBulletJustist</object>
       <object>objects\objBrick</object>
       <object>objects\objHealBullet</object>
+      <object>objects\objBoss1_Wings</object>
+      <object>objects\objBoss1_Arms</object>
+      <object>objects\objBoss1_Head</object>
+      <object>objects\objBoss1Bow</object>
     </objects>
     <objects name="Boss4">
       <object>objects\objJustination</object>

@@ -3,9 +3,9 @@
   <spriteName>sprJR_Idle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objBoss1</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,64 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = 4;
-image_yscale = image_xscale;
-image_speed = 0.1;
-flying = false;
-hidden = false;
-godmode = false;
-showing = false;
-canWalk = true;
+            <string>event_inherited();
 destinationX = 250;
 spd = 3;
-dick = 0;
-oldY = y;
-shootCounter = 0;
-extraBulletsCounter = 0;
-counter = 0;
-HP = 100;
-rad = 64;
-energy = 0;
-flyHight = random_range(200, 250);
-nextFlyHight = flyHight;
-nextFlying = flying;
-warnDelay = 80 - global.difficulty * 20;
-
-idle[0] = sprJR_Idle;
-idle[1] = sprJR_Idle_Old;
-run[0] = sprJR_Run;
-run[1] = sprJR_Run_Old;
-fall[0] = sprJR_Fall;
-fall[1] = sprJR_Fall_Old;
-jump[0] = sprJR_Jump;
-jump[1] = sprJR_Jump_Old;
+sprite[0] = sprJR_Idle;
+sprite[1] = sprJR_Run;
+sprite[2] = sprJR_Jump;
+sprite[3] = sprJR_Fall;
 
 if (global.spriteStyle == 0)
-   instance_create(x, y, objBoss1Bow);
+{
+    scrAddBodyPart(objBoss1Bow, objJR);
+    scrAddBodyPart(objBoss1_Wings, objJR);
+}
+scrAddBodyPart(objBoss1_Head, objJR);
+arms = scrAddBodyPart(objBoss1_Arms, objJR);
 with (instance_create(x, y, objBossName))
 {
     name = "JR";
-    xflip = true;
-    yflip = true;
     owner = objJR;
+    yflip = true;
+    xflip = true;
 }
-event_user(0);
-event_user(1);
-event_user(4);
-alarm[8] = irandom_range(1500, 2000);
-hole = instance_nearest(x, y, objWallHole);
-emitterRevive = part_emitter_create(global.saveParticleSystem);
-particleRevive = part_type_create();
-part_type_shape(particleRevive,pt_shape_cloud);
-part_type_color2(particleRevive,16777088,16776960);
-part_type_alpha3(particleRevive,0.7485,0.8681,0);
-part_type_life(particleRevive,5,100);
-part_type_size(particleRevive,1,2,0,0);
-part_type_speed(particleRevive,1,2,0,0);
-part_type_direction(particleRevive,0,360,0,0);
-part_type_orientation(particleRevive,0,360,0,0,0);
-part_type_gravity(particleRevive,0,270);
-part_type_blend(particleRevive,false);
 </string>
           </argument>
         </arguments>
@@ -117,107 +81,6 @@ with (instance_create(x, y, objBloodEmitter))
     H2_Speed = 8;
     type = 2;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Real flying
-flying = nextFlying;
-flyHight = nextFlyHight;
-event_user(0);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Real walking
-canWalk = true;
-event_user(1);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="9">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Real attacking
-if (!instance_exists(objPlayer) or alarm[4] = -1)
-    return -1;
-if (hidden)
-{
-    event_user(4);
-    return -1;
-}
-if (HP &gt; 75)
-{
-    event_user(11);
-}
-else if (HP &gt; 50)
-{
-    event_user(12);
-}
-else if (HP &gt; 0)
-{
-    alarm[5] = 1;
-}
-else if (HP &lt;= 0)
-{
-    if (choose(true, false))
-        alarm[5] = 1;
-    else
-        event_user(12);
-}
-energy++;
 </string>
           </argument>
         </arguments>
@@ -260,113 +123,7 @@ with (instance_create(x, y, objHealBullet))
     speed = targ.spd;
 }
 energy -= tmp;
-alarm[8] = irandom_range(1500, 2000);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Revive
-
-if (hidden)
-{
-    alarm[7] = 50;
-    exit;
-}
-if (HP &gt;= 100 or energy == 0)
-{
-    extraBulletsCounter--;
-    exit;
-}
-HP++;
-energy--;
-audio_play_sound(sndHeal, 2, false);
-alarm[7] = 5;
-if (!global.particles)
-    exit;
-part_emitter_region(global.saveParticleSystem, emitterRevive,x - 8, x + 8, y - 8, y + 8, ps_shape_ellipse,ps_distr_gaussian);
-part_emitter_burst(global.saveParticleSystem, emitterRevive, particleRevive, 2);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="6">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>counter++;
-if (showing)
-{
-    if (image_alpha &lt; 1)
-        image_alpha = counter / 10;
-    if (image_yscale &lt; 4)
-        image_yscale = counter / 10 * 4;
-    if (image_xscale &lt; 0)
-        image_xscale = image_yscale * -1;
-    else
-        image_xscale = image_yscale;
-    y = min(hole.y, 464);
-    destinationX = hole.x;
-    if (counter &gt;= 10)
-        counter = 0;
-    else
-        alarm[6] = 2;
-}
-else
-{
-    if (image_alpha &gt; 0)
-        image_alpha = 1 - counter / 10;
-    if (image_yscale &gt; 0)
-        image_yscale = (1 - counter / 10) * 4;
-    if (image_xscale &lt; 0)
-        image_xscale = image_yscale * -1;
-    else
-        image_xscale = image_yscale;
-    y = hole.y
-    hightY = hole.y;
-    destinationX = hole.x;
-    if (counter &gt;= 10)
-    {
-        oldY = -50;
-        y = -50;
-        flyHight = -50;
-        counter = 0;
-        hole = objBG.holes[irandom_range(0, 4)];
-    }
-    else
-        alarm[6] = 2;
-}
+alarm[8] = irandom_range(1200, 1600);
 </string>
           </argument>
         </arguments>
@@ -433,92 +190,7 @@ else
     audio_play_sound(sndShoot, 2, false);
     shootCounter++;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Attacking
-if (!instance_exists(objPlayer))
-    return -1;
-event_user(4);
-if (hidden)
-    return -1;
-if (global.difficulty &lt; 3)
-    scrPlaySound(sndBoss1_Reload, 1.2);
-alarm[9] = warnDelay;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Turning off I-framing
 
-godmode = false;
-alarm[2] = -1;
-image_alpha = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///I-framing
-if (image_alpha == 1)
-    image_alpha = 0.2;
-else
-    image_alpha = 1;
-alarm[2] = 5;
 </string>
           </argument>
         </arguments>
@@ -606,90 +278,6 @@ alarm[11] = warnDelay;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (canWalk)
-{
-    if (destinationX &lt; x)
-        image_xscale = abs(image_xscale) * -1;
-    else if (destinationX &gt; x)
-        image_xscale = abs(image_xscale);
-}
-else if (instance_exists(objPlayer))
-{
-    if (objPlayer.x &lt; x)
-        image_xscale = abs(image_xscale) * -1;
-    else if (objPlayer.x &gt; x)
-        image_xscale = abs(image_xscale);
-}
-
-if (flying)
-{
-    if (flyHight &lt; oldY)
-    {
-        y = max(y - spd - 1, flyHight);
-        oldY = y;
-        sprite_index = jump[global.spriteStyle];
-    }
-    else if (flyHight &gt; oldY)
-    {
-        y = min(y + spd + 1, flyHight);
-        oldY = y;
-        sprite_index = fall[global.spriteStyle];
-    }
-    else
-    {
-        y = oldY + 8 * sin(degtorad(dick));
-        dick += 8;
-        sprite_index = fall[global.spriteStyle];
-    }
-}
-else
-{
-    if (y &lt; 464)
-    {
-        y = min(y + spd + 1, 464);
-        oldY = y;
-        sprite_index = fall[global.spriteStyle];
-    }
-    else
-    {
-        dick = 0;
-        if (x == destinationX or !canWalk)
-            sprite_index = idle[global.spriteStyle];
-        else
-            sprite_index = run[global.spriteStyle];
-    }
-}
-if (x == destinationX)
-    canWalk = false;
-else if (canWalk)
-{
-    if (x &lt; destinationX)
-        x = min(x + spd, destinationX);
-    else if (x &gt; destinationX)
-        x = max(x - spd, destinationX);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objBullet">
       <action>
         <libid>1</libid>
@@ -715,16 +303,20 @@ if (HP &lt;= 0 and objJustist.HP &gt; 0)
     if (alarm[7] &gt; 10)
         alarm[7] -= 10;
 }
+if (!instance_exists(bullet))
+   bullet = instance_nearest(x, y, objBullet);
 if (godmode or HP &lt;= 0)
-    return -1;
+    exit;
+else
+    HP -= bullet.dmg;
+with (bullet)
+    instance_destroy();
+
 if (!sound_isplaying(sndBossHit))
    scrPlaySound(sndBossHit);
 //godmode = true;
 //alarm[2] = 1;
 //alarm[3] = 40;
-HP -= other.dmg;
-with (other)
-    instance_destroy();
 if (HP &lt;= 0)
     scrPlaySound(sndDeath);
 if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
@@ -745,6 +337,7 @@ if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
             maxPitch = 232/256;
         }
         alarm[7] = random_range(2000, 3000);
+        reviveSound = true;
         if (objJustist.HP &lt;= 0)
         {
             with (objBG)
@@ -756,68 +349,6 @@ if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
         }
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objPlayer">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (hidden or (HP &lt;= 0 and global.difficulty &lt; 3))
-    exit;
-scrKillPlayer();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="23">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Spawning extra bullets
-for (var i = 0; i &lt; 1 + global.difficulty * 2; i++)
-{
-    var bullet = instance_create(x, y, objBulletJR);
-    with (bullet)
-    {
-        direction = random(360);
-        wrap = true;
-        speed /= 2;
-    }
-    extraBulletsCounter++;
-}
-scrPlaySound(sndShoot, 1.2);
-scrPlaySound(sndShoot, 1.2);
-scrPlaySound(sndShoot, 1.2);
 </string>
           </argument>
         </arguments>
@@ -893,81 +424,6 @@ scrPlaySound(sndShoot, 1.2);
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="14">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Resetting alarm[4]
-if (objBG.phase == 2)
-    alarm[4] = random_range(100, 200);
-else
-    alarm[4] = random_range(150, 300);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Resetting alarm[1]
-alarm[1] = abs(random_range(250, 400) - spd * 8);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Resetting alarm[0]
-alarm[0] = random_range(400 - 200 * flying, 700 - 100 * flying) - 10 * global.difficulty;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -985,7 +441,8 @@ alarm[0] = random_range(400 - 200 * flying, 700 - 100 * flying) - 10 * global.di
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (HP &lt;= 0)
+            <string>sprite_index = sprite[state];
+if (HP &lt;= 0)
 {
     draw_set_blend_mode(bm_add);
     draw_set_alpha((0.7 - HP / 100) * image_alpha);
