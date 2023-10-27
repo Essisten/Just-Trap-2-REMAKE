@@ -39,9 +39,10 @@ alarm[0] = 60;
 god = true;
 isRed = false;
 wait = true;
-waitTime = 80;
+waitTime = 100 - global.difficulty * 20;
 jumping = false;
 shooting = false;
+reloading = false;
 killable = true;
 gravity_direction = 270;
 gravity = 0.4;
@@ -274,7 +275,7 @@ if (instance_exists(objPlayer))
         else
         {
             if (shootCounter &lt;= (global.difficulty + 1) * 2)
-                time = 13 - global.difficulty * 4;
+                time = 13 - global.difficulty * 3;
             for (var i = 0; i &lt; 3; i++)
             {
                 with (instance_create(x, y, objParalyzer))
@@ -297,6 +298,7 @@ if (time == -1)
     shootCounter = 0;
     shooting = false;
     scrJustularitySkin(0);
+    image_speed = 0.2;
 }
 else
 {
@@ -379,7 +381,7 @@ switch (act)
         event_user(0);  //Walk
         break;
     case 1:  //Gravity
-        event_user(1);  //stupid anomaly
+        event_user(1);
         if (phase == 2)
         {
             with (objJustularity)
@@ -387,12 +389,7 @@ switch (act)
         }
         break;
     case 2:
-        event_user(5);  //Jump
-        if (choose(true, false, true))
-        {
-            shooting = true;
-            alarm[6] = 1;
-        }
+         event_user(8);
         break;
 }
 prevAct = act;
@@ -561,7 +558,7 @@ if (jumping)
     scrJustularitySkin(2);
 if (shooting)
     scrJustularitySkin(3);
-if (wait or jumping)
+if (wait or jumping or reloading)
     exit;
 
 L = ((gravH and destination &gt; y) or (!gravH and destination &lt; x));
@@ -572,7 +569,7 @@ if (R)
 else if (L)
     h = -1;
 if (isRed)
-    spd = 3 + (((100 - RedHP) div 25) + 1) * global.difficulty;
+    spd = 4 + (((100 - RedHP) div 25) + 1) * global.difficulty;
 else
     spd = 3 + (((100 - BlueHP) div 25) + 1) * global.difficulty;
 if (gravH)
@@ -848,6 +845,43 @@ scrKillPlayer();
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="18">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reload animation
+
+if (choose(true, false, true))
+{
+    reloading = true;
+    shooting = true;
+    if (isRed)
+       sprite_index = sprJustularityReloadRed;
+    else
+       sprite_index = sprJustularityReloadBlue;
+    //image_speed = 1/8;
+    image_index = 0;
+}
+else
+    event_user(5);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="17">
       <action>
         <libid>1</libid>
@@ -1020,6 +1054,7 @@ speed = 10 + random(5);
 phase = 2;
 image_speed = 0.2;
 prevAct = 1;
+waitTime *= 2;
 j[1] = instance_copy(false);
 with (j[1])
 {
@@ -1038,6 +1073,10 @@ with (j[1])
     j[1] = self.id;
     j[0] = other.id;
 }
+if (j[1].isRed)
+   j[1].waitTime *= 0.8;
+else
+    waitTime *= 0.8;
 </string>
           </argument>
         </arguments>
@@ -1273,6 +1312,34 @@ if (gravH)
     destination = random_range(80, 520);
 else
     destination = random_range(80, 724);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!reloading)
+   exit;
+image_speed = 0;
+reloading = false;
+event_user(5);
+alarm[6] = 1;
 </string>
           </argument>
         </arguments>

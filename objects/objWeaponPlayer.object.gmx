@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>
+paralyzed[0] = sprWeaponIdle_Paralyzed;
+paralyzed[1] = sprWeaponIdle_Paralyzed;
+paralyzed[2] = sprWeaponJump_Paralyzed;
+paralyzed[3] = sprWeaponIdle_Paralyzed;
+paralyzed[4] = sprWeaponSliding_Paralyzed;
+image_speed = 0;
 image_index = global.currentWeapon;
 state_sprites[0] = sprWeaponIdle;
 state_sprites[1] = sprWeaponIdle;
@@ -61,16 +67,24 @@ maxCD[2] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(objPlayer))
+            <string>
+if (!instance_exists(objPlayer))
 {
    instance_destroy();
    exit;
+}
+for (i = 0; i &lt; max_weapons; i++)
+{
+    if (CD[i] &gt; 0)
+       CD[i]--;
 }
 x = objPlayer.x;
 y = objPlayer.y;
 image_angle = objPlayer.image_angle;
 image_xscale = objPlayer.xScale;
 image_yscale = global.grav;
+if (objPlayer.frozen)
+   exit;
 sprite_index = state_sprites[objPlayer.state];
 if (objPlayer.shootUpward)
    sprite_index = sprWeaponUp;
@@ -100,11 +114,6 @@ else if (scrButtonCheck(global.shootButton))
     }
 }
 image_index = global.currentWeapon;
-for (i = 0; i &lt; max_weapons; i++)
-{
-    if (CD[i] &gt; 0)
-       CD[i]--;
-}
 </string>
           </argument>
         </arguments>

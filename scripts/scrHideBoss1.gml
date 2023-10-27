@@ -34,6 +34,7 @@ else
         destinationX = hole.x;
         flyHight = hole.y;
         flying = true;
-        event_user(0);
+        //event_user(0);
+        alarm[0] = -1;
     }
 }

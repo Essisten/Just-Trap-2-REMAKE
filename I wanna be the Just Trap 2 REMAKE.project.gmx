@@ -100,14 +100,8 @@
       <sprite>sprites\sprWallHole</sprite>
       <sprite>sprites\sprWarningDark</sprite>
       <sprites name="Old sprites">
-        <sprite>sprites\sprJR_Fall_Old</sprite>
         <sprite>sprites\sprJR_Idle_Old</sprite>
-        <sprite>sprites\sprJR_Jump_Old</sprite>
-        <sprite>sprites\sprJR_Run_Old</sprite>
-        <sprite>sprites\sprJustist_Fall_Old</sprite>
         <sprite>sprites\sprJustist_Idle_Old</sprite>
-        <sprite>sprites\sprJustist_Jump_Old</sprite>
-        <sprite>sprites\sprJustist_Run_Old</sprite>
       </sprites>
       <sprites name="Justist">
         <sprite>sprites\sprJustist_Idle</sprite>
@@ -218,13 +212,19 @@
       <sprite>sprites\sprPlayerFallUp</sprite>
       <sprite>sprites\sprPlayerSlideUp</sprite>
       <sprite>sprites\sprGameOver</sprite>
-      <sprite>sprites\sprPlayerParalyzed</sprite>
       <sprite>sprites\sprBloodH2</sprite>
       <sprites name="Weapon">
         <sprite>sprites\sprWeaponIdle</sprite>
         <sprite>sprites\sprWeaponUp</sprite>
         <sprite>sprites\sprWeaponJump</sprite>
         <sprite>sprites\sprWeaponSliding</sprite>
+      </sprites>
+      <sprites name="Paralyzed">
+        <sprite>sprites\sprWeaponIdle_Paralyzed</sprite>
+        <sprite>sprites\sprWeaponUp_Paralyzed</sprite>
+        <sprite>sprites\sprWeaponJump_Paralyzed</sprite>
+        <sprite>sprites\sprWeaponSliding_Paralyzed</sprite>
+        <sprite>sprites\sprPlayerParalyzed</sprite>
       </sprites>
     </sprites>
     <sprites name="saves">
@@ -305,7 +305,8 @@
         <sprite>sprites\sprJustularityCoal2</sprite>
         <sprite>sprites\sprJustularityBullet2</sprite>
       </sprites>
-      <sprite>sprites\sprWaterWarning</sprite>
+      <sprite>sprites\sprJustularityReloadRed</sprite>
+      <sprite>sprites\sprJustularityReloadBlue</sprite>
     </sprites>
     <sprites name="Boss3">
       <sprite>sprites\sprJustrimsonA</sprite>
@@ -405,7 +406,6 @@
       <script>scripts\scrRefreshBulletSkin.gml</script>
       <script>scripts\scrCreateFade.gml</script>
       <script>scripts\scrStartSlowdown.gml</script>
-      <script>scripts\scrHideBoss1.gml</script>
       <script>scripts\scrShakeEffect.gml</script>
       <script>scripts\scrCreateShopItem.gml</script>
       <script>scripts\quad.gml</script>
@@ -416,6 +416,7 @@
       <script>scripts\scrJustularityAttack.gml</script>
     </scripts>
     <script>scripts\scrAddBodyPart.gml</script>
+    <script>scripts\scrHideBoss1.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>

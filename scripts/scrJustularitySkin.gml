@@ -1,7 +1,8 @@
 ///scrJustularitySkin(skin)
-///Sets proper skin by checking if boss is red or not
+///Sets proper skin by checking if the boss is red or not
 
-
+if (reloading)
+   return -1;
 if (isRed)
 {
     switch (argument0)

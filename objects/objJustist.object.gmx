@@ -28,6 +28,7 @@
             <string>event_inherited();
 destinationX = 550;
 spd = 4;
+bro = objJR;
 sprite[0] = sprJustist_Idle;
 sprite[1] = sprJustist_Run;
 sprite[2] = sprJustist_Jump;
@@ -45,82 +46,6 @@ with (instance_create(x, y, objBossName))
     owner = objJustist;
     yflip = true;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (hidden)
-{
-    x = hole.x;
-    y = hole.y;
-}
-with (instance_create(x, y, objBloodEmitter))
-{
-    type = 2;
-    H2_Amount = 10;
-    H2_Speed = 8;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="8">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Healing
-
-if (hidden or energy &lt;= 5 or HP &lt;= 0 or HP &gt;= 100)
-{
-    alarm[8] = 50;
-    return -1;
-}
-var tmp = irandom_range(5, min(energy, 20));
-var targ = objJustist;
-if (objJR.HP &lt; HP and objJR.HP &gt; 0)
-    targ = objJR;
-if (targ.HP &gt; 80)
-    tmp = min(energy, 100 - targ.HP);
-with (instance_create(x, y, objHealBullet))
-{
-    num = tmp;
-    target = targ;
-    speed = targ.spd;
-}
-energy -= tmp;
-alarm[8] = irandom_range(1200, 1600);
 </string>
           </argument>
         </arguments>
@@ -209,7 +134,7 @@ alarm[11] = warnDelay;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objBullet">
+    <event eventtype="7" enumb="23">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -226,58 +151,20 @@ alarm[11] = warnDelay;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hidden)
-    return -1;
-if (HP &lt;= 0 and objJR.HP &gt; 0)
+            <string>///Spawning extra bullets
+for (var i = 0; i &lt; 1 + global.difficulty * 2; i++)
 {
-    energy++;
-    if (alarm[7] &gt; 10)
-        alarm[7] -= 10;
-}
-if (!instance_exists(bullet))
-   bullet = instance_nearest(x, y, objBullet);
-if (godmode or HP &lt;= 0)
-    exit;
-else
-    HP -= bullet.dmg;
-with (bullet)
-    instance_destroy();
-//godmode = true;
-//alarm[2] = 1;
-//alarm[3] = 40;
-if (!sound_isplaying(hit))
-   hit = scrPlaySound(sndBossHit);
-if (HP &lt;= 0)
-    scrPlaySound(sndDeath);
-if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
-(extraBulletsCounter &lt;= (1 + global.difficulty * 2) and HP &gt; 25 and HP &lt;= 50) or
-(extraBulletsCounter &lt;= (1 + global.difficulty * 2) * 2 and HP &gt; 0 and HP &lt;= 25) or 
-(extraBulletsCounter &lt;= (1 + global.difficulty * 2) * 3 and HP &lt;= 0))
-{
-    event_user(13);
-    scrPlaySound(sndBoss1);
-    spd += 1 + global.difficulty;
-    image_speed += 0.04;
-    if (HP &lt;= 0)
+    with (instance_create(x, y, objBulletJustist))
     {
-        with (objBG)
-        {
-            alarm[1] = 5;
-            pitch = 232/256;
-        }
-        alarm[7] = irandom_range(2000, 3000);
-        reviveSound = true;
-        if (objJR.HP &lt;= 0)
-        {
-            with (objBG)
-            {
-                event_user(3);
-                pitch = 208/256;
-                alarm[1] = 5;
-            }
-        }
+        direction = random(360);
+        wrap = true;
+        speed /= 2;
+        owner = objJustist;
     }
+    extraBulletsCounter++;
 }
+scrPlaySound(sndShoot, 0.8);
+scrPlaySound(sndShoot, 0.8);
 </string>
           </argument>
         </arguments>
@@ -344,50 +231,6 @@ for (var i = 0; i &lt; 3 + global.difficulty; i++)
 }
 scrPlaySound(sndShoot, 0.8);
 scrPlaySound(sndShoot, 0.8);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>sprite_index = sprite[state];
-if (HP &lt;= 0)
-{
-    draw_set_blend_mode(bm_add);
-    draw_set_alpha((0.7 - HP / 100) * image_alpha);
-    draw_ellipse_colour(x - rad * 1.5, y - rad * 1.5, x + rad * 1.5, y + rad * 1.5, c_maroon, c_black, false);
-    draw_set_alpha(1);
-    draw_set_blend_mode(bm_normal);
-    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_black, image_alpha);
-}
-else
-    draw_self();
-if (HP &gt; 0 and !hidden)
-{
-    draw_set_alpha(1);
-    draw_healthbar(x - rad, y - rad, x + rad, y - 68, HP, c_black, c_red, c_red, 0, true, true);
-    draw_set_blend_mode(bm_add);
-    draw_set_alpha((0.7 - HP / 100) * image_alpha);
-    draw_ellipse_colour(x - rad, y - rad, x + rad, y + rad, c_maroon, c_black, false);
-    draw_set_alpha(1);
-    draw_set_blend_mode(bm_normal);
-}
 </string>
           </argument>
         </arguments>

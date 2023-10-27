@@ -53,7 +53,9 @@ nextFlyHight = flyHight;
 nextFlying = flying;
 warnDelay = 80 - global.difficulty * 20;
 hit = 0;
-
+bro = objJustist;
+color1 = c_red;
+color2 = c_maroon;
 event_user(0);
 event_user(1);
 event_user(4);
@@ -236,9 +238,9 @@ if (hidden or energy &lt;= 5 or HP &lt;= 0 or HP &gt;= 100)
     return -1;
 }
 var tmp = irandom_range(5, min(energy, 20));
-var targ = objJustist;
-if (objJR.HP &lt; HP and objJR.HP &gt; 0)
-    targ = objJR;
+var targ = self;
+if (bro.HP &lt; HP and bro.HP &gt; 0)
+    targ = bro;
 if (targ.HP &gt; 80)
     tmp = min(energy, 100 - targ.HP);
 with (instance_create(x, y, objHealBullet))
@@ -698,19 +700,18 @@ else if (canWalk)
             <kind>1</kind>
             <string>if (hidden)
     return -1;
-if (HP &lt;= 0 and objJR.HP &gt; 0)
+if (HP &lt;= 0 and bro.HP &gt; 0)
 {
     energy++;
     if (alarm[7] &gt; 10)
         alarm[7] -= 10;
 }
 bullet = instance_nearest(x, y, objBullet);
+HP = max(HP - bullet.dmg, 0);
 with (bullet)
     instance_destroy();
-if (godmode or HP &lt;= 0)
-    exit;
-else
-    HP -= bullet.dmg;
+//if (godmode or HP &lt;= 0)
+//    exit;
 //godmode = true;
 //alarm[2] = 1;
 //alarm[3] = 40;
@@ -736,7 +737,7 @@ if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
         }
         alarm[7] = irandom_range(2000, 3000);
         reviveSound = true;
-        if (objJR.HP &lt;= 0)
+        if (bro.HP &lt;= 0)
         {
             with (objBG)
             {
@@ -806,7 +807,6 @@ for (var i = 0; i &lt; 1 + global.difficulty * 2; i++)
     }
     extraBulletsCounter++;
 }
-scrPlaySound(sndShoot, 0.8);
 scrPlaySound(sndShoot, 0.8);
 scrPlaySound(sndShoot, 0.8);
 </string>
@@ -956,6 +956,70 @@ alarm[0] = random_range(300 - 200 * flying, 500 - 100 * flying) - 10 * global.di
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (hidden)
+   exit;
+if (HP &gt; 0)
+{
+    draw_set_blend_mode(bm_add);
+    draw_set_alpha((0.7 - HP / 100) * image_alpha);
+    draw_ellipse_colour(x - rad, y - rad, x + rad, y + rad, color2, c_black, false);
+    draw_set_alpha(1);
+    draw_set_blend_mode(bm_normal);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (hidden)
+   exit;
+if (HP &lt;= 0)
+{
+    draw_set_blend_mode(bm_add);
+    draw_set_alpha(0.8);
+    draw_ellipse_colour(x - rad * 1.5, y - rad * 1.5, x + rad * 1.5, y + rad * 1.5, color2, c_black, false);
+    draw_set_alpha(1);
+    draw_set_blend_mode(bm_normal);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -976,11 +1040,6 @@ alarm[0] = random_range(300 - 200 * flying, 500 - 100 * flying) - 10 * global.di
             <string>sprite_index = sprite[state];
 if (HP &lt;= 0)
 {
-    draw_set_blend_mode(bm_add);
-    draw_set_alpha((0.7 - HP / 100) * image_alpha);
-    draw_ellipse_colour(x - rad * 1.5, y - rad * 1.5, x + rad * 1.5, y + rad * 1.5, c_maroon, c_black, false);
-    draw_set_alpha(1);
-    draw_set_blend_mode(bm_normal);
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_black, image_alpha);
 }
 else
@@ -988,12 +1047,7 @@ else
 if (HP &gt; 0 and !hidden)
 {
     draw_set_alpha(1);
-    draw_healthbar(x - rad, y - rad, x + rad, y - 68, HP, c_black, c_red, c_red, 0, true, true);
-    draw_set_blend_mode(bm_add);
-    draw_set_alpha((0.7 - HP / 100) * image_alpha);
-    draw_ellipse_colour(x - rad, y - rad, x + rad, y + rad, c_maroon, c_black, false);
-    draw_set_alpha(1);
-    draw_set_blend_mode(bm_normal);
+    draw_healthbar(x - rad, y - rad, x + rad, y - 68, HP, c_black, color1, color1, 0, true, true);
 }
 </string>
           </argument>
