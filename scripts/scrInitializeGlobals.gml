@@ -31,6 +31,7 @@ for (i = 0; i < 7; i++)
     global.bossClear[i] = false;
     global.saveBossClear[i] = false;
     global.pb[i] = 1;
+    global.clearAmount[i] = 0;
 }
 global.pb[7] = 1;   //Gravityman second phase
 global.gameStarted = false;     //determines whether the game is in progress (enables saving, restarting, etc.)

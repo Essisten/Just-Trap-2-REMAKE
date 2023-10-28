@@ -31,6 +31,7 @@ x = view_xview[0] + view_wview[0] / 2;
 y = view_yview[0] + view_hview[0] / 2;
 percent = 0;
 old = 0;
+stage = 1;
 image_speed = 0;
 image_index = global.GameOverType;
 with (objMusicLooper)
@@ -42,7 +43,7 @@ a = true;
 b = false;
 c = 0;
 alarm[1] = 90;
-//
+global.frozen = false;
 </string>
           </argument>
         </arguments>
@@ -92,6 +93,7 @@ switch (room)
             global.pb[0] = percent;
         break;
     case rBoss2:
+         stage = 2;
         if (instance_exists(objViridian))
         {
             old = global.pb[1];
@@ -145,6 +147,7 @@ switch (room)
         }
         break;
     case rBoss4:
+         stage = 4;
         old = global.pb[3];
         if (instance_exists(objJustination))
         {
@@ -160,6 +163,7 @@ switch (room)
             global.pb[3] = percent;
         break;
     case rBoss3:
+         stage = 3;
         old = global.pb[2];
         if (!objJustrimsonController.dead)
         {
@@ -171,6 +175,8 @@ switch (room)
             global.pb[2] = percent;
         break;
 }
+if (percent &gt; old)
+   scrShowMoney(view_xview[0] + view_wview[0] - 128, view_yview[0] + view_hview[0] - 32, stage, false, round((percent - old) * stage * (1 + global.difficulty)));
 </string>
           </argument>
         </arguments>

@@ -54,7 +54,10 @@ ds_map_add(saveMap, "coins", global.coins);
 ds_map_add(saveMap, "superCoins", global.fakeCoins);
 
 for (var i = 0; i < array_length_1d(global.bossClear); i++)
+{
     ds_map_add(saveMap,"bossClear["+string(i)+"]", global.bossClear[i]);
+    ds_map_add(saveMap,"clearAmount["+string(i)+"]", global.clearAmount[i]);
+}
     
 ds_map_add(saveMap,"saveGameClear",global.saveGameClear);
 

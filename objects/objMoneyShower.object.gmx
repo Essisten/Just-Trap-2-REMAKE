@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-1010</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,10 +26,73 @@
           <argument>
             <kind>1</kind>
             <string>stage = 1;
-vGrad = 0;
-hText = -100;
-audio_play_sound(musClear, 1, false);
-alarm[0] = 50;
+reward = 0;
+fake_reward = 0;
+reward_length = 0;
+reward_alpha = 0;
+follow = false;
+alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Cool way of showing a number
+if (fake_reward &gt;= reward)
+{
+    fake_reward = reward;
+   exit;
+}
+fake_reward += round(reward / 10);
+reward_length = string_length(string(fake_reward));
+alarm[2] = 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Showing the reward
+if (reward_alpha &gt;= 1)
+{
+    alarm[2] = 1;
+    exit;
+}
+reward_alpha += 0.05;
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -52,8 +115,17 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Show the reward
-scrShowMoney(x, y, stage, true, 0);
+            <string>///Start showing the reward
+alarm[1] = 1;
+if (reward == 0)
+{
+    reward = stage * 100 * max(0, (1 - 0.1 * global.clearAmount[stage])) * (global.difficulty + 1);
+    global.clearAmount[stage]++;
+    if (global.pb[stage - 1] &lt; 25)
+       reward *= 2;
+}
+scrGiveMoney(reward);
+scrSaveGame(false);
 </string>
           </argument>
         </arguments>
@@ -76,30 +148,15 @@ scrShowMoney(x, y, stage, true, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var wow = sin(degtorad(abs((400 - hText)*(90/400))));
-hText += 1 + wow * 5;
-if (hText &gt; 0 and hText &lt; 800)
-    vGrad = max((1 - wow) * 100, 0);
-else
-    vGrad = 0;
-if (hText &gt; 1000)
+            <string>if (follow)
 {
-    if (!instance_exists(objPlayer))
-        exit;
-    global.bossClear[stage - 1] = true;
-    global.pb[stage - 1] = 100;
-    instance_destroy();
-    if (room == rBoss3_Fall)
-       exit;
-    if (room == rBoss2)
+    if (!instance_exists(objClear))
     {
-        with (objBoss2Door)
-             event_user(0);
-        exit;
+       instance_destroy();
+       exit;
     }
-    with (objPlayer)
-        instance_destroy();
-    room_goto(rStageSelect);
+    x = view_xview[0] + objClear.hText;
+    y = view_yview[0] + view_hview[0] / 2 + 64;
 }
 </string>
           </argument>
@@ -123,17 +180,13 @@ if (hText &gt; 1000)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_add);
-if (vGrad &gt; 0)
-{
-    draw_rectangle_colour(view_xview[0], view_yview[0] + view_hview[0] / 2, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] / 2 - vGrad, c_black, c_black, c_ltgray, c_ltgray, false);
-    draw_rectangle_colour(view_xview[0], view_yview[0] + view_hview[0] / 2, view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] / 2 + vGrad, c_ltgray, c_ltgray, c_black, c_black, false);
-}
-draw_set_blend_mode(bm_normal);
+            <string>draw_set_alpha(reward_alpha);
 draw_set_halign(fa_center);
-draw_set_valign(fa_center);
-draw_set_font(fBoss1_46);
-scrDrawTextOutline(view_xview[0] + hText, view_yview[0] + view_hview[0] / 2, "Stage   " + string(stage) + "#Clear", c_white, c_red);
+draw_set_valign(fa_top);
+draw_set_font(fDefault18);
+scrDrawTextOutline(x, y, "+" + string(fake_reward), c_white, c_black);
+draw_sprite(sprCoin, 0, x + reward_length * 9, y - 4);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

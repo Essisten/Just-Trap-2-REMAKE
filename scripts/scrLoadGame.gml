@@ -61,9 +61,11 @@ if (loadFile)
             global.skip[i] = scrSafeLoad(saveMap, "skip["+string(i)+"]", false);
             
         for (var i = 0; i < array_length_1d(global.pb); i++)
-        {
             global.pb[i] = scrSafeLoad(saveMap, "pb["+string(i)+"]", 1);
-        }
+        
+        for (var i = 0; i < array_length_1d(global.clearAmount); i++)
+            global.clearAmount[i] = scrSafeLoad(saveMap, "clearAmount["+string(i)+"]", 0);
+        
         global.coins = scrSafeLoad(saveMap, "coins", 0);
         global.fakeCoins = scrSafeLoad(saveMap, "superCoins", global.coins);
         global.currentWeapon = scrSafeLoad(saveMap, "currentWeapon", 0);

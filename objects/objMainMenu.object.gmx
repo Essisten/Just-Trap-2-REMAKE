@@ -528,6 +528,7 @@ draw_rectangle(sx[0], sy[0] - sOffsetY, sx[1], sy[1] - sOffsetY, false);
 draw_set_alpha(a);
 draw_set_font(fDefault24);
 draw_set_halign(fa_center);
+draw_set_valign(fa_top)
 for (var i = 0; i &lt; 3; i++)
 {
     if (sel == i and state == 0)
