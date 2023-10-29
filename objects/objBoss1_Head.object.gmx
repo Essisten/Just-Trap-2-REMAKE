@@ -86,7 +86,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>other.dmg *= 1.5;
+            <string>if (!instance_exists(owner))
+   exit;
+other.dmg *= 1.5;
 owner.bullet = other;
 with (owner)
 {
@@ -114,7 +116,9 @@ with (owner)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (owner.HP &gt; 0 and global.difficulty &lt; 3)
+            <string>if (!instance_exists(owner))
+   exit;
+if (owner.HP &gt; 0 and global.difficulty &lt; 3)
    scrKillPlayer();
 </string>
           </argument>

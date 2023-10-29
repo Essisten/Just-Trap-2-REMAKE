@@ -707,11 +707,15 @@ if (HP &lt;= 0 and bro.HP &gt; 0)
         alarm[7] -= 10;
 }
 bullet = instance_nearest(x, y, objBullet);
+if (godmode or HP &lt;= 0)
+{
+    with (bullet)
+         instance_destroy();
+    exit;
+}
 HP = max(HP - bullet.dmg, 0);
 with (bullet)
     instance_destroy();
-//if (godmode or HP &lt;= 0)
-//    exit;
 //godmode = true;
 //alarm[2] = 1;
 //alarm[3] = 40;

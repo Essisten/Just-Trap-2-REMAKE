@@ -547,6 +547,8 @@ scrInitializeGlobals();
 
 //load the current config file, sets default config if it doesn't exist
 scrLoadConfig();
+if (!global.soundTest)
+   room_goto_next();
 </string>
           </argument>
         </arguments>

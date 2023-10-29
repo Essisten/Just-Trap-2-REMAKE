@@ -1,3 +1,11 @@
+v0.4.8
+- Added the sound test at the beggining of the game. You can disable this in settings.
+- Deeply reworked JR & Justist and their animations. Added reloading animation.
+- Justularity's phase 2 were nerfed and improved shooting animation.
+- Improved reward system (experimental).
+- An attempt to fix the issue with JR & Justist when they didn't wanted to leave the field when they're supposed to.
+- Minor bug fix.
+==================================================
 v0.4.7
 - Machine gun added.
 - New way of controlling Just with switched gravity. You can go back to the old way of controls in settings.

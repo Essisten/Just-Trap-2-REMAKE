@@ -16,6 +16,7 @@ ini_write_real("Settings","Show_names", global.showNames);
 ini_write_real("Settings","Sprite_style", global.spriteStyle);
 ini_write_real("Settings","GameOver_type", global.GameOverType);
 ini_write_real("Settings","Gravity_controls", global.gravityControls);
+ini_write_real("Settings","Sound_test", global.soundTest);
 //keyboard controls
 ini_write_real("Controls","Left",global.leftButton[0]);
 ini_write_real("Controls","Right",global.rightButton[0]);

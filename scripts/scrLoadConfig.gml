@@ -17,6 +17,7 @@ global.showPB = ini_read_real("Settings","Show_PB",true);
 global.spriteStyle = ini_read_real("Settings","Sprite_style", 0);
 global.GameOverType = ini_read_real("Settings","GameOver_type", 0);
 global.gravityControls = ini_read_real("Settings","Gravity_controls", true);
+global.soundTest = ini_read_real("Settings","Sound_test", true);
 //keyboard controls
 global.leftButton[0] = ini_read_real("Controls","Left",vk_left);
 global.rightButton[0] = ini_read_real("Controls","Right",vk_right);

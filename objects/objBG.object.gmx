@@ -70,13 +70,9 @@ event_user(4);
 if (timer &lt; 2)
 {
     scrStopMusic();
-    with (objBoss1Bow)
+    with (objBoss1_Follower)
         instance_destroy();
-    with (objBoss1Bow)
-        instance_destroy();
-    with (objJR)
-        instance_destroy();
-    with (objJustist)
+    with (objBoss1)
         instance_destroy();
     final = false;
     scrShakeEffect(20, 0.5);

@@ -28,7 +28,7 @@
             <string>select = global.menuSelectPrev[1];
 
 xSelector = 100;
-ySelector = 160;
+ySelector = 120;
 xSeperation = 600;
 ySeperation = 48;
 offset = 40;
@@ -41,10 +41,11 @@ if (!global.controllerEnabled)  //remove controller settings menu if controllers
 strSelect[0] = "Music"
 strSelect[1] = "Sound";
 strSelect[2] = "Vsync";
-strSelect[3] = "Gravity controls";
-strSelect[4] = "Graphics";
-strSelect[5] = "Set Keyboard Controls";
-strSelect[6] = "Controller Options";
+strSelect[3] = "Sound test";
+strSelect[4] = "Gravity controls";
+strSelect[5] = "Graphics";
+strSelect[6] = "Set Keyboard Controls";
+strSelect[7] = "Controller Options";
 optionsNum = array_length_1d(strSelect);
 </string>
           </argument>
@@ -184,20 +185,23 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
             scrSetVsync();
             break;
         case 3:
-            global.gravityControls = !global.gravityControls;
+            global.soundTest = !global.soundTest;
             break;
         case 4:
+            global.gravityControls = !global.gravityControls;
+            break;
+        case 5:
             scrSaveConfig();
             instance_create(x, y, objGraphicMenu);
             instance_destroy();
             break;
-        case 5:
+        case 6:
             scrSaveConfig();    //save changes
             global.menuSelectPrev[1] = select;
             instance_create(x,y,objKeyboardControlsMenu);
             instance_destroy();
             break;
-        case 6:
+        case 7:
             scrSaveConfig();    //save changes
             global.menuSelectPrev[1] = select;
             instance_create(x,y,objControllerMenu);
@@ -256,10 +260,16 @@ for(var i = 0; i &lt; optionsNum; i++)
                 scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*2),"Off", clr, c_black);
             break;
         case 3:
-            if (global.gravityControls)
-                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*3),"New", clr, c_black);
+            if (global.soundTest)
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*3),"On", clr, c_black);
             else
-                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*3),"Old", clr, c_black);
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*3),"Off", clr, c_black);
+            break;
+        case 4:
+            if (global.gravityControls)
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*4),"New", clr, c_black);
+            else
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*4),"Old", clr, c_black);
             break;
     }
 }
