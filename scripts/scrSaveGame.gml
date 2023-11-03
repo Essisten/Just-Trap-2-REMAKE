@@ -68,12 +68,21 @@ for (var i = 0; i < array_length_1d(global.pb); i++)
     ds_map_add(saveMap,"pb["+string(i)+"]", global.pb[i]);
 for (var i = 0; i < array_length_1d(global.skip); i++)
     ds_map_add(saveMap,"skip["+string(i)+"]", global.skip[i]);
-for (var i = 0; i < 3; i++)
+for (var i = 0; i < 6; i++) //each weapon cycle
 {
-    ds_map_add(saveMap, "unlockedWeapons["+string(i)+"]", global.unlockedWeapons[i]);
-    ds_map_add(saveMap, "obtainedWeapons["+string(i)+"]", global.obtainedWeapons[i]);
+    for (var k = 0; k < 2; k++) //each type cycle
+    {
+        ds_map_add(saveMap, "unlockedWeapons["+string(k)+","+string(i)+"]", global.unlockedWeapons[k, i]);
+        ds_map_add(saveMap, "obtainedWeapons["+string(k)+","+string(i)+"]", global.obtainedWeapons[k, i]);
+    }
 }
-
+var tmp = ds_list_size(global.arsenal);
+if (tmp == 0)
+   ds_list_add(global.arsenal, 1);
+for (var i = 0; i < tmp; i++)
+{
+    ds_map_add(saveMap, "arsenal["+string(i)+"]", ds_list_find_value(global.arsenal, i));
+}
 //add md5 hash to verify saves and make them harder to hack
 ds_map_add(saveMap,"mapMd5",md5_string_unicode(json_encode(saveMap)+global.md5StrAdd));
 

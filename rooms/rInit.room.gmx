@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="objWorld" x="0" y="0" name="inst_DC134897" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSoundTest" x="32" y="0" name="inst_91643C1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

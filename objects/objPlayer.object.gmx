@@ -229,7 +229,7 @@ if (paralyzed)
     }
     sprite_index = sprt;
 }
-if (global.currentWeapon == 2)
+if (ds_list_find_value(global.arsenal, global.currentWeapon) == 3)
 {
     jump = 6 * global.grav;
     jump2 = 5 * global.grav;

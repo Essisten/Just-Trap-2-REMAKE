@@ -334,7 +334,10 @@
       <sprite>sprites\sprShopSign</sprite>
       <sprite>sprites\sprEntrance</sprite>
       <sprite>sprites\sprWeaponImage</sprite>
+      <sprite>sprites\sprUnknownWeapon</sprite>
       <sprite>sprites\sprCoin</sprite>
+      <sprite>sprites\sprMe</sprite>
+      <sprite>sprites\sprMyHead</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -419,8 +422,11 @@
       <script>scripts\scrJustularitySkin.gml</script>
       <script>scripts\scrJustularityAttack.gml</script>
     </scripts>
-    <script>scripts\scrAddBodyPart.gml</script>
-    <script>scripts\scrHideBoss1.gml</script>
+    <scripts name="Boss 1">
+      <script>scripts\scrHideBoss1.gml</script>
+      <script>scripts\scrAddBodyPart.gml</script>
+    </scripts>
+    <script>scripts\idk.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -634,6 +640,7 @@
       <object>objects\objShopMain</object>
       <object>objects\objShopWeapon</object>
       <object>objects\objShopItem</object>
+      <object>objects\objEssisten</object>
     </objects>
   </objects>
   <rooms name="rooms">

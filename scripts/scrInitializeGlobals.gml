@@ -21,11 +21,18 @@ for (i = 99; i >= 0; i--)
 global.coins = 0;
 global.fakeCoins = 0;
 global.currentWeapon = 0;
-for (i = 0; i < 3; i++)
+for (var i = 0; i < 6; i++) //each weapon cycle
 {
-    global.unlockedWeapons[i] = false;
-    global.obtainedWeapons[i] = false;
+    for (var k = 0; k < 2; k++) //each type cycle
+    {
+        global.unlockedWeapons[k, i] = false;
+        global.obtainedWeapons[k, i] = false;
+    }
 }
+global.unlockedWeapons[0, 1] = true;
+global.obtainedWeapons[0, 1] = true;
+global.arsenal = ds_list_create();
+ds_list_add(global.arsenal, 1);
 for (i = 0; i < 7; i++)
 {
     global.bossClear[i] = false;

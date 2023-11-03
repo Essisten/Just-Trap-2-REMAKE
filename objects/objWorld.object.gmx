@@ -28,6 +28,7 @@
             <string>//make sure we never have more than one world object
 if (instance_number(object_index) &gt; 1)
     instance_destroy();
+
 </string>
           </argument>
         </arguments>
@@ -547,8 +548,7 @@ scrInitializeGlobals();
 
 //load the current config file, sets default config if it doesn't exist
 scrLoadConfig();
-if (!global.soundTest)
-   room_goto_next();
+instance_create(x, y, objSoundTest);
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>warn_alpha = 0;
+            <string>
+if (!global.soundTest)
+   room_goto_next();
+warn_alpha = 0;
 image_alpha = 0;
 sel = 1;
 choice = 1;

@@ -70,10 +70,23 @@ if (loadFile)
         global.fakeCoins = scrSafeLoad(saveMap, "superCoins", global.coins);
         global.currentWeapon = scrSafeLoad(saveMap, "currentWeapon", 0);
         global.saveCurrentWeapon = global.currentWeapon;
-        for (var i = 0; i < 3; i++)
+        for (var i = 0; i < 6; i++) //each weapon cycle
         {
-            global.unlockedWeapons[i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(i)+"]", false);
-            global.obtainedWeapons[i] = scrSafeLoad(saveMap, "obtainedWeapons["+string(i)+"]", false);
+            for (var k = 0; k < 2; k++) //each type cycle
+            {
+                global.unlockedWeapons[k, i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(k)+","+string(i)+"]", false);
+                global.obtainedWeapons[k, i] = scrSafeLoad(saveMap, "obtainedWeapons["+string(k)+","+string(i)+"]", false);
+            }
+        }
+        global.unlockedWeapons[0, 1] = scrSafeLoad(saveMap, "unlockedWeapons[0, 1]", true);
+        global.obtainedWeapons[0, 1] = scrSafeLoad(saveMap, "obtainedWeapons[0, 1]", true);
+        ds_list_clear(global.arsenal);
+        for (var i = 0; i < 6; i++)
+        {
+            var weapon = scrSafeLoad(saveMap, "arsenal["+string(i)+"]", -1);
+            if (weapon == -1)
+               break;
+            ds_list_add(global.arsenal, weapon);
         }
         //load md5 string from the save map
         var mapMd5 = ds_map_find_value(saveMap,"mapMd5");

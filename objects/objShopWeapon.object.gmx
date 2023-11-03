@@ -36,27 +36,56 @@ weaponNameX = 232;
 weaponNameY = 32;
 weaponDescriptionX = 420;
 weaponDescriptionY = 32;
-weapons[0] = scrCreateShopItem("The Gun",
+for (var i = 0; i &lt; 6; i++)
+{
+    version[i] = 0;
+}
+weapons[0, 0] = scrCreateShopItem("Bat",
+"",
+"middle",
+"pathetic",
+"melee",
+200,
+"Defeat JR &amp; Justist");
+weapons[0, 1] = scrCreateShopItem("The Gun",
 "    The classic standard pistol of our famous Kid. It had been many years since the original user used it before Just got it.
 #    Initially, it has only a manual firing method, but it is possible to install an auto-firing module.",
 "fast",
 "middle",
 "far",
-0);
-weapons[1] = scrCreateShopItem("Shotgun",
+0,
+"How did you even lost it?!");
+weapons[0, 2] = scrCreateShopItem("Shotgun",
 "    Known killer weapon. It breaks the bullets into pieces right after firing to multiply their number. This reduces the flight speed, but significantly increases the damage radius.
 #    The sharp fragments together are capable of penetrating enemy's defenses, which increases overall damage compared to The Gun.",
 "slow",
 "good",
 "short",
-1000);
-weapons[2] = scrCreateShopItem("Machine gun",
+400,
+"Defeat Justularity");
+weapons[0, 3] = scrCreateShopItem("Machine gun",
 "    An extremely lethal and heavy weapon. Combining multiple the guns together made it possible to create a weapon with a high rate of fire, while maintaining the power of each bullet.
 #    Disadvantages include reduced accuracy, as well as reduced user mobility.",
 "TRA-TA-TA",
 "middle",
 "far",
-5000);
+800,
+"Defeat Justrimson");
+var v_amount = array_height_2d(weapons);
+for (var k = 0; k &lt; v_amount; k++)
+{
+    var w_amount = array_length_2d(weapons, 0);
+    for (var i = 0; i &lt; w_amount; i++)
+    {
+        if (global.unlockedWeapons[i + k * v_amount])
+           continue;
+        with (weapons[k, i])
+        {
+            name = "???";
+            description = "";
+        }
+    }
+}
 lineSeperation = 48;
 optionsNum = array_length_1d(weapons);
 boxStartX = 300;
@@ -157,7 +186,10 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (scrButtonCheckPressed(global.menuUpButton))
+            <string>ars_size = ds_list_size(global.arsenal);
+w_id = select * (version[select]+1);
+w_index = ds_list_find_index(global.arsenal, w_id);
+if (scrButtonCheckPressed(global.menuUpButton))
 {
     scrPlaySound(sndBoss1_Reload, 1.5);
     select -= 1;
@@ -177,14 +209,25 @@ else if (scrButtonCheckPressed(global.menuBackButton))
     alarm[0] = -1;
     alarm[1] = 1;
 }
-else if (scrButtonCheckPressed(global.menuAcceptButton))
+else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
 {
-     switch (select)
-     {
-        default:
-            scrPlaySound(sndGlass, 1);
-            break;
-     }
+    if (global.obtainedWeapons[w_id])
+    {
+        if (w_index == -1)
+            ds_list_insert(global.arsenal, min(ars_size, select), w_id);
+        else if (ds_list_size(global.arsenal) &gt; 1)
+            ds_list_delete(global.arsenal, w_index);
+        global.currentWeapon = 0;
+    }
+    else
+    {
+        if (global.unlockedWeapons[w_id] and weapons[version[select], select].price &lt;= global.coins)
+        {
+            scrGiveMoney(-weapons[version[select], select].price);
+            global.obtainedWeapons[w_id] = true;
+        }
+    }
+    scrSaveGame(false);
 }
 </string>
           </argument>
@@ -215,6 +258,8 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_colour(c_white);
 
+w_id = select * (version[select]+1);
+w_index = ds_list_find_index(global.arsenal, w_id);
 draw_set_alpha(0.6 * image_alpha);
 draw_rectangle_colour(boxStartX + slideOffset, boxStartY, boxEndX + slideOffset, boxEndY, c_black, c_black, c_black, c_black, false);
 dick += 2;
@@ -231,41 +276,57 @@ draw_line_width(boxStartX - selectBoxOffset * 2 + slideOffset, boxStartY + selec
 draw_line_width(boxStartX + slideOffset, boxStartY + lineSeperation * select, boxStartX - selectBoxOffset * 2 + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1), 4);
 draw_line_width(boxEndX + selectBoxOffset * 2 + slideOffset, boxStartY + lineSeperation * select, boxEndX + slideOffset, boxStartY + selectBoxOffset + lineSeperation * (select + 1), 4);
 
-draw_text_ext_transformed(weaponNameX, weaponNameY - slideOffset, weapons[select].name, 32, weaponDescriptionX - weaponNameX, 1, 1, 0);
-draw_set_font(fDefault12);
-scrDrawTextOutline(weaponNameX, weaponNameY + 64 - slideOffset, "Damage: " + weapons[select].dmg, c_red, c_maroon);
-scrDrawTextOutline(weaponNameX, weaponNameY + 80 - slideOffset, "Range:   " + weapons[select].range, c_yellow, c_orange);
-scrDrawTextOutline(weaponNameX, weaponNameY + 96 - slideOffset, "Speed:   " + weapons[select].spd, c_aqua, c_blue);
+draw_text_ext_transformed(weaponNameX, weaponNameY - slideOffset, weapons[version[select], select].name, 32, weaponDescriptionX - weaponNameX, 1, 1, 0);
+if (global.unlockedWeapons[w_id])
+{
+    draw_set_font(fDefault12);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 64 - slideOffset, "Damage: " + weapons[version[select], select].dmg, c_red, c_maroon);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 80 - slideOffset, "Range:   " + weapons[version[select], select].range, c_yellow, c_orange);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 96 - slideOffset, "Speed:   " + weapons[version[select], select].spd, c_aqua, c_blue);
+}
 draw_set_colour(c_white);
 draw_set_font(fDetermination14);
-draw_text_ext_transformed(weaponDescriptionX, weaponDescriptionY - slideOffset, weapons[select].description, 20, 780 - weaponDescriptionX, 1, 1, 0);
+draw_text_ext_transformed(weaponDescriptionX, weaponDescriptionY - slideOffset, weapons[version[select], select].description, 20, 780 - weaponDescriptionX, 1, 1, 0);
 draw_set_font(fDefault24);
-if (true)//global.obtainedWeapons[select])
+if (global.unlockedWeapons[w_id])
 {
-    draw_set_colour(c_green);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 160 - slideOffset, "Obtained", c_lime, c_green);
+    if (global.obtainedWeapons[w_id])
+    {
+        if (w_index &gt; -1)
+            scrDrawTextOutline(weaponNameX, weaponNameY + 160 - slideOffset, "Equipped", c_lime, c_green);
+        else
+            scrDrawTextOutline(weaponNameX, weaponNameY + 160 - slideOffset, "Not equipped", c_gray, c_dkgray);
+    }
+    else
+    {
+        scrDrawTextOutline(weaponNameX + 32, weaponNameY + 160 - slideOffset, weapons[version[select], select].price, c_white, c_gray);
+        draw_sprite(sprCoin, 0, weaponNameX, weaponNameY + 160 - slideOffset);
+    }
 }
 else
-{
-    
-}
+    scrDrawTextOutline(weaponNameX, weaponNameY + 160 - slideOffset, weapons[version[select], select].require, c_red, c_maroon);
 dick += 2;
 draw_set_colour(c_white);
 draw_set_valign(fa_center);
-draw_sprite_ext(sprWeaponImage, select, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 3.4, 3.4, 0, c_white, image_alpha);
+if (global.unlockedWeapons[w_id])
+   draw_sprite_ext(sprWeaponImage, w_id, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 3.4, 3.4, 0, c_white, image_alpha);
+else
+   draw_sprite_ext(sprUnknownWeapon, 0, weaponStartX + 8, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 9, 9, 0, c_white, image_alpha);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 draw_set_font(fDefault24);
 for (var i = 0; i &lt; optionsNum; i++)
 {
+    var ident = i * (version[i] + 1);
+    var index = ds_list_find_index(global.arsenal, ident);
     var color;
-    if (global.obtainedWeapons[i])
+    if (index &gt; -1)
        color = c_green;
-    else if (global.unlockedWeapons[i])
+    else if (global.obtainedWeapons[ident])
        color = c_white;
     else
        color = c_gray;
-    scrDrawTextOutline(lineCenter + slideOffset, boxStartY + selectBoxOffset * 2 + lineSeperation * (i), weapons[i].name, color, c_black);
+    scrDrawTextOutline(lineCenter + slideOffset, boxStartY + selectBoxOffset * 2 + lineSeperation * (i), weapons[version[select], i].name, color, c_black);
 }
 </string>
           </argument>

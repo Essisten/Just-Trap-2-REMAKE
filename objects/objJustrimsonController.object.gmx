@@ -260,6 +260,7 @@ with (objJustrimsonA_blade)
 audio_stop_sound(global.currentMusic);
 alarm[2] = -1;
 dead = true;
+global.unlockedWeapons[3] = true;
 scrLoadConfig();
 </string>
           </argument>

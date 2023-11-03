@@ -26,25 +26,26 @@
           <argument>
             <kind>1</kind>
             <string>
+w_id = ds_list_find_value(global.arsenal, global.currentWeapon);
 paralyzed[0] = sprWeaponIdle_Paralyzed;
 paralyzed[1] = sprWeaponIdle_Paralyzed;
 paralyzed[2] = sprWeaponJump_Paralyzed;
 paralyzed[3] = sprWeaponIdle_Paralyzed;
 paralyzed[4] = sprWeaponSliding_Paralyzed;
 image_speed = 0;
-image_index = global.currentWeapon;
 state_sprites[0] = sprWeaponIdle;
 state_sprites[1] = sprWeaponIdle;
 state_sprites[2] = sprWeaponJump;
 state_sprites[3] = sprWeaponIdle;
 state_sprites[4] = sprWeaponSliding;
-CD[0] = 0;
-CD[1] = 0;
-CD[2] = 0;
-max_weapons = array_length_1d(global.obtainedWeapons);
-maxCD[0] = 10;
-maxCD[1] = 50;
-maxCD[2] = 5;
+max_weapons = ds_list_size(global.arsenal);
+image_index = w_id;
+for (var i = 0; i &lt; array_length_1d(global.obtainedWeapons); i++)
+    CD[i] = 0;
+maxCD[0] = 25;
+maxCD[1] = 10;
+maxCD[2] = 50;
+maxCD[3] = 2;
 </string>
           </argument>
         </arguments>
@@ -67,13 +68,13 @@ maxCD[2] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>w_id = ds_list_find_value(global.arsenal, global.currentWeapon);
 if (!instance_exists(objPlayer))
 {
    instance_destroy();
    exit;
 }
-for (i = 0; i &lt; max_weapons; i++)
+for (i = 0; i &lt; array_length_1d(CD); i++)
 {
     if (CD[i] &gt; 0)
        CD[i]--;
@@ -88,23 +89,9 @@ if (objPlayer.frozen)
 sprite_index = state_sprites[objPlayer.state];
 if (objPlayer.shootUpward)
    sprite_index = sprWeaponUp;
-if (scrButtonCheckPressed(global.prevWeaponButton))
+if (scrButtonCheck(global.shootButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1);
-    global.currentWeapon--;
-    if (global.currentWeapon &lt; 0)
-       global.currentWeapon += max_weapons;
-}
-else if (scrButtonCheckPressed(global.nextWeaponButton))
-{
-    scrPlaySound(sndBoss1_Reload, 1);
-    global.currentWeapon++;
-    if (global.currentWeapon &gt;= max_weapons)
-       global.currentWeapon = 0;
-}
-else if (scrButtonCheck(global.shootButton))
-{
-    if (global.currentWeapon == 2)
+    if (w_id == 3)
     {
         event_user(0);
     }
@@ -113,7 +100,24 @@ else if (scrButtonCheck(global.shootButton))
         event_user(0);
     }
 }
-image_index = global.currentWeapon;
+else if (max_weapons &gt; 1)
+{
+    if (scrButtonCheckPressed(global.prevWeaponButton))
+    {
+        scrPlaySound(sndBoss1_Reload, 1);
+        global.currentWeapon--;
+        if (global.currentWeapon &lt; 0)
+           global.currentWeapon += max_weapons;
+    }
+    else if (scrButtonCheckPressed(global.nextWeaponButton))
+    {
+        scrPlaySound(sndBoss1_Reload, 1);
+        global.currentWeapon++;
+        if (global.currentWeapon &gt;= max_weapons)
+           global.currentWeapon = 0;
+    }
+}
+image_index = w_id;
 </string>
           </argument>
         </arguments>
@@ -137,7 +141,7 @@ image_index = global.currentWeapon;
           <argument>
             <kind>1</kind>
             <string>///Reloading
-CD[global.currentWeapon] = maxCD[global.currentWeapon];
+CD[w_id] = maxCD[w_id];
 </string>
           </argument>
         </arguments>
@@ -161,7 +165,7 @@ CD[global.currentWeapon] = maxCD[global.currentWeapon];
           <argument>
             <kind>1</kind>
             <string>///Shoot them up!
-if (CD[global.currentWeapon] &gt; 0)
+if (CD[w_id] &gt; 0)
    exit;
 scrPlayerShoot();
 event_user(1);

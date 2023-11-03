@@ -23,5 +23,6 @@
     <frame index="0">images\sprWeaponUp_0.png</frame>
     <frame index="1">images\sprWeaponUp_1.png</frame>
     <frame index="2">images\sprWeaponUp_2.png</frame>
+    <frame index="3">images\sprWeaponUp_3.png</frame>
   </frames>
 </sprite>

@@ -1185,6 +1185,7 @@ if (instance_number(objJustularity) == 0)
     audio_stop_sound(global.currentMusic);
     objWorld.alarm[2] = 300;
     global.frozen = true;
+    global.unlockedWeapons[2] = true;
     with (objBoss2HP)
     {
         play = false;

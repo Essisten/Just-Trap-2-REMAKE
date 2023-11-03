@@ -2,27 +2,24 @@
 <sprite>
   <type>0</type>
   <xorig>0</xorig>
-  <yorigin>32</yorigin>
+  <yorigin>11</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
-  <bbox_right>63</bbox_right>
+  <bbox_left>0</bbox_left>
+  <bbox_right>17</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>63</bbox_bottom>
+  <bbox_bottom>21</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>6</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>64</width>
-  <height>64</height>
+  <width>18</width>
+  <height>22</height>
   <frames>
-    <frame index="0">images\sprWeaponImage_0.png</frame>
-    <frame index="1">images\sprWeaponImage_1.png</frame>
-    <frame index="2">images\sprWeaponImage_2.png</frame>
-    <frame index="3">images\sprWeaponImage_3.png</frame>
+    <frame index="0">images\sprUnknownWeapon_0.png</frame>
   </frames>
 </sprite>
