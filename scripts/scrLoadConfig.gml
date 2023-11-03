@@ -58,6 +58,8 @@ if (global.controllerEnabled)
     global.skipButton[1] = ini_read_real("Controller","Skip",gp_face2);
     global.sprintButton[1] = ini_read_real("Controller","Sprint",gp_select);
     global.pauseButton[1] = ini_read_real("Controller","Pause",gp_start);
+    global.prevWeaponButton[1] = ini_read_real("Controller","Previous_weapon",gp_shoulderl);
+    global.nextWeaponButton[1] = ini_read_real("Controller","Next_weapon",gp_shoulderr);
     global.alignLeftButton[1] = ini_read_real("Controller","Align_left",gp_shoulderl);
     global.alignRightButton[1] = ini_read_real("Controller","Align_right",gp_shoulderr);
 }

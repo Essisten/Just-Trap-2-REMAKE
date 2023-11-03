@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>select = 0;
-xSelector = 100;
-ySelector = 40;
-xSeperation = 600;
-ySeperation = 40;
+xSelector = 64;
+ySelector = 10;
+xSeperation = 672;
+ySeperation = 36;
 offset = 30;
 alarm[1] = 1;
 settingButton = false;     //sets whether or not a button is getting set
@@ -46,8 +46,10 @@ strSelect[7] = "Restart Button";
 strSelect[8] = "Skip Button";
 strSelect[9] = "Sprint Button";
 strSelect[10] = "Pause Button";
-strSelect[11] = "Reset Controls";
-optionsNum = array_length_1d(strSelect);
+strSelect[11] = "Previous Weapon";
+strSelect[12] = "Next Weapon";
+strSelect[13] = "Reset Controls";
+optionsNum = array_length_1d(strSelect) - 1;
 //get current controls
 strButton[0] = string(global.controllerIndex);
 strButton[1] = scrGetControllerBind(global.leftButton[1]);
@@ -60,7 +62,9 @@ strButton[7] = scrGetControllerBind(global.restartButton[1]);
 strButton[8] = scrGetControllerBind(global.skipButton[1]);
 strButton[9] = scrGetControllerBind(global.sprintButton[1]);
 strButton[10] = scrGetControllerBind(global.pauseButton[1]);
-strButton[11] = "";
+strButton[11] = scrGetControllerBind(global.prevWeaponButton[1]);
+strButton[12] = scrGetControllerBind(global.nextWeaponButton[1]);
+strButton[13] = "";
 
 if (strButton[0] == "-1") strButton[0] = "Disabled";
 
@@ -141,13 +145,13 @@ alarm[1] = 10;
         scrPlaySound(sndBoss1_Reload, 1.5);
         select -= 1;
         if(select &lt; 0)
-            select = 11;
+            select = optionsNum;
     }
     else if (scrButtonCheckPressed(global.menuDownButton))
     {
         scrPlaySound(sndBoss1_Reload, 1.5);
         select += 1;
-        if(select &gt; 11)
+        if(select &gt; optionsNum)
             select = 0;
     }
     else if (scrButtonCheckPressed(global.menuBackButton))
@@ -162,10 +166,8 @@ alarm[1] = 10;
         scrPlaySound(sndBoss1_Reload);
         if (select != 0)
         {
-            if (select != 11)
-            {
+            if (select != optionsNum)
                 settingButton = true;
-            }
             else
             {
                 //default controls
@@ -179,7 +181,8 @@ alarm[1] = 10;
                 global.skipButton[1] = gp_face2;
                 global.sprintButton[1] = gp_select;
                 global.pauseButton[1] = gp_start;
-                
+                global.nextWeaponButton[1] = gp_shoulderr;
+                global.prevWeaponButton[1] = gp_shoulderl;
                 resetPrompt = true;
                 alarm[0] = 60;
             }
@@ -193,7 +196,7 @@ alarm[1] = 10;
         {
             scrPlaySound(sndBoss1_Reload, 1.5);
             global.controllerIndex += 1;
-            if (global.controllerIndex &gt; 11)
+            if (global.controllerIndex &gt; optionsNum)
                 global.controllerIndex = -1;
         }
         else if (scrButtonCheckPressed(global.menuLeftButton))
@@ -201,7 +204,7 @@ alarm[1] = 10;
             scrPlaySound(sndBoss1_Reload, 1.5);
             global.controllerIndex -= 1;
             if (global.controllerIndex &lt; -1)
-                global.controllerIndex = 11;
+                global.controllerIndex = optionsNum;
         }
     }
 }
@@ -220,6 +223,8 @@ else
         else if (select == 8) {global.skipButton[1] = buttonChange;}
         else if (select == 9) {global.sprintButton[1] = buttonChange;}
         else if (select == 10) {global.pauseButton[1] = buttonChange;}
+        else if (select == 11) {global.prevWeaponButton[1] = buttonChange;}
+        else if (select == 12) {global.nextWeaponButton[1] = buttonChange;}
         
         settingButton = false;
     }
@@ -241,7 +246,9 @@ strButton[7] = scrGetControllerBind(global.restartButton[1]);
 strButton[8] = scrGetControllerBind(global.skipButton[1]);
 strButton[9] = scrGetControllerBind(global.sprintButton[1]);
 strButton[10] = scrGetControllerBind(global.pauseButton[1]);
-strButton[11] = "";
+strButton[11] = scrGetControllerBind(global.prevWeaponButton[1]);
+strButton[12] = scrGetControllerBind(global.nextWeaponButton[1]);
+strButton[13] = "";
 
 if (strButton[0] == "-1") strButton[0] = "Disabled";
 </string>
@@ -270,9 +277,9 @@ if (strButton[0] == "-1") strButton[0] = "Disabled";
 
 draw_set_alpha(0.8);
 draw_set_colour(c_black);
-draw_rectangle(xSelector - offset, ySelector - offset + ySeperation, xSelector + xSeperation + offset, ySelector + ySeperation * optionsNum + offset, false);
+draw_rectangle(xSelector - offset, ySelector - offset + ySeperation, xSelector + xSeperation + offset, ySelector + ySeperation * (optionsNum + 2) + offset, false);
 draw_set_alpha(1);
-for(var i = 0; i &lt; 12; i += 1)
+for(var i = 0; i &lt;= optionsNum; i += 1)
 {
     draw_set_halign(fa_right);
     if(i == select)
@@ -295,7 +302,7 @@ for(var i = 0; i &lt; 12; i += 1)
         draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,strButton[i]);
     }
     
-    if (resetPrompt &amp;&amp; i == 11) //reset controls prompt
+    if (resetPrompt &amp;&amp; i == optionsNum) //reset controls prompt
     {
         draw_text(xSelector+xSeperation,ySelector+i*ySeperation+32,"Controls reset!");
     }
