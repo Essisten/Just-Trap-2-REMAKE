@@ -3,7 +3,7 @@
   <spriteName>sprWeaponIdle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-11</depth>
+  <depth>-12</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
+attacking = false;
 w_id = ds_list_find_value(global.arsenal, global.currentWeapon);
 paralyzed[0] = sprWeaponIdle_Paralyzed;
 paralyzed[1] = sprWeaponIdle_Paralyzed;
@@ -84,7 +85,7 @@ y = objPlayer.y;
 image_angle = objPlayer.image_angle;
 image_xscale = objPlayer.xScale;
 image_yscale = global.grav;
-if (objPlayer.frozen)
+if (objPlayer.frozen or attacking)
    exit;
 sprite_index = state_sprites[objPlayer.state];
 if (objPlayer.shootUpward)
@@ -169,6 +170,32 @@ if (CD[w_id] &gt; 0)
    exit;
 scrPlayerShoot();
 event_user(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!attacking)
+   exit;
+attacking = false;
+image_speed = 0;
 </string>
           </argument>
         </arguments>

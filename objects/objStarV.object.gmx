@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>c = 0;
+            <string>event_inherited();
+c = 0;
 speed = 12;
 </string>
           </argument>

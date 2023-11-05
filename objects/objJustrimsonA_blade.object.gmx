@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd = 6 + global.difficulty * 2;
+            <string>event_inherited();
+spd = 6 + global.difficulty * 2;
 gravity = 0.5 + 0.5 * global.difficulty;
 rotate_speed = 4 * choose(-1, 1);
 if (rotate_speed &lt; 0)
@@ -41,6 +42,7 @@ if (global.difficulty &lt; 3)
 alarm[0] = 80 - 10 * global.difficulty;
 alarm[1] = 50;
 endless = false;
+canParry = true;
 </string>
           </argument>
         </arguments>
@@ -112,6 +114,30 @@ endless = false;
             <string>image_angle += rotate_speed;
 if (speed &gt; spd)
    speed = spd;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBatHit">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>gravity = 0;
+alarm[0] = -1;
 </string>
           </argument>
         </arguments>

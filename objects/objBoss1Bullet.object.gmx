@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objPlayerKiller</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 6 + global.difficulty * 2;
+            <string>event_inherited();
+speed = 6 + global.difficulty * 2;
 wrap = false;
 owner = objJR;
 image_xscale = 4;
 image_yscale = image_xscale;
 event_user(0);
 can_kill = true;
+canParry = true;
 </string>
           </argument>
         </arguments>
@@ -126,28 +128,6 @@ if (y &lt; -20 or y &gt; 620 or x &lt; -20 or x &gt; 820)
             <string>if (can_kill)
    scrKillPlayer();
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

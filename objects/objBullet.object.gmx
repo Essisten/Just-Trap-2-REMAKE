@@ -31,8 +31,6 @@ spd = 16;
 bulletDir = 1;
 if (instance_exists(objPlayer))
     bulletDir = objPlayer.xScale;
-else
-    bulletDir = 1;
 
 //set the bullet's speed
 if (global.gravH)

@@ -35,6 +35,7 @@ for (i = 0; i &lt; 5 + global.difficulty; i++)
     with (star)
     {
         rad = 900;
+        dmg /= 10;
     }
     stars[i] = star;
 }
@@ -93,6 +94,8 @@ with (objJustrimsonC)
 for (var i = 0; i &lt; length; i++)
 {
     var star = stars[i];
+    if (!instance_exists(star))
+       continue;
     with (star)
     {
         if ((rad &gt; other.rad) or other.done)

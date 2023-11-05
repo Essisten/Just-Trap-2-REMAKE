@@ -220,6 +220,7 @@
         <sprite>sprites\sprWeaponUp</sprite>
         <sprite>sprites\sprWeaponJump</sprite>
         <sprite>sprites\sprWeaponSliding</sprite>
+        <sprite>sprites\sprBatAttack</sprite>
       </sprites>
       <sprites name="Paralyzed">
         <sprite>sprites\sprWeaponIdle_Paralyzed</sprite>
@@ -228,6 +229,7 @@
         <sprite>sprites\sprWeaponSliding_Paralyzed</sprite>
         <sprite>sprites\sprPlayerParalyzed</sprite>
       </sprites>
+      <sprite>sprites\sprBatHit</sprite>
     </sprites>
     <sprites name="saves">
       <sprite>sprites\sprSaveMask</sprite>
@@ -466,6 +468,7 @@
         <object>objects\objWeaponPlayer</object>
         <object>objects\objBullet</object>
         <object>objects\objBulletShotgun</object>
+        <object>objects\objBatHit</object>
       </objects>
       <object>objects\objPlayerThrower</object>
     </objects>

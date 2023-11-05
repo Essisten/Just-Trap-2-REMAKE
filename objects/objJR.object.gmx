@@ -147,6 +147,7 @@ else
     {
         alarm[0] = 1;
         speed += random_range(-1, 1);
+        canParry = false;
     }
     audio_play_sound(sndShoot, 2, false);
     shootCounter++;
@@ -304,7 +305,6 @@ for (var i = 0; i &lt; 18; i++)
 }
 scrPlaySound(sndShoot, 1.2);
 scrPlaySound(sndShoot, 1.2);
-scrPlaySound(sndShoot, 1.2);
 </string>
           </argument>
         </arguments>
@@ -337,7 +337,6 @@ for (var i = 0; i &lt; 12; i++)
         alarm[0] = 12;
     }
 }
-scrPlaySound(sndShoot, 1.2);
 scrPlaySound(sndShoot, 1.2);
 scrPlaySound(sndShoot, 1.2);
 </string>
