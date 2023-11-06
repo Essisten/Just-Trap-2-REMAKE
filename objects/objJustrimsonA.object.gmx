@@ -136,6 +136,7 @@ if (HP &lt;= 50 and HP &gt; 0)
     if (phase_counter == 0)
     {
        blade.endless = true;
+       blade.canParry = false;
        phase_counter++;
        if (!objJustrimsonController.lmao)
           sprite_index = sprJustrimsonA2;
@@ -150,6 +151,7 @@ else if (HP &lt;= 0)
     if (phase_counter == 1)
     {
        blade.endless = true;
+       blade.canParry = false;
        phase_counter++;
     }
    with (objJustrimsonA_blade)

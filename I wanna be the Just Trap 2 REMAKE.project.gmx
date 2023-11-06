@@ -18,6 +18,7 @@
         <sound>sound\sndJump</sound>
         <sound>sound\sndDeath</sound>
         <sound>sound\sndShotgunShoot</sound>
+        <sound>sound\sndBatDeflect</sound>
       </sounds>
       <sounds name="Boss 2">
         <sound>sound\sndBoss2_Bomb</sound>

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 dmg /= 2;
+sound = -1;
 speed = 2;
 image_alpha = 0.8;
 alarm[0] = 5;
@@ -40,7 +41,7 @@ if (instance_exists(objPlayer))
     else
        image_xscale = objPlayer.xScale;
     image_yscale = global.grav;
-    if (!global.gravH)
+    if (global.gravH or !objPlayer.shootUpward)
        hspeed += objPlayer.hspeed;
     if (objPlayer.shootUpward or global.gravH)
        vspeed += objPlayer.vspeed;
@@ -75,8 +76,9 @@ with (other)
     canParry = false;
     direction += 180;
     speed *= 2;
-    show_debug_message(direction);
 }
+if (!sound_isplaying(sound))
+   sound = scrPlaySound(sndBatDeflect, 0.8);
 </string>
           </argument>
         </arguments>

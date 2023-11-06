@@ -41,8 +41,8 @@ for (var i = 0; i &lt; 6; i++)
     version[i] = 0;
 }
 weapons[0, 0] = scrCreateShopItem("Metal bat",
-"    This weapon is made from repurposed scrap metal. It is sold at low price because of its unpopularity among The Kids.
-#    Due to Just's lack of physical strength, the damage of this weapon is simply negligible. However, it is capable of reflecting most enemy projectiles.",
+"    This weapon is made from repurposed scrap metal. It is sold at low price because of it's low popularity among The Kids.
+#    Due to Just's lack of strength, the damage of this weapon is simply negligible. However, it is capable of reflecting most enemy projectiles.",
 "middle",
 "pathetic",
 "melee",

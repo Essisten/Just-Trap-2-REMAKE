@@ -702,7 +702,6 @@ else if (canWalk)
    exit;
 bullet = other;
 event_perform(ev_collision, objBullet);
-//instance_destroy(other);
 </string>
           </argument>
         </arguments>

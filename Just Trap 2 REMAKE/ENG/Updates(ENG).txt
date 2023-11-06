@@ -1,3 +1,9 @@
+v0.4.9
+- Added Metal bat in the shop.
+- You can buy, equip, unequip weapons.
+- Gugudian now can be interrupted.
+- The shop keeper just started working here. Please, be nice.
+==================================================
 v0.4.8
 - Added the sound test at the beggining of the game. You can disable this in settings.
 - Deeply reworked JR & Justist and their animations. Added reloading animation.

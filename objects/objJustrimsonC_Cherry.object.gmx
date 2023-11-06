@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 done = false;
+canParry = false;
 if (!instance_exists(objJustrimsonC))
    exit;
 if (objJustrimsonC.HP &lt;= 0)
