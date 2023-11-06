@@ -136,7 +136,9 @@ if (speed &gt; spd)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity = 0;
+            <string>if (endless)
+   exit;
+gravity = 0;
 alarm[0] = -1;
 </string>
           </argument>

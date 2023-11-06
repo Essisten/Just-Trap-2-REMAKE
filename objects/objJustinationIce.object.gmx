@@ -106,16 +106,7 @@ alarm[0] = 70 - global.difficulty * 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.target != objJustinationIce or !active)
-{
-    return -1;
-}
-if (godmode)
-{
-    with (other)
-        instance_destroy();
-}
-event_inherited();
+            <string>event_inherited();
 if (HP &lt;= 0)
 {
     with (objBoss4_Effects)

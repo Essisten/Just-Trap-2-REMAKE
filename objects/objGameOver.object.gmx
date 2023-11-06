@@ -176,7 +176,7 @@ switch (room)
         break;
 }
 if (percent &gt; old)
-   scrShowMoney(view_xview[0] + view_wview[0] - 128, view_yview[0] + view_hview[0] - 32, stage, false, round((percent - old) * stage * (1 + global.difficulty)));
+   scrShowMoney(view_xview[0] + view_wview[0] - 128, view_yview[0] + view_hview[0] - 32, stage, false, ceil((percent - old) * stage * (1 + global.difficulty)));
 </string>
           </argument>
         </arguments>

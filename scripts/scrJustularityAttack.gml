@@ -41,17 +41,11 @@ switch (argument0)
                     tmpD = 90;
                 }
             }
-            var c = instance_create(tmpX, tmpY, objCherry);
+            var c = instance_create(tmpX, tmpY, objMeteor);
             with (c)
             {
                 if (other.image_blend == c_black)
                     sprite_index = sprJustularityCoal2;
-                else
-                    sprite_index = sprJustularityCoal;
-                image_speed = 10 / room_speed;
-                speed = 4 + global.difficulty * 2;
-                image_xscale = 2;
-                image_yscale = image_xscale;
             }
             c.direction = tmpD + random(global.difficulty * 10) * choose(1, -1);
             c.image_angle = tmpD - 270;

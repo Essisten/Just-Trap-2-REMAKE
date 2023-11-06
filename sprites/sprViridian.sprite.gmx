@@ -21,5 +21,6 @@
   <height>21</height>
   <frames>
     <frame index="0">images\sprViridian_0.png</frame>
+    <frame index="1">images\sprViridian_1.png</frame>
   </frames>
 </sprite>

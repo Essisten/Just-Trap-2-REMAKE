@@ -35,13 +35,15 @@ if (instance_exists(objPlayer))
     image_angle = objPlayer.image_angle;
     if (objPlayer.shootUpward)
     {
-       image_angle = 90;
-       image_xscale = 1;
+       image_angle += 90 * global.grav;
     }
-    image_xscale = objPlayer.xScale;
+    else
+       image_xscale = objPlayer.xScale;
     image_yscale = global.grav;
-    hspeed += objPlayer.hspeed;
-    vspeed += objPlayer.vspeed;
+    if (!global.gravH)
+       hspeed += objPlayer.hspeed;
+    if (objPlayer.shootUpward or global.gravH)
+       vspeed += objPlayer.vspeed;
 }
 </string>
           </argument>
@@ -73,6 +75,7 @@ with (other)
     canParry = false;
     direction += 180;
     speed *= 2;
+    show_debug_message(direction);
 }
 </string>
           </argument>

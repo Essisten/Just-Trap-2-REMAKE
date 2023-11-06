@@ -32,6 +32,7 @@ godmode = false;
 colorHP = c_yellow;
 dick = 0;
 oldY = y;
+bullet = noone;
 </string>
           </argument>
         </arguments>
@@ -172,11 +173,17 @@ if (y &gt; 800)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var heal = other.doHeal;
-with (other)
-    instance_destroy();
+            <string>if (!instance_exists(bullet))
+   bullet = instance_nearest(x, y, objBoss4_BigBullet);
+if (bullet.target != self or !active)
+   exit;
 if (godmode)
+{
+    instance_destroy(bullet);
     exit;
+}
+var heal = bullet.doHeal;
+instance_destroy(bullet);
 if (HP &gt; 0 and !heal)
 {
     HP -= 4 - global.difficulty;
@@ -233,6 +240,37 @@ if (!objJustination.active)
     with (objJustination)
         event_user(1);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayerKiller">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!other.reflected or !active)
+   exit;
+bullet = other;
+bullet.target = self;
+bullet.doHeal = false;
+event_perform(ev_collision, objBoss4_BigBullet);
+godmode = true;
+alarm[10] = 50;
+alarm[9] = 5;
 </string>
           </argument>
         </arguments>

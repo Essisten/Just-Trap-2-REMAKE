@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>used = true;
+            <string>event_inherited();
+used = true;
 image_speed = 10 / room_speed;
 if (global.difficulty == 3)
 {
@@ -34,6 +35,7 @@ if (global.difficulty == 3)
 }
 alarm[0] = 25;
 spd = 0;
+canParry = true;
 </string>
           </argument>
         </arguments>
@@ -161,6 +163,33 @@ else
         speed = 0;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBatHit">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0] = -1;
+alarm[1] = -1;
+alarm[2] = -1;
+used = true;
+speed = spd * 2;
 </string>
           </argument>
         </arguments>

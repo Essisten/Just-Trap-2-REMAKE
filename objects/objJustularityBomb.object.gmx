@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 5 / room_speed;
+            <string>event_inherited();
+image_speed = 5 / room_speed;
 direction = point_direction(x, y, 400, 304) + random_range(-50, 50);
 speed = 3 + global.difficulty * 2;
 image_xscale = 2;
 image_yscale = image_xscale;
+canParry = true;
 </string>
           </argument>
         </arguments>
@@ -111,6 +113,7 @@ for (var i = 0; i &lt; 10; i++)
         speed = other.speed * 1.5;
         depth = 100030;
         sprite_index = other.sprite_index;
+        reflected = other.reflected;
     }
     c.direction = 36 * i + r;
 }

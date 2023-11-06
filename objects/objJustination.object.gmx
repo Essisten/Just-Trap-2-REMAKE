@@ -219,6 +219,7 @@ if (HP &gt; 50)
             change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
             image_xscale = 0.5;
             image_yscale = 0.5;
+            dmg /= 5;
         }
     }
     alarm[0] = 8 - global.difficulty * 2;
@@ -270,16 +271,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.target != objJustination or !active)
-{
-    return -1;
-}
-if (godmode)
-{
-    with (other)
-        instance_destroy();
-}
-event_inherited();
+            <string>event_inherited();
 if (HP &lt;= 0)
 {
     with (objBoss4_Spike)

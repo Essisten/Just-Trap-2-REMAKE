@@ -40,32 +40,33 @@ for (var i = 0; i &lt; 6; i++)
 {
     version[i] = 0;
 }
-weapons[0, 0] = scrCreateShopItem("Bat",
-"",
+weapons[0, 0] = scrCreateShopItem("Metal bat",
+"    This weapon is made from repurposed scrap metal. It is sold at low price because of its unpopularity among The Kids.
+#    Due to Just's lack of physical strength, the damage of this weapon is simply negligible. However, it is capable of reflecting most enemy projectiles.",
 "middle",
 "pathetic",
 "melee",
 200,
 "Defeat JR &amp; Justist");
 weapons[0, 1] = scrCreateShopItem("The Gun",
-"    The classic standard pistol of our famous Kid. It had been many years since the original user used it before Just got it.
-#    Initially, it has only a manual firing method, but it is possible to install an auto-firing module.",
+"   The classic standard pistol of everyone's favorite Kid. The original user wielded it for many years before Just obtained it.
+#   It was initially designed to only fire manually, but it could be improved with an auto-firing module.",
 "fast",
 "middle",
 "far",
 0,
 "How did you even lost it?!");
 weapons[0, 2] = scrCreateShopItem("Shotgun",
-"    Known killer weapon. It breaks the bullets into pieces right after firing to multiply their number. This reduces the flight speed, but significantly increases the damage radius.
-#    The sharp fragments together are capable of penetrating enemy's defenses, which increases overall damage compared to The Gun.",
+"    A notoriously deadly weapon. It fractures the bullets into pieces right after firing. This weapon has a lower shot speed, but significantly increased damage radius.
+#    The sharp fragments are able to penetrate an enemy's defenses, increasing maximum damage compared to The Gun. ",
 "slow",
 "good",
 "short",
 400,
 "Defeat Justularity");
 weapons[0, 3] = scrCreateShopItem("Machine gun",
-"    An extremely lethal and heavy weapon. Combining multiple the guns together made it possible to create a weapon with a high rate of fire, while maintaining the power of each bullet.
-#    Disadvantages include reduced accuracy, as well as reduced user mobility.",
+"    An extremely lethal and heavy weapon. Combining multiple guns together gives this weapon a high rate of fire, without sacrificing the power of each bullet.
+#    Its disadvantages include its reduced accuracy, as well as reduced user mobility.",
 "TRA-TA-TA",
 "middle",
 "far",

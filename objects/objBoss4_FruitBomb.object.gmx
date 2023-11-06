@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = 3;
+            <string>event_inherited();
+image_xscale = 3;
 image_yscale = image_xscale;
 image_speed = 1/15;
 vspeed = 6 + global.difficulty * 3;
 alarm[0] = 30;
+dmg *= 4;
 </string>
           </argument>
         </arguments>
@@ -59,6 +61,7 @@ alarm[0] = 30;
     {
         sprite_index = sprCherryDark;
         speed = 3 + global.difficulty * 2;
+        reflected = other.reflected;
         if (instance_exists(objJustinationDark))
         {
             if objJustinationDark.HP &lt;= 0

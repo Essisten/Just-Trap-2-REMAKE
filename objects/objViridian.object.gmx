@@ -29,13 +29,16 @@
 image_blend = make_colour_hsv(type, type, 200);
 image_xscale = 6;
 image_yscale = image_xscale;
+image_speed = 0;
 rotate = false;
 fly = true;
 line = false;
 muted = false;
 shootCounter = 0;
 totalShoots = 0;
+bullet = noone;
 lineCounter = 0;
+HP = 8;
 d = 0;
 spd = 16 * choose(1, -1);
 yy = y;
@@ -287,15 +290,17 @@ else
           <argument>
             <kind>1</kind>
             <string>///Real time shooting
-shootCounter++;
-line = false;
-var s = instance_create(x, y, objStarV);
-s.direction = direction;
-s.image_xscale = 2 + totalShoots;
-s.image_yscale = s.image_xscale;
-scrPlaySound(sndShootV);
 if (shootCounter &lt; 30)
+{
     alarm[1] = 1 + totalShoots;
+    shootCounter++;
+    line = false;
+    var s = instance_create(x, y, objStarV);
+    s.direction = direction;
+    s.image_xscale = 2 + totalShoots;
+    s.image_yscale = s.image_xscale;
+    scrPlaySound(sndShootV);
+}
 else
 {
     totalShoots++;
@@ -374,6 +379,69 @@ if (rotate)
 {
     image_angle += spd;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayerKiller">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!other.reflected)
+   exit;
+bullet = other;
+event_perform(ev_collision, objBullet);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (HP &lt;= 0)
+   exit;
+if (!instance_exists(bullet))
+   bullet = instance_nearest(x, y, objBullet);
+HP -= bullet.dmg;
+instance_destroy(bullet);
+scrPlaySound(sndBossHit);
+if (HP &gt; 0)
+   exit;
+totalShoots = 3;
+shootCounter = 30;
+alarm[1] = 1;
+image_index = 1;
+scrPlaySound(sndDeath);
+
 </string>
           </argument>
         </arguments>

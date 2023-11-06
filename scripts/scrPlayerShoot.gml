@@ -5,7 +5,7 @@ switch (ds_list_find_value(global.arsenal, global.currentWeapon))
         attacking = true;
         sprite_index = sprBatAttack;
         image_speed = 0.2;
-        scrPlaySound(sndShoot);
+        scrPlaySound(sndMiss);
         break;
     case 1:
         instance_create(x,y,objBullet);
