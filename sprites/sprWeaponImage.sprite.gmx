@@ -7,7 +7,7 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
+  <bbox_left>0</bbox_left>
   <bbox_right>63</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>63</bbox_bottom>
@@ -24,5 +24,6 @@
     <frame index="1">images\sprWeaponImage_1.png</frame>
     <frame index="2">images\sprWeaponImage_2.png</frame>
     <frame index="3">images\sprWeaponImage_3.png</frame>
+    <frame index="4">images\sprWeaponImage_4.png</frame>
   </frames>
 </sprite>

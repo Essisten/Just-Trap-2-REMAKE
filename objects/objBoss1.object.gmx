@@ -331,7 +331,7 @@ if (showing)
         image_xscale = image_yscale * -1;
     else
         image_xscale = image_yscale;
-    y = min(hole.y, 464);
+    oldY = min(hole.y, 464);
     destinationX = hole.x;
     if (counter &gt;= 10)
     {
@@ -351,13 +351,13 @@ else
         image_xscale = image_yscale * -1;
     else
         image_xscale = image_yscale;
-    y = hole.y
+    oldY = hole.y
     hightY = hole.y;
     destinationX = hole.x;
     if (counter &gt;= 10)
     {
         oldY = -50;
-        y = -50;
+        oldY = -50;
         flyHight = -50;
         counter = 0;
         alarm[6] = -1;

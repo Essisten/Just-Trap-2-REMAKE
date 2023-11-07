@@ -106,7 +106,7 @@ else
     else
         target = objJR;
 }
-if (abs(x - target.x) &lt; 4 and abs(y - target.y) &lt; 4)
+if (abs(x - target.x) &lt; (speed * 2) and abs(y - target.y) &lt; (speed * 2))
     instance_destroy();
 if (!global.particles)
     exit;

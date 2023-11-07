@@ -77,8 +77,8 @@ with (other)
     direction += 180;
     speed *= 2;
 }
-if (!sound_isplaying(sound))
-   sound = scrPlaySound(sndBatDeflect, 0.8);
+if (sound == -1)
+   sound = scrPlaySound(sndBatDeflect2, 1);
 </string>
           </argument>
         </arguments>

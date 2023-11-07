@@ -147,7 +147,6 @@ else
     {
         alarm[0] = 1;
         speed += random_range(-1, 1);
-        canParry = false;
     }
     audio_play_sound(sndShoot, 2, false);
     shootCounter++;

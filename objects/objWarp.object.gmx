@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 ready = false;
-alarm[0] = 25;
+alarm[0] = 15;
 spinDir = choose(-1, 1);
 color = c_purple;
 if (global.spriteStyle == 1)
@@ -94,7 +94,10 @@ ready = true;
           <argument>
             <kind>1</kind>
             <string>if (!ready)
+{
+    objPlayer.x += 64;
     exit;
+}
 event_inherited();
 </string>
           </argument>

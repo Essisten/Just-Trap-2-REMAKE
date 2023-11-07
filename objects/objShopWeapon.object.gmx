@@ -40,9 +40,9 @@ for (var i = 0; i &lt; 6; i++)
 {
     version[i] = 0;
 }
-weapons[0, 0] = scrCreateShopItem("Metal bat",
-"    This weapon is made from repurposed scrap metal. It is sold at low price because of it's low popularity among The Kids.
-#    Due to Just's lack of strength, the damage of this weapon is simply negligible. However, it is capable of reflecting most enemy projectiles.",
+weapons[0, 0] = scrCreateShopItem("CXN Bat",
+"The CXN is end loaded, has an optimized handle flex specially built to perform perfectly with the 13 inch composite barrel. Get your CXN Slowpitch Bat today, right here at CheapBats.com!
+#    Due to Just's lack of strength, the damage of this weapon is simply negligible. However, it's capable of reflecting most enemy projectiles.",
 "middle",
 "pathetic",
 "melee",
@@ -281,9 +281,9 @@ draw_text_ext_transformed(weaponNameX, weaponNameY - slideOffset, weapons[versio
 if (global.unlockedWeapons[w_id])
 {
     draw_set_font(fDefault12);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 64 - slideOffset, "Damage: " + weapons[version[select], select].dmg, c_red, c_maroon);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 80 - slideOffset, "Range:   " + weapons[version[select], select].range, c_yellow, c_orange);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 96 - slideOffset, "Speed:   " + weapons[version[select], select].spd, c_aqua, c_blue);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 72 - slideOffset, "Damage: " + weapons[version[select], select].dmg, c_red, c_maroon);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 88 - slideOffset, "Range:   " + weapons[version[select], select].range, c_yellow, c_orange);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 104 - slideOffset, "Speed:   " + weapons[version[select], select].spd, c_aqua, c_blue);
 }
 draw_set_colour(c_white);
 draw_set_font(fDetermination14);
@@ -310,7 +310,12 @@ dick += 2;
 draw_set_colour(c_white);
 draw_set_valign(fa_center);
 if (global.unlockedWeapons[w_id])
-   draw_sprite_ext(sprWeaponImage, w_id, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 3.4, 3.4, 0, c_white, image_alpha);
+{
+    if (w_id == 0)
+       draw_sprite_ext(sprBigWeaponImage, 0, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 1, 1, 0, c_white, image_alpha);
+    else
+        draw_sprite_ext(sprWeaponImage, w_id, weaponStartX, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 3.4, 3.4, 0, c_white, image_alpha);
+}
 else
    draw_sprite_ext(sprUnknownWeapon, 0, weaponStartX + 8, weaponStartY + (weaponEndY - weaponStartY) / 2 - slideOffset, 9, 9, 0, c_white, image_alpha);
 draw_set_halign(fa_center);

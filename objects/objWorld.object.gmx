@@ -395,7 +395,7 @@ if (keyboard_check_pressed(vk_f4) &amp;&amp; !global.gamePaused)    //toggle ful
     
     window_set_fullscreen(global.fullscreenMode);
     
-    scrSaveConfig();    //save fullscreen setting
+    //scrSaveConfig();    //save fullscreen setting
 }
 
 if (keyboard_check_pressed(vk_f5) &amp;&amp; !global.gamePaused)    //reset window size

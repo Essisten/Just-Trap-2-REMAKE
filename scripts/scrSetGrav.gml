@@ -7,7 +7,7 @@ var up = 14;
 djump = 1;
 if (global.gravityControls)
 {
-    scrLoadConfig();
+    scrLoadControls();
     var tmpUp = global.upButton;
     var tmpDown = global.downButton;
     var tmpLeft = global.leftButton;
