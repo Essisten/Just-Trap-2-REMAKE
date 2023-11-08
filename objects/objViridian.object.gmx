@@ -51,11 +51,11 @@ with (name)
 {
     from = "Happil 1";
     owner = objViridian;
+    if (other.type == 128)
+       name = "Gugudian";
+    else
+        name = "Gugumillion";
 }
-if (type == 128)
-   name.name = "Gugudian";
-else
-    name.name = "Gugumillion";
 alarm[6] = 1;
 </string>
           </argument>

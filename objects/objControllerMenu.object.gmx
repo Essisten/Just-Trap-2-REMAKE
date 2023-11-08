@@ -157,7 +157,7 @@ alarm[1] = 10;
     else if (scrButtonCheckPressed(global.menuBackButton))
     {
         scrPlaySound(sndBoss1_Reload);
-        scrSaveConfig();    //save changes
+        scrSaveControls();    //save changes
         instance_create(x,y,objOptionsMenu);
         instance_destroy();
     }

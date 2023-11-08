@@ -391,6 +391,7 @@
         <script>scripts\scrSetGlobalOptions.gml</script>
         <script>scripts\scrSaveGame.gml</script>
         <script>scripts\scrSaveConfig.gml</script>
+        <script>scripts\scrSaveControls.gml</script>
         <script>scripts\scrLoadGame.gml</script>
         <script>scripts\scrLoadConfig.gml</script>
         <script>scripts\scrParticleInit.gml</script>

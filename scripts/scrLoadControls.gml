@@ -68,4 +68,3 @@ for (var i = 0; i < 2; i++)
     global.saveJumpButton[i] = global.jumpButton[i];
     global.saveShootButton[i] = global.shootButton[i];
 }
-scrSaveConfig();    //save config in case something changed
