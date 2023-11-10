@@ -79,6 +79,7 @@
       <sound>sound\musOnDeath2</sound>
       <sound>sound\musStage3A</sound>
       <sound>sound\musStage3B</sound>
+      <sound>sound\musStage6</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -89,6 +90,7 @@
       <sprite>sprites\sprKillerBlock</sprite>
       <sprite>sprites\sprBlock</sprite>
       <sprite>sprites\sprBlock2</sprite>
+      <sprite>sprites\sprBlock3</sprite>
       <sprite>sprites\sprSlideBlock</sprite>
       <sprite>sprites\sprSlideBlockR</sprite>
       <sprite>sprites\sprSlideBlockL</sprite>
@@ -179,6 +181,7 @@
       <sprite>sprites\sprMiniLeft</sprite>
       <sprite>sprites\sprMiniDown</sprite>
       <sprite>sprites\sprCherry</sprite>
+      <sprite>sprites\sprCherry_Blend</sprite>
     </sprites>
     <sprites name="misc">
       <sprite>sprites\sprWater</sprite>
@@ -208,7 +211,6 @@
       <sprite>sprites\sprPlayerSliding</sprite>
       <sprite>sprites\sprBow</sprite>
       <sprite>sprites\sprBullet</sprite>
-      <sprite>sprites\sprBullet2</sprite>
       <sprite>sprites\sprBlood</sprite>
       <sprite>sprites\sprPlayerIdleUp</sprite>
       <sprite>sprites\sprPlayerRunUp</sprite>
@@ -343,6 +345,19 @@
       <sprite>sprites\sprMe</sprite>
       <sprite>sprites\sprMyHead</sprite>
       <sprite>sprites\sprBigWeaponImage</sprite>
+    </sprites>
+    <sprites name="Final Boss">
+      <sprite>sprites\sprBigJust_Body</sprite>
+      <sprite>sprites\sprBigSolgryn_Body</sprite>
+      <sprite>sprites\sprBigGay_Body</sprite>
+      <sprite>sprites\sprBigCrimson_Body</sprite>
+      <sprite>sprites\sprBigJust_Head</sprite>
+      <sprites name="???">
+        <sprite>sprites\sprDarkJust_Head</sprite>
+        <sprite>sprites\sprDarkJust_Body</sprite>
+      </sprites>
+      <sprite>sprites\sprBigBullet_Colorful</sprite>
+      <sprite>sprites\sprBigBullet_Blend</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -480,14 +495,18 @@
     <objects name="blocks">
       <object>objects\objBlock</object>
       <object>objects\objMiniBlock</object>
-      <object>objects\objSlipBlock</object>
-      <object>objects\objBlockInvis</object>
-      <object>objects\objBlockFake</object>
-      <object>objects\objSlideBlock</object>
-      <object>objects\objSlideBlockL</object>
-      <object>objects\objSlideBlockR</object>
-      <object>objects\objBossBlock</object>
-      <object>objects\objSaveBlocker</object>
+      <object>objects\objStretchableBlock</object>
+      <object>objects\objBlockEdge</object>
+      <objects name="Engine trash">
+        <object>objects\objBlockInvis</object>
+        <object>objects\objSlideBlock</object>
+        <object>objects\objBlockFake</object>
+        <object>objects\objSlideBlockR</object>
+        <object>objects\objBossBlock</object>
+        <object>objects\objSlipBlock</object>
+        <object>objects\objSaveBlocker</object>
+        <object>objects\objSlideBlockL</object>
+      </objects>
     </objects>
     <objects name="slopes">
       <object>objects\objSlope</object>
@@ -651,6 +670,15 @@
       <object>objects\objShopItem</object>
       <object>objects\objEssisten</object>
     </objects>
+    <objects name="Final Boss">
+      <object>objects\objBigKid_Body</object>
+      <object>objects\objBigKid_Head</object>
+      <object>objects\objBigKid_BG</object>
+      <object>objects\objBigJust_Healthbar</object>
+      <object>objects\objBigKid_Bullet</object>
+      <object>objects\objBigKid_Water</object>
+      <object>objects\objBigKid_BounceFruit</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="init">
@@ -660,14 +688,15 @@
       <room>rooms\rOptions</room>
       <room>rooms\rDifficultySelect</room>
     </rooms>
+    <room>rooms\rTemplate</room>
+    <room>rooms\rStageSelect</room>
+    <room>rooms\rShop</room>
     <room>rooms\rBoss1</room>
     <room>rooms\rBoss2</room>
-    <room>rooms\rBoss4</room>
-    <room>rooms\rStageSelect</room>
-    <room>rooms\rTemplate</room>
-    <room>rooms\rBoss3_Fall</room>
     <room>rooms\rBoss3</room>
-    <room>rooms\rShop</room>
+    <room>rooms\rBoss3_Fall</room>
+    <room>rooms\rBoss4</room>
+    <room>rooms\rFinalBoss</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -25,5 +25,12 @@
     <frame index="2">images\sprCard_2.png</frame>
     <frame index="3">images\sprCard_3.png</frame>
     <frame index="4">images\sprCard_4.png</frame>
+    <frame index="5">images\sprCard_5.png</frame>
+    <frame index="6">images\sprCard_6.png</frame>
+    <frame index="7">images\sprCard_7.png</frame>
+    <frame index="8">images\sprCard_8.png</frame>
+    <frame index="9">images\sprCard_9.png</frame>
+    <frame index="10">images\sprCard_10.png</frame>
+    <frame index="11">images\sprCard_11.png</frame>
   </frames>
 </sprite>

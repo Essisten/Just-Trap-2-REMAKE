@@ -79,6 +79,7 @@ else
             io_clear(); //clear input states to prevent possible pause strats/exploits
             break;
         case 1:
+             global.gameStarted = false;
             room_goto(rTitle);
             break;
         case 2:

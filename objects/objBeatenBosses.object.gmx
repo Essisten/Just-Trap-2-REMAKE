@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>blend = c_white;
 sel = global.selectedBoss;
-var d = 1000000;
-for (var i = 0; i &lt; 5; i++)
+var d = 100000000;
+for (var i = 0; i &lt; 7; i++)
 {
     tiles[i] = tile_get_ids_at_depth(d);
     d /= 10;
@@ -158,6 +158,10 @@ switch (global.selectedBoss)
         if (background_index[1] != bBoss4)
             background_index[1] = bBoss4;
         break;
+    case 6:
+        if (background_index[1] != bBoss4)
+            background_index[1] = bBoss4;
+        break;
 }
 </string>
           </argument>
@@ -235,6 +239,16 @@ if (global.spriteStyle == 0)
    draw_sprite_ext(sprJustination_Mini, 0, 608, 278, 1, 1, 0, blend, image_alpha);
 else
     draw_sprite_ext(sprJustination_Mini, 1, 608, 278, 1, 1, 0, blend, image_alpha);
+
+scrCheckBossClear(5);
+draw_sprite_ext(sprBigJust_Head, 0, 464, 48, 3, 3, 0, blend, image_alpha);
+draw_sprite_ext(sprBigJust_Body, 0, 464, 48, 3, 3, 0, blend, image_alpha);
+
+
+draw_sprite_ext(sprDarkJust_Body, 0, 336, 48, -3, 3, 0, blend, image_alpha);
+draw_sprite_ext(sprDarkJust_Head, 0, 336, 48, -3, 3, 0, blend, image_alpha);
+
+
 </string>
           </argument>
         </arguments>

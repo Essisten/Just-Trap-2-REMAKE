@@ -14,6 +14,7 @@ if (argument1)
         x = hole.x;
         y = hole.y;
         oldY = y;
+        dick = 0;
         flyHight = irandom_range(150, 300);
         alarm[0] = 1;
         alarm[6] = 2;

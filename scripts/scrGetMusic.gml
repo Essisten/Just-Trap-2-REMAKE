@@ -20,6 +20,10 @@ switch (room)                       //determines which song to play
         scrPlayMusic(musStage4, true); //play the song for the current room
         audio_sound_set_track_position(global.currentMusic, 13.1);
         return -1;
+    case rFinalBoss:
+        scrPlayMusic(musStage6, true); //play the song for the current room
+        audio_sound_pitch(global.currentMusic, 320/256);
+        return -1;
     default:                        //default option in case the room does not have a song set
         roomSong = -1;
         break;

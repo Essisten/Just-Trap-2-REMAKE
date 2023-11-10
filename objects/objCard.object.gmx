@@ -81,13 +81,13 @@ gravity = 0.08;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &lt; -320 or x &gt; 800)
+            <string>if (x &lt; (view_xview[0] - 320) or x &gt; view_xview[0] + view_wview[0])
     instance_destroy();
 if (done)
     exit;
-if (x &lt; 400)
+if (x &lt; view_xview[0] + view_wview[0] / 2)
 {
-    x = min(x + 6, 0);
+    x = min(x + 6, view_xview[0]);
     if (x &gt;= 0)
     {
         done = true;
@@ -96,8 +96,8 @@ if (x &lt; 400)
 }
 else
 {
-    x = max(x - 6, 480);
-    if (x &lt;= 480)
+    x = max(x - 6, view_xview[0] + view_wview[0] - 320);
+    if (x &lt;= view_xview[0] + view_wview[0] - 320)
     {
         done = true;
         alarm[0] = 100;
