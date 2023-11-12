@@ -54,6 +54,7 @@
     <instance objName="objPlayerStart" x="192" y="544" name="inst_3B524373" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBigKid_Body" x="576" y="320" name="inst_A9A16977" locked="0" code="" scaleX="16" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objBigKid_BG" x="128" y="192" name="inst_C771D7A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBigBow" x="544" y="416" name="inst_A1C13425" locked="0" code="" scaleX="-16" scaleY="16" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="192" y="576" w="16" h="16" xo="0" yo="0" id="10004752" name="inst_3A463B47" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

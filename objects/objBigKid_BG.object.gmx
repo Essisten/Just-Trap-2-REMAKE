@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>width = 640;
+            <string>healthbar = -1;
+width = 640;
 height = 384;
 color[0] = c_gray;
 color[1] = c_maroon;
@@ -35,6 +36,10 @@ color[4] = c_dkgray;
 color[5] = -1;
 color[6] = -1;
 color[7] = -1;
+BG[2] = sprBigKid_GayBG;
+BG[3] = sprBigKid_KamiliaBG;
+BG[5] = sprBigKid_GayBG;
+BG[6] = sprBigKid_GayBG;
 phase = 0;
 name[0] = "The Kid";
 name[1] = "Crimson Kid";
@@ -44,6 +49,7 @@ name[4] = "Geezer Kid";
 name[5] = "Kamilia Kid";
 name[6] = "Kamilia";
 name[7] = "The Kamilia";
+image_speed = 1/8;
 top_wall = instance_create(x + 32, y, objStretchableBlock);
 bottom_wall = instance_create(x + 32, 576, objStretchableBlock);
 left_wall = instance_create(x, y + 32, objStretchableBlock);
@@ -53,6 +59,7 @@ left_top_edge = instance_create(x, y, objBlockEdge);
 left_bottom_edge = instance_create(x, 576, objBlockEdge);
 right_top_edge = instance_create(768, y, objBlockEdge);
 right_bottom_edge = instance_create(768, 576, objBlockEdge);
+alarm[2] = 1;
 healthbar = instance_create(x, y - 24, objBigJust_Healthbar);
 with (top_wall)
 {
@@ -73,6 +80,38 @@ with (right_wall)
 {
     image_yscale = 11;
     sprite_index = sprBlock2;
+}
+with (objBlock)
+     image_speed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Post-create
+
+if (global.difficulty &lt; 3)
+{
+   healthbar = instance_create(x, y, objPlayerHP);
+    with (objPlayer)
+         healthed = true;
 }
 </string>
           </argument>
@@ -132,7 +171,7 @@ for (var i = 0; i &lt; 19; i++)
 {
     if (i &gt; 9 and i &lt; 16)
        continue;
-    instance_create(x + 32 * (i + 1), y, objSpikeDown);
+    instance_create(x + 32 * (i + 2), y + 32, objSpikeDown);
     instance_create(x + 32 * (i + 1), 576, objSpikeUp);
 }
 with (objSpikeUp)
@@ -202,7 +241,8 @@ with (label_name)
             <kind>1</kind>
             <string>if (color[phase] == -1)
 {
-    
+    sprite_index = BG[phase];
+    draw_self();
 }
 else
 {
@@ -210,6 +250,7 @@ else
     draw_rectangle(x, y, x + width, y + height, false);
 }
 draw_set_font(fDefault30);
+draw_set_halign(fa_left);
 scrDrawTextOutline(x, y - 64, name[phase], c_white, c_gray);
 </string>
           </argument>

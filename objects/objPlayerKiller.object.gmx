@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>reflected = false;
 canParry = false;
-dmg = (4 - global.difficulty) * 2;
+dmg = (4 - global.difficulty);
 </string>
           </argument>
         </arguments>

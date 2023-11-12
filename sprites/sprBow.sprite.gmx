@@ -7,9 +7,9 @@
   <coltolerance>0</coltolerance>
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>7</bbox_left>
+  <bbox_left>2</bbox_left>
   <bbox_right>17</bbox_right>
-  <bbox_top>9</bbox_top>
+  <bbox_top>2</bbox_top>
   <bbox_bottom>18</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -21,5 +21,7 @@
   <height>32</height>
   <frames>
     <frame index="0">images\sprBow_0.png</frame>
+    <frame index="1">images\sprBow_1.png</frame>
+    <frame index="2">images\sprBow_2.png</frame>
   </frames>
 </sprite>

@@ -33,9 +33,13 @@ gravity = 0.4 * global.grav; //player gravity
 djump = 1; //allow the player to double jump as soon as he spawns
 maxSpeed = 3;   //max horizontal speed
 maxVspeed = 9;  //max vertical speed
+HP = 1;
+maxHP = 1;
 image_speed = 0.2; //initial speed of animation
 onPlatform = false; //sets if player is currently standing on a platform
 paralyzed = false;
+healthed = false;
+iframe_counter = 0;
 xScale = 1; //sets the direction the player is facing (1 is facing right, -1 is facing left)
 sprt = sprite_index;
 Just[0] = sprPlayerIdle;
@@ -88,6 +92,41 @@ with (objBow)
     instance_destroy();
 part_type_clear(global.sprintParticles);
 part_emitter_clear(global.sprintParticleSystem, global.sprintEmitter);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///I-framing
+if (image_alpha &gt; 0.2)
+   image_alpha = 0.2;
+else
+    image_alpha = 1;
+iframe_counter++;
+if (iframe_counter &gt;= 8)
+{
+    image_alpha = 1;
+    iframe_counter = 0;
+    exit;
+}
+alarm[1] = 10;
 </string>
           </argument>
         </arguments>
@@ -915,7 +954,14 @@ with (objWeaponPlayer)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrKillPlayer();
+            <string>if (alarm[1] &gt; -1)
+   exit;
+if (!healthed)
+{
+   scrKillPlayer();
+   exit;
+}
+scrDamagePlayer(1);
 </string>
           </argument>
         </arguments>

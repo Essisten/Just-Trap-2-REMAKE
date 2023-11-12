@@ -83,6 +83,7 @@ for (i = 0; i &lt; array_length_1d(CD); i++)
 x = objPlayer.x;
 y = objPlayer.y;
 image_angle = objPlayer.image_angle;
+image_alpha = objPlayer.image_alpha;
 image_xscale = objPlayer.xScale;
 image_yscale = global.grav;
 if (objPlayer.frozen or attacking)

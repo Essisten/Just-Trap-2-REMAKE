@@ -353,7 +353,7 @@ if (global.debugVisuals)
     {
         if (global.debugNoDeath)     //makes player slightly transparent when god mode is on
             image_alpha = 0.7;
-        else
+        else if (!healthed)
             image_alpha = 1;
         
         if (global.debugInfJump)     //makes player turn blue when infinite jump is on

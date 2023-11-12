@@ -32,6 +32,13 @@ bullet = noone;
 head = instance_create(x, y, objBigKid_Head);
 bullet_counter = irandom(1);
 alarm[0] = 50;
+skin[0] = sprBigJust_Body;
+skin[1] = sprBigCrimson_Body;
+skin[2] = sprBigGay_Body;
+skin[3] = sprBigSolgryn_Body;
+skin[4] = sprBigGeezer_Body;
+skin[5] = sprBigKamilia_Body;
+//skin[6] = sprBigCrimson_Body;
 </string>
           </argument>
         </arguments>
@@ -69,10 +76,10 @@ b = instance_create(x - 208, y + 64, tmp);
 with (b)
 {
     hspeed = -(global.difficulty + 1) * 1.5;
-    image_xscale = 20;
+    image_xscale = 16;
     image_yscale = image_xscale;
 }
-alarm[0] = floor(80 / abs(b.hspeed));
+alarm[0] = floor(64 / abs(b.hspeed));
 </string>
           </argument>
         </arguments>
@@ -131,6 +138,35 @@ if (instance_exists(head))
             <string>if (!instance_exists(bullet))
    bullet = instance_nearest(x, y, objBullet);
 instance_destroy(bullet);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change skin
+switch (objBigKid_BG.phase)
+{
+    default:
+        sprite_index = skin[objBigKid_BG.phase];
+        break;
+}
 </string>
           </argument>
         </arguments>

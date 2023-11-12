@@ -163,14 +163,14 @@ switch (objBigKid_BG.phase)
          else
          {
             if (tmpHP &gt; 10)
-                with (instance_create(v_w, random_range(256, 448), objCherry))
-                     hspeed = -fruit_spd * random_range(0.6, 1);
-            if (tmpHP &gt; 20)
                 with (instance_create(random_range(160, 416), view_yview[0], objCherry))
                      vspeed = fruit_spd * random_range(0.6, 1);
-            if (tmpHP &gt; 30)
+            if (tmpHP &gt; 20)
                 with (instance_create(random_range(160, 416), v_h, objCherry))
                      vspeed = -fruit_spd * random_range(0.6, 1);
+            if (tmpHP &gt; 30)
+                with (instance_create(v_w, random_range(256, 448), objCherry))
+                     hspeed = -fruit_spd * random_range(0.6, 1);
             if (tmpHP &gt; 40)
                 with (instance_create(view_xview[0], random_range(256, 448), objCherry))
                      hspeed = fruit_spd * random_range(0.6, 1);
@@ -207,12 +207,17 @@ objBigJust_Healthbar.oldHP = maxHP;
 objBigKid_BG.phase++;
 image_index = objBigKid_BG.phase;
 scrCreateFade(c_white, 0.05, false);
+scrDamagePlayer(-1, false);
 with (instance_create(view_xview[0] + view_wview[0], view_yview[0] + view_hview[0] - 192, objCard))
 {
     image_index = objBigKid_BG.phase + 4;
     if (objBigKid_BG.phase == 1)
        image_index = 3;
 }
+with (objBigKid_Bullet)
+     event_user(0);
+with (objBigKid_Body)
+   event_user(0);
 switch (objBigKid_BG.phase)
 {
     case 1:
@@ -221,12 +226,65 @@ switch (objBigKid_BG.phase)
               sprite_index = sprBoss3_Block;
               image_speed = 0;
          }
-         with (objSpikeUp)
+         with (objSpikeParent)
               image_blend = c_red;
-         with (objSpikeDown)
-              image_blend = c_red;
-         with (objBigKid_Body)
-            sprite_index = sprBigCrimson_Body;
+         with (objBigBow)
+         {
+              image_index = 2;
+              depth = -20;
+         }
+         break;
+    case 2:
+         with (objBigBow)
+         {
+              image_index = 0;
+              depth = -30;
+         }
+         with (objSpikeParent)
+         {
+            image_blend = c_white;
+            sprite_index = sprBigKid_GaySpike;
+         }
+         with (objBlock)
+             sprite_index = sprBigKid_Brick1;
+         with (objBigKid_BG)
+            bottom_wall.image_index = 1;
+         break;
+    case 3:
+         with (objBigBow)
+              image_index = 1;
+         with (objSpikeParent)
+            sprite_index = sprBigKid_SolgrynSpike;
+         with (objBlock)
+              sprite_index = sprBigKid_Brick3;
+         break;
+    case 4:
+         with (objBigBow)
+              image_index = 0;
+         with (objSpikeParent)
+         {
+            sprite_index = sprBigKid_GaySpike;
+         }
+         break;
+    case 5:
+         with (objSpikeParent)
+         {
+            sprite_index = sprBigKid_KamiliaSpike;
+         }
+         depth = -19;
+         with (objBigKid_BG)
+         {
+            with (objBlock)
+                 sprite_index = sprBigKamilia_Block;
+            with (top_wall)
+                 image_index = 1;
+            with (left_wall)
+                 image_index = 2;
+            with (right_wall)
+                 image_index = 2;
+            with (bottom_wall)
+                 sprite_index = sprBigKamilia_Platform;
+         }
          break;
 }
 </string>

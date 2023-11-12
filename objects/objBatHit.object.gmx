@@ -74,9 +74,13 @@ with (other)
 {
     reflected = true;
     canParry = false;
-    direction += 180;
     speed *= 2;
+    dmg *= 2;
 }
+if (abs(other.direction - direction) &gt; 100)
+   other.direction += 180;
+else
+    other.direction = direction;
 if (sound == -1)
    sound = scrPlaySound(sndBatDeflect2, 1);
 </string>
