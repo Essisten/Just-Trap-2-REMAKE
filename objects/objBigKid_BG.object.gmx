@@ -32,14 +32,14 @@ color[0] = c_gray;
 color[1] = c_maroon;
 color[2] = -1;
 color[3] = -1;
-color[4] = c_dkgray;
+color[4] = c_black;
 color[5] = -1;
 color[6] = -1;
 color[7] = -1;
 BG[2] = sprBigKid_GayBG;
-BG[3] = sprBigKid_KamiliaBG;
-BG[5] = sprBigKid_GayBG;
-BG[6] = sprBigKid_GayBG;
+BG[3] = sprBigKid_GayBG;
+BG[5] = sprBigKid_KamiliaBG;
+BG[6] = sprBigKid_KamiliaBG;
 phase = 0;
 name[0] = "The Kid";
 name[1] = "Crimson Kid";
@@ -252,6 +252,59 @@ else
 draw_set_font(fDefault30);
 draw_set_halign(fa_left);
 scrDrawTextOutline(x, y - 64, name[phase], c_white, c_gray);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="98">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!global.debugMode)
+   exit;
+with (objBigKid_Head)
+     event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="97">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!global.debugMode or phase &lt; 2)
+   exit;
+phase -= 2;
+with (objBigKid_Head)
+     event_user(0);
 </string>
           </argument>
         </arguments>

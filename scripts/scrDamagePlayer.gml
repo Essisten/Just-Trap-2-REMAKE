@@ -1,20 +1,22 @@
 ///scrDamagePlayer(damage, do iframe)
 
-if (argument0 > 0)
+if (argument[0] > 0)
    scrPlaySound(sndDeath);
 else
     scrPlaySound(sndHeal);
 var state = objPlayerHP.state;
+var do_iframe = true;
+if (argument_count > 1)
+{
+   do_iframe = argument[1];
+}
 with (objPlayer)
 {
-    HP -= argument0;
-    if (argument_count == 1 or argument1)
+    HP -= argument[0];
+    if (do_iframe)
        alarm[1] = 1;
-    if (HP >= 10)
-    {
-        HP = maxHP;
+    if (argument[0] < 0)
         state = 0;
-    }
     else if (HP <= 0)
     {
         HP = 0;

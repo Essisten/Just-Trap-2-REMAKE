@@ -69,6 +69,11 @@ if (bullet_counter == 0 or
 {
     bullet_counter++;
     tmp = objBigKid_Bullet;
+    if (objBigKid_BG.phase == 1 and objBigKid_Head.HP &lt; 25 and global.difficulty &lt; 3)
+    {
+        alarm[0] = ceil(64 / random_range(2, 5));
+        exit;
+    }
 }
 else
     bullet_counter = 0;

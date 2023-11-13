@@ -181,6 +181,7 @@
       <sprite>sprites\sprMiniLeft</sprite>
       <sprite>sprites\sprMiniDown</sprite>
       <sprite>sprites\sprCherry</sprite>
+      <sprite>sprites\sprCherry_Colorful</sprite>
       <sprite>sprites\sprCherry_Blend</sprite>
     </sprites>
     <sprites name="misc">
@@ -348,13 +349,6 @@
       <sprite>sprites\sprBigWeaponImage</sprite>
     </sprites>
     <sprites name="Final Boss">
-      <sprite>sprites\sprBigJust_Body</sprite>
-      <sprite>sprites\sprBigKamilia_Body</sprite>
-      <sprite>sprites\sprBigGeezer_Body</sprite>
-      <sprite>sprites\sprBigSolgryn_Body</sprite>
-      <sprite>sprites\sprBigGay_Body</sprite>
-      <sprite>sprites\sprBigCrimson_Body</sprite>
-      <sprite>sprites\sprBigJust_Head</sprite>
       <sprites name="???">
         <sprite>sprites\sprDarkJust_Head</sprite>
         <sprite>sprites\sprDarkJust_Body</sprite>
@@ -363,14 +357,27 @@
       <sprite>sprites\sprBigBullet_Blend</sprite>
       <sprite>sprites\sprBigKid_GayBG</sprite>
       <sprite>sprites\sprBigKid_KamiliaBG</sprite>
-      <sprite>sprites\sprBigKid_Brick1</sprite>
-      <sprite>sprites\sprBigKid_Brick2</sprite>
-      <sprite>sprites\sprBigKid_Brick3</sprite>
-      <sprite>sprites\sprBigKid_GaySpike</sprite>
-      <sprite>sprites\sprBigKid_SolgrynSpike</sprite>
-      <sprite>sprites\sprBigKid_KamiliaSpike</sprite>
-      <sprite>sprites\sprBigKamilia_Block</sprite>
-      <sprite>sprites\sprBigKamilia_Platform</sprite>
+      <sprite>sprites\sprFire</sprite>
+      <sprites name="Body">
+        <sprite>sprites\sprBigJust_Body</sprite>
+        <sprite>sprites\sprBigCrimson_Body</sprite>
+        <sprite>sprites\sprBigGay_Body</sprite>
+        <sprite>sprites\sprBigGeezer_Body</sprite>
+        <sprite>sprites\sprBigKamilia_Body</sprite>
+        <sprite>sprites\sprBigSolgryn_Body</sprite>
+        <sprite>sprites\sprBigJust_Head</sprite>
+      </sprites>
+      <sprite>sprites\sprDeadShiratama</sprite>
+      <sprites name="Blocks">
+        <sprite>sprites\sprBigKid_Brick1</sprite>
+        <sprite>sprites\sprBigKid_Brick2</sprite>
+        <sprite>sprites\sprBigKid_Brick3</sprite>
+        <sprite>sprites\sprBigKamilia_Block</sprite>
+        <sprite>sprites\sprBigKamilia_Platform</sprite>
+        <sprite>sprites\sprBigKid_GaySpike</sprite>
+        <sprite>sprites\sprBigKid_SolgrynSpike</sprite>
+        <sprite>sprites\sprBigKid_KamiliaSpike</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -464,6 +471,9 @@
       <script>scripts\scrAddBodyPart.gml</script>
     </scripts>
     <script>scripts\idk.gml</script>
+    <scripts name="Final boss">
+      <script>scripts\scrBigKid_Attack.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -549,14 +559,16 @@
       <object>objects\objMiniRight</object>
       <object>objects\objMiniLeft</object>
       <object>objects\objMiniDown</object>
-      <object>objects\objCherry</object>
-      <object>objects\objCherryBounce</object>
-      <object>objects\objCherryBounceRandom</object>
-      <object>objects\objCherryBounceLat</object>
-      <object>objects\objCherryBounceVert</object>
       <object>objects\objKillerBlock</object>
-      <object>objects\objCherryPersistant</object>
       <object>objects\objSpikeParent</object>
+      <objects name="Cherries">
+        <object>objects\objCherry</object>
+        <object>objects\objCherryBounce</object>
+        <object>objects\objCherryBounceRandom</object>
+        <object>objects\objCherryBounceLat</object>
+        <object>objects\objCherryBounceVert</object>
+        <object>objects\objCherryPersistant</object>
+      </objects>
     </objects>
     <objects name="triggers">
       <object>objects\objFreeTrigger</object>
@@ -695,8 +707,13 @@
       <object>objects\objBigJust_Healthbar</object>
       <object>objects\objBigKid_Bullet</object>
       <object>objects\objBigKid_Water</object>
-      <object>objects\objBigKid_BounceFruit</object>
       <object>objects\objBigBow</object>
+      <objects name="Attacks">
+        <object>objects\objBigKid_BounceFruit</object>
+        <object>objects\objCrimsonCherry</object>
+        <object>objects\objCrimsonFire</object>
+        <object>objects\objDeadShiratama</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
