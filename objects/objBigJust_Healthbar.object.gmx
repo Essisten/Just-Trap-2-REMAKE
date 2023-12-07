@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-82</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,6 +29,10 @@
 HP = 50;
 oldHP = HP;
 maxHP = HP;
+gayDiff[0] = "Basic";
+gayDiff[1] = "Normal";
+gayDiff[2] = "Hard";
+gayDiff[3] = "Expert";
 width = 672;
 height = 20;
 border = 2;
@@ -127,6 +131,14 @@ switch (type)
         draw_rectangle(x, y, posHP, y + height, false);
         break;
 }
+if (objBigKid_BG.phase == 2)
+{
+    draw_set_font(fDefault24);
+    scrDrawTextOutline(view_xview[0] + 16, view_yview[0] + view_hview[0] - 32, "Deaths: " + string(global.death), c_white, c_black);
+    draw_set_halign(fa_right);
+    scrDrawTextOutline(view_xview[0] + view_wview[0] - 16, view_yview[0] + view_hview[0] - 32, "Difficulty: " + gayDiff[global.difficulty], c_white, c_black);
+}
+draw_rectangle_colour(view_xview[0], objBigKid_BG.left_wall.y, objBigKid_BG.left_wall.x + 32, objBigKid_BG.left_wall.y + objBigKid_BG.left_wall.image_yscale * 32, c_black, c_black, c_black, c_black, false);
 </string>
           </argument>
         </arguments>

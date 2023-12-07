@@ -3,7 +3,7 @@
   <spriteName>sprBow</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-30</depth>
+  <depth>-86</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -50,8 +50,8 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (image_index == 2)
-//   image_angle += 2;
+            <string>if (image_index == 2)
+   image_angle += 2;
 </string>
           </argument>
         </arguments>

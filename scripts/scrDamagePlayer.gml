@@ -1,5 +1,6 @@
 ///scrDamagePlayer(damage, do iframe)
-
+if (global.debugNoDeath)
+   exit;
 if (argument[0] > 0)
    scrPlaySound(sndDeath);
 else

@@ -1,2 +1,0 @@
-///scrBigKid_Attack()
-

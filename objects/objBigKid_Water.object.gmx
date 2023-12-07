@@ -3,7 +3,7 @@
   <spriteName>sprBigBullet_Blend</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-80</depth>
   <persistent>0</persistent>
   <parentName>objWater</parentName>
   <maskName>&lt;undefined&gt;</maskName>

@@ -3,9 +3,11 @@
 global.portalParticleSystem = part_system_create();
 global.saveParticleSystem = part_system_create();
 global.sprintParticleSystem = part_system_create();
+global.topParticleSystem = part_system_create();
 part_system_depth(global.portalParticleSystem, 1);
 part_system_depth(global.saveParticleSystem, -5);
 part_system_depth(global.sprintParticleSystem, -9);
+part_system_depth(global.topParticleSystem, -95);
 
 global.saveEmitter = part_emitter_create(global.saveParticleSystem);
 

@@ -3,7 +3,7 @@
   <spriteName>sprDeadShiratama</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-105</depth>
   <persistent>0</persistent>
   <parentName>objPlayerKiller</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-direction = random_range(225, 315);
+//direction = random_range(225, 315);
 gravity_direction = 270;
-gravity = 0.1;
-speed = 2;
+gravity = 0.05 * (global.difficulty + 1);
+//speed = 2;
 </string>
           </argument>
         </arguments>

@@ -63,6 +63,22 @@
       <sound>sound\sndMenuSelect</sound>
       <sound>sound\sndSpikeTrap</sound>
       <sound>sound\sndSpike</sound>
+      <sounds name="Final boss">
+        <sound>sound\sndGayShooter</sound>
+        <sound>sound\sndGayShooting</sound>
+        <sound>sound\sndGayFireball</sound>
+        <sound>sound\sndGayReporter</sound>
+        <sound>sound\sndSolgrynShoot</sound>
+        <sound>sound\sndHadoken</sound>
+        <sound>sound\sndSolgrynWater</sound>
+        <sound>sound\sndSolgrynLaser</sound>
+        <sound>sound\sndGayBilly1</sound>
+        <sound>sound\sndGayBilly2</sound>
+        <sound>sound\sndGayBilly3</sound>
+        <sound>sound\sndGayBilly4</sound>
+        <sound>sound\sndGayBillyDeath</sound>
+        <sound>sound\sndGayBilly5</sound>
+      </sounds>
     </sounds>
     <sounds name="music">
       <sound>sound\musOnDeath</sound>
@@ -357,7 +373,6 @@
       <sprite>sprites\sprBigBullet_Blend</sprite>
       <sprite>sprites\sprBigKid_GayBG</sprite>
       <sprite>sprites\sprBigKid_KamiliaBG</sprite>
-      <sprite>sprites\sprFire</sprite>
       <sprites name="Body">
         <sprite>sprites\sprBigJust_Body</sprite>
         <sprite>sprites\sprBigCrimson_Body</sprite>
@@ -378,6 +393,30 @@
         <sprite>sprites\sprBigKid_SolgrynSpike</sprite>
         <sprite>sprites\sprBigKid_KamiliaSpike</sprite>
       </sprites>
+      <sprite>sprites\sprGayShooter</sprite>
+      <sprite>sprites\sprGayShooter_Fire</sprite>
+      <sprites name="Attacks">
+        <sprite>sprites\sprFire</sprite>
+        <sprite>sprites\sprGayBullet</sprite>
+        <sprite>sprites\sprGayBullet_Effect</sprite>
+        <sprite>sprites\sprGayTornado</sprite>
+        <sprite>sprites\sprTrapCard</sprite>
+        <sprite>sprites\sprGayIce</sprite>
+        <sprite>sprites\sprGayFireball</sprite>
+        <sprite>sprites\sprSolgrynBullet</sprite>
+        <sprite>sprites\sprSolgrynHadoken</sprite>
+        <sprite>sprites\sprKitty</sprite>
+        <sprite>sprites\sprPirhanaPlant</sprite>
+        <sprite>sprites\sprPirhanaPlant_Laser</sprite>
+        <sprite>sprites\sprPirhanaPlant_Laser2</sprite>
+        <sprite>sprites\sprSolgryn_Water</sprite>
+        <sprite>sprites\sprGayGranade</sprite>
+        <sprite>sprites\sprGayBoom</sprite>
+        <sprite>sprites\sprSolgryn_ShootEffect</sprite>
+      </sprites>
+      <sprite>sprites\sprBigKid_SolgrynBG</sprite>
+      <sprite>sprites\sprBigKid_SolgrynBG2</sprite>
+      <sprite>sprites\sprBigKid_SolgrynBG3</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -472,7 +511,10 @@
     </scripts>
     <script>scripts\idk.gml</script>
     <scripts name="Final boss">
-      <script>scripts\scrBigKid_Attack.gml</script>
+      <script>scripts\scrLovetrap_Attack.gml</script>
+      <script>scripts\scrCrimson_Attack.gml</script>
+      <script>scripts\scrGay_Attack.gml</script>
+      <script>scripts\scrSolgryn_Attack.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -484,7 +526,6 @@
     <font>fonts\fDetermination14</font>
   </fonts>
   <objects name="objects">
-    <object>objects\object</object>
     <objects name="world">
       <object>objects\objWorld</object>
       <object>objects\objCamera</object>
@@ -569,6 +610,7 @@
         <object>objects\objCherryBounceVert</object>
         <object>objects\objCherryPersistant</object>
       </objects>
+      <object>objects\objReflectableKiller</object>
     </objects>
     <objects name="triggers">
       <object>objects\objFreeTrigger</object>
@@ -713,6 +755,17 @@
         <object>objects\objCrimsonCherry</object>
         <object>objects\objCrimsonFire</object>
         <object>objects\objDeadShiratama</object>
+        <object>objects\objBigKid_GayShooter</object>
+        <object>objects\objGayReporter</object>
+        <object>objects\objGayBullet</object>
+        <object>objects\objGayTornado</object>
+        <object>objects\objGayIce</object>
+        <object>objects\objGayFireball</object>
+        <object>objects\objKitty</object>
+        <object>objects\objPirhanaPlant</object>
+        <object>objects\objSolgryn_Water</object>
+        <object>objects\objGayGranade</object>
+        <object>objects\objGayBoom</object>
       </objects>
     </objects>
   </objects>
