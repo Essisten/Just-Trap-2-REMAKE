@@ -41,5 +41,12 @@ if (tmpHP > 50)
    if (irandom(2) == 0)
       snd = choose(sndGayBilly1, sndGayBilly2, sndGayBilly3, sndGayBilly4, sndGayBilly5);
 }
+if (tmpHP > 60)
+{
+    with (instance_create(v_w, view_yview[0] + 32, objGayTornado))
+    {
+        hspeed = -4;
+    }
+}
 if (HP <= 0)
    snd = sndGayBillyDeath;

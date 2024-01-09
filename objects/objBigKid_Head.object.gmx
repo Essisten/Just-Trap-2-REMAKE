@@ -185,7 +185,7 @@ if (bounce_counter &lt; ceil((objBigKid_BG.phase + 1) * ((maxHP - HP) div 20)) /
     with (instance_create(x, y, objBigKid_BounceFruit))
     {
         direction = random(360);
-        speed = other.fruit_spd / 2;
+        speed = floor(other.fruit_spd / 2);
     }
 }
 switch (objBigKid_BG.phase)

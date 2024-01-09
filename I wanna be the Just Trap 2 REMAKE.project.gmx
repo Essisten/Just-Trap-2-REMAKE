@@ -4,9 +4,7 @@
     <Config>Configs\Default</Config>
   </Configs>
   <datafiles number="6" name="datafiles"/>
-  <NewExtensions>
-    <extension index="0">extensions\GMSched</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound">
     <sounds name="sfx">
       <sounds name="player">
@@ -307,12 +305,10 @@
       <sprite>sprites\sprJustularityRunBlue</sprite>
       <sprite>sprites\sprJustularityShootBlue</sprite>
       <sprite>sprites\sprJustularityMask</sprite>
-      <sprite>sprites\sprJustularityStar</sprite>
-      <sprite>sprites\sprJustularityBarrier</sprite>
-      <sprite>sprites\sprJustularityRing</sprite>
       <sprite>sprites\sprViridian</sprite>
       <sprite>sprites\sprStarV</sprite>
       <sprite>sprites\sprArrowWarning</sprite>
+      <sprite>sprites\sprJustularityBarrier</sprite>
       <sprites name="Normal attacks">
         <sprite>sprites\sprJustularityPropeller</sprite>
         <sprite>sprites\sprJustularityBall</sprite>
@@ -322,6 +318,7 @@
         <sprite>sprites\sprJustularityBullet</sprite>
         <sprite>sprites\sprJustularityCoal</sprite>
         <sprite>sprites\sprJustularityTornado</sprite>
+        <sprite>sprites\sprJustularityBall3</sprite>
       </sprites>
       <sprites name="Gray attacks">
         <sprite>sprites\sprJustularityBall2</sprite>
@@ -331,6 +328,9 @@
         <sprite>sprites\sprJustularityWater2</sprite>
         <sprite>sprites\sprJustularityCoal2</sprite>
         <sprite>sprites\sprJustularityBullet2</sprite>
+        <sprite>sprites\sprJustularityStar</sprite>
+        <sprite>sprites\sprJustularityRing</sprite>
+        <sprite>sprites\sprJustularityBall4</sprite>
       </sprites>
       <sprite>sprites\sprJustularityReloadRed</sprite>
       <sprite>sprites\sprJustularityReloadBlue</sprite>
@@ -363,6 +363,9 @@
       <sprite>sprites\sprMe</sprite>
       <sprite>sprites\sprMyHead</sprite>
       <sprite>sprites\sprBigWeaponImage</sprite>
+      <sprite>sprites\sprScreenFrame</sprite>
+      <sprite>sprites\sprJustReflection</sprite>
+      <sprite>sprites\sprJustReflection_Eyes</sprite>
     </sprites>
     <sprites name="Final Boss">
       <sprites name="???">
@@ -741,6 +744,9 @@
       <object>objects\objShopWeapon</object>
       <object>objects\objShopItem</object>
       <object>objects\objEssisten</object>
+      <object>objects\objScreenFrame</object>
+      <object>objects\objJustReflection</object>
+      <object>objects\objJustReflection_Eyes</object>
     </objects>
     <objects name="Final Boss">
       <object>objects\objBigKid_Body</object>

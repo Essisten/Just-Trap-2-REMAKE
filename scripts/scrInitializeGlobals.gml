@@ -25,11 +25,14 @@ for (var i = 0; i < 6; i++) //each weapon cycle
 {
     for (var k = 0; k < 2; k++) //each type cycle
     {
-        global.unlockedWeapons[k, i] = false;
+        if (k == 0) //gamemaker disrespects inline boolean checks
+           global.unlockedWeapons[k, i] = true;
+        else
+           global.unlockedWeapons[k, i] = false;
         global.obtainedWeapons[k, i] = false;
     }
 }
-global.unlockedWeapons[0, 1] = true;
+//global.unlockedWeapons[0, 1] = true;
 global.obtainedWeapons[0, 1] = true;
 global.arsenal = ds_list_create();
 ds_list_add(global.arsenal, 1);

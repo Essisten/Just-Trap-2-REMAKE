@@ -19,13 +19,14 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>objViridian</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = choose(128, 255)
+            <string>event_inherited();
+type = choose(128, 255)
 image_blend = make_colour_hsv(type, type, 200);
 image_xscale = 6;
 image_yscale = image_xscale;
@@ -108,7 +109,7 @@ alarm[7] = 11 - global.difficulty * 3;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>objViridian</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -283,7 +284,7 @@ else
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>objViridian</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>

@@ -57,7 +57,7 @@ fire_alpha = 0;
             <string>alarm[1] = 5 - global.difficulty;
 if (!ready or shoots &lt;= 0)
    exit;
-if (shoots &gt; 10)
+if (shoots &gt; 20)
 {
     var amount = (global.difficulty + 1) * 2, start = 100 + random(10);
     for (var i = 0; i &lt; amount; i++)

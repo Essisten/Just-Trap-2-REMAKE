@@ -40,17 +40,18 @@ global.noPause = true;
 submenu = noone;
 lineSeperation = 48;
 optionsNum = array_length_1d(main);
-boxStartX = 550;
+boxStartX = 540;
 boxStartY = 250;
-boxEndX = 780;
+boxEndX = 770;
 boxEndY = boxStartY + lineSeperation * (optionsNum);
 lineCenter = boxStartX + (boxEndX - boxStartX) / 2;
 selectBoxOffset = 4;
 slideOffset = 160;
 alarm[1] = 1;
 image_alpha = 0;
-coinX = 800 - (string_height(string(global.coins)) * 4) - 32;
-coinY = 576;
+draw_set_font(fDefault24);
+coinX = 800 - (string_width(string(global.coins))) - 64;
+coinY = 560;
 </string>
           </argument>
         </arguments>
@@ -244,7 +245,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 draw_set_alpha(image_alpha);
 draw_sprite(sprCoin, 0, coinX, coinY + slideOffset / 8);
-scrDrawTextOutline(coinX + 32, coinY + (608 - coinY) / 2 + slideOffset / 8, global.coins, c_white, c_black);
+scrDrawTextOutline(coinX + 32, coinY + (590 - coinY) / 2 + slideOffset / 8, global.coins, c_white, c_black);
 
 draw_set_font(fDefault24);
 draw_set_halign(fa_center);

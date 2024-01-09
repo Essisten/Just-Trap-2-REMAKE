@@ -95,7 +95,6 @@ ready = true;
             <kind>1</kind>
             <string>if (!ready)
 {
-    objPlayer.x += 64;
     exit;
 }
 event_inherited();

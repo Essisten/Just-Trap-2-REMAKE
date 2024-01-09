@@ -57,7 +57,7 @@ with (instance_create(x, y, objCherry))
     gravity = 0.04 * (global.difficulty + 1);
     gravity_direction = 270;
     direction = random_range(0, 180);
-    speed = 2 * global.difficulty + 1;
+    speed = global.difficulty + 1;
     depth = -100;
 }
 alarm[0] = 16 - global.difficulty * 4;

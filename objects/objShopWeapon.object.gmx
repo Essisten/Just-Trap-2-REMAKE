@@ -47,7 +47,7 @@ weapons[0, 0] = scrCreateShopItem("CXN Bat",
 "pathetic",
 "melee",
 200,
-"Defeat JR &amp; Justist");
+"");
 weapons[0, 1] = scrCreateShopItem("The Gun",
 "   The classic standard pistol of everyone's favorite Kid. The original user wielded it for many years before Just obtained it.
 #   It was initially designed to only fire manually, but it could be improved with an auto-firing module.",
@@ -63,7 +63,7 @@ weapons[0, 2] = scrCreateShopItem("Shotgun",
 "good",
 "short",
 400,
-"Defeat Justularity");
+"");
 weapons[0, 3] = scrCreateShopItem("Machine gun",
 "    An extremely lethal and heavy weapon. Combining multiple guns together gives this weapon a high rate of fire, without sacrificing the power of each bullet.
 #    Its disadvantages include its reduced accuracy, as well as reduced user mobility.",
@@ -71,7 +71,7 @@ weapons[0, 3] = scrCreateShopItem("Machine gun",
 "middle",
 "far",
 800,
-"Defeat Justrimson");
+"");
 var v_amount = array_height_2d(weapons);
 for (var k = 0; k &lt; v_amount; k++)
 {

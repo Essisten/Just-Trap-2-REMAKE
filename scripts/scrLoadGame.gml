@@ -97,6 +97,7 @@ if (loadFile)
         
         //generate md5 string to compare with
         ds_map_delete(saveMap,"mapMd5");
+        var a = json_encode(saveMap)+global.md5StrAdd;
         var genMd5 = md5_string_unicode(json_encode(saveMap)+global.md5StrAdd);
         if (mapMd5 != genMd5)   //check if md5 hash is invalid
             saveValid = false;

@@ -31,6 +31,8 @@ shake_mag_acc = 0;
 surface = surface_create(view_wview[0], view_hview[0]);
 old_x = view_xview[0];
 old_y = view_yview[0];
+xFollow = 0;
+yFollow = 0;
 if (instance_exists(objPlayer))
 {
     xFollow = max(objPlayer.x, old_x);

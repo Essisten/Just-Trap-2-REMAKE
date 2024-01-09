@@ -93,11 +93,8 @@ if (objPlayer.shootUpward)
    sprite_index = sprWeaponUp;
 if (scrButtonCheck(global.shootButton))
 {
-    if (w_id == 3)
-    {
-        event_user(0);
-    }
-    else if (scrButtonCheckPressed(global.shootButton))
+    if (scrButtonCheckPressed(global.shootButton) or 
+    w_id == 3 or w_id == 1)
     {
         event_user(0);
     }

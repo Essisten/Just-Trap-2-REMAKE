@@ -57,8 +57,8 @@ global.noPause = false;</code>
     <instance objName="objSaveVHard" x="384" y="432" name="inst_9D498246" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerStart" x="384" y="544" name="inst_D4C4F2E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="-48" name="inst_8BFA25F4" locked="0" code="" scaleX="23" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWarp" x="192" y="448" name="inst_2C41B5C2" locked="0" code="roomTo = rBoss1;&#xA;color = c_dkgray;&#xA;event_user(0);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWarp" x="608" y="336" name="inst_D1914EE1" locked="0" code="color = c_white;&#xA;event_user(0);&#xA;roomTo = rBoss4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWarp" x="192" y="448" name="inst_2C41B5C2" locked="0" code="roomTo = rBoss1;&#xA;color = c_dkgray;&#xA;event_user(0);&#xA;warpX = 404;&#xA;warpY = 503;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWarp" x="608" y="336" name="inst_D1914EE1" locked="0" code="color = c_white;&#xA;event_user(0);&#xA;roomTo = rBoss4;&#xA;warpX = 400;&#xA;warpY = 567;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerBossSelect" x="112" y="400" name="inst_FB245367" locked="0" code="sel = 1;&#xA;" scaleX="5" scaleY="2.5806450843811" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerBossSelect" x="304" y="272" name="inst_61C7A280" locked="0" code="sel = 0;&#xA;" scaleX="6" scaleY="9.29032230377197" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerBossSelect" x="48" y="128" name="inst_D7537554" locked="0" code="sel = 0;&#xA;" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
@@ -83,14 +83,14 @@ global.noPause = false;</code>
     <instance objName="objBlock" x="0" y="-32" name="inst_34BFC15F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="768" y="-32" name="inst_F9E326AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlatformLight" x="80" y="336" name="inst_65AF8F5D" locked="0" code="sel = 3;&#xA;" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWarp" x="192" y="336" name="inst_0FC864CD" locked="0" code="color = c_aqua;&#xA;event_user(0);&#xA;roomTo = rBoss3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWarp" x="192" y="336" name="inst_0FC864CD" locked="0" code="color = c_aqua;&#xA;event_user(0);&#xA;roomTo = rBoss3;&#xA;warpX = 416;&#xA;warpY = 560;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerBossSelect" x="112" y="288" name="inst_94F7203F" locked="0" code="sel = 3;&#xA;" scaleX="5" scaleY="2.54838705062866" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerBossSelect" x="80" y="0" name="inst_5D8D1067" locked="0" code="sel = 0;&#xA;" scaleX="7" scaleY="7.22580623626709" colour="4294967295" rotation="0"/>
     <instance objName="objShopSign" x="32" y="512" name="inst_847C11E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShopEntrance" x="0" y="544" name="inst_2C1F6906" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="-32" y="512" name="inst_E17F98CA" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objRoomChanger" x="0" y="544" name="inst_0FEC0D05" locked="0" code="roomTo = rShop;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWarp" x="400" y="80" name="inst_2F85CD60" locked="0" code="color = c_yellow;&#xA;event_user(0);&#xA;roomTo = rFinalBoss;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWarp" x="400" y="80" name="inst_2F85CD60" locked="0" code="color = c_yellow;&#xA;event_user(0);&#xA;roomTo = rFinalBoss;&#xA;warpX = 208;&#xA;warpY = 567;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerBossSelect" x="336" y="32" name="inst_9DCC81CC" locked="0" code="sel = 6;&#xA;" scaleX="4" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="objPlatformLight" x="304" y="80" name="inst_81DCE4A7" locked="0" code="sel = 6;&#xA;" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSaveVHard" x="384" y="16" name="inst_067834D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -157,10 +157,6 @@ global.noPause = false;</code>
     <tile bgName="bAllTiles" x="768" y="64" w="32" h="32" xo="32" yo="64" id="10002156" name="inst_E5353F45" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="768" y="32" w="32" h="32" xo="32" yo="64" id="10002159" name="inst_C920E348" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="768" y="0" w="32" h="32" xo="32" yo="96" id="10002161" name="inst_7AAA9145" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bAllTiles" x="336" y="112" w="32" h="32" xo="0" yo="96" id="10002175" name="inst_820106C7" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bAllTiles" x="368" y="112" w="32" h="32" xo="0" yo="96" id="10002176" name="inst_3938768E" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bAllTiles" x="304" y="112" w="32" h="32" xo="32" yo="96" id="10002179" name="inst_73CAB89D" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bAllTiles" x="464" y="112" w="32" h="32" xo="32" yo="96" id="10002180" name="inst_81851660" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss1_Brick4" x="80" y="480" w="32" h="32" xo="32" yo="0" id="10002201" name="inst_33AF0077" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss1_Brick4" x="160" y="480" w="32" h="32" xo="32" yo="0" id="10002202" name="inst_E0B766FB" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="304" y="240" w="32" h="32" xo="32" yo="96" id="10002832" name="inst_CBBCC1CC" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -170,8 +166,6 @@ global.noPause = false;</code>
     <tile bgName="bBoss1_Brick4" x="112" y="480" w="32" h="32" xo="32" yo="0" id="10003041" name="inst_7EAE752D" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="400" y="240" w="32" h="32" xo="0" yo="96" id="10003048" name="inst_9BE2441A" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="464" y="240" w="32" h="32" xo="32" yo="96" id="10003049" name="inst_419082AC" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bAllTiles" x="400" y="112" w="32" h="32" xo="0" yo="96" id="10003053" name="inst_8709E9F5" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bAllTiles" x="432" y="112" w="32" h="32" xo="0" yo="96" id="10003054" name="inst_E2765B8C" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="432" y="240" w="32" h="32" xo="0" yo="96" id="10003055" name="inst_5AA45296" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss2Wall2" x="688" y="480" w="32" h="32" xo="32" yo="0" id="10003069" name="inst_D572095D" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss2Wall" x="576" y="480" w="32" h="32" xo="0" yo="0" id="10003070" name="inst_9C743D1E" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -201,6 +195,12 @@ global.noPause = false;</code>
     <tile bgName="bBoss3_Tiles" x="80" y="368" w="32" h="32" xo="32" yo="0" id="10004314" name="inst_3D8DD8B5" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss3_Tiles" x="112" y="368" w="32" h="32" xo="32" yo="0" id="10004315" name="inst_07B36B6A" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss3_Tiles" x="144" y="368" w="32" h="32" xo="32" yo="0" id="10004316" name="inst_68207447" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBoss5_Wall" x="304" y="112" w="32" h="32" xo="32" yo="32" id="10004866" name="inst_77424EF4" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBoss5_Wall" x="336" y="112" w="32" h="32" xo="0" yo="32" id="10004867" name="inst_78F80240" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBoss5_Wall" x="368" y="112" w="32" h="32" xo="0" yo="32" id="10004868" name="inst_14A17282" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBoss5_Wall2" x="464" y="112" w="32" h="32" xo="32" yo="32" id="10004869" name="inst_CDEF70A0" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBoss5_Wall2" x="432" y="112" w="32" h="32" xo="0" yo="32" id="10004870" name="inst_A9BCB55B" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBoss5_Wall2" x="400" y="112" w="32" h="32" xo="0" yo="32" id="10004871" name="inst_DB74E037" depth="100000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss1_Brick4" x="0" y="0" w="32" h="32" xo="0" yo="0" id="10003181" name="inst_C51A4377" depth="10000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss1_Brick4" x="0" y="32" w="32" h="32" xo="0" yo="0" id="10003182" name="inst_3F3BA6A0" depth="10000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBoss1_Brick4" x="0" y="64" w="32" h="32" xo="0" yo="0" id="10003183" name="inst_6D5ECBF1" depth="10000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

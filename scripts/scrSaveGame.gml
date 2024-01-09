@@ -95,11 +95,44 @@ else    //use text file
 {
     //open the save file
     var f = file_text_open_write(global.dir + "Data\save"+string(global.savenum));
-    show_debug_message(global.dir + "Data\save"+string(global.savenum));
     //write map to the save file with base64 encoding
     file_text_write_string(f,base64_encode(json_encode(saveMap)));
     
     file_text_close(f);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //destroy the map
 ds_map_destroy(saveMap);

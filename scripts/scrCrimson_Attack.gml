@@ -10,6 +10,7 @@ if (tmpHP > 20)
 {
    var yy = random_range(view_yview[0], v_h);
    var amount = 8 * (global.difficulty + 1);
+   var dir = choose(1, -1);
    for (var i = 1; i <= 8 * (global.difficulty + 1); i++)
    {
        var f = instance_create(v_w, yy, objCherry);
@@ -17,6 +18,8 @@ if (tmpHP > 20)
        f.direction = 90 + 180 / amount * i;
        f.sprite_index = sprCherry_Colorful;
        f.image_blend = c_yellow;
+       if (tmpHP > 60)
+          f.change_dir = dir * 0.5;
    }
 }
 if (tmpHP > 30)
