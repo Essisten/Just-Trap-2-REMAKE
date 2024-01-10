@@ -60,7 +60,7 @@ if (increment &lt; 32 and dir &gt; 90 and dir &lt; 270)
      increment = 32;
 dir += increment;
 increment += 5 - global.difficulty;
-shoots -= 1 - global.difficulty * 0.2; //0.05 * (4 - global.difficulty);
+shoots -= 1;
 fire_alpha = 1;
 scrPlaySound(sndGayShooting);
 if (dir &gt; 360)

@@ -60,7 +60,7 @@ if (fake_reward &gt;= reward)
     fake_reward = reward;
    exit;
 }
-fake_reward += round(reward / 10);
+fake_reward += ceil(reward / 10);
 reward_length = string_length(string(fake_reward));
 alarm[2] = 5;
 </string>

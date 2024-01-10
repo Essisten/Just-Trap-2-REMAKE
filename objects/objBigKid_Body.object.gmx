@@ -80,7 +80,7 @@ else
 b = instance_create(x - 208, y + 64, tmp);
 with (b)
 {
-    hspeed = -(global.difficulty + 1) * 1.5;
+    hspeed = -(global.difficulty + 1) * 1.4;
     image_xscale = 16;
     image_yscale = image_xscale;
 }

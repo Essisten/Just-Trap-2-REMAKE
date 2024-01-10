@@ -74,7 +74,8 @@ if (loadFile)
         {
             for (var k = 0; k < 2; k++) //each type cycle
             {
-                global.unlockedWeapons[k, i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(k)+","+string(i)+"]", false);
+                if (k > 0)
+                   global.unlockedWeapons[k, i] = scrSafeLoad(saveMap, "unlockedWeapons["+string(k)+","+string(i)+"]", false);
                 global.obtainedWeapons[k, i] = scrSafeLoad(saveMap, "obtainedWeapons["+string(k)+","+string(i)+"]", false);
             }
         }

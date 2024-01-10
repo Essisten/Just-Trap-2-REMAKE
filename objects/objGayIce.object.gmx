@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-alarm[0] = 2;
+alarm[0] = 20 - (global.difficulty + 1) * 5;
+if (global.difficulty == 3)
+   alarm[0] = 6;
 canParry = true;
 </string>
           </argument>
@@ -50,7 +52,7 @@ canParry = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed /= 2;
+            <string>speed /= global.difficulty + 2;
 </string>
           </argument>
         </arguments>

@@ -500,6 +500,7 @@ global.difficulty = oldSel;
 if (file_exists(global.dir + "Data\save"+string(global.savenum)))
     file_delete(global.dir + "Data\save"+string(global.savenum));
 room_goto(global.startRoom);
+
 </string>
           </argument>
         </arguments>

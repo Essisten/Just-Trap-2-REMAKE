@@ -187,7 +187,9 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ars_size = ds_list_size(global.arsenal);
+            <string>if (alarm[1] &gt; 0)
+   exit;
+ars_size = ds_list_size(global.arsenal);
 w_id = select * (version[select]+1);
 w_index = ds_list_find_index(global.arsenal, w_id);
 if (scrButtonCheckPressed(global.menuUpButton))
