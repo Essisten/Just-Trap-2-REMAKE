@@ -2,7 +2,7 @@
 <sprite>
   <type>0</type>
   <xorig>3</xorig>
-  <yorigin>2</yorigin>
+  <yorigin>4</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
@@ -21,10 +21,5 @@
   <height>4</height>
   <frames>
     <frame index="0">images\sprJustReflection_Eyes_0.png</frame>
-    <frame index="1">images\sprJustReflection_Eyes_1.png</frame>
-    <frame index="2">images\sprJustReflection_Eyes_2.png</frame>
-    <frame index="3">images\sprJustReflection_Eyes_3.png</frame>
-    <frame index="4">images\sprJustReflection_Eyes_4.png</frame>
-    <frame index="5">images\sprJustReflection_Eyes_5.png</frame>
   </frames>
 </sprite>

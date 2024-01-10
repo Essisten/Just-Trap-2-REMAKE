@@ -52,16 +52,6 @@ image_alpha = 0;
 draw_set_font(fDefault24);
 coinX = 800 - (string_width(string(global.coins))) - 64;
 coinY = 560;
-if (global.difficulty == 3)
-{
-    for (var i = 0; i &lt; 6; i++) //each weapon cycle
-    {
-        for (var k = 0; k &lt; 2; k++) //each type cycle
-        {
-            global.obtainedWeapons[k, i] = true;
-        }
-    }
-}
 </string>
           </argument>
         </arguments>

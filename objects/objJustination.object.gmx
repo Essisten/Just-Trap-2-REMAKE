@@ -42,7 +42,7 @@ for (var i = 0; i &lt; block_count; i++)
 }
 normal[0] = sprJustination;
 normal[1] = sprJustination_Old;
-
+unlucky = 0;
 crazy[0] = sprJustinationCrazy;
 crazy[1] = sprJustinationCrazy_Old;
 xx = x;
@@ -114,8 +114,8 @@ alarm[4] = 20;
             <kind>1</kind>
             <string>///Changing active parts
 scrPlaySound(sndBlockChange);
-if (!instance_exists(objPlayer) or active)
-    return -1;
+if (active)
+    exit;
 var length = ds_list_size(active_parts);
 for (var i = 0; i &lt; length; i++)
 {
@@ -125,10 +125,19 @@ for (var i = 0; i &lt; length; i++)
     }
 }
 ds_list_clear(active_parts);
-for (var i = 0; i &lt; 2; i++)
+var tmp = 2;
+if (!instance_exists(objPlayer))
+   tmp = 4;
+for (var i = 0; i &lt; tmp; i++)
 {
     var r = irandom(ds_list_size(parts) - 1);
     var part = ds_list_find_value(parts, r);
+    if ((i &gt; 0 and part == objJustinationLight and ds_list_size(parts) &gt; 1 and !instance_exists(objPlayer))
+       or (unlucky &gt; 3 and part.HP &lt;= 0))
+    {
+        i --;
+        continue;
+    }
     objBoss4_Effects.side[i] = part;
     ds_list_add(active_parts, part);
     with (part)
@@ -138,16 +147,24 @@ for (var i = 0; i &lt; 2; i++)
     }
     ds_list_delete(parts, r);
 }
+var part1 = ds_list_find_value(active_parts, 0),
+    part2 = ds_list_find_value(active_parts, 1);
+if (part1.HP &lt;= 0 and part2.HP &lt;= 0)
+   unlucky++;
+else
+    unlucky = 0;
+for (var i = 0; i &lt; block_count; i++)
+{
+    with (blocks[i])
+        event_user(0);
+}
+if (!instance_exists(objPlayer))
+   exit;;
 length = min(ds_list_size(active_parts), 2);
 for (var i = 0; i &lt; length; i++)
 {
    spikes[i].owner = ds_list_find_value(active_parts, i);
    with (spikes[i])
-        event_user(0);
-}
-for (var i = 0; i &lt; block_count; i++)
-{
-    with (blocks[i])
         event_user(0);
 }
 event_user(0);
