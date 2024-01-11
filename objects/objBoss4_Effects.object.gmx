@@ -121,6 +121,7 @@ if (final)
             with (objBoss4_Spike)
             {
                 kill = true;
+                image_alpha = 1;
             }
         }
     }

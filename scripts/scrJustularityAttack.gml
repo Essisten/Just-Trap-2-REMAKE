@@ -19,7 +19,7 @@ switch (argument0)
         var tmpX = -4;
         var tmpY = -4;
         var tmpD = 270;
-        for (var i = 0; i < global.difficulty + 1; i++)
+        for (var i = 0; i < (global.difficulty + 1); i++)
         {
             if (global.gravH)
             {
@@ -47,7 +47,7 @@ switch (argument0)
                 if (other.image_blend == c_black)
                     sprite_index = sprJustularityCoal2;
             }
-            c.direction = tmpD + random(global.difficulty * 10) * choose(1, -1);
+            c.direction = tmpD;
             c.image_angle = tmpD - 270;
         }
         alarm[7] = 32 - global.difficulty * 6;

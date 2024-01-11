@@ -79,6 +79,8 @@ ready = true;
             <kind>1</kind>
             <string>if (image_index == 0)
     warm = max(0, warm - 1);
+else
+    warm = 0;
 </string>
           </argument>
         </arguments>

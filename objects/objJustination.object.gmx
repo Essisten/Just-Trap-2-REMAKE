@@ -249,7 +249,7 @@ else
         {
             sprite_index = choose(sprCherry, sprCherryWhite, sprCherryCyan, sprCherryGray);
             direction = random_range(270, 320);
-            speed = random_range(2, 3 + global.difficulty * 2);
+            speed = random_range(1, 2 + global.difficulty);
             change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
             image_xscale = 0.5;
             image_yscale = 0.5;
@@ -258,13 +258,16 @@ else
         {
             sprite_index = choose(sprCherry, sprCherryWhite, sprCherryCyan, sprCherryGray);
             direction = random_range(270, 220);
-            speed = random_range(2, 3 + global.difficulty * 2);
+            speed = random_range(1, 2 + global.difficulty);
             change_dir = random_range(0.1, -0.1) * (global.difficulty + 1);
             image_xscale = 0.5;
             image_yscale = 0.5;
         }
     }
-    alarm[0] = 16 - global.difficulty * 4;
+    if (global.difficulty == 3)
+       alarm[0] = 3;
+    else
+        alarm[0] = 18 - global.difficulty * 3;
 }
 </string>
           </argument>
@@ -288,7 +291,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (!active)
+   exit;
+event_inherited();
 if (HP &lt;= 0)
 {
     with (objBoss4_Spike)
@@ -407,8 +412,12 @@ if (dead &gt;= 4)
     for (var i = 0; i &lt; 2; i++)
     {
         var s = spikes[i];
-        s.owner = objJustination;
-        s.kill = false;
+        with (s)
+        {
+            owner = objJustination;
+            kill = false;
+            image_alpha = 0.4;
+        }
         if (i == r)
         {
             s.doHeal = true;

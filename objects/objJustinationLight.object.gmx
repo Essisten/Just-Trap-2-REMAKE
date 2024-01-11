@@ -74,7 +74,7 @@ else
     with (f)
     {
         sprite_index = sprCherryWhite;
-        hspeed = random_range(2, 4) + global.difficulty * 2;
+        hspeed = random_range(1, 3) + global.difficulty * 2;
     }
     if HP &lt;= 0
         f.sprite_index = sprCherryGray;
@@ -82,7 +82,7 @@ else
     with (f)
     {
         sprite_index = sprCherryWhite;
-        hspeed = -(random_range(2, 4) + global.difficulty * 2);
+        hspeed = -(random_range(1, 3) + global.difficulty * 2);
     }
     if HP &lt;= 0
         f.sprite_index = sprCherryGray;

@@ -36,6 +36,7 @@ if (global.difficulty == 3)
 alarm[0] = 25;
 spd = 0;
 canParry = true;
+dmg *= 4;
 </string>
           </argument>
         </arguments>
