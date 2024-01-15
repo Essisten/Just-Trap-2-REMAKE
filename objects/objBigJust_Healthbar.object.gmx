@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-82</depth>
+  <depth>-81</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -115,21 +115,24 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var posHP = x + width * (HP / maxHP);
-var oldPosHP = x + width * (oldHP / maxHP);
-switch (type)
+            <string>if (HP &gt; 0)
 {
-    case 7:
-         
-         break;
-    default:
-        draw_set_color(c_black);
-        draw_rectangle(x - border, y - border, x + width + border, y + height + border, false);
-        draw_set_color(c_red);
-        draw_rectangle(posHP, y, oldPosHP, y + height, false);
-        draw_set_color(colorHP[objBigKid_BG.phase]);
-        draw_rectangle(x, y, posHP, y + height, false);
-        break;
+    var posHP = x + width * (HP / maxHP);
+    var oldPosHP = x + width * (oldHP / maxHP);
+    switch (type)
+    {
+        case 7:
+             
+             break;
+        default:
+            draw_set_color(c_black);
+            draw_rectangle(x - border, y - border, x + width + border, y + height + border, false);
+            draw_set_color(c_red);
+            draw_rectangle(posHP, y, oldPosHP, y + height, false);
+            draw_set_color(colorHP[objBigKid_BG.phase]);
+            draw_rectangle(x, y, posHP, y + height, false);
+            break;
+    }
 }
 if (objBigKid_BG.phase == 2)
 {

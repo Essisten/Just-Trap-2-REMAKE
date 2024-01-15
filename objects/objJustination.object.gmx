@@ -132,6 +132,8 @@ for (var i = 0; i &lt; tmp; i++)
 {
     var r = irandom(ds_list_size(parts) - 1);
     var part = ds_list_find_value(parts, r);
+    if (part.HP &gt; 0)
+       unlucky = 0;
     if ((i &gt; 0 and part == objJustinationLight and ds_list_size(parts) &gt; 1 and !instance_exists(objPlayer))
        or (unlucky &gt; 3 and part.HP &lt;= 0))
     {

@@ -31,6 +31,7 @@ canParry = false;
 bullet = noone;
 bounce_counter = 0;
 evenCounter = false;
+frozen = false;
 iframe = 0;
 HP = 50;
 maxHP = HP;
@@ -40,6 +41,31 @@ with (instance_create(view_xview[0] + view_wview[0], view_yview[0] + view_hview[
 {
     image_index = 5;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change phase later
+event_user(0);
+frozen = false;
 </string>
           </argument>
         </arguments>
@@ -130,24 +156,51 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(bullet))
+            <string>if (frozen)
+   exit;
+if (!instance_exists(bullet))
    bullet = instance_nearest(x, y, objBullet);
-HP = max(HP - bullet.dmg, 0);
+HP = clamp(HP - bullet.dmg, 0, 100);
 instance_destroy(bullet);
 event_user(1);
-if (HP &lt;= 0)
+if (HP &lt;= 0 and !frozen)
 {
     event_user(0);
 }
+scrPlaySound(sndBossHit);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sync HP
 if (instance_exists(objBigJust_Healthbar))
 {
     with (objBigJust_Healthbar)
     {
         HP = other.HP;
+        if (oldHP &lt; HP)
+           oldHP = HP;
         alarm[0] = 50;
     }
 }
-scrPlaySound(sndBossHit);
 </string>
           </argument>
         </arguments>
@@ -202,6 +255,9 @@ switch (objBigKid_BG.phase)
     case 3:
          scrSolgryn_Attack();
          break;
+    case 4:
+         scrGeezer_Attack();
+         break;
 }
 with (objCherry)
      depth = -110;
@@ -210,6 +266,7 @@ if (snd != -1)
     audio_stop_sound(snd);
     scrPlaySound(snd);
 }
+event_user(2);
 </string>
           </argument>
         </arguments>
@@ -233,10 +290,9 @@ if (snd != -1)
           <argument>
             <kind>1</kind>
             <string>///Phase changed
-if (!instance_exists(objPlayer))
+if (!instance_exists(objPlayer) or frozen)
    exit;
 HP = maxHP;
-objBigJust_Healthbar.oldHP = maxHP;
 objBigKid_BG.phase++;
 image_index = objBigKid_BG.phase;
 scrCreateFade(c_white, 0.05, false);
@@ -250,13 +306,14 @@ with (instance_create(view_xview[0] + view_wview[0], view_yview[0] + view_hview[
     else if (objBigKid_BG.phase == 2)
          y = view_yview[0];
 }
+event_user(2);
 with (objBigKid_Bullet)
      event_user(0);
 with (objBigKid_Body)
    event_user(0);
 switch (objBigKid_BG.phase)
 {
-    case 1:
+    case 1:     //Crimson
          with (objBlock)
          {
               sprite_index = sprBoss3_Block;
@@ -270,7 +327,7 @@ switch (objBigKid_BG.phase)
               depth = -83;
          }
          break;
-    case 2:
+    case 2:    //Don't Gay
          with (objBigBow)
          {
               image_index = 2;
@@ -294,7 +351,7 @@ switch (objBigKid_BG.phase)
          }
          instance_create(objPlayer.x, view_yview[0], objDeadShiratama);
          break;
-    case 3:
+    case 3:    //Solgryn
          with (objBigBow)
          {
               image_index = 3;
@@ -308,24 +365,28 @@ switch (objBigKid_BG.phase)
               sprite_index = sprBigKid_Brick3;
          instance_destroy(objBigKid_GayShooter);
          break;
-    case 4:
+    case 4:    //Geezer
          with (objBigBow)
               image_index = 0;
          with (objSpikeParent)
             sprite_index = sprBigKid_GaySpike;
          with (objBlock)
-              sprite_index = sprBigKid_Brick2;
+              visible = false;;
+         instance_create(x, y, objBigGeezer_Head);
          break;
-    case 5:
+    case 5:    //Kamilia 1
          with (objSpikeParent)
          {
             sprite_index = sprBigKid_KamiliaSpike;
          }
+        with (objBlock)
+        {
+             sprite_index = sprBigKamilia_Block;
+             visible = true;
+        }
          depth = -19;
          with (objBigKid_BG)
          {
-            with (objBlock)
-                 sprite_index = sprBigKamilia_Block;
             with (top_wall)
                  image_index = 1;
             with (left_wall)

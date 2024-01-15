@@ -76,6 +76,8 @@
         <sound>sound\sndGayBilly4</sound>
         <sound>sound\sndGayBillyDeath</sound>
         <sound>sound\sndGayBilly5</sound>
+        <sound>sound\sndSolgryn_Spider</sound>
+        <sound>sound\sndGeezerStatic</sound>
       </sounds>
     </sounds>
     <sounds name="music">
@@ -384,6 +386,9 @@
         <sprite>sprites\sprBigKamilia_Body</sprite>
         <sprite>sprites\sprBigSolgryn_Body</sprite>
         <sprite>sprites\sprBigJust_Head</sprite>
+        <sprite>sprites\sprBigGeezer_Head</sprite>
+        <sprite>sprites\sprBigGeezer_Noise</sprite>
+        <sprite>sprites\sprBigGeezer_Face</sprite>
       </sprites>
       <sprite>sprites\sprDeadShiratama</sprite>
       <sprites name="Blocks">
@@ -416,10 +421,15 @@
         <sprite>sprites\sprGayGranade</sprite>
         <sprite>sprites\sprGayBoom</sprite>
         <sprite>sprites\sprSolgryn_ShootEffect</sprite>
+        <sprite>sprites\sprSolgryn_Spider</sprite>
       </sprites>
       <sprite>sprites\sprBigKid_SolgrynBG</sprite>
       <sprite>sprites\sprBigKid_SolgrynBG2</sprite>
       <sprite>sprites\sprBigKid_SolgrynBG3</sprite>
+      <sprite>sprites\sprGeezer_Effect</sprite>
+      <sprite>sprites\objBigGeezer_Rotate</sprite>
+      <sprite>sprites\sprGeezer_BG</sprite>
+      <sprite>sprites\sprBigGeezer_Eyes</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -443,6 +453,7 @@
     <background>background\bBoss3_BG</background>
     <background>background\bBoss3_BG2</background>
     <background>background\bFinalBoss_BG</background>
+    <background>background\bGeezer</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -518,6 +529,7 @@
       <script>scripts\scrCrimson_Attack.gml</script>
       <script>scripts\scrGay_Attack.gml</script>
       <script>scripts\scrSolgryn_Attack.gml</script>
+      <script>scripts\scrGeezer_Attack.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -749,29 +761,49 @@
       <object>objects\objJustReflection_Eyes</object>
     </objects>
     <objects name="Final Boss">
-      <object>objects\objBigKid_Body</object>
-      <object>objects\objBigKid_Head</object>
-      <object>objects\objBigKid_BG</object>
-      <object>objects\objBigJust_Healthbar</object>
-      <object>objects\objBigKid_Bullet</object>
-      <object>objects\objBigKid_Water</object>
-      <object>objects\objBigBow</object>
       <objects name="Attacks">
         <object>objects\objBigKid_BounceFruit</object>
-        <object>objects\objCrimsonCherry</object>
-        <object>objects\objCrimsonFire</object>
-        <object>objects\objDeadShiratama</object>
-        <object>objects\objBigKid_GayShooter</object>
-        <object>objects\objGayReporter</object>
-        <object>objects\objGayBullet</object>
-        <object>objects\objGayTornado</object>
-        <object>objects\objGayIce</object>
-        <object>objects\objGayFireball</object>
-        <object>objects\objKitty</object>
-        <object>objects\objPirhanaPlant</object>
-        <object>objects\objSolgryn_Water</object>
-        <object>objects\objGayGranade</object>
-        <object>objects\objGayBoom</object>
+        <objects name="Crimson">
+          <object>objects\objCrimsonCherry</object>
+          <object>objects\objCrimsonFire</object>
+          <object>objects\objDeadShiratama</object>
+        </objects>
+        <objects name="Gay">
+          <object>objects\objBigKid_GayShooter</object>
+          <object>objects\objGayReporter</object>
+          <object>objects\objGayBullet</object>
+          <object>objects\objGayIce</object>
+          <object>objects\objGayTornado</object>
+          <object>objects\objGayFireball</object>
+          <object>objects\objGayGranade</object>
+          <object>objects\objGayBoom</object>
+        </objects>
+        <objects name="Solgryn">
+          <object>objects\objKitty</object>
+          <object>objects\objPirhanaPlant</object>
+          <object>objects\objSolgryn_Water</object>
+          <object>objects\objSolgryn_Spider</object>
+        </objects>
+        <objects name="Geezer">
+          <object>objects\objBigGeezer_Spike</object>
+        </objects>
+      </objects>
+      <objects name="Main">
+        <object>objects\objBigKid_BG</object>
+        <object>objects\objBigJust_Healthbar</object>
+        <object>objects\objBigBow</object>
+        <object>objects\objBigKid_Head</object>
+        <object>objects\objBigKid_Body</object>
+        <object>objects\objBigKid_Bullet</object>
+        <object>objects\objBigKid_Water</object>
+      </objects>
+      <objects name="Misc">
+        <object>objects\objBigGeezer_Head</object>
+        <object>objects\objBigGeezer_BlockEffect</object>
+        <object>objects\objBigGeezer_Block</object>
+        <object>objects\objBigGeezer_BG</object>
+        <object>objects\objGeezer_Text</object>
+        <object>objects\objBigGeezer_Eyes</object>
       </objects>
     </objects>
   </objects>
