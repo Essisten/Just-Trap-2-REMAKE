@@ -99,6 +99,32 @@ for (var i = view_yview[0]; i &lt; view_yview[0] + view_hview[0] + 64; i += 64)
      instance_destroy();
 with (objBigGeezer_BlockEffect)
      instance_destroy();
+part_type_destroy(global.topParticleSystem);
+part_emitter_destroy(global.topParticleSystem, emitter);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stop being insane
+face_id = 3;
 </string>
           </argument>
         </arguments>
@@ -190,6 +216,8 @@ faceX = x + random_range(-8, 8);
 faceY = y + random_range(-8, 8);
 image_blend = make_color_hsv(irandom(255), 87, 230);
 alarm[2] = 2;
+if (alarm[5] &gt; 0)
+   face_id = irandom_range(2, 3);
 </string>
           </argument>
         </arguments>
@@ -220,10 +248,10 @@ audio_stop_sound(sndGeezerStatic);
 if (crazy)
 {
    alarm[2] = 1;
-   face_id = 3;
+   alarm[5] = 100;
    part_emitter_region(global.topParticleSystem, emitter,
-x - offset, x, y, y + offset, pt_shape_square, ps_distr_linear);
-   part_emitter_stream(global.topParticleSystem, emitter, effect, -10);
+x - offset, x, y, y + offset, pt_shape_square, ps_distr_invgaussian);
+   part_emitter_stream(global.topParticleSystem, emitter, effect, -20);
    with (objGeezer_Text)
         event_user(0);
 }
@@ -260,7 +288,9 @@ else
             <kind>1</kind>
             <string>///Boot up
 on = true;
-instance_create(288, 480, objGeezer_Text);
+objBigKid_Head.frozen = false;
+instance_create(448, 640, objGeezer_Text);
+//instance_create(288, 480, objGeezer_Text);
 instance_create(view_xview[0] + view_wview[0] + 64,
               objBigGeezer_Head.y, objBigGeezer_Eyes);
 </string>

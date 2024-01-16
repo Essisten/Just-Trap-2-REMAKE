@@ -376,8 +376,6 @@
       </sprites>
       <sprite>sprites\sprBigBullet_Colorful</sprite>
       <sprite>sprites\sprBigBullet_Blend</sprite>
-      <sprite>sprites\sprBigKid_GayBG</sprite>
-      <sprite>sprites\sprBigKid_KamiliaBG</sprite>
       <sprites name="Body">
         <sprite>sprites\sprBigJust_Body</sprite>
         <sprite>sprites\sprBigCrimson_Body</sprite>
@@ -390,7 +388,6 @@
         <sprite>sprites\sprBigGeezer_Noise</sprite>
         <sprite>sprites\sprBigGeezer_Face</sprite>
       </sprites>
-      <sprite>sprites\sprDeadShiratama</sprite>
       <sprites name="Blocks">
         <sprite>sprites\sprBigKid_Brick1</sprite>
         <sprite>sprites\sprBigKid_Brick2</sprite>
@@ -401,35 +398,52 @@
         <sprite>sprites\sprBigKid_SolgrynSpike</sprite>
         <sprite>sprites\sprBigKid_KamiliaSpike</sprite>
       </sprites>
-      <sprite>sprites\sprGayShooter</sprite>
-      <sprite>sprites\sprGayShooter_Fire</sprite>
       <sprites name="Attacks">
-        <sprite>sprites\sprFire</sprite>
-        <sprite>sprites\sprGayBullet</sprite>
-        <sprite>sprites\sprGayBullet_Effect</sprite>
-        <sprite>sprites\sprGayTornado</sprite>
-        <sprite>sprites\sprTrapCard</sprite>
-        <sprite>sprites\sprGayIce</sprite>
-        <sprite>sprites\sprGayFireball</sprite>
-        <sprite>sprites\sprSolgrynBullet</sprite>
-        <sprite>sprites\sprSolgrynHadoken</sprite>
-        <sprite>sprites\sprKitty</sprite>
-        <sprite>sprites\sprPirhanaPlant</sprite>
-        <sprite>sprites\sprPirhanaPlant_Laser</sprite>
-        <sprite>sprites\sprPirhanaPlant_Laser2</sprite>
-        <sprite>sprites\sprSolgryn_Water</sprite>
-        <sprite>sprites\sprGayGranade</sprite>
-        <sprite>sprites\sprGayBoom</sprite>
-        <sprite>sprites\sprSolgryn_ShootEffect</sprite>
-        <sprite>sprites\sprSolgryn_Spider</sprite>
+        <sprites name="Crimson">
+          <sprite>sprites\sprFire</sprite>
+          <sprite>sprites\sprDeadShiratama</sprite>
+        </sprites>
+        <sprites name="Gay">
+          <sprite>sprites\sprGayShooter</sprite>
+          <sprite>sprites\sprGayShooter_Fire</sprite>
+          <sprite>sprites\sprTrapCard</sprite>
+          <sprite>sprites\sprGayFireball</sprite>
+          <sprite>sprites\sprGayIce</sprite>
+          <sprite>sprites\sprGayTornado</sprite>
+          <sprite>sprites\sprGayBullet_Effect</sprite>
+          <sprite>sprites\sprGayBullet</sprite>
+          <sprite>sprites\sprGayGranade</sprite>
+          <sprite>sprites\sprGayBoom</sprite>
+        </sprites>
+        <sprites name="Solgryn">
+          <sprite>sprites\sprSolgryn_Water</sprite>
+          <sprite>sprites\sprPirhanaPlant_Laser</sprite>
+          <sprite>sprites\sprPirhanaPlant_Laser2</sprite>
+          <sprite>sprites\sprPirhanaPlant</sprite>
+          <sprite>sprites\sprKitty</sprite>
+          <sprite>sprites\sprSolgrynHadoken</sprite>
+          <sprite>sprites\sprSolgrynBullet</sprite>
+          <sprite>sprites\sprSolgryn_Spider</sprite>
+        </sprites>
+        <sprites name="Geezer">
+          <sprite>sprites\objBigGeezer_Rotate</sprite>
+          <sprite>sprites\sprGeezer_Rock</sprite>
+          <sprite>sprites\sprGeezer_Octopus</sprite>
+          <sprite>sprites\sprGeezer_Hammer</sprite>
+          <sprite>sprites\sprGeezer_Flame</sprite>
+        </sprites>
       </sprites>
-      <sprite>sprites\sprBigKid_SolgrynBG</sprite>
-      <sprite>sprites\sprBigKid_SolgrynBG2</sprite>
-      <sprite>sprites\sprBigKid_SolgrynBG3</sprite>
-      <sprite>sprites\sprGeezer_Effect</sprite>
-      <sprite>sprites\objBigGeezer_Rotate</sprite>
-      <sprite>sprites\sprGeezer_BG</sprite>
-      <sprite>sprites\sprBigGeezer_Eyes</sprite>
+      <sprites name="Misc">
+        <sprite>sprites\sprBigKid_GayBG</sprite>
+        <sprite>sprites\sprBigKid_SolgrynBG</sprite>
+        <sprite>sprites\sprBigKid_SolgrynBG2</sprite>
+        <sprite>sprites\sprBigKid_SolgrynBG3</sprite>
+        <sprite>sprites\sprBigKid_KamiliaBG</sprite>
+        <sprite>sprites\sprBigGeezer_Eyes</sprite>
+        <sprite>sprites\sprGeezer_Effect</sprite>
+        <sprite>sprites\sprGeezer_BG</sprite>
+        <sprite>sprites\sprSolgryn_ShootEffect</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -539,6 +553,7 @@
     <font>fonts\fDefault12</font>
     <font>fonts\fBoss1_46</font>
     <font>fonts\fDetermination14</font>
+    <font>fonts\fGeezer30</font>
   </fonts>
   <objects name="objects">
     <objects name="world">
@@ -786,6 +801,10 @@
         </objects>
         <objects name="Geezer">
           <object>objects\objBigGeezer_Spike</object>
+          <object>objects\objBigGeezer_Octopus</object>
+          <object>objects\objBigGeezer_Rock</object>
+          <object>objects\objBigGeezer_Hammer</object>
+          <object>objects\objBigGeezer_BounceBlock</object>
         </objects>
       </objects>
       <objects name="Main">

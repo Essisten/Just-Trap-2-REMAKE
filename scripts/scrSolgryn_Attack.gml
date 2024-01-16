@@ -54,13 +54,8 @@ if (tmpHP > 50)
    instance_create(random_range(160, 416), v_h, objSolgryn_Water);
    snd = choose(snd, sndSolgrynWater);
 }
-if (HP <= 0)
+if (HP <= 0 and !instance_exists(objSolgryn_Spider))
 {
-    if (instance_exists(objSolgryn_Spider))
-    {
-        instance_destroy(objSolgryn_Spider);
-        frozen = false;
-    }
     frozen = true;
     instance_create(x, -128, objSolgryn_Spider);
 }
