@@ -34,6 +34,10 @@ part_type_sprite(effect, sprBigGeezer_Eyes, false, false, false);
 oldY = y;
 dick = 0;
 hspeed = -1;
+if (instance_number(objBigGeezer_Eyes) &gt; 1)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -80,7 +84,7 @@ part_emitter_destroy(global.topParticleSystem, emitter);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dick += 1;
+            <string>dick += 2;
 y = oldY + sin(degtorad(dick)) * 32;
 if (dick &gt; 360)
    dick -= 360;

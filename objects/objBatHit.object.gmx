@@ -31,6 +31,7 @@ sound = -1;
 speed = 2;
 image_alpha = 0.8;
 alarm[0] = 5;
+old_dir = direction;
 if (instance_exists(objPlayer))
 {
     image_angle = objPlayer.image_angle;
@@ -101,19 +102,24 @@ event_perform(ev_collision, objPlayerKiller);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!other.canParry)
+            <string>if (!other.canParry or other.alarm[0] &gt; -1)
    exit;
 with (other)
 {
     reflected = true;
-    canParry = false;
     speed *= 2;
     dmg *= 2;
+    alarm[0] = 50;
 }
-if (abs(other.direction - direction) &gt; 100)
+var proj_dir = other.direction;
+if (proj_dir &gt; 180)
+{
+    proj_dir -= (proj_dir - 180) * 2;
+}
+if (abs(proj_dir - old_dir) &gt; 90)
    other.direction += 180;
 else
-    other.direction = direction;
+    other.direction = old_dir;
 if (sound == -1)
    sound = scrPlaySound(sndBatDeflect2, 1);
 </string>

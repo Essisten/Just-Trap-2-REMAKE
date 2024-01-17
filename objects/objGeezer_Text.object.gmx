@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>line = 0;
+            <string>if (instance_number(objGeezer_Text) &gt; 1)
+{
+    instance_destroy();
+    exit;
+}
+line = 0;
 chars = 0;
 color = c_white;
 alarm[0] = 1;

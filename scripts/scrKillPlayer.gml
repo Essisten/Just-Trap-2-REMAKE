@@ -28,7 +28,7 @@ if (instance_exists(objPlayer) && (!global.noDeath && !global.debugNoDeath))
             instance_destroy();
         }
         
-        instance_create(0,0,objGameOver);
+        instance_create(view_xview[0], view_yview[0], objGameOver);
         
         global.death += 1; //increment deaths
         objWorld.alarm[2] = -1;

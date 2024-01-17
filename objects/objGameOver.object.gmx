@@ -304,8 +304,8 @@ if (image_index == 4)
 else
 {
     draw_set_blend_mode(bm_add);
-    draw_rectangle_colour(0, h / 2 ,w ,(h - h * (image_alpha + 0.2)) / 2, c_black, c_black, c_red, c_red, false);
-    draw_rectangle_colour(0, h / 2, w ,(h + h * (image_alpha + 0.2)) / 2, c_red, c_red, c_black, c_black, false);
+    draw_rectangle_colour(view_xview[0], h / 2, view_xview[0] + w, view_yview[0] + (h - h * (image_alpha + 0.2)) / 2, c_black, c_black, c_red, c_red, false);
+    draw_rectangle_colour(view_xview[0], h / 2, view_xview[0] + w, view_yview[0] + (h + h * (image_alpha + 0.2)) / 2, c_red, c_red, c_black, c_black, false);
     draw_set_blend_mode(bm_normal);
 }
 if (image_index &lt; 3)
