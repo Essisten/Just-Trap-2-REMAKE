@@ -433,6 +433,7 @@
           <sprite>sprites\sprGeezer_Flame</sprite>
           <sprite>sprites\sprGeezer_GreenDude</sprite>
           <sprite>sprites\sprGeezer_GreenDude2</sprite>
+          <sprite>sprites\sprGeezer_Bat</sprite>
         </sprites>
       </sprites>
       <sprites name="Misc">
@@ -808,6 +809,8 @@
           <object>objects\objBigGeezer_Rock</object>
           <object>objects\objBigGeezer_Hammer</object>
           <object>objects\objBigGeezer_GreenDude</object>
+          <object>objects\objBigGeezer_GreenDude2</object>
+          <object>objects\objBigGeezer_Bat</object>
         </objects>
       </objects>
       <objects name="Main">

@@ -28,3 +28,11 @@ if (tmpHP > 40)
 {
     instance_create(random_range(160, 416), view_yview - 13, objBigGeezer_GreenDude);
 }
+if (tmpHP > 50)
+{
+    instance_create(view_xview[0] + view_wview[0] + 13, random_range(256, 448), objBigGeezer_GreenDude2);
+}
+if (tmpHP > 60)
+{
+    instance_create(view_xview[0] - 8, random_range(256, 448), objBigGeezer_Bat);
+}
