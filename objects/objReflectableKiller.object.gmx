@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>event_inherited();
 canParry = true;
-hor = true;
+hor = false;
+ver = false;
+rotate = true;
 </string>
           </argument>
         </arguments>

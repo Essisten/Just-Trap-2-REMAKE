@@ -274,6 +274,7 @@ alarm[0] = 5;
             <string>if (!other.reflected)
    exit;
 bullet = other;
+bullet.dmg /= 2;
 event_perform(ev_collision, objBullet);
 
 </string>

@@ -431,6 +431,8 @@
           <sprite>sprites\sprGeezer_Octopus</sprite>
           <sprite>sprites\sprGeezer_Hammer</sprite>
           <sprite>sprites\sprGeezer_Flame</sprite>
+          <sprite>sprites\sprGeezer_GreenDude</sprite>
+          <sprite>sprites\sprGeezer_GreenDude2</sprite>
         </sprites>
       </sprites>
       <sprites name="Misc">
@@ -641,6 +643,7 @@
         <object>objects\objCherryPersistant</object>
       </objects>
       <object>objects\objReflectableKiller</object>
+      <object>objects\objKillable</object>
     </objects>
     <objects name="triggers">
       <object>objects\objFreeTrigger</object>
@@ -804,7 +807,7 @@
           <object>objects\objBigGeezer_Octopus</object>
           <object>objects\objBigGeezer_Rock</object>
           <object>objects\objBigGeezer_Hammer</object>
-          <object>objects\objBigGeezer_BounceBlock</object>
+          <object>objects\objBigGeezer_GreenDude</object>
         </objects>
       </objects>
       <objects name="Main">

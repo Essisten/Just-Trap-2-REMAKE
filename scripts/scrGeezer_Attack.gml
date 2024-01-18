@@ -24,3 +24,7 @@ if (tmpHP > 30)
 {
     instance_create(view_xview[0] + view_wview[0] + random(64), 256, objBigGeezer_Hammer);
 }
+if (tmpHP > 40)
+{
+    instance_create(random_range(160, 416), view_yview - 13, objBigGeezer_GreenDude);
+}

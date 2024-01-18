@@ -69,17 +69,21 @@ if (instance_exists(objPlayer))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if (!other.canParry or other.alarm[11] &gt; -1 or other.speed &gt; 16)
+   exit;
 with (other)
 {
-    if (reflected)
-       exit;
     if (hor)
        image_xscale *= -1;
-    else
+    else if (ver)
        image_yscale *= -1;
 }
 event_perform(ev_collision, objPlayerKiller);
+with (other)
+{
+    if (rotate)
+       image_angle = direction;
+}
 </string>
           </argument>
         </arguments>
@@ -102,14 +106,14 @@ event_perform(ev_collision, objPlayerKiller);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!other.canParry or other.alarm[0] &gt; -1)
+            <string>if (!other.canParry or other.alarm[11] &gt; -1 or other.speed &gt; 16)
    exit;
 with (other)
 {
     reflected = true;
     speed *= 2;
     dmg *= 2;
-    alarm[0] = 50;
+    alarm[11] = 50;
 }
 var proj_dir = other.direction;
 if (proj_dir &gt; 180)

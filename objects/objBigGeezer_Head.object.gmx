@@ -28,6 +28,7 @@
             <string>crazy = false;
 noise = true;
 on = false;
+intro = true;
 image_speed = 1/2;
 image_xscale = 16;
 image_yscale = image_xscale;
@@ -245,10 +246,11 @@ var offset = 64;
 sprite_index = sprBigGeezer_Head;
 noise = false;
 audio_stop_sound(sndGeezerStatic);
-if (crazy)
+if (intro and crazy)
 {
    alarm[2] = 1;
    alarm[5] = 100;
+   intro = false;
    part_emitter_region(global.topParticleSystem, emitter,
 x - offset, x, y, y + offset, pt_shape_square, ps_distr_invgaussian);
    part_emitter_stream(global.topParticleSystem, emitter, effect, -20);

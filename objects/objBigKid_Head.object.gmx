@@ -93,6 +93,11 @@ if (iframe &gt;= 30)
 {
     iframe = 0;
     image_alpha = 1;
+    with (objBigGeezer_Head)
+    {
+        event_perform(ev_alarm, 1);
+        event_perform(ev_alarm, 2);
+    }
     exit;
 }
 if (image_alpha == 0.4)
@@ -134,6 +139,12 @@ bullet = other;
 bullet.dmg /= 2;
 event_perform(ev_collision, objBullet);
 alarm[0] = 1;
+with (objBigGeezer_Head)
+{
+    event_perform(ev_alarm, 3);
+    alarm[1] = -1;
+    alarm[2] = -1;
+}
 </string>
           </argument>
         </arguments>

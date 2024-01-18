@@ -26,18 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-alarm[0] = 5;
+alarm[1] = 5;
 gravity = 0.05 * (global.difficulty + 1);
 gravity_direction = 270;
 image_yscale = 2;
 image_xscale = image_yscale * choose(1, -1);
 image_speed = 1/12;
+rotate = false;
+hor = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -59,7 +61,7 @@ if (y &gt; view_yview[0] + view_hview[0])
    instance_destroy();
 vspeed = -global.difficulty;
 hspeed = (global.difficulty + 1) / 2 * choose(1, -1);
-alarm[0] = 50;
+alarm[1] = 50;
 if ((x &lt; view_xview[0] and hspeed &lt; 0) or (x &gt; view_xview[0] + 600 and hspeed &gt; 0))
    hspeed *= -1;
 </string>
@@ -85,7 +87,7 @@ if ((x &lt; view_xview[0] and hspeed &lt; 0) or (x &gt; view_xview[0] + 600 and 
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-alarm[0] *= 4;
+alarm[1] *= 4;
 </string>
           </argument>
         </arguments>

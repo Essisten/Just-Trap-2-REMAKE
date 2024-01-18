@@ -31,13 +31,13 @@ done = true;
 dir = random(360);
 for (i = 0; i &lt; 5 + global.difficulty; i++)
 {
-    var star = instance_create(-10, -10, objJustrimsonC_Cherry);
-    with (star)
+    var fruit = instance_create(-10, -10, objJustrimsonC_Cherry);
+    with (fruit)
     {
         rad = 900;
-        dmg /= 10;
+        dmg /= 2;
     }
-    stars[i] = star;
+    fruits[i] = fruit;
 }
 if (!instance_exists(objPlayer))
    exit;
@@ -90,24 +90,23 @@ with (objJustrimsonC)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var length = array_length_1d(stars);
+            <string>var length = array_length_1d(fruits);
 for (var i = 0; i &lt; length; i++)
 {
-    var star = stars[i];
-    if (!instance_exists(star))
+    var fruit = fruits[i];
+    if (!instance_exists(fruit) or fruit.reflected)
        continue;
-    with (star)
+    with (fruit)
     {
-        if ((rad &gt; other.rad) or other.done)
-            rad -= (2 + global.difficulty) * 2;
+        rad -= (2 + global.difficulty) * 2;
     }
-    if (star.rad &lt; -900)
+    if (abs(fruit.rad) &gt; 900)
     {
         instance_destroy();
         exit;
     }
-    star.x = x + lengthdir_x(star.rad, dir + i * (360 / length));
-    star.y = y + lengthdir_y(star.rad, dir + i * (360 / length));
+    fruit.x = x + lengthdir_x(fruit.rad, dir + i * (360 / length));
+    fruit.y = y + lengthdir_y(fruit.rad, dir + i * (360 / length));
 }
 if (!instance_exists(objJustrimsonC))
    exit;

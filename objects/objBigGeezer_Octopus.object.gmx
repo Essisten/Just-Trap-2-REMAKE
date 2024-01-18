@@ -152,11 +152,8 @@ if (!instance_exists(bullet))
    bullet = instance_nearest(x, y, objBullet);
 HP -= bullet.dmg;
 instance_destroy(bullet);
-event_user(1);
 if (HP &lt;= 0)
-{
     event_user(0);
-}
 scrPlaySound(sndBossHit, 1.4);
 </string>
           </argument>
