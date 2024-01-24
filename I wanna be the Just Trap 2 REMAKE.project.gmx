@@ -435,6 +435,14 @@
           <sprite>sprites\sprGeezer_GreenDude2</sprite>
           <sprite>sprites\sprGeezer_Bat</sprite>
         </sprites>
+        <sprites name="Kamilia 2">
+          <sprite>sprites\sprK2_Ball</sprite>
+          <sprite>sprites\sprK2_MagicUse</sprite>
+          <sprite>sprites\sprK2_Projectile</sprite>
+          <sprite>sprites\sprK2_Line</sprite>
+          <sprite>sprites\sprK2_Laser</sprite>
+          <sprite>sprites\sprK2_Bomb</sprite>
+        </sprites>
       </sprites>
       <sprites name="Misc">
         <sprite>sprites\sprBigKid_GayBG</sprite>
@@ -446,6 +454,11 @@
         <sprite>sprites\sprGeezer_Effect</sprite>
         <sprite>sprites\sprGeezer_BG</sprite>
         <sprite>sprites\sprSolgryn_ShootEffect</sprite>
+        <sprite>sprites\sprNoRespond_Title</sprite>
+        <sprite>sprites\sprNoRespond_Button</sprite>
+        <sprite>sprites\sprNoRespond_Body</sprite>
+        <sprite>sprites\sprNoRespond_Close</sprite>
+        <sprite>sprites\sprStickyKeys</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -812,6 +825,7 @@
           <object>objects\objBigGeezer_GreenDude2</object>
           <object>objects\objBigGeezer_Bat</object>
         </objects>
+        <object>objects\objK2_MagicUse</object>
       </objects>
       <objects name="Main">
         <object>objects\objBigKid_BG</object>
@@ -829,6 +843,10 @@
         <object>objects\objBigGeezer_BG</object>
         <object>objects\objGeezer_Text</object>
         <object>objects\objBigGeezer_Eyes</object>
+        <object>objects\objNoRespond</object>
+        <object>objects\objNoRespond_Button</object>
+        <object>objects\objNoRespond_Close</object>
+        <object>objects\objNoRespond_Controller</object>
       </objects>
     </objects>
   </objects>

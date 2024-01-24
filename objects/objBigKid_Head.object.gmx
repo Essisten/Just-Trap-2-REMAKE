@@ -386,7 +386,14 @@ switch (objBigKid_BG.phase)
          instance_create(x, y, objBigGeezer_Head);
          frozen = true;
          break;
-    case 5:    //Kamilia 1
+    case 5:
+        instance_destroy(objBigGeezer_Head);
+        instance_destroy(objGeezer_Text);
+        with (objBigGeezer_BG)
+             instance_destroy(objBigGeezer_BG);
+        
+        break;
+    case 6:    //Kamilia 2
          with (objSpikeParent)
             sprite_index = sprBigKid_KamiliaSpike;
         with (objBlock)
@@ -394,10 +401,6 @@ switch (objBigKid_BG.phase)
              sprite_index = sprBigKamilia_Block;
              visible = true;
         }
-        instance_destroy(objBigGeezer_Head);
-        instance_destroy(objGeezer_Text);
-        with (objBigGeezer_BG)
-             instance_destroy();
          depth = -19;
          with (objBigKid_BG)
          {
