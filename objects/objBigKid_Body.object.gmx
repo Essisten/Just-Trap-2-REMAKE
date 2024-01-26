@@ -3,7 +3,7 @@
   <spriteName>sprBigJust_Body</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-83</depth>
+  <depth>-84</depth>
   <persistent>0</persistent>
   <parentName>objPlayerKiller</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -62,11 +62,12 @@ skin[5] = sprBigKamilia_Body;
             <kind>1</kind>
             <string>///Shooting big bullets
 var tmp = objBigKid_Water;
-if (bullet_counter == 0 or
-   (bullet_counter == 1 and (irandom(5 - global.difficulty) == 0)) or
-   (bullet_counter == 2 and (global.difficulty == 3) and choose(true, false)))
+if ((bullet_counter == 0 or
+   (bullet_counter == 1 and (irandom(5 - global.difficulty) == 0) and global.difficulty &gt; 0) or
+   (bullet_counter == 2 and (global.difficulty == 3) and choose(true, false))))
 {
-    bullet_counter++;
+    if !(global.difficulty == 0 and bullet_counter == 1)
+       bullet_counter++;
     tmp = objBigKid_Bullet;
     if (objBigKid_BG.phase == 1 and objBigKid_Head.HP &lt; 25 and global.difficulty &lt; 3)
     {

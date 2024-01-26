@@ -235,11 +235,13 @@ alarm[1] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (var i = 0; i &lt; 3; i++)
+            <string>///Close
+for (var i = 0; i &lt; 3; i++)
 {
     instance_destroy(button[i]);
 }
 alarm[0] = 1;
+objNoRespond_Controller.alarm[2] = 100;
 </string>
           </argument>
         </arguments>

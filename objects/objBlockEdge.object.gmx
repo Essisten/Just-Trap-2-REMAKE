@@ -3,7 +3,7 @@
   <spriteName>sprBlock</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-12</depth>
   <persistent>0</persistent>
   <parentName>objBlock</parentName>
   <maskName>&lt;undefined&gt;</maskName>

@@ -36,3 +36,8 @@ if (tmpHP > 60)
 {
     instance_create(view_xview[0] - 8, random_range(256, 448), objBigGeezer_Bat);
 }
+if (HP <= 0 and !instance_exists(objNoRespond_Controller))
+{
+    frozen = true;
+    instance_create(x, y, objNoRespond_Controller);
+}

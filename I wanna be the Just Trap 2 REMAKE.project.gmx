@@ -78,6 +78,7 @@
         <sound>sound\sndGayBilly5</sound>
         <sound>sound\sndSolgryn_Spider</sound>
         <sound>sound\sndGeezerStatic</sound>
+        <sound>sound\sndStickyKeys</sound>
       </sounds>
     </sounds>
     <sounds name="music">
@@ -837,16 +838,20 @@
         <object>objects\objBigKid_Water</object>
       </objects>
       <objects name="Misc">
-        <object>objects\objBigGeezer_Head</object>
-        <object>objects\objBigGeezer_BlockEffect</object>
-        <object>objects\objBigGeezer_Block</object>
-        <object>objects\objBigGeezer_BG</object>
-        <object>objects\objGeezer_Text</object>
-        <object>objects\objBigGeezer_Eyes</object>
         <object>objects\objNoRespond</object>
         <object>objects\objNoRespond_Button</object>
         <object>objects\objNoRespond_Close</object>
         <object>objects\objNoRespond_Controller</object>
+        <objects name="Geezer">
+          <object>objects\objBigGeezer_Head</object>
+          <object>objects\objBigGeezer_BlockEffect</object>
+          <object>objects\objBigGeezer_BG</object>
+          <object>objects\objBigGeezer_Block</object>
+          <object>objects\objGeezer_Text</object>
+          <object>objects\objBigGeezer_Eyes</object>
+        </objects>
+        <object>objects\objBigJust_ViewMover</object>
+        <object>objects\objStickyKeys</object>
       </objects>
     </objects>
   </objects>

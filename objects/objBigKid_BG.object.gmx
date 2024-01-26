@@ -256,19 +256,25 @@ with (label_name)
             <kind>1</kind>
             <string>if (color[phase] == -1)
 {
-    if (phase == 3)
-    {
-        draw_sprite(sprBigKid_SolgrynBG2, 0, x, y);
-        for (var i = 0; i &lt;= (height / 32) - 1; i++)
-        {
-            for (var k = 0; k &lt;= (width / 32) - 1; k++)
-            {
-                draw_sprite(sprBigKid_SolgrynBG3, 0, x + 32 * k + (dick mod 32), y + 32 * i + (dick mod 32));
-            }
-        }
-        dick += 0.5;
-    }
     sprite_index = BG[phase];
+    switch (phase)
+    {
+        case 3:
+            draw_sprite(sprBigKid_SolgrynBG2, 0, x, y);
+            for (var i = 0; i &lt;= (height / 32) - 1; i++)
+            {
+                for (var k = 0; k &lt;= (width / 32) - 1; k++)
+                {
+                    draw_sprite(sprBigKid_SolgrynBG3, 0, x + 32 * k + (dick mod 32), y + 32 * i + (dick mod 32));
+                }
+            }
+            dick += 0.5;
+            break;
+        case 5:
+             image_xscale = (right_wall.x - x + 32) / 800;
+             image_yscale = (bottom_wall.y - y + 32) / 533;
+             break;
+    }
     draw_self();
 }
 else

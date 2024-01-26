@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-995</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,9 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 1;
-counter = 0;
-surface = surface_create(view_wview[0], view_hview[0]);
+            <string>alarm[3] = 50;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Moving the healthbar
+objBigJust_Healthbar.y += 2;
+if (objBigJust_Healthbar.y - 4 &lt; objBigKid_BG.top_wall.y)
+   alarm[3] = 1;
+else
+    alarm[0] = 50;
 </string>
           </argument>
         </arguments>
@@ -50,14 +76,9 @@ surface = surface_create(view_wview[0], view_hview[0]);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop freezing
-instance_activate_all();
-audio_resume_sound(global.currentMusic);
-with (instance_create(objBigKid_Head.x, view_yview[0] + view_hview[0], objStickyKeys))
-{
-    vspeed = -4;
-}
-instance_destroy();
+            <string>///Stop the new spikes
+with (objSpikeParent)
+     vspeed = 0;
 </string>
           </argument>
         </arguments>
@@ -80,14 +101,91 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Freezing
-counter++;
-if (counter == 2)
+            <string>///Stretch the box
+if (x &gt; 0)
+   x -= 2;
+else if (y &gt; 0)
+     y -= 2;
+else
 {
-    instance_create(view_xview[0] + 16, view_yview[0] + 16, objNoRespond);
+    alarm[2] = 64;
+    for (var i = 1; i &lt; 21; i++)
+    {
+         if (i &gt; 4 and i &lt; 15)
+            continue;
+        with (instance_create(32 * (i + 1), -64, objSpikeDown))
+        {
+            vspeed = 2;
+            sprite_index = sprBigKid_KamiliaSpike;
+        }
+        if (i &gt; 4)
+           continue;
+        with (instance_create(32 * i,
+             view_yview[0] + view_hview[0] + 64, objSpikeUp))
+        {
+            vspeed = -2;
+            sprite_index = sprBigKid_KamiliaSpike;
+        }
+    }
     exit;
 }
-alarm[1] = 100;
+with (objBigKid_BG)
+{
+    with (top_wall)
+    {
+        x = objBigJust_ViewMover.x + 32;
+        xprevious = x;
+        y = objBigJust_ViewMover.y;
+        image_xscale = ceil((view_xview[0] + view_wview[0] - x) /
+        sprite_get_width(sprite_index)) - 1;
+    }
+    with (left_wall)
+    {
+        x = objBigJust_ViewMover.x;
+        y = objBigJust_ViewMover.y + 32;
+        image_yscale = ceil((view_yview[0] + view_hview[0] - y) /
+        sprite_get_height(sprite_index)) - 1;
+    }
+    with (right_wall)
+    {
+        y = objBigJust_ViewMover.y + 32;
+        image_yscale = ceil((view_yview[0] + view_hview[0] - y) /
+        sprite_get_height(sprite_index)) - 1;
+    }
+    with (bottom_wall)
+    {
+        x = objBigJust_ViewMover.x + 32;
+        xprevious = x;
+        image_xscale = ceil((view_xview[0] + view_wview[0] - x) /
+        sprite_get_width(sprite_index));
+    }
+    with (left_top_edge)
+    {
+        x = objBigJust_ViewMover.x;
+        y = objBigJust_ViewMover.y;
+    }
+    with (right_top_edge)
+    {
+        y = objBigJust_ViewMover.y;
+    }
+    with (left_bottom_edge)
+    {
+        x = objBigJust_ViewMover.x;
+    }
+    x = objBigJust_ViewMover.x;
+    y = objBigJust_ViewMover.y;
+}
+with (objBigJust_Healthbar)
+{
+    x = objBigJust_ViewMover.x + 32;
+    y = objBigJust_ViewMover.y + 4;
+    width = view_xview[0] + view_wview[0] - x - 32;
+}
+with (objSpikeDown)
+{
+    y = objBigJust_ViewMover.y + 64;
+}
+alarm[1] = 1;
 </string>
           </argument>
         </arguments>
@@ -110,58 +208,24 @@ alarm[1] = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Slowdown
-room_speed -= 5;
-if (room_speed &lt;= 5)
+            <string>///Move the view
+alarm[0] = 1;
+if (view_xview[0] &gt; 0)
+   view_xview[0] -= 2;
+else if (view_yview[0] &gt; 0)
+     view_yview[0] -= 2;
+else
 {
-    instance_deactivate_all(true);
-    audio_pause_sound(global.currentMusic);
-    audio_stop_sound(sndGeezerStatic);
-    room_speed = 50;
-    counter++;
-    surface_copy(surface, 0, 0, application_surface);
-    alarm[1] = 100;
-    exit;
-}
-alarm[0] = 50 - room_speed;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-if (!surface_exists(surface))
-{
-    instance_activate_all();
-    surface_copy(surface, 0, 0, application_surface);
-    instance_deactivate_all(true);
-}
-if (counter &gt; 0)
-{
-    draw_surface(surface, view_xview[0], view_yview[0]);
-    draw_set_alpha(0.5);
-    draw_set_color(c_white);
-    draw_rectangle(view_xview[0], view_yview[0],
-    view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
-    draw_set_alpha(1);
-    window_set_caption(global.roomCaptionLast + " (Not Responding)");
+    view_xview[0] = 0;
+    view_yview[0] = 0;
+    alarm[1] = 50;
+    alarm[0] = -1;
+    with (instance_create(view_xview[0] + view_wview[0],
+                      view_yview[0] + view_hview[0] - 192, objCard))
+    {
+        y = view_yview[0];
+        image_index = objBigKid_BG.phase + 4;
+    }
 }
 </string>
           </argument>

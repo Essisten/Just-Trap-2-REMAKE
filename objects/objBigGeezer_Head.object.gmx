@@ -100,6 +100,8 @@ for (var i = view_yview[0]; i &lt; view_yview[0] + view_hview[0] + 64; i += 64)
      instance_destroy();
 with (objBigGeezer_BlockEffect)
      instance_destroy();
+with (objBigGeezer_Eyes)
+     instance_destroy();
 part_type_destroy(global.topParticleSystem);
 part_emitter_destroy(global.topParticleSystem, emitter);
 </string>
@@ -187,7 +189,7 @@ sprite_index = sprBigGeezer_Noise;
 image_blend = c_white;
 alarm[1] = 50;
 noise = true;
-audio_play_sound(sndGeezerStatic, 1, true);
+scrPlaySound(sndGeezerStatic, 1, true);
 if (!on)
    alarm[1] /= 2;
 </string>

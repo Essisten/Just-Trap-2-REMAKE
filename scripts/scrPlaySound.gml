@@ -1,6 +1,8 @@
-///scrPlaySound(sound, pitch)
-
-var s = audio_play_sound(argument[0], 3, false);
+///scrPlaySound(sound, pitch, loop)
+var loop = false;
+if (argument_count > 2)
+   loop = argument[2];
+var s = audio_play_sound(argument[0], 3, loop);
 audio_sound_gain(s, global.soundVol/100, 0);
 if (argument_count > 1)
 {
