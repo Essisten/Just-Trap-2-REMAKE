@@ -62,23 +62,34 @@
       <sound>sound\sndSpikeTrap</sound>
       <sound>sound\sndSpike</sound>
       <sounds name="Final boss">
-        <sound>sound\sndGayShooter</sound>
-        <sound>sound\sndGayShooting</sound>
-        <sound>sound\sndGayFireball</sound>
-        <sound>sound\sndGayReporter</sound>
-        <sound>sound\sndSolgrynShoot</sound>
-        <sound>sound\sndHadoken</sound>
-        <sound>sound\sndSolgrynWater</sound>
-        <sound>sound\sndSolgrynLaser</sound>
-        <sound>sound\sndGayBilly1</sound>
-        <sound>sound\sndGayBilly2</sound>
-        <sound>sound\sndGayBilly3</sound>
-        <sound>sound\sndGayBilly4</sound>
-        <sound>sound\sndGayBillyDeath</sound>
-        <sound>sound\sndGayBilly5</sound>
-        <sound>sound\sndSolgryn_Spider</sound>
         <sound>sound\sndGeezerStatic</sound>
         <sound>sound\sndStickyKeys</sound>
+        <sounds name="Gay">
+          <sound>sound\sndGayShooter</sound>
+          <sound>sound\sndGayShooting</sound>
+          <sound>sound\sndGayFireball</sound>
+          <sound>sound\sndGayReporter</sound>
+          <sound>sound\sndGayBilly1</sound>
+          <sound>sound\sndGayBilly2</sound>
+          <sound>sound\sndGayBilly3</sound>
+          <sound>sound\sndGayBilly4</sound>
+          <sound>sound\sndGayBilly5</sound>
+          <sound>sound\sndGayBillyDeath</sound>
+        </sounds>
+        <sounds name="Solgryn">
+          <sound>sound\sndSolgrynShoot</sound>
+          <sound>sound\sndSolgrynWater</sound>
+          <sound>sound\sndHadoken</sound>
+          <sound>sound\sndSolgrynLaser</sound>
+          <sound>sound\sndSolgryn_Spider</sound>
+        </sounds>
+        <sounds name="K2">
+          <sound>sound\sndK2_Shoot</sound>
+          <sound>sound\sndK2_Shoot2</sound>
+          <sound>sound\sndK2_Laser</sound>
+          <sound>sound\sndK2_Ball</sound>
+          <sound>sound\sound84</sound>
+        </sounds>
       </sounds>
     </sounds>
     <sounds name="music">
@@ -561,6 +572,7 @@
       <script>scripts\scrGay_Attack.gml</script>
       <script>scripts\scrSolgryn_Attack.gml</script>
       <script>scripts\scrGeezer_Attack.gml</script>
+      <script>scripts\scrK2_Attack.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -826,7 +838,12 @@
           <object>objects\objBigGeezer_GreenDude2</object>
           <object>objects\objBigGeezer_Bat</object>
         </objects>
-        <object>objects\objK2_MagicUse</object>
+        <objects name="K2">
+          <object>objects\objK2_MagicUse</object>
+          <object>objects\objK2_Ball</object>
+          <object>objects\objK2_Projectile</object>
+          <object>objects\objK2_Laser</object>
+        </objects>
       </objects>
       <objects name="Main">
         <object>objects\objBigKid_BG</object>

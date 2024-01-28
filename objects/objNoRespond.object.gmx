@@ -264,7 +264,11 @@ objNoRespond_Controller.alarm[2] = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if (scrButtonCheckPressed(global.menuOptionsButton) or scrButtonCheckPressed(global.pauseButton))
+{
+    event_user(0);
+}
+draw_self();
 draw_sprite_ext(sprNoRespond_Body, 0, x, y + (bodyY * image_yscale), image_xscale, image_yscale, 0, c_white, image_alpha);
 </string>
           </argument>

@@ -272,6 +272,9 @@ switch (objBigKid_BG.phase)
     case 4:
          scrGeezer_Attack();
          break;
+    case 5:
+         scrK2_Attack();
+         break;
 }
 with (objCherry)
      depth = -110;
@@ -395,6 +398,7 @@ switch (objBigKid_BG.phase)
     case 5:    //Kamilia 2
         instance_destroy(objBigGeezer_Head);
         instance_destroy(objGeezer_Text);
+        audio_stop_sound(sndGeezerStatic);
         with (objBigGeezer_BG)
              instance_destroy(objBigGeezer_BG);
          with (objSpikeParent)

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_xscale = view_wview[0];
+image_yscale = 2;
 </string>
           </argument>
         </arguments>

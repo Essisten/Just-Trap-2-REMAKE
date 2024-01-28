@@ -57,6 +57,11 @@ with (instance_create(objBigKid_Head.x, view_yview[0] + view_hview[0], objSticky
 {
     vspeed = -4;
 }
+with (objBigGeezer_Head)
+{
+    event_perform(ev_alarm, 3);
+    alarm[1] = -1;
+}
 instance_destroy();
 </string>
           </argument>
@@ -115,8 +120,7 @@ room_speed -= 5;
 if (room_speed &lt;= 5)
 {
     instance_deactivate_all(true);
-    audio_pause_sound(global.currentMusic);
-    audio_stop_sound(sndGeezerStatic);
+    audio_pause_all();
     room_speed = 50;
     counter++;
     surface_copy(surface, 0, 0, application_surface);

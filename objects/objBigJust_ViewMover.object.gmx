@@ -53,7 +53,7 @@ objBigJust_Healthbar.y += 2;
 if (objBigJust_Healthbar.y - 4 &lt; objBigKid_BG.top_wall.y)
    alarm[3] = 1;
 else
-    alarm[0] = 50;
+    alarm[0] = 25;
 </string>
           </argument>
         </arguments>
@@ -103,9 +103,9 @@ with (objSpikeParent)
             <kind>1</kind>
             <string>///Stretch the box
 if (x &gt; 0)
-   x -= 2;
+   x -= 4;
 else if (y &gt; 0)
-     y -= 2;
+     y -= 4;
 else
 {
     alarm[2] = 64;
@@ -211,14 +211,14 @@ alarm[1] = 1;
             <string>///Move the view
 alarm[0] = 1;
 if (view_xview[0] &gt; 0)
-   view_xview[0] -= 2;
+   view_xview[0] -= 4;
 else if (view_yview[0] &gt; 0)
-     view_yview[0] -= 2;
+     view_yview[0] -= 4;
 else
 {
     view_xview[0] = 0;
     view_yview[0] = 0;
-    alarm[1] = 50;
+    alarm[1] = 25;
     alarm[0] = -1;
     with (instance_create(view_xview[0] + view_wview[0],
                       view_yview[0] + view_hview[0] - 192, objCard))
