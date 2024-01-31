@@ -88,7 +88,7 @@
           <sound>sound\sndK2_Shoot2</sound>
           <sound>sound\sndK2_Laser</sound>
           <sound>sound\sndK2_Ball</sound>
-          <sound>sound\sound84</sound>
+          <sound>sound\sndK2_Boom</sound>
         </sounds>
       </sounds>
     </sounds>
@@ -396,6 +396,7 @@
         <sprite>sprites\sprBigKamilia_Body</sprite>
         <sprite>sprites\sprBigSolgryn_Body</sprite>
         <sprite>sprites\sprBigJust_Head</sprite>
+        <sprite>sprites\sprK2_Face</sprite>
         <sprite>sprites\sprBigGeezer_Head</sprite>
         <sprite>sprites\sprBigGeezer_Noise</sprite>
         <sprite>sprites\sprBigGeezer_Face</sprite>
@@ -451,9 +452,11 @@
           <sprite>sprites\sprK2_Ball</sprite>
           <sprite>sprites\sprK2_MagicUse</sprite>
           <sprite>sprites\sprK2_Projectile</sprite>
-          <sprite>sprites\sprK2_Line</sprite>
           <sprite>sprites\sprK2_Laser</sprite>
           <sprite>sprites\sprK2_Bomb</sprite>
+          <sprite>sprites\sprK2_Projectile2</sprite>
+          <sprite>sprites\sprK2_Sphere</sprite>
+          <sprite>sprites\sprMoon</sprite>
         </sprites>
       </sprites>
       <sprites name="Misc">
@@ -471,6 +474,10 @@
         <sprite>sprites\sprNoRespond_Body</sprite>
         <sprite>sprites\sprNoRespond_Close</sprite>
         <sprite>sprites\sprStickyKeys</sprite>
+        <sprite>sprites\sprK2_Boom</sprite>
+        <sprite>sprites\sprK2_LightEffect</sprite>
+        <sprite>sprites\sprK2_Line</sprite>
+        <sprite>sprites\sprK2_DeathBoom</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -842,7 +849,12 @@
           <object>objects\objK2_MagicUse</object>
           <object>objects\objK2_Ball</object>
           <object>objects\objK2_Projectile</object>
+          <object>objects\objK2_Bomb</object>
           <object>objects\objK2_Laser</object>
+          <object>objects\objK2_Projectile2</object>
+          <object>objects\objK2_PeriodicAttack</object>
+          <object>objects\objK2_Sphere</object>
+          <object>objects\objMoon</object>
         </objects>
       </objects>
       <objects name="Main">
@@ -855,10 +867,6 @@
         <object>objects\objBigKid_Water</object>
       </objects>
       <objects name="Misc">
-        <object>objects\objNoRespond</object>
-        <object>objects\objNoRespond_Button</object>
-        <object>objects\objNoRespond_Close</object>
-        <object>objects\objNoRespond_Controller</object>
         <objects name="Geezer">
           <object>objects\objBigGeezer_Head</object>
           <object>objects\objBigGeezer_BlockEffect</object>
@@ -866,9 +874,17 @@
           <object>objects\objBigGeezer_Block</object>
           <object>objects\objGeezer_Text</object>
           <object>objects\objBigGeezer_Eyes</object>
+          <object>objects\objStickyKeys</object>
+          <object>objects\objNoRespond_Controller</object>
+          <object>objects\objNoRespond</object>
+          <object>objects\objNoRespond_Close</object>
+          <object>objects\objNoRespond_Button</object>
         </objects>
         <object>objects\objBigJust_ViewMover</object>
-        <object>objects\objStickyKeys</object>
+        <object>objects\objK2_SphereCenter</object>
+        <object>objects\objK2_Boom</object>
+        <object>objects\objK2_LightEffect</object>
+        <object>objects\objK2_Face</object>
       </objects>
     </objects>
   </objects>

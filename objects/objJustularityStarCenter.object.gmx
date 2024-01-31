@@ -29,6 +29,7 @@
 counter = 0;
 rad = 64;
 dir = 0;
+spd = (global.difficulty + 1) * 2;
 owner = instance_find(objJustularity, 0);
 alarm[0] = 1;
 done = false;
@@ -99,7 +100,7 @@ ds_list_add(stars, star);
           <argument>
             <kind>1</kind>
             <string>var length = ds_list_size(stars);
-dir += (global.difficulty + 1) * 2;
+dir += spd;
 for (var i = 0; i &lt; length; i++)
 {
     var star = ds_list_find_value(stars, i);

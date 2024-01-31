@@ -131,7 +131,7 @@ alarm[0] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!other.reflected)
+            <string>if (!other.reflected or frozen)
    exit;
 if (alarm[0] &gt; -1)
 {
@@ -396,36 +396,7 @@ switch (objBigKid_BG.phase)
          frozen = true;
          break;
     case 5:    //Kamilia 2
-        instance_destroy(objBigGeezer_Head);
-        instance_destroy(objGeezer_Text);
-        audio_stop_sound(sndGeezerStatic);
-        with (objBigGeezer_BG)
-             instance_destroy(objBigGeezer_BG);
-         with (objSpikeParent)
-            sprite_index = sprBigKid_KamiliaSpike;
-        with (objBlock)
-        {
-             sprite_index = sprBigKamilia_Block;
-             visible = true;
-        }
-         with (objBigKid_BG)
-         {
-            with (top_wall)
-                 image_index = 1;
-            with (left_wall)
-                 image_index = 2;
-            with (right_wall)
-                 image_index = 2;
-            with (bottom_wall)
-            {
-                sprite_index = sprBigKamilia_Platform;
-                image_xscale = ceil((view_xview[0] + view_wview[0] - x) /
-                sprite_get_width(sprite_index)) - 1;
-            }
-         }
-         with (objBigBow)
-              image_index = 3;
-         instance_create(objBigKid_BG.x, objBigKid_BG.y, objBigJust_ViewMover);
+         instance_create(x, y, objK2_Face);
          break;
 }
 </string>

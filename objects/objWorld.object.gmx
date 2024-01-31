@@ -360,7 +360,7 @@ if (global.debugVisuals)
         if (global.debugInfJump)     //makes player turn blue when infinite jump is on
             image_blend = c_blue;
         else
-            image_blend = c_white;
+            image_blend = color_normal;
     }
 }
 </string>

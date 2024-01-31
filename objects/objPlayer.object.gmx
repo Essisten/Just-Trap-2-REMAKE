@@ -54,7 +54,7 @@ global.gravH = false;
 if (global.grav == -1)
     scrFlipGrav();
 scrSetPlayerMask(); //set the player's hitbox
-
+color_normal = c_white;
 if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create the player's bow
     instance_create(x,y,objBow);
 
