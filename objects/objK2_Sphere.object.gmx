@@ -218,14 +218,7 @@ instance_create(x, y, objK2_Boom);
 instance_destroy();
 if (instance_number(objK2_Sphere) == 0)
 {
-    objBigKid_Head.frozen = false;
-    objK2_Face.image_index = 2;
-    with (objMoon)
-    {
-        gravity_direction = 90;
-        gravity = 0.01;
-        done = true;
-    }
+    objK2_Face.alarm[4] = 100;
 }
 </string>
           </argument>

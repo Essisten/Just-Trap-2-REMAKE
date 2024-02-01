@@ -51,7 +51,10 @@ canParry = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if (speed == 0)
+{
+    instance_destroy();
+}
 image_blend = make_colour_hsv(c, 255, 255);
 c += 8;
 if (c &gt; 255)

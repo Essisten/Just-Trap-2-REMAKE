@@ -1,3 +1,12 @@
+v0.5
+- Added part 1/4 of Big Just (Just Trap 1).
+- Shop redesigned.
+- Added autofire for The Gun.
+- Fixed incorrect bat's reflection reaim.
+- Rebalanced Justination.
+- Return to the old anti-softlock protection.
+- Minor bug fixes.
+==================================================
 v0.4.9.8
 - Metal bat replaced with NXC bat.
 - Improved portal anti-softlock trigger.

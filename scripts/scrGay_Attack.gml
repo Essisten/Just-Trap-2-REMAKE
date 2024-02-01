@@ -30,7 +30,7 @@ if (tmpHP > 50)
 {
    for (var i = 0; i < (global.difficulty) * 2; i++)
    {
-       with (instance_create(random_range(160, 416), view_yview[0], objPlayerKiller))
+       with (instance_create(random_range(160, 416), view_yview[0], objCherry))
        {
            sprite_index = sprBigKid_GaySpike;
            gravity = 0.1 * random_range(1, global.difficulty);

@@ -88,7 +88,7 @@ alarm[1] = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &lt; view_xview)
+            <string>if (x &gt; view_xview[0])
    exit;
 instance_destroy();
 </string>

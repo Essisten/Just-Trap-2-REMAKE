@@ -54,11 +54,13 @@ counter = 0;
           <argument>
             <kind>1</kind>
             <string>///Firing
-with (instance_create(x, fire.y - 64, objKillerBlock))
+with (instance_create(x, fire.y - 64, objCherry))
 {
     vspeed = -(global.difficulty + 1);
     sprite_index = sprPirhanaPlant_Laser2;
     depth = -112;
+    canParry = false;
+    image_speed = 0;
 }
 counter++;
 if (counter &gt; (global.difficulty + 1) * 10)
@@ -134,6 +136,29 @@ if (y &lt;= view_yview[0] + view_hview[0])
     exit;
 }
 alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>

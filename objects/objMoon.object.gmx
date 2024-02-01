@@ -53,10 +53,13 @@ done = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dick += 2;
+            <string>
+image_angle += 6;
+if (done)
+   exit;
+dick += 2;
 y = oldY + sin(degtorad(dick)) * 64;
 oldY += 0.05 * (global.difficulty + 1);
-image_angle += 6;
 </string>
           </argument>
         </arguments>

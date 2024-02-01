@@ -264,7 +264,7 @@ objNoRespond_Controller.alarm[2] = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (scrButtonCheckPressed(global.menuOptionsButton) or scrButtonCheckPressed(global.pauseButton))
+            <string>if (scrButtonCheckPressed(global.menuOptionsButton) or scrButtonCheckPressed(global.menuBackButton))
 {
     event_user(0);
 }

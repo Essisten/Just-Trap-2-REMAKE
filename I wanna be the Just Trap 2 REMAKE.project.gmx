@@ -675,6 +675,7 @@
         <object>objects\objCherryBounceLat</object>
         <object>objects\objCherryBounceVert</object>
         <object>objects\objCherryPersistant</object>
+        <object>objects\objCherryReflectable</object>
       </objects>
       <object>objects\objReflectableKiller</object>
       <object>objects\objKillable</object>

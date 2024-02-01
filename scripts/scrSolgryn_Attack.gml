@@ -6,12 +6,15 @@ if (tmpHP > 10)
    snd = sndSolgrynShoot;
    for (var i = 0; i < amount; i++)
    {
-       var b = instance_create(x + 64, y + 64, objReflectableKiller);
+       var b = instance_create(x + 64, y + 64, objCherryReflectable);
        b.direction = 360 / amount * i + rng;
        b.image_angle = b.direction;
        b.speed = fruit_spd;
-       b.sprite_index = sprSolgrynBullet;
-       b.image_speed = 1/8;
+       with (b)
+       {
+            sprite_index = sprSolgrynBullet;
+            image_speed = 1/8;
+       }
    }
    part_emitter_region(global.topParticleSystem, objBigKid_BG.emitter, x + 64, x + 64, y + 64, y + 64, ps_shape_line, ps_distr_linear);
    part_emitter_burst(global.topParticleSystem, objBigKid_BG.emitter, objBigKid_BG.solgryn_effect, 1);
@@ -28,15 +31,15 @@ if (tmpHP > 20)
    }
    for (; i <= 800 - 64; i += step)
    {
-       var h = instance_create(view_xview + i, view_yview[0], objReflectableKiller);
+       var h = instance_create(view_xview + i, view_yview[0], objCherryReflectable);
        h.vspeed = fruit_spd * 0.8;
        with (h)
        {
-           sprite_index = sprSolgrynHadoken;
-           image_xscale = 1.5;
-           image_yscale = image_xscale;
-           image_angle = 270;
-           image_speed = 1/8;
+            sprite_index = sprSolgrynHadoken;
+            image_xscale = 1.5;
+            image_yscale = image_xscale;
+            image_angle = 270;
+            image_speed = 1/8;
        }
    }
    evenCounter = !evenCounter;
