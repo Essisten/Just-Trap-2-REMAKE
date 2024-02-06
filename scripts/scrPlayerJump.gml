@@ -1,4 +1,7 @@
-
+var addAngle = image_angle;
+if (global.grav == -1)
+   addAngle += 180;
+part_type_direction(global.djumpParticles, addAngle + 180, addAngle + 360, 0, 0);
 part_emitter_region(global.sprintParticleSystem, global.djumpEmitter, x, x, y, y, global.djumpParticles, ps_distr_linear);
 if (global.gravH)
 {

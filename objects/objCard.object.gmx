@@ -171,9 +171,16 @@ else
           <argument>
             <kind>1</kind>
             <string>///fuck go back
-done = true;
-alarm[0] = 1;
-image_alpha = 0.2;
+if (x &lt; view_xview[0] + view_wview[0] / 2)
+{
+    x = view_xview[0] + view_wview[0] - (x - view_xview[0] + sprite_width);
+}
+else
+{
+    x = view_xview[0] + (view_xview[0] + view_wview[0] - x - sprite_width);
+}
+gravity_direction += 180;
+direction += 180;
 </string>
           </argument>
         </arguments>

@@ -1,3 +1,9 @@
+0.5.1
+- Added visual effects for double jumping and shooting.
+- Reworked titlecards.
+- Performance improvements.
+- Paralyzed player sprites were replaced with a grayscale shader.
+==================================================
 v0.5
 - Added part 1/4 of Big Just (Just Trap 1).
 - Shop redesigned.
