@@ -80,8 +80,11 @@ once = true;
             <string>if (!other.hidden or !once or abs(other.oldY - y) &gt; 2 or abs(other.x - x) &gt; 2)
     exit;
 event_user(0);
-other.alarm[6] = 2;
-other.counter = 0;
+with (other)
+{
+    event_perform(ev_alarm, 6);
+    counter = 0;
+}
 once = false;
 alarm[1] = 150;
 </string>

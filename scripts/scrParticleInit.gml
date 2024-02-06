@@ -24,5 +24,13 @@ part_type_alpha3(global.saveParticles, 1, 0.6, 0.2);
 global.sprintParticles = part_type_create();
 part_type_life(global.sprintParticles, 10, 10);
 part_type_alpha2(global.sprintParticles, 0.6, 0);
-
 global.sprintEmitter = part_emitter_create(global.sprintParticleSystem);
+
+global.djumpParticles = part_type_create();
+part_type_life(global.djumpParticles, 10, 10);
+part_type_alpha2(global.djumpParticles, 0.6, 0);
+part_type_shape(global.djumpParticles, pt_shape_cloud);
+part_type_speed(global.djumpParticles, 1, 2, 0, 0);
+part_type_direction(global.djumpParticles, 180, 360, 0, 0);
+part_type_size(global.djumpParticles, 0.1, 0.2, 0, 0);
+global.djumpEmitter = part_emitter_create(global.sprintParticleSystem);

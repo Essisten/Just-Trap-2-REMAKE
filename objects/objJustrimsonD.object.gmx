@@ -243,11 +243,12 @@ if (HP &lt;= 50)
 rot_sum = 360 * 2 + (rot_sum mod 360);
 amount_angl = rot_sum;
 old_angl = image_angle;
-if (instance_number(objJustrimsonD_Star) &gt; 600)
+if (instance_number(objJustrimsonD_Star) &gt; 400)
 {
     with (objJustrimsonD_Star)
     {
-        event_user(15);
+        if (!ready)
+           event_user(15);
     }
 }
 for (i = 0; i &lt; 8 * (global.difficulty + 1); i++)

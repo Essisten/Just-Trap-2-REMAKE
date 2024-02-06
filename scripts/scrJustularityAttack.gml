@@ -48,7 +48,7 @@ switch (argument0)
                     sprite_index = sprJustularityCoal2;
             }
             c.direction = tmpD;
-            c.image_angle = tmpD - 270;
+            c.image_angle = tmpD;
         }
         alarm[7] = 32 - global.difficulty * 6;
         break;

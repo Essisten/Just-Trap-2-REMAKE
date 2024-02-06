@@ -235,7 +235,8 @@ if (scrButtonCheck(global.sprintButton))
    part_type_scale(global.sprintParticles, image_xscale*xScale,image_yscale*global.grav);
    part_type_orientation(global.sprintParticles, image_angle, image_angle, 0, 0, 0);
    part_emitter_region(global.sprintParticleSystem, global.sprintEmitter, x, x, y, y, global.sprintParticles, ps_distr_linear);
-   part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
+   //part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
+   part_emitter_burst(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
 }
 else
 {
@@ -247,26 +248,29 @@ shootUpward = scrButtonCheck(global.upButton) &amp;&amp; !frozen;
 if (paralyzed)
 {
     image_speed = 0;
-    sprt = sprPlayerParalyzed;
-    switch (sprite_index)
+    if (false)
     {
-        case sprPlayerRunning:
-        case sprPlayerRunUp:
-            image_index = 1;
-            break;
-        case sprPlayerFall:
-        case sprPlayerFallUp:
-            image_index = 2;
-            break;
-        case sprPlayerJump:
-        case sprPlayerJumpUp:
-            image_index = 3;
-            break;
-        default:
-            image_index = 0;
-            break;
+        sprt = sprPlayerParalyzed;
+        switch (sprite_index)
+        {
+            case sprPlayerRunning:
+            case sprPlayerRunUp:
+                image_index = 1;
+                break;
+            case sprPlayerFall:
+            case sprPlayerFallUp:
+                image_index = 2;
+                break;
+            case sprPlayerJump:
+            case sprPlayerJumpUp:
+                image_index = 3;
+                break;
+            default:
+                image_index = 0;
+                break;
+        }
+        sprite_index = sprt;
     }
-    sprite_index = sprt;
 }
 if (ds_list_find_value(global.arsenal, global.currentWeapon) == 3)
 {
@@ -926,6 +930,7 @@ if (paralyzed)
    exit;
 frozen = true;
 paralyzed = true;
+exit;
 with (objWeaponPlayer)
 {
     sprite_index = paralyzed[other.state];
@@ -1183,14 +1188,14 @@ if (room == rBoss2)
           <argument>
             <kind>1</kind>
             <string>///draw the player
-
+if (paralyzed)
+   shader_set(shdGrayscale);
 var drawX = x;
 var drawY = y;
-
 if (global.grav == -1)      //need to draw the player a pixel off in the y-axis when flipped for some reason
     drawY += 1;
 draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale*xScale,image_yscale*global.grav,image_angle,image_blend,image_alpha);
-
+shader_reset();
 //draw the player's hitbox
 if (global.debugShowHitbox)
     draw_sprite_ext(mask_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.8);

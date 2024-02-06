@@ -34,6 +34,33 @@ image_yscale = image_xscale;
 event_user(0);
 can_kill = true;
 canParry = true;
+alarm[1] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check the bullet type
+b = objBulletJR;
+if (owner == objJustist)
+   b = objBulletJustist;
 </string>
           </argument>
         </arguments>
@@ -82,24 +109,8 @@ if (instance_exists(objPlayer))
           <argument>
             <kind>1</kind>
             <string>if (wrap and instance_exists(owner))
-{
-    var b = objBulletJR
-    if (owner == objJustist)
-       b = objBulletJustist;
-    var num = instance_number(b);
-    var count = 0;
-    for (var i = 0; i &lt; num; i++)
-    {
-        var tmp = instance_find(b, i);
-        if (tmp.wrap)
-           count++;
-    }
-    if (owner.extraBulletsCounter &lt; count)
-       wrap = false;
-    move_wrap(true, true, 10);
-    event_user(0);
-}
-if (y &lt; -20 or y &gt; 620 or x &lt; -20 or x &gt; 820)
+   move_wrap(true, true, 10);
+else if (y &lt; -20 or y &gt; 620 or x &lt; -20 or x &gt; 820)
 {
     instance_destroy();
 }
@@ -127,6 +138,43 @@ if (y &lt; -20 or y &gt; 620 or x &lt; -20 or x &gt; 820)
             <kind>1</kind>
             <string>if (can_kill)
    scrKillPlayer();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if (wrap and instance_exists(owner))
+{
+    var num = instance_number(b);
+    var count = 0;
+    for (var i = 0; i &lt; num; i++)
+    {
+        var tmp = instance_find(b, i);
+        if (tmp.wrap)
+           count++;
+    }
+    if (owner.extraBulletsCounter &lt; count)
+       wrap = false;
+    event_user(0);
+}
 </string>
           </argument>
         </arguments>

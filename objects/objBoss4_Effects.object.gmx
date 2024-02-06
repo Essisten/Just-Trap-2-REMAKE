@@ -109,8 +109,7 @@ if (final)
 {
     draw_set_blend_mode_ext(bm_inv_dest_color, bm_inv_dest_color);
     draw_set_colour(c_white);
-    draw_rectangle(400 - w, 0, 400, 608, false);
-    draw_rectangle(400 + w, 0, 401, 608, false);
+    draw_rectangle(400 - w, 0, 400 + w, 608, false);
     if (instance_exists(objJustination))
     {
         if (w &lt; 500)

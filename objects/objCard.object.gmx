@@ -28,6 +28,7 @@
             <string>if (!global.showCard)
     instance_destroy();
 done = false;
+boss = true;
 image_speed = 0;
 if (x &lt; 400)
     gravity_direction  = 180;
@@ -198,6 +199,8 @@ image_alpha = 0.2;
             <string>draw_self();
 if (global.difficulty == 3)
    draw_sprite(sprCardH, 0, x, y);
+if (boss)
+   draw_sprite(sprCardB, 0, x + sprite_width, y);
 </string>
           </argument>
         </arguments>

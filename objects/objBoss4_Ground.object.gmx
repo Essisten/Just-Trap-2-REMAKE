@@ -81,6 +81,7 @@ ready = true;
     warm = max(0, warm - 1);
 else
     warm = 0;
+image_blend = make_colour_rgb(255, 255 - warm, 255 - warm);
 </string>
           </argument>
         </arguments>
@@ -185,37 +186,6 @@ else
     }
 }
 image_index = s;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>switch (image_index)
-{
-    case 0:
-        draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, make_colour_rgb(255, 255 - warm, 255 - warm), 1);
-        break;
-    default:
-        draw_self();
-        break;
-}
 </string>
           </argument>
         </arguments>

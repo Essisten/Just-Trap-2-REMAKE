@@ -420,11 +420,11 @@ scrHideBoss1(objJustist, true);
     }
     scrDrawTextOutline(0, 30, "JR energy: ", clr1, clr2);
     scrDrawTextOutline(190, 30, string(objJR.energy), clr1, clr2);
-}
-if (final)
-{
-    draw_set_font(fBoss1_46);
-    scrDrawTextOutline(timerX, timerY, string(timer), c_white, c_white);
+    if (final)
+    {
+        draw_set_font(fBoss1_46);
+        scrDrawTextOutline(timerX, timerY, string(timer), c_white, c_white);
+    }
 }
 </string>
           </argument>

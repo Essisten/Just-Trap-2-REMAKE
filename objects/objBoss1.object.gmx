@@ -320,7 +320,8 @@ part_emitter_burst(global.saveParticleSystem, emitterRevive, particleRevive, 2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>counter++;
+            <string>///Showing and hiding
+counter++;
 if (showing)
 {
     if (image_alpha &lt; 1)
@@ -356,7 +357,6 @@ else
     destinationX = hole.x;
     if (counter &gt;= 10)
     {
-        oldY = -50;
         oldY = -50;
         flyHight = -50;
         counter = 0;

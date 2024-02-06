@@ -157,8 +157,7 @@ if (HP &lt;= 50)
 if (instance_number(objJustrimsonB_Laser) &gt; 4)
 {
    beam.alarm[0] += instance_number(objJustrimsonB_Laser) * 5 * choose(-1, 1);
-   if (beam.alarm[0] &lt; 0)
-      beam.alarm[0] = 1;
+   beam.alarm[0] = max(1, beam.alarm[0]);
 }
 if (HP &gt; 0 and HP &lt;= 50)
 {

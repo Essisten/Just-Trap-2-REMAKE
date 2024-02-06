@@ -224,6 +224,7 @@
       <sprite>sprites\sprGravityDown</sprite>
       <sprite>sprites\sprCard</sprite>
       <sprite>sprites\sprCardH</sprite>
+      <sprite>sprites\sprCardB</sprite>
       <sprite>sprites\sprBossName</sprite>
     </sprites>
     <sprites name="platforms">
@@ -480,6 +481,7 @@
         <sprite>sprites\sprK2_DeathBoom</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sprite302</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bAllTiles</background>
@@ -582,6 +584,10 @@
       <script>scripts\scrK2_Attack.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shdInvert.shader</shader>
+    <shader type="GLSLES">shaders\shdGrayscale.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
     <font>fonts\fDefault24</font>
