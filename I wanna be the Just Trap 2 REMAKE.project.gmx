@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="6" name="datafiles"/>
+  <datafiles number="7" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="sfx">
@@ -587,6 +587,7 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdInvert.shader</shader>
     <shader type="GLSLES">shaders\shdGrayscale.shader</shader>
+    <shader type="GLSLES">shaders\shdRandomNoise.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>

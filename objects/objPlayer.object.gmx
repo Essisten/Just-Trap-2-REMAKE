@@ -231,12 +231,14 @@ if (!part_emitter_exists(global.sprintParticleSystem, global.sprintEmitter))
 if (scrButtonCheck(global.sprintButton))
 {
    maxSpeed = 6;
-   part_type_sprite(global.sprintParticles, sprite_index, false, false, false);
-   part_type_scale(global.sprintParticles, image_xscale*xScale,image_yscale*global.grav);
-   part_type_orientation(global.sprintParticles, image_angle, image_angle, 0, 0, 0);
-   part_emitter_region(global.sprintParticleSystem, global.sprintEmitter, x, x, y, y, global.sprintParticles, ps_distr_linear);
-   //part_emitter_stream(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
-   part_emitter_burst(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
+   if (global.particles)
+   {
+       part_type_sprite(global.sprintParticles, sprite_index, false, false, false);
+       part_type_scale(global.sprintParticles, image_xscale*xScale,image_yscale*global.grav);
+       part_type_orientation(global.sprintParticles, image_angle, image_angle, 0, 0, 0);
+       part_emitter_region(global.sprintParticleSystem, global.sprintEmitter, x, x, y, y, global.sprintParticles, ps_distr_linear);
+       part_emitter_burst(global.sprintParticleSystem, global.sprintEmitter, global.sprintParticles, 1);
+   }
 }
 else
 {

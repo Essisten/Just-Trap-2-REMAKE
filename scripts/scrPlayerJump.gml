@@ -1,8 +1,11 @@
 var addAngle = image_angle;
 if (global.grav == -1)
    addAngle += 180;
-part_type_direction(global.djumpParticles, addAngle + 180, addAngle + 360, 0, 0);
-part_emitter_region(global.sprintParticleSystem, global.djumpEmitter, x, x, y, y, global.djumpParticles, ps_distr_linear);
+if (global.particles)
+{
+    part_type_direction(global.djumpParticles, addAngle + 180, addAngle + 360, 0, 0);
+    part_emitter_region(global.sprintParticleSystem, global.djumpEmitter, x, x, y, y, global.djumpParticles, ps_distr_linear);
+}
 if (global.gravH)
 {
     if (place_meeting(x +(global.grav), y,objBlock) || onPlatform || place_meeting(x +(global.grav), y,objWater))
@@ -20,7 +23,8 @@ if (global.gravH)
             djump = 0;  //take away the player's double jump
         else
             djump = 1;  //replenish djump if touching water3
-        part_emitter_burst(global.sprintParticleSystem, global.djumpEmitter, global.djumpParticles, 4);
+        if (global.particles)
+           part_emitter_burst(global.sprintParticleSystem, global.djumpEmitter, global.djumpParticles, 4);
     }
 }
 else
@@ -36,7 +40,8 @@ else
         vspeed = -jump2;
         state = 2;
         scrPlaySound(sndDJump);
-        part_emitter_burst(global.sprintParticleSystem, global.djumpEmitter, global.djumpParticles, 4);
+        if (global.particles)
+           part_emitter_burst(global.sprintParticleSystem, global.djumpEmitter, global.djumpParticles, 4);
         
         if (!place_meeting(x,y+(global.grav),objWater3))
             djump = 0;  //take away the player's double jump
