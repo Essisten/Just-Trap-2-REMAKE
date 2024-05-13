@@ -577,13 +577,14 @@ instance_create(x, y, objSoundTest);
           <argument>
             <kind>1</kind>
             <string>///draw debug overlay
+/*
 shader_set(shdRandomNoise);
 var rng = shader_get_uniform(shdRandomNoise, "rng_seed");
 shader_set_uniform_f(rng, random_range(0.1, 0.5));
 var alpha = shader_get_uniform(shdRandomNoise, "transparency");
 shader_set_uniform_f(alpha, 0.2);
 draw_sprite_ext(sprJustinationFire, 0, 400, 300, 4, 4, 0, 0, 0);
-shader_reset();
+shader_reset();*/
 if (global.debugOverlay)
 {
     draw_set_color(c_black);

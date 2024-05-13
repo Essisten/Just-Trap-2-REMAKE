@@ -366,6 +366,8 @@
       <sprite>sprites\sprJustrimson_Soul</sprite>
       <sprite>sprites\sprJustrimsonD_Pixel</sprite>
       <sprite>sprites\sprLeslie</sprite>
+      <sprite>sprites\sprKelvar</sprite>
+      <sprite>sprites\sprSquare</sprite>
       <sprite>sprites\sprBoss3_Platform</sprite>
       <sprite>sprites\sprJustrimsonOutline</sprite>
     </sprites>
@@ -481,7 +483,7 @@
         <sprite>sprites\sprK2_DeathBoom</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprite302</sprite>
+    <sprite>sprites\sprJustrimsonE</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bAllTiles</background>
@@ -599,22 +601,133 @@
     <font>fonts\fGeezer30</font>
   </fonts>
   <objects name="objects">
-    <objects name="world">
-      <object>objects\objWorld</object>
-      <object>objects\objCamera</object>
-      <object>objects\objSmoothCamera</object>
-      <object>objects\objPlayMusic</object>
+    <objects name="Engine default">
+      <objects name="blocks">
+        <objects name="slopes">
+          <object>objects\objSlope</object>
+          <object>objects\objSlopeDownLeft</object>
+          <object>objects\objSlopeDownRight</object>
+          <object>objects\objSlopeUpLeft</object>
+          <object>objects\objSlopeUpRight</object>
+        </objects>
+        <object>objects\objBlock</object>
+        <object>objects\objMiniBlock</object>
+        <object>objects\objStretchableBlock</object>
+        <object>objects\objBlockEdge</object>
+        <objects name="Engine trash">
+          <object>objects\objBlockInvis</object>
+          <object>objects\objSlideBlock</object>
+          <object>objects\objBlockFake</object>
+          <object>objects\objSlideBlockR</object>
+          <object>objects\objBossBlock</object>
+          <object>objects\objSlipBlock</object>
+          <object>objects\objSaveBlocker</object>
+          <object>objects\objSlideBlockL</object>
+        </objects>
+        <objects name="platforms">
+          <object>objects\objPlatform</object>
+          <object>objects\objMovingPlatform</object>
+          <object>objects\objMovingPlatformNoBounce</object>
+          <object>objects\objBlockRise</object>
+          <object>objects\objBlockFall</object>
+        </objects>
+      </objects>
+      <objects name="saves">
+        <object>objects\objSaveMedium</object>
+        <object>objects\objSave</object>
+        <object>objects\objSaveVHard</object>
+        <object>objects\objSaveMediumFlip</object>
+        <object>objects\objSaveFlip</object>
+        <object>objects\objSaveVHardFlip</object>
+      </objects>
+      <objects name="warps">
+        <object>objects\objWarpStart</object>
+        <object>objects\objRoomChanger</object>
+        <object>objects\objWarp</object>
+        <object>objects\objWarpNext</object>
+        <object>objects\objWarpAutosaveNext</object>
+        <object>objects\objOutsideRoomChanger</object>
+      </objects>
+      <objects name="misc">
+        <object>objects\objWater</object>
+        <object>objects\objWater2</object>
+        <object>objects\objWater3</object>
+        <object>objects\objWalljumpR</object>
+        <object>objects\objWalljumpL</object>
+        <object>objects\objJumpRefresher</object>
+        <object>objects\objSign</object>
+        <object>objects\objGravityUp</object>
+        <object>objects\objGravityLeft</object>
+        <object>objects\objGravityRight</object>
+        <object>objects\objGravityDown</object>
+      </objects>
+      <objects name="triggers">
+        <object>objects\objFreeTrigger</object>
+        <object>objects\objTriggerButton</object>
+        <object>objects\objKillerTrigger</object>
+        <object>objects\objSpikeTriggerUp</object>
+        <object>objects\objSpikeTriggerRight</object>
+        <object>objects\objSpikeTriggerLeft</object>
+        <object>objects\objSpikeTriggerDown</object>
+        <object>objects\objCherryTrigger</object>
+        <object>objects\objTriggerBossSelect</object>
+      </objects>
+      <objects name="killers">
+        <object>objects\objPlayerKiller</object>
+        <object>objects\objSpikeUp</object>
+        <object>objects\objSpikeRight</object>
+        <object>objects\objSpikeLeft</object>
+        <object>objects\objSpikeDown</object>
+        <object>objects\objMiniUp</object>
+        <object>objects\objMiniRight</object>
+        <object>objects\objMiniLeft</object>
+        <object>objects\objMiniDown</object>
+        <object>objects\objKillerBlock</object>
+        <object>objects\objSpikeParent</object>
+        <objects name="Cherries">
+          <object>objects\objCherry</object>
+          <object>objects\objCherryBounce</object>
+          <object>objects\objCherryBounceRandom</object>
+          <object>objects\objCherryBounceLat</object>
+          <object>objects\objCherryBounceVert</object>
+          <object>objects\objCherryPersistant</object>
+          <object>objects\objCherryReflectable</object>
+        </objects>
+        <object>objects\objReflectableKiller</object>
+        <object>objects\objKillable</object>
+      </objects>
+    </objects>
+    <objects name="Menu">
       <object>objects\objTitleMenu</object>
       <object>objects\objDifficultyMenu</object>
       <object>objects\objOptionsMenu</object>
       <object>objects\objKeyboardControlsMenu</object>
       <object>objects\objControllerMenu</object>
-      <object>objects\objBeatenBosses</object>
       <object>objects\objMainMenu</object>
-      <object>objects\objGraphicMenu</object>
-      <object>objects\objMusicLooper</object>
       <object>objects\objPauseMenu</object>
       <object>objects\objSoundTest</object>
+      <object>objects\objGraphicMenu</object>
+    </objects>
+    <objects name="Visuals">
+      <object>objects\objSlowdownEffect</object>
+      <object>objects\objMoneyShower</object>
+      <object>objects\objBossName</object>
+      <object>objects\objTutorial1</object>
+      <object>objects\objShowLabel</object>
+      <object>objects\objShakeEffect</object>
+      <object>objects\objLightEffect</object>
+      <object>objects\objPlatformLight</object>
+      <object>objects\objCard</object>
+      <object>objects\objClear</object>
+    </objects>
+    <objects name="world">
+      <object>objects\objWorld</object>
+      <object>objects\objCamera</object>
+      <object>objects\objSmoothCamera</object>
+      <object>objects\objPlayMusic</object>
+      <object>objects\objBeatenBosses</object>
+      <object>objects\objMusicLooper</object>
+      <object>objects\objParalyzer</object>
     </objects>
     <objects name="player">
       <object>objects\objPlayerStart</object>
@@ -633,171 +746,69 @@
       <object>objects\objPlayerThrower</object>
       <object>objects\objPlayerHP</object>
     </objects>
-    <objects name="blocks">
-      <object>objects\objBlock</object>
-      <object>objects\objMiniBlock</object>
-      <object>objects\objStretchableBlock</object>
-      <object>objects\objBlockEdge</object>
-      <objects name="Engine trash">
-        <object>objects\objBlockInvis</object>
-        <object>objects\objSlideBlock</object>
-        <object>objects\objBlockFake</object>
-        <object>objects\objSlideBlockR</object>
-        <object>objects\objBossBlock</object>
-        <object>objects\objSlipBlock</object>
-        <object>objects\objSaveBlocker</object>
-        <object>objects\objSlideBlockL</object>
-      </objects>
-    </objects>
-    <objects name="slopes">
-      <object>objects\objSlope</object>
-      <object>objects\objSlopeDownLeft</object>
-      <object>objects\objSlopeDownRight</object>
-      <object>objects\objSlopeUpLeft</object>
-      <object>objects\objSlopeUpRight</object>
-    </objects>
-    <objects name="platforms">
-      <object>objects\objPlatform</object>
-      <object>objects\objMovingPlatform</object>
-      <object>objects\objMovingPlatformNoBounce</object>
-      <object>objects\objBlockRise</object>
-      <object>objects\objBlockFall</object>
-    </objects>
-    <objects name="killers">
-      <object>objects\objPlayerKiller</object>
-      <object>objects\objSpikeUp</object>
-      <object>objects\objSpikeRight</object>
-      <object>objects\objSpikeLeft</object>
-      <object>objects\objSpikeDown</object>
-      <object>objects\objMiniUp</object>
-      <object>objects\objMiniRight</object>
-      <object>objects\objMiniLeft</object>
-      <object>objects\objMiniDown</object>
-      <object>objects\objKillerBlock</object>
-      <object>objects\objSpikeParent</object>
-      <objects name="Cherries">
-        <object>objects\objCherry</object>
-        <object>objects\objCherryBounce</object>
-        <object>objects\objCherryBounceRandom</object>
-        <object>objects\objCherryBounceLat</object>
-        <object>objects\objCherryBounceVert</object>
-        <object>objects\objCherryPersistant</object>
-        <object>objects\objCherryReflectable</object>
-      </objects>
-      <object>objects\objReflectableKiller</object>
-      <object>objects\objKillable</object>
-    </objects>
-    <objects name="triggers">
-      <object>objects\objFreeTrigger</object>
-      <object>objects\objTriggerButton</object>
-      <object>objects\objKillerTrigger</object>
-      <object>objects\objSpikeTriggerUp</object>
-      <object>objects\objSpikeTriggerRight</object>
-      <object>objects\objSpikeTriggerLeft</object>
-      <object>objects\objSpikeTriggerDown</object>
-      <object>objects\objCherryTrigger</object>
-      <object>objects\objTriggerBossSelect</object>
-    </objects>
-    <objects name="misc">
-      <object>objects\objCard</object>
-      <object>objects\objWater</object>
-      <object>objects\objWater2</object>
-      <object>objects\objWater3</object>
-      <object>objects\objWalljumpR</object>
-      <object>objects\objWalljumpL</object>
-      <object>objects\objJumpRefresher</object>
-      <object>objects\objSign</object>
-      <object>objects\objGravityUp</object>
-      <object>objects\objGravityLeft</object>
-      <object>objects\objGravityRight</object>
-      <object>objects\objGravityDown</object>
-      <object>objects\objPlatformLight</object>
-      <object>objects\objParalyzer</object>
-      <object>objects\objLightEffect</object>
-      <object>objects\objShakeEffect</object>
-      <object>objects\objClear</object>
-      <object>objects\objShowLabel</object>
-      <object>objects\objTutorial1</object>
-      <object>objects\objBossName</object>
-      <object>objects\objSlowdownEffect</object>
-      <object>objects\objMoneyShower</object>
-    </objects>
-    <objects name="saves">
-      <object>objects\objSaveMedium</object>
-      <object>objects\objSave</object>
-      <object>objects\objSaveVHard</object>
-      <object>objects\objSaveMediumFlip</object>
-      <object>objects\objSaveFlip</object>
-      <object>objects\objSaveVHardFlip</object>
-    </objects>
-    <objects name="warps">
-      <object>objects\objWarpStart</object>
-      <object>objects\objRoomChanger</object>
-      <object>objects\objWarp</object>
-      <object>objects\objWarpNext</object>
-      <object>objects\objWarpAutosaveNext</object>
-      <object>objects\objOutsideRoomChanger</object>
+    <objects name="Shop">
+      <object>objects\objShopSign</object>
+      <object>objects\objShopEntrance</object>
+      <object>objects\objShopMain</object>
+      <object>objects\objShopWeapon</object>
+      <object>objects\objShopItem</object>
+      <object>objects\objEssisten</object>
+      <object>objects\objScreenFrame</object>
+      <object>objects\objJustReflection</object>
+      <object>objects\objJustReflection_Eyes</object>
     </objects>
     <objects name="Boss1">
-      <object>objects\objBoss1</object>
       <object>objects\objBG</object>
-      <object>objects\objJR</object>
-      <object>objects\objJustist</object>
-      <object>objects\objBoss1_Follower</object>
       <object>objects\objWallHole</object>
       <object>objects\objWarning</object>
-      <object>objects\objWarningJR</object>
       <object>objects\objWarningJustist</object>
       <object>objects\objBoss1Bullet</object>
       <object>objects\objBulletJR</object>
       <object>objects\objBulletJustist</object>
       <object>objects\objBrick</object>
       <object>objects\objHealBullet</object>
-      <object>objects\objBoss1_Wings</object>
-      <object>objects\objBoss1_Arms</object>
-      <object>objects\objBoss1_Head</object>
-      <object>objects\objBoss1Bow</object>
-    </objects>
-    <objects name="Boss4">
-      <object>objects\objJustination</object>
-      <object>objects\objJustinationParent</object>
-      <object>objects\objBoss4_BigBullet</object>
-      <object>objects\objJustinationDark</object>
-      <object>objects\objJustinationIce</object>
-      <object>objects\objJustinationLight</object>
-      <object>objects\objJustinationFire</object>
-      <object>objects\objBoss4_Spike</object>
-      <object>objects\objBoss4_FruitBomb</object>
-      <object>objects\objBoss4_Ground</object>
-      <object>objects\objBoss4_Effects</object>
-      <object>objects\objJustinationPiece</object>
+      <object>objects\objWarningJR</object>
+      <objects name="Kids">
+        <object>objects\objBoss1</object>
+        <object>objects\objJR</object>
+        <object>objects\objJustist</object>
+        <object>objects\objBoss1_Wings</object>
+        <object>objects\objBoss1_Arms</object>
+        <object>objects\objBoss1_Head</object>
+        <object>objects\objBoss1_Follower</object>
+        <object>objects\objBoss1Bow</object>
+      </objects>
     </objects>
     <objects name="Boss2">
       <object>objects\objBoss2Door</object>
       <object>objects\objBoss2HP</object>
       <object>objects\objJustularity</object>
       <object>objects\objBoss2Warning</object>
-      <object>objects\objRock</object>
-      <object>objects\objPropeller</object>
-      <object>objects\objJustularityWater</object>
-      <object>objects\objJustularityBall</object>
-      <object>objects\objJustularityBomb</object>
       <object>objects\objViridian</object>
       <object>objects\objStarV</object>
       <object>objects\objJustularityStarCenter</object>
       <object>objects\objTornado</object>
-      <object>objects\objMeteor</object>
+      <objects name="Attacks">
+        <object>objects\objRock</object>
+        <object>objects\objPropeller</object>
+        <object>objects\objJustularityWater</object>
+        <object>objects\objJustularityBall</object>
+        <object>objects\objJustularityBomb</object>
+        <object>objects\objMeteor</object>
+      </objects>
     </objects>
     <objects name="Boss3">
-      <object>objects\objJustrimsonParent</object>
-      <object>objects\objJustrimsonA</object>
-      <object>objects\objJustrimsonB</object>
-      <object>objects\objJustrimsonC</object>
-      <object>objects\objJustrimsonD</object>
-      <object>objects\objJustrimsonA_blade</object>
-      <object>objects\objJustrimsonB_Head</object>
-      <object>objects\objJustrimsonC_Heart</object>
+      <objects name="Fellas">
+        <object>objects\objJustrimsonParent</object>
+        <object>objects\objJustrimsonA</object>
+        <object>objects\objJustrimsonB_Head</object>
+        <object>objects\objJustrimsonB</object>
+        <object>objects\objJustrimsonC</object>
+        <object>objects\objJustrimsonD</object>
+      </objects>
       <object>objects\objJustrimsonController</object>
+      <object>objects\objJustrimsonA_blade</object>
+      <object>objects\objJustrimsonC_Heart</object>
       <object>objects\objJustrimson_Block</object>
       <object>objects\objJustrimson_Water</object>
       <object>objects\objJustrimsonB_Laser</object>
@@ -809,16 +820,21 @@
       <object>objects\objJustrimsonD_Star</object>
       <object>objects\objJustrimson_Fall</object>
     </objects>
-    <objects name="Shop">
-      <object>objects\objShopSign</object>
-      <object>objects\objShopEntrance</object>
-      <object>objects\objShopMain</object>
-      <object>objects\objShopWeapon</object>
-      <object>objects\objShopItem</object>
-      <object>objects\objEssisten</object>
-      <object>objects\objScreenFrame</object>
-      <object>objects\objJustReflection</object>
-      <object>objects\objJustReflection_Eyes</object>
+    <objects name="Boss4">
+      <objects name="Parts">
+        <object>objects\objJustinationParent</object>
+        <object>objects\objJustination</object>
+        <object>objects\objJustinationDark</object>
+        <object>objects\objJustinationIce</object>
+        <object>objects\objJustinationLight</object>
+        <object>objects\objJustinationFire</object>
+      </objects>
+      <object>objects\objBoss4_BigBullet</object>
+      <object>objects\objBoss4_Spike</object>
+      <object>objects\objBoss4_FruitBomb</object>
+      <object>objects\objBoss4_Ground</object>
+      <object>objects\objBoss4_Effects</object>
+      <object>objects\objJustinationPiece</object>
     </objects>
     <objects name="Final Boss">
       <objects name="Attacks">
@@ -875,6 +891,7 @@
         <object>objects\objBigKid_Water</object>
       </objects>
       <objects name="Misc">
+        <object>objects\objBigJust_ViewMover</object>
         <objects name="Geezer">
           <object>objects\objBigGeezer_Head</object>
           <object>objects\objBigGeezer_BlockEffect</object>
@@ -888,11 +905,12 @@
           <object>objects\objNoRespond_Close</object>
           <object>objects\objNoRespond_Button</object>
         </objects>
-        <object>objects\objBigJust_ViewMover</object>
-        <object>objects\objK2_SphereCenter</object>
-        <object>objects\objK2_Boom</object>
-        <object>objects\objK2_LightEffect</object>
-        <object>objects\objK2_Face</object>
+        <objects name="K2">
+          <object>objects\objK2_SphereCenter</object>
+          <object>objects\objK2_Boom</object>
+          <object>objects\objK2_LightEffect</object>
+          <object>objects\objK2_Face</object>
+        </objects>
       </objects>
     </objects>
   </objects>

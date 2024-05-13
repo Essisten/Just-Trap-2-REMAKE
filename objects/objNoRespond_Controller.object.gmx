@@ -61,6 +61,7 @@ with (objBigGeezer_Head)
 {
     event_perform(ev_alarm, 3);
     alarm[1] = -1;
+    alarm[2] = -1;
 }
 instance_destroy();
 </string>

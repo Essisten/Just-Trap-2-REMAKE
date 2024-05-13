@@ -97,7 +97,7 @@ with (instance_create(objJustrimsonC.x, objJustrimsonC.y, objBossName))
 }
 with (instance_create(objJustrimsonD.x, objJustrimsonD.y, objBossName))
 {
-    name = "Flip";
+    name = "Flip-Flop";
     xflip = true;
     owner = objJustrimsonD;
 }

@@ -89,7 +89,7 @@ part_type_destroy(effect);
             <string>///Periodic attack
 if (!instance_exists(objPlayer))
    exit;
-alarm[1] = 50 + HP * (6 - global.difficulty) * 5;
+alarm[1] = 50 + instance_number(objK2_Sphere) * (6 - global.difficulty) * 5;
 if (global.difficulty == 3)
    alarm[1] = 15;
 var proj = noone;

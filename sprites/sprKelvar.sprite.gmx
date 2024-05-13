@@ -8,21 +8,20 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>3</bbox_left>
-  <bbox_right>138</bbox_right>
+  <bbox_right>147</bbox_right>
   <bbox_top>2</bbox_top>
-  <bbox_bottom>133</bbox_bottom>
+  <bbox_bottom>127</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>5</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>145</width>
+  <width>148</width>
   <height>140</height>
   <frames>
-    <frame index="0">images\sprLeslie_0.png</frame>
-    <frame index="1">images\sprLeslie_1.png</frame>
-    <frame index="2">images\sprLeslie_2.png</frame>
-    <frame index="3">images\sprLeslie_3.png</frame>
+    <frame index="0">images\sprKelvar_0.png</frame>
+    <frame index="1">images\sprKelvar_1.png</frame>
+    <frame index="2">images\sprKelvar_2.png</frame>
   </frames>
 </sprite>

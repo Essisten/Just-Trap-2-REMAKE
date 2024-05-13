@@ -40,6 +40,7 @@ black = c_black;
 bm = bm_add;
 glow_thicc = 0;
 glow_index = 0;
+glow_color = c_white;
 phase_counter = 0;
 nohit_challenge = 0;
 dmg_in = 4;
@@ -458,7 +459,7 @@ if (objJustrimsonA.HP &lt;= 0 and objJustrimsonD.HP &lt;= 0 and objJustrimsonB.H
             <kind>1</kind>
             <string>if (glow_thicc &gt; 0)
 {
-    draw_sprite_ext(sprJustrimsonOutline, glow_index, x, y, image_xscale, image_yscale, image_angle, c_white, glow_thicc);
+    draw_sprite_ext(sprJustrimsonOutline, glow_index, x, y, image_xscale, image_yscale, image_angle, glow_color, glow_thicc);
 }
 draw_self();
 var offset = 72;
