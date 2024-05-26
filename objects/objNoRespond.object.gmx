@@ -64,10 +64,12 @@ dragY = 0;
             <string>///Dragging
 if (!mouse_check_button(mb_left))
    exit;
-xx = mouse_x - dragX;
-yy = mouse_y - dragY;
+xx = clamp(mouse_x - dragX, view_xview[0], view_xview[0] + 490);
+yy = clamp(mouse_y - dragY, view_yview[0], view_yview[0] + 460);
 for (var i = 0; i &lt; 3; i++)
 {
+    if (!instance_exists(button[i]))
+       break;
     button[i].x += xx - x;
     button[i].y += yy - y;
 }

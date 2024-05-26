@@ -636,108 +636,6 @@ if (shooting)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objPlayerKiller">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!other.reflected)
-   exit;
-bullet = other;
-event_perform(ev_collision, objBullet);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objBlock">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>var distH = 0//30 * sign(hspeed);
-var distV = 0//42 * sign(vspeed);
-if (!place_free(x+hspeed+distH,y))
-{
-    if (grav == 1)   //normal
-    {
-        if(hspeed &lt;= 0)
-            move_contact_solid(180,abs(hspeed));
-        else
-            move_contact_solid(0,abs(hspeed));
-    }
-    else    //flipped
-    {
-        if(hspeed &lt; 0)
-            move_contact_solid(180,abs(hspeed));
-        else
-            move_contact_solid(0,abs(hspeed));
-    }
-    hspeed = 0;
-    if (jumping)
-    {
-        jumping = false;
-        if (gravH)
-            destination = y;
-        else
-            destination = x;
-    }
-}
-if (!place_free(x,y+vspeed+distV))
-{
-    if (grav == 1)   //normal
-    {
-        if(vspeed &lt;= 0)
-            move_contact_solid(90,abs(vspeed));
-        else
-            move_contact_solid(270,abs(vspeed));
-    }
-    else    //flipped
-    {
-        if(vspeed &lt; 0)
-            move_contact_solid(90,abs(vspeed));
-        else
-            move_contact_solid(270,abs(vspeed));
-    }
-    vspeed = 0;
-    if (jumping)
-    {
-        jumping = false;
-        if (gravH)
-            destination = y;
-        else
-            destination = x;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objBullet">
       <action>
         <libid>1</libid>
@@ -869,6 +767,108 @@ else
             <string>if ((image_blend == c_black and global.difficulty != 3) or !killable)
     exit;
 scrKillPlayer();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayerKiller">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!other.reflected)
+   exit;
+bullet = other;
+event_perform(ev_collision, objBullet);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objBlock">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var distH = 0//30 * sign(hspeed);
+var distV = 0//42 * sign(vspeed);
+if (!place_free(x+hspeed+distH,y))
+{
+    if (grav == 1)   //normal
+    {
+        if(hspeed &lt;= 0)
+            move_contact_solid(180,abs(hspeed));
+        else
+            move_contact_solid(0,abs(hspeed));
+    }
+    else    //flipped
+    {
+        if(hspeed &lt; 0)
+            move_contact_solid(180,abs(hspeed));
+        else
+            move_contact_solid(0,abs(hspeed));
+    }
+    hspeed = 0;
+    if (jumping)
+    {
+        jumping = false;
+        if (gravH)
+            destination = y;
+        else
+            destination = x;
+    }
+}
+if (!place_free(x,y+vspeed+distV))
+{
+    if (grav == 1)   //normal
+    {
+        if(vspeed &lt;= 0)
+            move_contact_solid(90,abs(vspeed));
+        else
+            move_contact_solid(270,abs(vspeed));
+    }
+    else    //flipped
+    {
+        if(vspeed &lt; 0)
+            move_contact_solid(90,abs(vspeed));
+        else
+            move_contact_solid(270,abs(vspeed));
+    }
+    vspeed = 0;
+    if (jumping)
+    {
+        jumping = false;
+        if (gravH)
+            destination = y;
+        else
+            destination = x;
+    }
+}
 </string>
           </argument>
         </arguments>

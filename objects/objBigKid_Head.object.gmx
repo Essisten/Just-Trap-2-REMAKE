@@ -114,6 +114,40 @@ alarm[0] = 5;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objBullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (frozen)
+   exit;
+if (!instance_exists(bullet))
+   bullet = instance_nearest(x, y, objBullet);
+HP = clamp(HP - bullet.dmg, 0, 100);
+instance_destroy(bullet);
+event_user(1);
+if (HP &lt;= 0 and !frozen)
+{
+    event_user(0);
+}
+scrPlaySound(sndBossHit);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objPlayerKiller">
       <action>
         <libid>1</libid>
@@ -148,40 +182,6 @@ with (objBigGeezer_Head)
     alarm[1] = -1;
     alarm[2] = -1;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objBullet">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (frozen)
-   exit;
-if (!instance_exists(bullet))
-   bullet = instance_nearest(x, y, objBullet);
-HP = clamp(HP - bullet.dmg, 0, 100);
-instance_destroy(bullet);
-event_user(1);
-if (HP &lt;= 0 and !frozen)
-{
-    event_user(0);
-}
-scrPlaySound(sndBossHit);
 </string>
           </argument>
         </arguments>

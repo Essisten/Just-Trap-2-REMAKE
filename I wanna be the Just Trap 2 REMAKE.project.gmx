@@ -111,19 +111,148 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="blocks">
-      <sprite>sprites\sprBlockMask</sprite>
-      <sprite>sprites\sprMiniBlockMask</sprite>
-      <sprite>sprites\sprSlipBlockMask</sprite>
-      <sprite>sprites\sprKillerBlock</sprite>
-      <sprite>sprites\sprBlock</sprite>
-      <sprite>sprites\sprBlock2</sprite>
-      <sprite>sprites\sprBlock3</sprite>
-      <sprite>sprites\sprSlideBlock</sprite>
-      <sprite>sprites\sprSlideBlockR</sprite>
-      <sprite>sprites\sprSlideBlockL</sprite>
-      <sprite>sprites\sprSaveBlocker</sprite>
-      <sprite>sprites\sprDoor</sprite>
+    <sprites name="Engine">
+      <sprites name="blocks">
+        <sprite>sprites\sprBlockMask</sprite>
+        <sprite>sprites\sprMiniBlockMask</sprite>
+        <sprite>sprites\sprSlipBlockMask</sprite>
+        <sprite>sprites\sprKillerBlock</sprite>
+        <sprite>sprites\sprBlock</sprite>
+        <sprite>sprites\sprBlock2</sprite>
+        <sprite>sprites\sprBlock3</sprite>
+        <sprite>sprites\sprSlideBlock</sprite>
+        <sprite>sprites\sprSlideBlockR</sprite>
+        <sprite>sprites\sprSlideBlockL</sprite>
+        <sprite>sprites\sprSaveBlocker</sprite>
+        <sprite>sprites\sprDoor</sprite>
+      </sprites>
+      <sprites name="items">
+        <sprite>sprites\sprSecretItem</sprite>
+        <sprite>sprites\sprBossItem</sprite>
+      </sprites>
+      <sprites name="killers">
+        <sprite>sprites\sprSpikeUp</sprite>
+        <sprite>sprites\sprSpikeRight</sprite>
+        <sprite>sprites\sprSpikeLeft</sprite>
+        <sprite>sprites\sprSpikeDown</sprite>
+        <sprite>sprites\sprMiniUp</sprite>
+        <sprite>sprites\sprMiniRight</sprite>
+        <sprite>sprites\sprMiniLeft</sprite>
+        <sprite>sprites\sprMiniDown</sprite>
+        <sprite>sprites\sprCherry</sprite>
+        <sprite>sprites\sprCherry_Colorful</sprite>
+        <sprite>sprites\sprCherry_Blend</sprite>
+      </sprites>
+      <sprites name="misc">
+        <sprite>sprites\sprWater</sprite>
+        <sprite>sprites\sprWalljumpR</sprite>
+        <sprite>sprites\sprWalljumpL</sprite>
+        <sprite>sprites\sprJumpRefresher</sprite>
+        <sprite>sprites\sprSign</sprite>
+        <sprite>sprites\sprGravityUp</sprite>
+        <sprite>sprites\sprGravityLeft</sprite>
+        <sprite>sprites\sprGravityRight</sprite>
+        <sprite>sprites\sprGravityDown</sprite>
+        <sprite>sprites\sprCard</sprite>
+        <sprite>sprites\sprCardH</sprite>
+        <sprite>sprites\sprCardB</sprite>
+        <sprite>sprites\sprBossName</sprite>
+      </sprites>
+      <sprites name="platforms">
+        <sprite>sprites\sprPlatform</sprite>
+        <sprite>sprites\sprMovingPlatform</sprite>
+      </sprites>
+      <sprites name="saves">
+        <sprite>sprites\sprSaveMask</sprite>
+        <sprite>sprites\sprSaveMedium</sprite>
+        <sprite>sprites\sprSave</sprite>
+        <sprite>sprites\sprSaveVHard</sprite>
+        <sprite>sprites\sprSaveMediumFlip</sprite>
+        <sprite>sprites\sprSaveFlip</sprite>
+        <sprite>sprites\sprSaveVHardFlip</sprite>
+      </sprites>
+      <sprites name="slopes">
+        <sprite>sprites\sprSlopeBlock</sprite>
+        <sprite>sprites\sprSlopeDownLeft</sprite>
+        <sprite>sprites\sprSlopeDownRight</sprite>
+        <sprite>sprites\sprSlopeUpLeft</sprite>
+        <sprite>sprites\sprSlopeUpRight</sprite>
+      </sprites>
+      <sprites name="triggers">
+        <sprite>sprites\sprTriggerMask</sprite>
+        <sprite>sprites\sprTriggerBossSelect</sprite>
+        <sprite>sprites\sprButton</sprite>
+        <sprite>sprites\sprSpikeTriggerDown</sprite>
+        <sprite>sprites\sprSpikeTriggerLeft</sprite>
+        <sprite>sprites\sprSpikeTriggerRight</sprite>
+        <sprite>sprites\sprSpikeTriggerUp</sprite>
+      </sprites>
+      <sprites name="warps">
+        <sprite>sprites\sprWarp</sprite>
+        <sprite>sprites\sprWarp_Old</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="player">
+      <sprites name="Movement">
+        <sprite>sprites\sprPlayerIdle</sprite>
+        <sprite>sprites\sprPlayerJump</sprite>
+        <sprite>sprites\sprPlayerFall</sprite>
+        <sprite>sprites\sprPlayerRunning</sprite>
+        <sprite>sprites\sprPlayerSliding</sprite>
+        <sprite>sprites\sprBow</sprite>
+        <sprite>sprites\sprPlayerIdleUp</sprite>
+        <sprite>sprites\sprPlayerRunUp</sprite>
+        <sprite>sprites\sprPlayerJumpUp</sprite>
+        <sprite>sprites\sprPlayerFallUp</sprite>
+        <sprite>sprites\sprPlayerSlideUp</sprite>
+      </sprites>
+      <sprites name="Paralyzed">
+        <sprite>sprites\sprWeaponIdle_Paralyzed</sprite>
+        <sprite>sprites\sprWeaponUp_Paralyzed</sprite>
+        <sprite>sprites\sprWeaponJump_Paralyzed</sprite>
+        <sprite>sprites\sprWeaponSliding_Paralyzed</sprite>
+        <sprite>sprites\sprPlayerParalyzed</sprite>
+      </sprites>
+      <sprites name="Weapon">
+        <sprite>sprites\sprWeaponIdle</sprite>
+        <sprite>sprites\sprWeaponUp</sprite>
+        <sprite>sprites\sprWeaponJump</sprite>
+        <sprite>sprites\sprWeaponSliding</sprite>
+        <sprite>sprites\sprBatAttack</sprite>
+      </sprites>
+      <sprite>sprites\sprPlayerMask</sprite>
+      <sprite>sprites\sprPlayerMaskFlip</sprite>
+      <sprite>sprites\sprBullet</sprite>
+      <sprite>sprites\sprBlood</sprite>
+      <sprite>sprites\sprGameOver</sprite>
+      <sprite>sprites\sprBloodH2</sprite>
+      <sprite>sprites\sprBatHit</sprite>
+      <sprite>sprites\sprPlayerHeart</sprite>
+    </sprites>
+    <sprites name="Shop">
+      <sprite>sprites\sprShopSign</sprite>
+      <sprite>sprites\sprEntrance</sprite>
+      <sprite>sprites\sprWeaponImage</sprite>
+      <sprite>sprites\sprUnknownWeapon</sprite>
+      <sprite>sprites\sprCoin</sprite>
+      <sprite>sprites\sprMe</sprite>
+      <sprite>sprites\sprMyHead</sprite>
+      <sprite>sprites\sprBigWeaponImage</sprite>
+      <sprite>sprites\sprScreenFrame</sprite>
+      <sprite>sprites\sprJustReflection</sprite>
+      <sprite>sprites\sprJustReflection_Eyes</sprite>
+    </sprites>
+    <sprites name="world">
+      <sprite>sprites\sprCamera</sprite>
+      <sprite>sprites\sprPlayMusic</sprite>
+      <sprite>sprites\sprPlayerKiller</sprite>
+      <sprite>sprites\sprPlayerStart</sprite>
+      <sprite>sprites\sprGameTitle</sprite>
+      <sprite>sprites\sprShiftToStart</sprite>
+      <sprite>sprites\sprRemake</sprite>
+      <sprite>sprites\sprDiffIcon</sprite>
+      <sprite>sprites\sprClock</sprite>
+      <sprite>sprites\sprSoundTest_Icon</sprite>
     </sprites>
     <sprites name="Boss1">
       <sprite>sprites\sprBoss1_Brick1</sprite>
@@ -175,137 +304,6 @@
         <sprite>sprites\sprJRHead_Jump</sprite>
         <sprite>sprites\sprJRHead_Fall</sprite>
       </sprites>
-    </sprites>
-    <sprites name="Boss4">
-      <sprite>sprites\sprBoss4_Ground</sprite>
-      <sprite>sprites\sprJustination</sprite>
-      <sprite>sprites\sprJustination_Mini</sprite>
-      <sprite>sprites\sprJustinationDark</sprite>
-      <sprite>sprites\sprJustinationFire</sprite>
-      <sprite>sprites\sprJustinationIce</sprite>
-      <sprite>sprites\sprJustinationLight</sprite>
-      <sprite>sprites\sprJustinationPiece</sprite>
-      <sprite>sprites\sprBoss4_Spike</sprite>
-      <sprite>sprites\sprBoss4_BigBullet</sprite>
-      <sprite>sprites\sprCherryDark</sprite>
-      <sprite>sprites\sprCherryGray</sprite>
-      <sprite>sprites\sprCherryCyan</sprite>
-      <sprite>sprites\sprCherryWhite</sprite>
-      <sprite>sprites\sprJustinationCrazy</sprite>
-      <sprite>sprites\sprJustination_Old</sprite>
-      <sprite>sprites\sprJustinationCrazy_Old</sprite>
-    </sprites>
-    <sprites name="items">
-      <sprite>sprites\sprSecretItem</sprite>
-      <sprite>sprites\sprBossItem</sprite>
-    </sprites>
-    <sprites name="killers">
-      <sprite>sprites\sprSpikeUp</sprite>
-      <sprite>sprites\sprSpikeRight</sprite>
-      <sprite>sprites\sprSpikeLeft</sprite>
-      <sprite>sprites\sprSpikeDown</sprite>
-      <sprite>sprites\sprMiniUp</sprite>
-      <sprite>sprites\sprMiniRight</sprite>
-      <sprite>sprites\sprMiniLeft</sprite>
-      <sprite>sprites\sprMiniDown</sprite>
-      <sprite>sprites\sprCherry</sprite>
-      <sprite>sprites\sprCherry_Colorful</sprite>
-      <sprite>sprites\sprCherry_Blend</sprite>
-    </sprites>
-    <sprites name="misc">
-      <sprite>sprites\sprWater</sprite>
-      <sprite>sprites\sprWalljumpR</sprite>
-      <sprite>sprites\sprWalljumpL</sprite>
-      <sprite>sprites\sprJumpRefresher</sprite>
-      <sprite>sprites\sprSign</sprite>
-      <sprite>sprites\sprGravityUp</sprite>
-      <sprite>sprites\sprGravityLeft</sprite>
-      <sprite>sprites\sprGravityRight</sprite>
-      <sprite>sprites\sprGravityDown</sprite>
-      <sprite>sprites\sprCard</sprite>
-      <sprite>sprites\sprCardH</sprite>
-      <sprite>sprites\sprCardB</sprite>
-      <sprite>sprites\sprBossName</sprite>
-    </sprites>
-    <sprites name="platforms">
-      <sprite>sprites\sprPlatform</sprite>
-      <sprite>sprites\sprMovingPlatform</sprite>
-    </sprites>
-    <sprites name="player">
-      <sprite>sprites\sprPlayerMask</sprite>
-      <sprite>sprites\sprPlayerMaskFlip</sprite>
-      <sprite>sprites\sprPlayerIdle</sprite>
-      <sprite>sprites\sprPlayerJump</sprite>
-      <sprite>sprites\sprPlayerFall</sprite>
-      <sprite>sprites\sprPlayerRunning</sprite>
-      <sprite>sprites\sprPlayerSliding</sprite>
-      <sprite>sprites\sprBow</sprite>
-      <sprite>sprites\sprBullet</sprite>
-      <sprite>sprites\sprBlood</sprite>
-      <sprite>sprites\sprPlayerIdleUp</sprite>
-      <sprite>sprites\sprPlayerRunUp</sprite>
-      <sprite>sprites\sprPlayerJumpUp</sprite>
-      <sprite>sprites\sprPlayerFallUp</sprite>
-      <sprite>sprites\sprPlayerSlideUp</sprite>
-      <sprite>sprites\sprGameOver</sprite>
-      <sprite>sprites\sprBloodH2</sprite>
-      <sprites name="Weapon">
-        <sprite>sprites\sprWeaponIdle</sprite>
-        <sprite>sprites\sprWeaponUp</sprite>
-        <sprite>sprites\sprWeaponJump</sprite>
-        <sprite>sprites\sprWeaponSliding</sprite>
-        <sprite>sprites\sprBatAttack</sprite>
-      </sprites>
-      <sprites name="Paralyzed">
-        <sprite>sprites\sprWeaponIdle_Paralyzed</sprite>
-        <sprite>sprites\sprWeaponUp_Paralyzed</sprite>
-        <sprite>sprites\sprWeaponJump_Paralyzed</sprite>
-        <sprite>sprites\sprWeaponSliding_Paralyzed</sprite>
-        <sprite>sprites\sprPlayerParalyzed</sprite>
-      </sprites>
-      <sprite>sprites\sprBatHit</sprite>
-      <sprite>sprites\sprPlayerHeart</sprite>
-    </sprites>
-    <sprites name="saves">
-      <sprite>sprites\sprSaveMask</sprite>
-      <sprite>sprites\sprSaveMedium</sprite>
-      <sprite>sprites\sprSave</sprite>
-      <sprite>sprites\sprSaveVHard</sprite>
-      <sprite>sprites\sprSaveMediumFlip</sprite>
-      <sprite>sprites\sprSaveFlip</sprite>
-      <sprite>sprites\sprSaveVHardFlip</sprite>
-    </sprites>
-    <sprites name="slopes">
-      <sprite>sprites\sprSlopeBlock</sprite>
-      <sprite>sprites\sprSlopeDownLeft</sprite>
-      <sprite>sprites\sprSlopeDownRight</sprite>
-      <sprite>sprites\sprSlopeUpLeft</sprite>
-      <sprite>sprites\sprSlopeUpRight</sprite>
-    </sprites>
-    <sprites name="triggers">
-      <sprite>sprites\sprTriggerMask</sprite>
-      <sprite>sprites\sprTriggerBossSelect</sprite>
-      <sprite>sprites\sprButton</sprite>
-      <sprite>sprites\sprSpikeTriggerDown</sprite>
-      <sprite>sprites\sprSpikeTriggerLeft</sprite>
-      <sprite>sprites\sprSpikeTriggerRight</sprite>
-      <sprite>sprites\sprSpikeTriggerUp</sprite>
-    </sprites>
-    <sprites name="warps">
-      <sprite>sprites\sprWarp</sprite>
-      <sprite>sprites\sprWarp_Old</sprite>
-    </sprites>
-    <sprites name="world">
-      <sprite>sprites\sprCamera</sprite>
-      <sprite>sprites\sprPlayMusic</sprite>
-      <sprite>sprites\sprPlayerKiller</sprite>
-      <sprite>sprites\sprPlayerStart</sprite>
-      <sprite>sprites\sprGameTitle</sprite>
-      <sprite>sprites\sprShiftToStart</sprite>
-      <sprite>sprites\sprRemake</sprite>
-      <sprite>sprites\sprDiffIcon</sprite>
-      <sprite>sprites\sprClock</sprite>
-      <sprite>sprites\sprSoundTest_Icon</sprite>
     </sprites>
     <sprites name="Boss2">
       <sprite>sprites\sprJustularityDeath</sprite>
@@ -371,18 +369,24 @@
       <sprite>sprites\sprBoss3_Platform</sprite>
       <sprite>sprites\sprJustrimsonOutline</sprite>
     </sprites>
-    <sprites name="Shop">
-      <sprite>sprites\sprShopSign</sprite>
-      <sprite>sprites\sprEntrance</sprite>
-      <sprite>sprites\sprWeaponImage</sprite>
-      <sprite>sprites\sprUnknownWeapon</sprite>
-      <sprite>sprites\sprCoin</sprite>
-      <sprite>sprites\sprMe</sprite>
-      <sprite>sprites\sprMyHead</sprite>
-      <sprite>sprites\sprBigWeaponImage</sprite>
-      <sprite>sprites\sprScreenFrame</sprite>
-      <sprite>sprites\sprJustReflection</sprite>
-      <sprite>sprites\sprJustReflection_Eyes</sprite>
+    <sprites name="Boss4">
+      <sprite>sprites\sprBoss4_Ground</sprite>
+      <sprite>sprites\sprJustination</sprite>
+      <sprite>sprites\sprJustination_Mini</sprite>
+      <sprite>sprites\sprJustinationDark</sprite>
+      <sprite>sprites\sprJustinationFire</sprite>
+      <sprite>sprites\sprJustinationIce</sprite>
+      <sprite>sprites\sprJustinationLight</sprite>
+      <sprite>sprites\sprJustinationPiece</sprite>
+      <sprite>sprites\sprBoss4_Spike</sprite>
+      <sprite>sprites\sprBoss4_BigBullet</sprite>
+      <sprite>sprites\sprCherryDark</sprite>
+      <sprite>sprites\sprCherryGray</sprite>
+      <sprite>sprites\sprCherryCyan</sprite>
+      <sprite>sprites\sprCherryWhite</sprite>
+      <sprite>sprites\sprJustinationCrazy</sprite>
+      <sprite>sprites\sprJustination_Old</sprite>
+      <sprite>sprites\sprJustinationCrazy_Old</sprite>
     </sprites>
     <sprites name="Final Boss">
       <sprites name="???">
@@ -701,6 +705,7 @@
       <object>objects\objTitleMenu</object>
       <object>objects\objDifficultyMenu</object>
       <object>objects\objOptionsMenu</object>
+      <object>objects\objMenuParent</object>
       <object>objects\objKeyboardControlsMenu</object>
       <object>objects\objControllerMenu</object>
       <object>objects\objMainMenu</object>
