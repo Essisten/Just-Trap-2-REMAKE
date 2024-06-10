@@ -76,7 +76,6 @@ if (tmpHP > 40)
 {
     for (var i = 64; i < view_xview[0] + view_wview[0] - 128; i += 96 - (global.difficulty * 16))
     {
-        show_debug_message(i);
         instance_create(i, view_yview[0] - 8, objK2_Bomb);
     }
 }
