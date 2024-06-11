@@ -704,14 +704,16 @@
     <objects name="Menu">
       <object>objects\objTitleMenu</object>
       <object>objects\objDifficultyMenu</object>
-      <object>objects\objOptionsMenu</object>
       <object>objects\objMenuParent</object>
-      <object>objects\objKeyboardControlsMenu</object>
-      <object>objects\objControllerMenu</object>
       <object>objects\objMainMenu</object>
       <object>objects\objPauseMenu</object>
       <object>objects\objSoundTest</object>
-      <object>objects\objGraphicMenu</object>
+      <objects name="Settings">
+        <object>objects\objOptionsMenu</object>
+        <object>objects\objGraphicMenu</object>
+        <object>objects\objKeyboardControlsMenu</object>
+        <object>objects\objControllerMenu</object>
+      </objects>
     </objects>
     <objects name="Visuals">
       <object>objects\objSlowdownEffect</object>

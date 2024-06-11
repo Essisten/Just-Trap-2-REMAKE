@@ -1209,7 +1209,7 @@ for (var i = 0; i &lt; 8; i++)
     e.image_xscale = 3;
     e.image_yscale = e.image_xscale;
 }
-if (instance_number(objJustularity) == 0)
+if (instance_number(objJustularity) == 0 and instance_exists(objPlayer))
 {
     audio_stop_sound(global.currentMusic);
     objWorld.alarm[2] = 300;

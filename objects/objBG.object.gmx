@@ -67,6 +67,8 @@ event_user(4);
           <argument>
             <kind>1</kind>
             <string>///Final timer
+if (!instance_exists(objPlayer))
+    exit;
 if (timer &lt; 2)
 {
     scrStopMusic();
@@ -97,8 +99,6 @@ if (timer &lt; 2)
         scrPlaySound(sndDeath, 0.7);
     exit;
 }
-if (!instance_exists(objPlayer))
-    return -1;
 timer--;
 event_user(4);
 alarm[2] = 50;

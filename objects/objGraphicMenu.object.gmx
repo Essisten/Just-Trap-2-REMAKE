@@ -27,17 +27,13 @@
             <kind>1</kind>
             <string>select = 0;
 alarm[0] = 1;
-xSelector = 80;
+xSelector = 240;
 ySelector = 64;
-xSeperation = 640;
+xSeperation = 500;
 ySeperation = 48;
 offset = 40;
-alarm[0] = 10;
-if (!global.controllerEnabled)  //remove controller settings menu if controllers are disabled
-{
-    optionsNum -= 1;
-    ySelector += 32;
-}
+style[0] = "New";
+style[1] = "Old";
 strSelect[0] = "Fullscreen"
 strSelect[1] = "Smoothing";
 strSelect[2] = "Title cards";
@@ -48,30 +44,11 @@ strSelect[6] = "Show names";
 strSelect[7] = "Sprite style";
 strSelect[8] = "Game Over screen";
 optionsNum = array_length_1d(strSelect);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>background_alpha[0] = 0.5 + random_range(0, 0.2);
-alarm[0] = 10;
+GameOver[0] = "New";
+GameOver[1] = "New (dots)";
+GameOver[2] = "New (shiny)";
+GameOver[3] = "Old";
+GameOver[4] = "Happil 2";
 </string>
           </argument>
         </arguments>
@@ -110,10 +87,10 @@ else if (scrButtonCheckPressed(global.menuDownButton))
 }
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
-    scrPlaySound(sndBoss1_Reload);
     //save changes and go back
+    scrPlaySound(sndBoss1_Reload);
     scrSaveConfig();
-    instance_create(x, y, objOptionsMenu);
+    objOptionsMenu.active = true;
     instance_destroy();
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton) or
@@ -183,7 +160,7 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
             <string>draw_set_alpha(0.8);
 draw_set_colour(c_black);
 draw_rectangle(xSelector - offset, ySelector - offset, xSelector + xSeperation + offset, ySelector + ySeperation * optionsNum + offset, false);
-draw_set_font(fDefault30);
+draw_set_font(fDefault24);
 draw_set_alpha(1);
 for(var i = 0; i &lt; optionsNum; i++)
 {
@@ -232,17 +209,10 @@ for(var i = 0; i &lt; optionsNum; i++)
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*6),value, clr, c_black);
             break;
         case 7:
-             style[0] = "New";
-             style[1] = "Old";
              value = style[global.spriteStyle];
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*7),value, clr, c_black);
             break;
         case 8:
-             GameOver[0] = "New";
-             GameOver[1] = "New (dots)";
-             GameOver[2] = "New (shiny)";
-             GameOver[3] = "Old";
-             GameOver[4] = "Happil 2";
              value = GameOver[global.GameOverType];
             scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*8),value, clr, c_black);
              break;

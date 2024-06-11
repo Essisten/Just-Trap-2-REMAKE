@@ -293,7 +293,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!active)
+            <string>if (!active or !instance_exists(objPlayer))
    exit;
 event_inherited();
 if (HP &lt;= 0)

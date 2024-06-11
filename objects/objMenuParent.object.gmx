@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>owner = noone;
+select = 0;
 xSelector = 32;
 ySelector = 64;
 xSeperation = 160;

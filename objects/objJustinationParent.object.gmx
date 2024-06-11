@@ -175,7 +175,7 @@ if (y &gt; 800)
             <kind>1</kind>
             <string>if (!instance_exists(bullet))
    bullet = instance_nearest(x, y, objBoss4_BigBullet);
-if (bullet.target != self or !active)
+if (!instance_exists(bullet) or bullet.target != self or !active)
    exit;
 if (godmode)
 {

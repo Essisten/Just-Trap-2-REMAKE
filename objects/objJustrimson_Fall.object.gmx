@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>with (objSpikeUp)
      image_blend = c_red;
+if (!instance_exists(objPlayer))
+    exit;
 objWorld.alarm[2] = 100;
 global.frozen = true;
 </string>
