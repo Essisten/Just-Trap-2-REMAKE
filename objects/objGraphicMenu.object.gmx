@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objMenuParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,15 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>select = 0;
+            <string>event_inherited();
+select = 0;
 alarm[0] = 1;
 xSelector = 240;
 ySelector = 64;
 xSeperation = 500;
 ySeperation = 48;
 offset = 40;
-style[0] = "New";
-style[1] = "Old";
+valueType[0] = 0;
+valueType[1] = 2;
+valueType[2] = 0;
+valueType[3] = 0;
+valueType[4] = 0;
+valueType[5] = 0;
+valueType[6] = 0;
+valueType[7] = 1;
+valueType[8] = 3;
+values = true;
 strSelect[0] = "Fullscreen"
 strSelect[1] = "Smoothing";
 strSelect[2] = "Title cards";
@@ -44,17 +53,24 @@ strSelect[6] = "Show names";
 strSelect[7] = "Sprite style";
 strSelect[8] = "Game Over screen";
 optionsNum = array_length_1d(strSelect);
-GameOver[0] = "New";
-GameOver[1] = "New (dots)";
-GameOver[2] = "New (shiny)";
-GameOver[3] = "Old";
-GameOver[4] = "Happil 2";
+//Smoothing
+strValue[2, 0] = "Off";
+strValue[2, 1] = "Bilinear";
+strValue[2, 2] = "Triilinear";
+//Game Over
+strValue[3, 0] = "New";
+strValue[3, 1] = "New (dots)";
+strValue[3, 2] = "New (shiny)";
+strValue[3, 3] = "Old";
+strValue[3, 4] = "Happil 2";
+event_user(2);
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="12">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,70 +87,102 @@ GameOver[4] = "Happil 2";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (scrButtonCheckPressed(global.menuUpButton))
+            <string>///Read values
+ds_list_clear(values);
+ds_list_add(values, global.fullscreenMode);
+ds_list_add(values, global.smoothingMode);
+ds_list_add(values, global.showCard);
+ds_list_add(values, global.particles);
+ds_list_add(values, global.delayBow);
+ds_list_add(values, global.showPB);
+ds_list_add(values, global.showNames);
+ds_list_add(values, global.spriteStyle);
+ds_list_add(values, global.GameOverType);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///going back
+scrSaveConfig();
+objOptionsMenu.active = true;
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Option selection
+switch (select)
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
-    select -= 1;
-    if(select &lt; 0)
-        select = optionsNum-1;
+    case 0:
+        global.fullscreenMode = !global.fullscreenMode;
+        window_set_fullscreen(global.fullscreenMode);
+        break;
+    case 1:
+        global.smoothingMode = !global.smoothingMode;
+        break;
+    case 2:
+        global.showCard = !global.showCard;
+        break;
+    case 3:
+        global.particles = !global.particles;
+        break;
+    case 4:
+        global.delayBow = !global.delayBow;
+        break;
+    case 5:
+        global.showPB = !global.showPB;
+        break;
+    case 6:
+        global.showNames = !global.showNames;
+        break;
+    case 7:
+        global.spriteStyle++;
+        if (global.spriteStyle &gt; 1)
+           global.spriteStyle = 0;
+        break;
+    case 8:
+        global.GameOverType++;
+        if (global.GameOverType &gt; 4)
+           global.GameOverType = 0;
+        break;
 }
-else if (scrButtonCheckPressed(global.menuDownButton))
-{
-    scrPlaySound(sndBoss1_Reload, 1.5);
-    select += 1;
-    if(select &gt; optionsNum-1)
-        select = 0;
-}
-else if (scrButtonCheckPressed(global.menuBackButton))
-{
-    //save changes and go back
-    scrPlaySound(sndBoss1_Reload);
-    scrSaveConfig();
-    objOptionsMenu.active = true;
-    instance_destroy();
-}
-else if (scrButtonCheckPressed(global.menuAcceptButton) or
-        scrButtonCheckPressed(global.menuLeftButton) or
-        scrButtonCheckPressed(global.menuRightButton) or
-        scrButtonCheckPressed(global.menuOptionsButton))
-{
-    scrPlaySound(sndBoss1_Reload);
-    switch (select)
-    {
-        case 0:
-            global.fullscreenMode = !global.fullscreenMode;
-            window_set_fullscreen(global.fullscreenMode);
-            break;
-        case 1:
-            global.smoothingMode = !global.smoothingMode;
-            break;
-        case 2:
-            global.showCard = !global.showCard;
-            break;
-        case 3:
-            global.particles = !global.particles;
-            break;
-        case 4:
-            global.delayBow = !global.delayBow;
-            break;
-        case 5:
-            global.showPB = !global.showPB;
-            break;
-        case 6:
-            global.showNames = !global.showNames;
-            break;
-        case 7:
-            global.spriteStyle++;
-            if (global.spriteStyle &gt; 1)
-               global.spriteStyle = 0;
-            break;
-        case 8:
-            global.GameOverType++;
-            if (global.GameOverType &gt; 4)
-               global.GameOverType = 0;
-            break;
-    }
-}
+event_user(2);
 </string>
           </argument>
         </arguments>
@@ -157,7 +205,10 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.8);
+            <string>event_inherited();
+exit;
+
+draw_set_alpha(0.8);
 draw_set_colour(c_black);
 draw_rectangle(xSelector - offset, ySelector - offset, xSelector + xSeperation + offset, ySelector + ySeperation * optionsNum + offset, false);
 draw_set_font(fDefault24);
@@ -165,12 +216,15 @@ draw_set_alpha(1);
 for(var i = 0; i &lt; optionsNum; i++)
 {
     var clr = c_white;
-    var value = "Off"
+    //var value = "Off"
     if (i == select)
         clr = c_red;
     draw_set_halign(fa_left);
     scrDrawTextOutline(xSelector,ySelector+(ySeperation*i),strSelect[i], clr, c_black);
     draw_set_halign(fa_right);
+    //scrDrawTextOutline(xSelector+xSeperation,ySelector, strValue[i,], clr, c_black);
+    
+    continue;
     switch (i)
     {
         case 0:

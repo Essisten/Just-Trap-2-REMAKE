@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -35,6 +35,15 @@ offset = 16;
 alarm[0] = 1;
 strSelect[0] = ""
 optionsNum = 1;
+values = false;
+//On-Off
+strValue[0, 0] = "Off";
+strValue[0, 1] = "On";
+//New-Old
+strValue[1, 0] = "New";
+strValue[1, 1] = "Old";
+values = ds_list_create();
+valueType[0] = -1;
 </string>
           </argument>
         </arguments>
@@ -59,6 +68,13 @@ optionsNum = 1;
             <kind>1</kind>
             <string>///There should go menu options
 optionsNum = array_length_1d(strSelect);
+if (array_length_1d(valueType) == 1)
+{
+    for (i = 0; i &lt; optionsNum; i++)
+    {
+        valueType[i] = -1;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -154,6 +170,30 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Read values
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="11">
       <action>
         <libid>1</libid>
@@ -230,8 +270,11 @@ for(var i = 0; i &lt; optionsNum; i++)
         clr = c_red;
     draw_set_halign(fa_left);
     scrDrawTextOutline(xSelector,ySelector+(ySeperation*i),strSelect[i], clr, c_black);
-    continue;
+    if (valueType[i] == -1)
+        continue;
     draw_set_halign(fa_right);
+    scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*i), strValue[valueType[i], ds_list_find_value(values, i)], clr, c_black);
+    continue;
     switch (i)
     {
         case 0:
