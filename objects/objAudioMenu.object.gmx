@@ -33,44 +33,23 @@ ySelector = 64;
 xSeperation = 500;
 ySeperation = 48;
 offset = 40;
-valueType[0] = 0;
-valueType[1] = 2;
+valueType[0] = -1;
+valueType[1] = -1;
 valueType[2] = 0;
-valueType[3] = 0;
-valueType[4] = 0;
-valueType[5] = 0;
-valueType[6] = 0;
-valueType[7] = 1;
-valueType[8] = 3;
 values = true;
-strSelect[0] = "Fullscreen"
-strSelect[1] = "Smoothing";
-strSelect[2] = "Title cards";
-strSelect[3] = "Particles";
-strSelect[4] = "Fix bow";
-strSelect[5] = "Personal best";
-strSelect[6] = "Show names";
-strSelect[7] = "Sprite style";
-strSelect[8] = "Game Over screen";
+strSelect[0] = "Music"
+strSelect[1] = "Sounds";
+strSelect[2] = "Sound test";
 optionsNum = array_length_1d(strSelect);
-//Smoothing
-strValue[2, 0] = "Off";
-strValue[2, 1] = "Bilinear";
-strValue[2, 2] = "Triilinear";
-//Game Over
-strValue[3, 0] = "New";
-strValue[3, 1] = "New (dots)";
-strValue[3, 2] = "New (shiny)";
-strValue[3, 3] = "Old";
-strValue[3, 4] = "Happil 2";
 event_user(2);
 
+alarm[11] = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="13">
+    <event eventtype="2" enumb="11">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -87,46 +66,26 @@ event_user(2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Option paging
-show_debug_message(select);
-if (scrButtonCheckPressed(global.menuLeftButton))
+            <string>///Less precise step event
+switch (select)
 {
-    switch (select)
-    {
-        case 7:
-            global.spriteStyle--;
-            if (global.spriteStyle &lt; 0)
-               global.spriteStyle = 1;
-            break;
-        case 8:
-            global.GameOverType--;
-            if (global.GameOverType &lt; 0)
-               global.GameOverType = 4;
-            break;
-        default:
-            event_user(0);
-            break;
-    }
+    case 0:
+        if (scrButtonCheck(global.menuLeftButton))
+            global.musicVol--;
+        if (scrButtonCheck(global.menuRightButton))
+            global.musicVol++;
+        global.musicVol = clamp(global.musicVol, 0, 100);
+        audio_sound_gain(global.currentMusic, global.musicVol/100, 0);
+        break;
+    case 1:
+        if (scrButtonCheck(global.menuLeftButton))
+            global.soundVol--;
+        if (scrButtonCheck(global.menuRightButton))
+            global.soundVol++;
+        global.soundVol = clamp(global.soundVol, 0, 100);
+        break;
 }
-else
-{
-    switch (select)
-    {
-        case 7:
-            global.spriteStyle++;
-            if (global.spriteStyle &gt; 1)
-               global.spriteStyle = 0;
-            break;
-        case 8:
-            global.GameOverType++;
-            if (global.GameOverType &gt; 4)
-               global.GameOverType = 0;
-            break;
-        default:
-            event_user(0);
-            break;
-    }
-}
+alarm[11] = 2;
 </string>
           </argument>
         </arguments>
@@ -151,15 +110,9 @@ else
             <kind>1</kind>
             <string>///Read values
 ds_list_clear(values);
-ds_list_add(values, global.fullscreenMode);
-ds_list_add(values, global.smoothingMode);
-ds_list_add(values, global.showCard);
-ds_list_add(values, global.particles);
-ds_list_add(values, global.delayBow);
-ds_list_add(values, global.showPB);
-ds_list_add(values, global.showNames);
-ds_list_add(values, global.spriteStyle);
-ds_list_add(values, global.GameOverType);
+ds_list_add(values, global.musicVol);
+ds_list_add(values, global.soundVol);
+ds_list_add(values, global.soundTest);
 </string>
           </argument>
         </arguments>
@@ -212,38 +165,25 @@ instance_destroy();
 switch (select)
 {
     case 0:
-        global.fullscreenMode = !global.fullscreenMode;
-        window_set_fullscreen(global.fullscreenMode);
+        if (global.musicVol == 0)
+            global.musicVol = 100;
+        else
+            global.musicVol = 0;
+        global.musicVol = clamp(global.musicVol, 0, 100);
+        audio_sound_gain(global.currentMusic, global.musicVol/100, 0);
         break;
     case 1:
-        global.smoothingMode = !global.smoothingMode;
+        if (global.soundVol == 0)
+            global.soundVol = 100;
+        else
+            global.soundVol = 0;
+        global.soundVol = clamp(global.soundVol, 0, 100);
         break;
     case 2:
-        global.showCard = !global.showCard;
-        break;
-    case 3:
-        global.particles = !global.particles;
-        break;
-    case 4:
-        global.delayBow = !global.delayBow;
-        break;
-    case 5:
-        global.showPB = !global.showPB;
-        break;
-    case 6:
-        global.showNames = !global.showNames;
-        break;
-    case 7:
-        global.spriteStyle++;
-        if (global.spriteStyle &gt; 1)
-           global.spriteStyle = 0;
-        break;
-    case 8:
-        global.GameOverType++;
-        if (global.GameOverType &gt; 4)
-           global.GameOverType = 0;
+        global.soundTest = !global.soundTest;
         break;
 }
+event_user(2);
 </string>
           </argument>
         </arguments>

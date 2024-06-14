@@ -29,6 +29,7 @@
 active = true;
 
 alarm[2] = 10;
+group[0] = objAudioMenu;
 group[1] = objGraphicMenu;
 group[3] = objKeyboardControlsMenu;
 </string>
@@ -163,7 +164,7 @@ event_inherited();
 event_inherited();
 scrSaveConfig();
 scrCreateFade(c_black, 0.05, true);
-alarm[1] = 20;
+alarm[1] = 19;
 </string>
           </argument>
         </arguments>

@@ -557,6 +557,7 @@
       <script>scripts\scrStopMusic.gml</script>
       <script>scripts\scrToggleMusic.gml</script>
       <script>scripts\scrPlaySound.gml</script>
+      <script>scripts\scrCustomDisplay.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrDrawTextOutline.gml</script>
@@ -704,12 +705,13 @@
     <objects name="Menu">
       <object>objects\objTitleMenu</object>
       <object>objects\objDifficultyMenu</object>
-      <object>objects\objMenuParent</object>
       <object>objects\objMainMenu</object>
       <object>objects\objPauseMenu</object>
       <object>objects\objSoundTest</object>
       <objects name="Settings">
+        <object>objects\objMenuParent</object>
         <object>objects\objOptionsMenu</object>
+        <object>objects\objAudioMenu</object>
         <object>objects\objGraphicMenu</object>
         <object>objects\objKeyboardControlsMenu</object>
         <object>objects\objControllerMenu</object>
