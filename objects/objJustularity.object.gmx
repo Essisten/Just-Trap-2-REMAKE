@@ -1230,10 +1230,13 @@ else
         tornado = instance_create(x, y, objTornado);
         tornado.gravity_direction = gravity_direction + 90 * i;
     }
-    with (objJustularity)
+    if (global.musicSlowdown)
     {
-        pitch -= 32/256;
-        alarm[10] = 5;
+        with (objJustularity)
+        {
+            pitch -= 32/256;
+            alarm[10] = 5;
+        }
     }
 }
 </string>

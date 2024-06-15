@@ -733,10 +733,13 @@ if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
     image_speed += 0.04;
     if (HP &lt;= 0)
     {
-        with (objBG)
+        if (global.musicSlowdown)
         {
-            alarm[1] = 5;
-            pitch = 232/256;
+            with (objBG)
+            {
+                alarm[1] = 5;
+                pitch = 232/256;
+            }
         }
         alarm[7] = irandom_range(2000, 3000);
         reviveSound = true;
@@ -745,8 +748,11 @@ if ((extraBulletsCounter == 0 and HP &gt; 50 and HP &lt;= 75) or
             with (objBG)
             {
                 event_user(3);
-                pitch = 208/256;
-                alarm[1] = 5;
+                if (global.musicSlowdown)
+                {
+                    pitch = 208/256;
+                    alarm[1] = 5;
+                }
             }
         }
     }

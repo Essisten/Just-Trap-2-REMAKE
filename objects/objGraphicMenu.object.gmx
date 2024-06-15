@@ -88,7 +88,6 @@ event_user(2);
           <argument>
             <kind>1</kind>
             <string>///Option paging
-show_debug_message(select);
 if (scrButtonCheckPressed(global.menuLeftButton))
 {
     switch (select)

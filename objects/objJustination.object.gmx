@@ -376,8 +376,11 @@ for (var i = 0; i &lt; 4; i++)
 }
 if (dead &gt; 0)
 {
-    alarm[2] = 5;
-    pitch = (256 - dead * 8) / 256;
+    if (global.musicSlowdown)
+    {
+        alarm[2] = 5;
+        pitch = (256 - dead * 8) / 256;
+    }
     part_alpha = dead / 12;
     part_type_alpha2(fantom, part_alpha, 0);
     part_emitter_stream(global.portalParticleSystem, emitter, fantom, -4 +  dead);

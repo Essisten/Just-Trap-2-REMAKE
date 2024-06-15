@@ -36,10 +36,12 @@ offset = 40;
 valueType[0] = -1;
 valueType[1] = -1;
 valueType[2] = 0;
+valueType[3] = 0;
 values = true;
 strSelect[0] = "Music"
 strSelect[1] = "Sounds";
 strSelect[2] = "Sound test";
+strSelect[3] = "Music slowdown";
 optionsNum = array_length_1d(strSelect);
 event_user(2);
 
@@ -91,6 +93,37 @@ alarm[11] = 2;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Option paging
+switch (select)
+{
+    case 2:
+    case 3:
+        event_user(0);
+        break;
+}
+event_user(2);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="12">
       <action>
         <libid>1</libid>
@@ -113,6 +146,7 @@ ds_list_clear(values);
 ds_list_add(values, global.musicVol);
 ds_list_add(values, global.soundVol);
 ds_list_add(values, global.soundTest);
+ds_list_add(values, global.musicSlowdown);
 </string>
           </argument>
         </arguments>
@@ -181,6 +215,9 @@ switch (select)
         break;
     case 2:
         global.soundTest = !global.soundTest;
+        break;
+    case 3:
+        global.musicSlowdown = !global.musicSlowdown;
         break;
 }
 event_user(2);

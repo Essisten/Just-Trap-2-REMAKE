@@ -25,23 +25,74 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>line = 3;
 if (!global.soundTest)
    room_goto_next();
 warn_alpha = 0;
 image_alpha = 0;
 sel = 1;
 choice = 1;
+phrase = 0;
 answer = irandom(2);
 warn[0] = "WRONG! Are you deaf?"
 warn[1] = "Wow, you have ears!"
+warn[2] = "What next? Play blindfolded?"
 warn_color[0] = c_red;
 warn_color[1] = c_lime;
+warn_color[2] = c_yellow;
 sound[0] = sndCherry;
 sound[1] = sndSpike;
 sound[2] = sndShoot;
+musicPlaying = -1;
+music[0] = musTitleA;
+music[1] = musStage2A;
+music[2] = musStage2C;
+music[3] = musStage3A;
 alarm[1] = 1;
 alarm[3] = 50;
+alarm[4] = 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Less precise step event
+switch (line)
+{
+    case 0:
+        if (scrButtonCheck(global.menuLeftButton))
+            global.musicVol--;
+        if (scrButtonCheck(global.menuRightButton))
+            global.musicVol++;
+        global.musicVol = clamp(global.musicVol, 0, 100);
+        audio_sound_gain(global.currentMusic, global.musicVol/100, 0);
+        break;
+    case 1:
+        if (scrButtonCheck(global.menuLeftButton))
+            global.soundVol--;
+        if (scrButtonCheck(global.menuRightButton))
+            global.soundVol++;
+        global.soundVol = clamp(global.soundVol, 0, 100);
+        break;
+}
+alarm[4] = 2;
 </string>
           </argument>
         </arguments>
@@ -176,35 +227,93 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (scrButtonCheckPressed(global.leftButton))
+            <string>if (line == 3)
 {
-    sel--;
-    if (sel &lt; 0)
-       sel = 2;
-}
-else if (scrButtonCheckPressed(global.rightButton))
-{
-    sel++;
-    if (sel &gt; 2)
-       sel = 0;
-}
-if (alarm[0] &gt; 0 or alarm[2] &gt; 0)
-   exit;
-if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
-{
-    warn_alpha = 1;
-    choice = sel;
-    if (sel == answer)
+    if (scrButtonCheckPressed(global.leftButton))
     {
-       alarm[3] = -1;
-       alarm[2] = 50;
+        sel--;
+        if (sel &lt; 0)
+           sel = 2;
+    }
+    else if (scrButtonCheckPressed(global.rightButton))
+    {
+        sel++;
+        if (sel &gt; 2)
+           sel = 0;
+    }
+    if (alarm[0] &gt; 0 or alarm[2] &gt; 0)
+       exit;
+    if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
+    {
+        warn_alpha = 1;
+        choice = sel;
+        scrSaveConfig();
+        if (global.soundVol == 0 and global.musicVol == 0)
+        {
+            phrase = 2;
+            alarm[3] = -1;
+            alarm[2] = 50;
+        }
+        else if (sel == answer)
+        {
+           alarm[3] = -1;
+           alarm[2] = 50;
+           phrase = 1;
+        }
+        else
+        {
+            alarm[0] = 1;
+            phrase = 0;
+        }
+    }
+}
+else if (line == 2 and
+    (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton)))
+{
+    if (audio_is_playing(musicPlaying))
+    {
+        alarm[3] = 50;
+        audio_stop_sound(musicPlaying);
     }
     else
-        alarm[0] = 1;
+    {
+        musicPlaying = scrPlayMusic(music[irandom(3)], false);
+        alarm[3] = -1;
+        sound_stop_all();
+    }
+}
+if (scrButtonCheckPressed(global.menuUpButton))
+{
+    line--;
+    if (line &lt; 0)
+        line = 3;
+}
+else if (scrButtonCheckPressed(global.menuDownButton))
+{
+    line++;
+    if (line &gt; 3)
+        line = 0;
 }
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
     game_end();
+}
+else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
+{
+    if (line == 0)
+    {
+        if (global.musicVol == 0)
+            global.musicVol = 100;
+        else
+            global.musicVol = 0;
+    }
+    else if (line == 1)
+    {
+        if (global.soundVol == 0)
+            global.soundVol = 100;
+        else
+            global.soundVol = 0;
+    }
 }
 </string>
           </argument>
@@ -233,24 +342,54 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_colour(c_white);
 draw_set_alpha(image_alpha);
-draw_text(400, 64, "Sound Test");
+draw_text(400, 32, "Sound Test");
 for (var i = 0; i &lt; 3; i++)
 {
     draw_sprite_ext(sprSoundTest_Icon, i, 200 + i * 200, 500, 4, 4, 0, c_white, image_alpha);
 }
 draw_set_font(fDefault24);
-draw_text(400, 128, "Press left and right to navigate");
-draw_set_color(c_red);
-for (var k = 2; k &lt; 6; k++)
+draw_text(400, 86, "Press arrow keys to navigate");
+if (line == 3)
 {
-    draw_rectangle(136 + sel * 200 - k, 436 - k, 264 + sel * 200 + k, 564 + k, true);
+    draw_set_color(c_red);
+    for (var k = 2; k &lt; 6; k++)
+    {
+        draw_rectangle(136 + sel * 200 - k, 436 - k, 264 + sel * 200 + k, 564 + k, true);
+    }
+    draw_set_color(warn_color[phrase]);
+    draw_set_alpha(warn_alpha);
+    draw_text(400, 144, warn[phrase]);
 }
-var correct = 0;
-if (choice == answer)
-   correct = 1;
-draw_set_color(warn_color[correct]);
-draw_set_alpha(warn_alpha);
-draw_text(400, 256, warn[correct]);
+draw_set_alpha(image_alpha);
+var clr = c_white;
+if (line == 0)
+    clr = c_red;
+scrDrawTextOutline(64, 232, "Music", clr, c_black);
+scrDrawTextOutline(748, 232, string(global.musicVol) + "%", clr, c_black);
+draw_set_color(clr);
+draw_rectangle(400 - 288, 212, 400 - 288 + (576 * (global.musicVol / 100)), 212 + 32, false);
+draw_set_color(c_white);
+draw_rectangle(400 - 288, 212, 400 + 288, 212 + 32, true);
+if (line == 1)
+    clr = c_red;
+else
+    clr = c_white;
+scrDrawTextOutline(64, 276, "Sound", clr, c_black);
+scrDrawTextOutline(748, 276, string(global.soundVol) + "%", clr, c_black);
+draw_set_color(clr);
+draw_rectangle(400 - 288, 256, 400 - 288 + (576 * (global.soundVol / 100)), 256 + 32, false);
+draw_set_color(c_white);
+draw_rectangle(400 - 288, 256, 400 + 288, 256 + 32, true);
+if (line == 2)
+    clr = c_red;
+else
+    clr = c_white;
+var text = "Play Music";
+if (audio_is_playing(musicPlaying))
+    text = "Music is playing...";
+else if (alarm[3] = -1)
+    alarm[3] = 50;
+scrDrawTextOutline(400, 336, text, clr, c_black);
 </string>
           </argument>
         </arguments>
