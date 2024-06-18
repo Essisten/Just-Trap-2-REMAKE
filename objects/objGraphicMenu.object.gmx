@@ -107,17 +107,12 @@ else
 {
     switch (select)
     {
-        case 7:
+        case 6:
             global.spriteStyle++;
             if (global.spriteStyle &gt; 1)
                global.spriteStyle = 0;
             break;
-        case 8:
-            global.GameOverType++;
-            if (global.GameOverType &gt; 4)
-               global.GameOverType = 0;
-            break;
-        case 9:
+        case 7:
             global.screenshake++;
             if (global.screenshake &gt; 2)
                global.screenshake = 0;
