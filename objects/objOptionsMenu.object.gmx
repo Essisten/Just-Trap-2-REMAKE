@@ -27,10 +27,10 @@
             <kind>1</kind>
             <string>event_inherited();
 active = true;
-
 alarm[2] = 10;
 group[0] = objAudioMenu;
 group[1] = objGraphicMenu;
+group[2] = objGameplayMenu;
 group[3] = objKeyboardControlsMenu;
 </string>
           </argument>

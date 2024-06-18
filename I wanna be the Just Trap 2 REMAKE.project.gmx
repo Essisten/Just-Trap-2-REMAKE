@@ -713,6 +713,7 @@
         <object>objects\objOptionsMenu</object>
         <object>objects\objAudioMenu</object>
         <object>objects\objGraphicMenu</object>
+        <object>objects\objGameplayMenu</object>
         <object>objects\objKeyboardControlsMenu</object>
         <object>objects\objControllerMenu</object>
       </objects>

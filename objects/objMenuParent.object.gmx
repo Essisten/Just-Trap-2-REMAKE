@@ -42,6 +42,9 @@ strValue[0, 1] = "On";
 //New-Old
 strValue[1, 0] = "New";
 strValue[1, 1] = "Old";
+//Reserved
+strValue[2, 0] = "";
+strValue[2, 1] = "";
 values = ds_list_create();
 valueType[0] = -1;
 </string>
@@ -122,17 +125,6 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
     scrPlaySound(sndBoss1_Reload);
     event_user(0);
     event_user(2);
-    /*exit;
-    switch (select)
-    {
-        case 2:
-            global.vsyncMode = !global.vsyncMode;
-            scrSetVsync();
-            break;
-        case 4:
-            global.gravityControls = !global.gravityControls;
-            break;
-    }*/
 }
 else if (scrButtonCheckPressed(global.menuLeftButton) or
         scrButtonCheckPressed(global.menuRightButton))
@@ -275,22 +267,6 @@ for(i = 0; i &lt; optionsNum; i++)
     }
     draw_set_halign(fa_right);
     scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*i), strValue[valueType[i], ds_list_find_value(values, i)], clr, c_black);
-    continue;
-    switch (i)
-    {
-        case 2:
-            if (global.vsyncMode)
-                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*2),"On", clr, c_black);
-            else
-                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*2),"Off", clr, c_black);
-            break;
-        case 4:
-            if (global.gravityControls)
-                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*4),"New", clr, c_black);
-            else
-                scrDrawTextOutline(xSelector+xSeperation,ySelector+(ySeperation*4),"Old", clr, c_black);
-            break;
-    }
 }
 </string>
           </argument>

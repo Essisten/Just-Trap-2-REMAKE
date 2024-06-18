@@ -30,39 +30,35 @@ select = 0;
 alarm[0] = 1;
 xSelector = 240;
 ySelector = 64;
-xSeperation = 500;
+xSeperation = 532;
 ySeperation = 48;
-offset = 40;
+offset = 20;
 valueType[0] = 0;
-valueType[1] = 2;
+valueType[1] = 3;
 valueType[2] = 0;
 valueType[3] = 0;
 valueType[4] = 0;
 valueType[5] = 0;
-valueType[6] = 0;
-valueType[7] = 1;
-valueType[8] = 3;
+valueType[6] = 1;
+valueType[7] = 4;
 values = true;
 strSelect[0] = "Fullscreen"
 strSelect[1] = "Smoothing";
-strSelect[2] = "Title cards";
+strSelect[2] = "V. Sync";
 strSelect[3] = "Particles";
 strSelect[4] = "Fix bow";
-strSelect[5] = "Personal best";
-strSelect[6] = "Show names";
-strSelect[7] = "Sprite style";
-strSelect[8] = "Game Over screen";
+strSelect[5] = "Show names";
+strSelect[6] = "Sprite style";
+strSelect[7] = "Screenshake";
 optionsNum = array_length_1d(strSelect);
 //Smoothing
-strValue[2, 0] = "Off";
-strValue[2, 1] = "Bilinear";
-strValue[2, 2] = "Triilinear";
-//Game Over
-strValue[3, 0] = "New";
-strValue[3, 1] = "New (dots)";
-strValue[3, 2] = "New (shiny)";
-strValue[3, 3] = "Old";
-strValue[3, 4] = "Happil 2";
+strValue[3, 0] = "Off";
+strValue[3, 1] = "Bilinear";
+strValue[3, 2] = "Triilinear";
+//Screenshake
+strValue[4, 0] = "Off";
+strValue[4, 1] = "Normal";
+strValue[4, 2] = "Strong";
 event_user(2);
 
 </string>
@@ -92,15 +88,15 @@ if (scrButtonCheckPressed(global.menuLeftButton))
 {
     switch (select)
     {
-        case 7:
+        case 6:
             global.spriteStyle--;
             if (global.spriteStyle &lt; 0)
                global.spriteStyle = 1;
             break;
-        case 8:
-            global.GameOverType--;
-            if (global.GameOverType &lt; 0)
-               global.GameOverType = 4;
+        case 7:
+            global.screenshake--;
+            if (global.screenshake &lt; 0)
+               global.screenshake = 2;
             break;
         default:
             event_user(0);
@@ -120,6 +116,11 @@ else
             global.GameOverType++;
             if (global.GameOverType &gt; 4)
                global.GameOverType = 0;
+            break;
+        case 9:
+            global.screenshake++;
+            if (global.screenshake &gt; 2)
+               global.screenshake = 0;
             break;
         default:
             event_user(0);
@@ -152,13 +153,12 @@ else
 ds_list_clear(values);
 ds_list_add(values, global.fullscreenMode);
 ds_list_add(values, global.smoothingMode);
-ds_list_add(values, global.showCard);
+ds_list_add(values, global.vsyncMode);
 ds_list_add(values, global.particles);
 ds_list_add(values, global.delayBow);
-ds_list_add(values, global.showPB);
 ds_list_add(values, global.showNames);
 ds_list_add(values, global.spriteStyle);
-ds_list_add(values, global.GameOverType);
+ds_list_add(values, global.screenshake);
 </string>
           </argument>
         </arguments>
@@ -218,7 +218,8 @@ switch (select)
         global.smoothingMode = !global.smoothingMode;
         break;
     case 2:
-        global.showCard = !global.showCard;
+        global.vsyncMode = !global.vsyncMode;
+        scrSetVsync();
         break;
     case 3:
         global.particles = !global.particles;
@@ -227,20 +228,17 @@ switch (select)
         global.delayBow = !global.delayBow;
         break;
     case 5:
-        global.showPB = !global.showPB;
-        break;
-    case 6:
         global.showNames = !global.showNames;
         break;
-    case 7:
+    case 6:
         global.spriteStyle++;
         if (global.spriteStyle &gt; 1)
            global.spriteStyle = 0;
         break;
-    case 8:
-        global.GameOverType++;
-        if (global.GameOverType &gt; 4)
-           global.GameOverType = 0;
+    case 7:
+        global.screenshake++;
+        if (global.screenshake &gt; 2)
+           global.screenshake = 0;
         break;
 }
 </string>

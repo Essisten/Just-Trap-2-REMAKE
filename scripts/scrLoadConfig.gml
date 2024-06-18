@@ -19,6 +19,7 @@ global.GameOverType = ini_read_real("Settings","GameOver_type", 0);
 global.gravityControls = ini_read_real("Settings","Gravity_controls", true);
 global.soundTest = ini_read_real("Settings","Sound_test", true);
 global.musicSlowdown = ini_read_real("Settings","Music_slowdown", true);
+global.screenshake = ini_read_real("Settings","Screenshake", 2);
 ini_close();
 scrLoadControls();
 scrSaveConfig();    //save config in case something changed
