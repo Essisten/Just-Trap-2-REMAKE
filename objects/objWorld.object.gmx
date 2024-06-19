@@ -28,7 +28,7 @@
             <string>//make sure we never have more than one world object
 if (instance_number(object_index) &gt; 1)
     instance_destroy();
-
+__SMOOTH_u_texelsPerPixel = shader_get_uniform(__SMOOTH_sh_pxUpscale,"u_texelsPerPixel");
 </string>
           </argument>
         </arguments>
@@ -180,7 +180,7 @@ audio_pause_sound(global.currentMusic);
 
 
 //set linear interpolation depending on what the current smoothing setting is
-texture_set_interpolation(global.smoothingMode);
+//texture_set_interpolation(global.smoothingMode);
 
 //controller checks
 if (global.controllerEnabled &amp;&amp; global.controllerIndex != -1)
@@ -554,6 +554,86 @@ scrInitializeGlobals();
 //load the current config file, sets default config if it doesn't exist
 scrLoadConfig();
 instance_create(x, y, objSoundTest);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var __SMOOTH_windowWidth = window_get_width();
+var __SMOOTH_windowHeight = window_get_height();
+
+texture_set_repeat(false);
+
+draw_enable_alphablend(false);
+
+if(__SMOOTH_windowWidth mod 800 != 0 || __SMOOTH_windowHeight mod 608 != 0){
+    var __SMOOTH_aspectRatio = __SMOOTH_windowWidth / __SMOOTH_windowHeight;
+    var __SMOOTH_aspectRatioRatio = __SMOOTH_aspectRatio / (800/608);
+    
+    texture_set_interpolation(true);
+    shader_set(__SMOOTH_sh_pxUpscale);
+    
+    if(__SMOOTH_aspectRatioRatio &lt; 1){
+        var __SMOOTH_canvasHeight = __SMOOTH_windowWidth*608/800;
+        var __SMOOTH_vertOutPixels = (__SMOOTH_windowHeight - __SMOOTH_canvasHeight) / 2;
+        shader_set_uniform_f(__SMOOTH_u_texelsPerPixel, 800./__SMOOTH_windowWidth, 608./__SMOOTH_canvasHeight);
+        draw_surface_stretched(application_surface, 0, __SMOOTH_vertOutPixels, __SMOOTH_windowWidth, __SMOOTH_canvasHeight);
+    }
+    else{
+        var __SMOOTH_canvasWidth = __SMOOTH_windowHeight*800/608;
+        var __SMOOTH_horOutPixels = (__SMOOTH_windowWidth - __SMOOTH_canvasWidth) / 2;
+        shader_set_uniform_f(__SMOOTH_u_texelsPerPixel, 800./__SMOOTH_canvasWidth, 608./__SMOOTH_windowHeight);
+        draw_surface_stretched(application_surface, __SMOOTH_horOutPixels, 0, __SMOOTH_canvasWidth, __SMOOTH_windowHeight);
+    }
+    
+    shader_reset();
+    texture_set_interpolation(false);
+}
+else{
+    draw_surface(application_surface,0,0);
+}
+
+draw_enable_alphablend(true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>application_surface_draw_enable(false);
 </string>
           </argument>
         </arguments>

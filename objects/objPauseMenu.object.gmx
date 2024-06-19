@@ -70,16 +70,17 @@ else
     switch (sel)
     {
         case 0:
-            global.gamePaused = false;  //set the game to unpaused
-            global.pauseDelay = global.pauseDelayLength;     //set pause delay
-            instance_activate_all();    //reactivate objects
+            global.gamePaused = false;
+            global.pauseDelay = global.pauseDelayLength;
+            instance_activate_all();
             if (surface_exists(global.pauseSurf))
-                surface_free(global.pauseSurf);         //free the surface
-            scrSaveConfig();    //save config in case volume levels were changed
+                surface_free(global.pauseSurf);
+            scrSaveConfig();
             io_clear(); //clear input states to prevent possible pause strats/exploits
             break;
         case 1:
-             global.gameStarted = false;
+            global.gameStarted = false;
+            global.gamePaused = false;
             room_goto(rTitle);
             break;
         case 2:

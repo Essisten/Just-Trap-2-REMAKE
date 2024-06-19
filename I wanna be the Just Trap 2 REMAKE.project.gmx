@@ -595,6 +595,7 @@
     <shader type="GLSLES">shaders\shdInvert.shader</shader>
     <shader type="GLSLES">shaders\shdGrayscale.shader</shader>
     <shader type="GLSLES">shaders\shdRandomNoise.shader</shader>
+    <shader type="HLSL9">shaders\__SMOOTH_sh_pxUpscale.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
