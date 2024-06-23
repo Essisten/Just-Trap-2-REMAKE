@@ -28,7 +28,7 @@
             <string>leaveRoom = true;  //sets whether the camera can follow the player outside of the room's boundaries
 shake_mag = 0;
 shake_mag_acc = 0;
-if (global.screenshake == 2)
+if (global.screenshakePower == 2)
     surface = surface_create(view_wview[0], view_hview[0]);
 old_x = view_xview[0];
 old_y = view_yview[0];
@@ -151,7 +151,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///Thanks to Just and Kelvar &lt;3
-if (global.screenshake == 1)
+if (global.screenshakePower == 1)
     exit;
 surface_free(surface);
 surface = surface_create(view_wview[0], view_hview[0]);

@@ -34,12 +34,12 @@ xSeperation = 532;
 ySeperation = 48;
 offset = 20;
 valueType[0] = 0;
-valueType[1] = 0;
+valueType[1] = 5;
 valueType[2] = 3;
 valueType[3] = 0;
 valueType[4] = 0;
 valueType[5] = 0;
-valueType[6] = 0;
+valueType[6] = 6;
 valueType[7] = 1;
 valueType[8] = 4;
 values = true;
@@ -49,7 +49,7 @@ strSelect[2] = "Anti-alising";
 strSelect[3] = "V. Sync";
 strSelect[4] = "Particles";
 strSelect[5] = "Fix bow";
-strSelect[6] = "Show names";
+strSelect[6] = "Shaders";
 strSelect[7] = "Sprite style";
 strSelect[8] = "Screenshake";
 optionsNum = array_length_1d(strSelect);
@@ -62,6 +62,14 @@ strValue[3, 3] = "x8";
 strValue[4, 0] = "Off";
 strValue[4, 1] = "Normal";
 strValue[4, 2] = "Strong";
+//Smoothing
+strValue[5, 0] = "Disabled";
+strValue[5, 1] = "New";
+strValue[5, 2] = "Old";
+//Surfaces
+strValue[6, 0] = "Disabled";
+strValue[6, 1] = "All";
+strValue[6, 2] = "Minimal";
 event_user(2);
 aaMode[0] = true;
 switch (display_aa)
@@ -115,6 +123,11 @@ if (scrButtonCheckPressed(global.menuLeftButton))
 {
     switch (select)
     {
+        case 1:
+            global.smoothingMode--;
+            if (global.smoothingMode &lt; 0)
+                global.smoothingMode = 2;
+            break;
         case 2:
             global.AA--;
             if (global.AA &lt; 0)
@@ -126,15 +139,20 @@ if (scrButtonCheckPressed(global.menuLeftButton))
             }
             scrSetVsync();
             break;
+        case 6:
+            global.enableShaders--;
+            if (global.enableShaders &lt; 0)
+               global.enableShaders = 2;
+            break;
         case 7:
             global.spriteStyle--;
             if (global.spriteStyle &lt; 0)
                global.spriteStyle = 1;
             break;
         case 8:
-            global.screenshake--;
-            if (global.screenshake &lt; 0)
-               global.screenshake = 2;
+            global.screenshakePower--;
+            if (global.screenshakePower &lt; 0)
+               global.screenshakePower = 2;
             break;
         default:
             event_user(0);
@@ -145,27 +163,6 @@ else
 {
     switch (select)
     {
-        case 2:
-            global.AA++;
-            if (global.AA &gt; 3)
-               global.AA = 0;
-            if (!aaMode[global.AA])
-            {
-                event_user(3);
-                exit;
-            }
-            scrSetVsync();
-            break;
-        case 7:
-            global.spriteStyle++;
-            if (global.spriteStyle &gt; 1)
-               global.spriteStyle = 0;
-            break;
-        case 8:
-            global.screenshake++;
-            if (global.screenshake &gt; 2)
-               global.screenshake = 0;
-            break;
         default:
             event_user(0);
             break;
@@ -201,9 +198,9 @@ ds_list_add(values, global.AA);
 ds_list_add(values, global.vsyncMode);
 ds_list_add(values, global.particles);
 ds_list_add(values, global.delayBow);
-ds_list_add(values, global.showNames);
+ds_list_add(values, global.enableShaders);
 ds_list_add(values, global.spriteStyle);
-ds_list_add(values, global.screenshake);
+ds_list_add(values, global.screenshakePower);
 </string>
           </argument>
         </arguments>
@@ -227,6 +224,13 @@ ds_list_add(values, global.screenshake);
           <argument>
             <kind>1</kind>
             <string>///going back
+if (global.enableShaders == 0)
+{
+    if (global.smoothingMode = 1)
+        global.smoothingMode = 0;
+    if (global.screenshakePower == 2)
+        global.screenshakePower = 1;
+}
 scrSaveConfig();
 objOptionsMenu.active = true;
 instance_destroy();
@@ -260,7 +264,9 @@ switch (select)
         window_set_fullscreen(global.fullscreenMode);
         break;
     case 1:
-        global.smoothingMode = !global.smoothingMode;
+        global.smoothingMode++;
+        if (global.smoothingMode &gt; 2)
+            global.smoothingMode = 0;
         break;
     case 2:
         global.AA++;
@@ -284,7 +290,9 @@ switch (select)
         global.delayBow = !global.delayBow;
         break;
     case 6:
-        global.showNames = !global.showNames;
+        global.enableShaders++;
+        if (global.enableShaders &gt; 2)
+           global.enableShaders = 0;
         break;
     case 7:
         global.spriteStyle++;
@@ -292,9 +300,9 @@ switch (select)
            global.spriteStyle = 0;
         break;
     case 8:
-        global.screenshake++;
-        if (global.screenshake &gt; 2)
-           global.screenshake = 0;
+        global.screenshakePower++;
+        if (global.screenshakePower &gt; 2)
+           global.screenshakePower = 0;
         break;
 }
 </string>

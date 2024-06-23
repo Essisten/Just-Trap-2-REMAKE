@@ -180,7 +180,10 @@ audio_pause_sound(global.currentMusic);
 
 
 //set linear interpolation depending on what the current smoothing setting is
-//texture_set_interpolation(global.smoothingMode);
+if (global.smoothingMode == 2)
+    texture_set_interpolation(true);
+else if (global.smoothingMode == 0)
+    texture_set_interpolation(false);
 
 //controller checks
 if (global.controllerEnabled &amp;&amp; global.controllerIndex != -1)
@@ -576,7 +579,9 @@ instance_create(x, y, objSoundTest);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var __SMOOTH_windowWidth = window_get_width();
+            <string>if (global.smoothingMode != 1 or global.enableShaders == 0)
+    exit;
+var __SMOOTH_windowWidth = window_get_width();
 var __SMOOTH_windowHeight = window_get_height();
 
 texture_set_repeat(false);
@@ -633,7 +638,10 @@ draw_enable_alphablend(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>application_surface_draw_enable(false);
+            <string>if (global.smoothingMode == 1)
+    application_surface_draw_enable(false);
+else
+    application_surface_draw_enable(true);
 </string>
           </argument>
         </arguments>

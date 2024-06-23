@@ -250,7 +250,7 @@ shootUpward = scrButtonCheck(global.upButton) &amp;&amp; !frozen;
 if (paralyzed)
 {
     image_speed = 0;
-    if (false)
+    if (global.enableShaders == 0)
     {
         sprt = sprPlayerParalyzed;
         switch (sprite_index)
@@ -1190,7 +1190,7 @@ if (room == rBoss2)
           <argument>
             <kind>1</kind>
             <string>///draw the player
-if (paralyzed)
+if (paralyzed and global.enableShaders != 0)
    shader_set(shdGrayscale);
 var drawX = x;
 var drawY = y;

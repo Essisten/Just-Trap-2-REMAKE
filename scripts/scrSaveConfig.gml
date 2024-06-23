@@ -18,7 +18,7 @@ ini_write_real("Settings","GameOver_type", global.GameOverType);
 ini_write_real("Settings","Gravity_controls", global.gravityControls);
 ini_write_real("Settings","Sound_test", global.soundTest);
 ini_write_real("Settings","Music_slowdown", global.musicSlowdown);
-ini_write_real("Settings","Screenshake", global.screenshake);
+ini_write_real("Settings","Screenshake", global.screenshakePower);
 ini_write_real("Settings","AA", global.AA);
 
 ini_close();

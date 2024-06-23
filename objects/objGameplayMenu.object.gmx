@@ -37,11 +37,13 @@ valueType[0] = 0;
 valueType[1] = 0;
 valueType[2] = 3;
 valueType[3] = 1;
+valueType[4] = 0;
 values = true;
 strSelect[0] = "Title cards"
 strSelect[1] = "Personal best";
 strSelect[2] = "Game Over screen";
 strSelect[3] = "Gravity controls";
+strSelect[4] = "Show names";
 optionsNum = array_length_1d(strSelect);
 //Game Over
 strValue[3, 0] = "New";
@@ -130,6 +132,7 @@ ds_list_add(values, global.showCard);
 ds_list_add(values, global.showPB);
 ds_list_add(values, global.GameOverType);
 ds_list_add(values, global.gravityControls);
+ds_list_add(values, global.showNames);
 </string>
           </argument>
         </arguments>
@@ -194,6 +197,9 @@ switch (select)
         break;
     case 3:
         global.gravityControls = !global.gravityControls;
+        break;
+    case 4:
+        global.showNames = !global.showNames;
         break;
 }
 </string>
