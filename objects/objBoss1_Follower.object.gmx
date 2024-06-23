@@ -87,10 +87,6 @@ if (!instance_exists(owner))
 event_user(0);
 visible = owner.visible;
 d+=2;
-if (owner.HP &gt; 0)
-    color = c_white;
-else
-    color = c_black;
 </string>
           </argument>
         </arguments>
@@ -148,7 +144,16 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, color, 1);
+            <string>if (!instance_exists(owner))
+   exit;
+   
+if (owner.HP &lt;= 0)
+{
+    shader_set(shdGrayscale);
+    shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+}
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, 1);
+shader_reset();
 </string>
           </argument>
         </arguments>

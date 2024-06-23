@@ -461,7 +461,10 @@ if (objJustrimsonA.HP &lt;= 0 and objJustrimsonD.HP &lt;= 0 and objJustrimsonB.H
 {
     draw_sprite_ext(sprJustrimsonOutline, glow_index, x, y, image_xscale, image_yscale, image_angle, glow_color, glow_thicc);
 }
+if (HP &lt;= 0)
+   shader_set(shdGrayscale);
 draw_self();
+shader_reset();
 var offset = 72;
 if (spot == 1 or spot == 4)
    offset = -offset - 24;

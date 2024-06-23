@@ -42,6 +42,7 @@ valueType[5] = 0;
 valueType[6] = 0;
 valueType[7] = 1;
 valueType[8] = 4;
+valueType[9] = 5;
 values = true;
 strSelect[0] = "Fullscreen"
 strSelect[1] = "Smoothing";
@@ -52,6 +53,7 @@ strSelect[5] = "Fix bow";
 strSelect[6] = "Show names";
 strSelect[7] = "Sprite style";
 strSelect[8] = "Screenshake";
+strSelect[9] = "Dead bosses";
 optionsNum = array_length_1d(strSelect);
 //Anti-alising
 strValue[3, 0] = "Off";
@@ -62,6 +64,9 @@ strValue[3, 3] = "x8";
 strValue[4, 0] = "Off";
 strValue[4, 1] = "Normal";
 strValue[4, 2] = "Strong";
+//Boss death style
+strValue[5, 0] = "Black";
+strValue[5, 1] = "Gray";
 event_user(2);
 aaMode[0] = true;
 switch (display_aa)
@@ -204,6 +209,7 @@ ds_list_add(values, global.delayBow);
 ds_list_add(values, global.showNames);
 ds_list_add(values, global.spriteStyle);
 ds_list_add(values, global.screenshake);
+ds_list_add(values, global.bossDeathStyle);
 </string>
           </argument>
         </arguments>
@@ -296,6 +302,9 @@ switch (select)
         if (global.screenshake &gt; 2)
            global.screenshake = 0;
         break;
+    case 9:
+         global.bossDeathStyle = !global.bossDeathStyle;
+         break;
 }
 </string>
           </argument>
