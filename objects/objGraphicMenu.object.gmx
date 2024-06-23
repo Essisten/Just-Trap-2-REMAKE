@@ -42,6 +42,7 @@ valueType[5] = 0;
 valueType[6] = 6;
 valueType[7] = 1;
 valueType[8] = 4;
+valueType[9] = 7
 values = true;
 strSelect[0] = "Fullscreen"
 strSelect[1] = "Smoothing";
@@ -70,6 +71,9 @@ strValue[5, 2] = "Old";
 strValue[6, 0] = "Disabled";
 strValue[6, 1] = "All";
 strValue[6, 2] = "Minimal";
+//Boss death style
+strValue[7, 0] = "Black";
+strValue[7, 1] = "Gray
 event_user(2);
 aaMode[0] = true;
 switch (display_aa)

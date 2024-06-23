@@ -544,6 +544,7 @@
         <script>scripts\scrParticleInit.gml</script>
         <script>scripts\scrSafeLoad.gml</script>
         <script>scripts\scrLoadControls.gml</script>
+        <script>scripts\scrShaderUniforms.gml</script>
       </scripts>
       <script>scripts\scrDrawButtonInfo.gml</script>
       <script>scripts\scrGetControllerBind.gml</script>
@@ -581,7 +582,6 @@
       <script>scripts\scrHideBoss1.gml</script>
       <script>scripts\scrAddBodyPart.gml</script>
     </scripts>
-    <script>scripts\idk.gml</script>
     <scripts name="Final boss">
       <script>scripts\scrLovetrap_Attack.gml</script>
       <script>scripts\scrCrimson_Attack.gml</script>
