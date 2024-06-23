@@ -26,19 +26,29 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-active = true;
-alarm[2] = 10;
-group[0] = objAudioMenu;
-group[1] = objGraphicMenu;
-group[2] = objGameplayMenu;
-group[3] = objKeyboardControlsMenu;
-group[4] = objOtherMenu;
+select = 0;
+alarm[0] = 1;
+xSelector = 240;
+ySelector = 64;
+xSeperation = 532;
+ySeperation = 48;
+offset = 20;
+valueType[0] = -1;
+valueType[1] = -1;
+valueType[2] = 0;
+valueType[3] = 0;
+values = true;
+strSelect[0] = "Dead boss brightness";
+optionsNum = array_length_1d(strSelect);
+event_user(2);
+
+alarm[11] = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="2">
+    <event eventtype="2" enumb="11">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,15 +65,24 @@ group[4] = objOtherMenu;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Background flashing
-background_alpha[0] = 0.5 + random_range(0, 0.2);
-alarm[0] = 10;
+            <string>///Less precise step event
+switch (select)
+{
+    case 0:
+        if (scrButtonCheck(global.menuLeftButton))
+            global.bossDeathBrightness -= 0.02;
+        if (scrButtonCheck(global.menuRightButton))
+            global.bossDeathBrightness += 0.02;
+        global.bossDeathBrightness = clamp(global.bossDeathBrightness, 0, 1);
+        break;
+}
+alarm[11] = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
+    <event eventtype="7" enumb="13">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -80,17 +99,19 @@ alarm[0] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///go to menu
-if (instance_exists(objLightEffect))
-    alarm[1] = 1;
-else
-    room_goto(rTitle);
+            <string>///Option paging
+switch (select)
+{
+    default:
+        break;
+}
+event_user(2);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="7" enumb="12">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -107,38 +128,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Options
-strSelect[0] = "Audio"
-strSelect[1] = "Video";
-strSelect[2] = "Gameplay";
-strSelect[3] = "Controls";
-strSelect[4] = "Other";
-event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!active)
-   exit;
-event_inherited();
+            <string>///Read values
+ds_list_clear(values);
+ds_list_add(values, global.bossDeathBrightness);
 </string>
           </argument>
         </arguments>
@@ -161,11 +153,10 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Back
-event_inherited();
+            <string>///going back
 scrSaveConfig();
-scrCreateFade(c_black, 0.05, true);
-alarm[1] = 19;
+objOptionsMenu.active = true;
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -188,9 +179,17 @@ alarm[1] = 19;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Opening a group of settings
-instance_create(0, 0, group[select]);
-active = false;
+            <string>///Option selection
+switch (select)
+{
+    case 0:
+        if (global.bossDeathBrightness == 0)
+            global.bossDeathBrightness = 1;
+        else
+            global.bossDeathBrightness = 0;
+        break;
+}
+event_user(2);
 </string>
           </argument>
         </arguments>

@@ -1441,16 +1441,9 @@ if ((RedHP &lt;= 0 and isRed) or (BlueHP &lt;= 0 and !isRed) or phase == 2)
     draw_set_blend_mode(bm_add);
     draw_ellipse_colour(x - rad, y - rad, x + rad, y + rad, clr, c_black, false);
     draw_set_blend_mode(bm_normal);
-    if (global.bossDeathStyle == 1)
-    {
-        shader_set(shdGrayscale);
-        shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
-    }
-    else
-        image_blend = c_black;
+    shader_set(shdGrayscale);
+    shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
 }
-else
-    image_blend = c_white;
 draw_self();
 shader_reset();
 </string>

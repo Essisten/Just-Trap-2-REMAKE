@@ -25,4 +25,18 @@ switch (object_index)
                 break;
         }
         break;
+    case objOtherMenu:
+        draw_set_halign(fa_right);
+        switch (i)
+        {
+            case 0:
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+ySeperation*i,string(round(global.bossDeathBrightness * 100)) + "%", clr, c_black);
+                draw_set_color(clr);
+                draw_rectangle(xSelector+xSeperation - 160, ySelector+ySeperation*i,
+                            xSelector+xSeperation - 160 + (64 * global.bossDeathBrightness), ySelector+ySeperation*i + 32, false);
+                draw_set_color(c_white);
+                draw_rectangle(xSelector+xSeperation - 160, ySelector+ySeperation*i,
+                            xSelector+xSeperation - 96, ySelector+ySeperation*i + 32, true);
+                break;
+        }
 }

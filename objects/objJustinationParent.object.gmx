@@ -345,16 +345,19 @@ alarm[0] = 100 - global.difficulty * 30;
             <kind>1</kind>
             <string>if (active)
 {
+    image_blend = c_white;
     if (HP &gt; 0)
-    {
-        draw_self();
         draw_healthbar(x - 32, oldY - 90, x + 32, oldY - 86, HP, c_black, colorHP, colorHP, 0, true, true);
-    }
     else
-        draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_black, 1);
+    {
+        shader_set(shdGrayscale);
+        shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);    
+    }
 }
 else
-    draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_black, 1);
+    image_blend = c_black;
+draw_self();
+shader_reset();
 </string>
           </argument>
         </arguments>
