@@ -31,71 +31,51 @@ alarm[0] = 1;
 xSelector = 240;
 ySelector = 64;
 xSeperation = 532;
-ySeperation = 48;
+ySeperation = 32;
 offset = 20;
-valueType[0] = 0;
-valueType[1] = 5;
-valueType[2] = 3;
-valueType[3] = 0;
-valueType[4] = 0;
-valueType[5] = 0;
-valueType[6] = 6;
-valueType[7] = 1;
-valueType[8] = 4;
+valueType[0] = 3;
+valueType[1] = -1;
+valueType[2] = -1;
+valueType[3] = -1;
+valueType[4] = -1;
+valueType[5] = -1;
+valueType[6] = -1;
+valueType[7] = -1;
+valueType[8] = -1;
+valueType[9] = -1;
+valueType[10] = -1;
+valueType[11] = -1;
+valueType[12] = -1;
+valueType[13] = -1;
 values = true;
-strSelect[0] = "Fullscreen"
-strSelect[1] = "Smoothing";
-strSelect[2] = "Anti-alising";
-strSelect[3] = "V. Sync";
-strSelect[4] = "Particles";
-strSelect[5] = "Fix bow";
-strSelect[6] = "Shaders";
-strSelect[7] = "Sprite style";
-strSelect[8] = "Screenshake";
+strSelect[0] = "Device"
+strSelect[1] = "Reset controls";
+strSelect[2] = "Left";
+strSelect[3] = "Right";
+strSelect[4] = "Up";
+strSelect[5] = "Down";
+strSelect[6] = "Jump";
+strSelect[7] = "Shoot";
+strSelect[8] = "Restart";
+strSelect[9] = "Skip";
+strSelect[10] = "Sprint";
+strSelect[11] = "Pause";
+strSelect[12] = "Previous weapon";
+strSelect[13] = "Next weapon";
 optionsNum = array_length_1d(strSelect);
-//Anti-alising
-strValue[3, 0] = "Off";
-strValue[3, 1] = "x2";
-strValue[3, 2] = "x4";
-strValue[3, 3] = "x8";
-//Screenshake
-strValue[4, 0] = "Off";
-strValue[4, 1] = "Normal";
-strValue[4, 2] = "Strong";
-//Smoothing
-strValue[5, 0] = "Disabled";
-strValue[5, 1] = "New";
-strValue[5, 2] = "Old";
-//Surfaces
-strValue[6, 0] = "Disabled";
-strValue[6, 1] = "All";
-strValue[6, 2] = "Minimal";
-event_user(2);
-aaMode[0] = true;
-switch (display_aa)
+//Devices
+strValue[3, 0] = "Keyboard";
+gp_num = gamepad_get_device_count();
+gp_connections = 0;
+for (var i = 1; i &lt;= gp_num; i++)
 {
-    case 2:
-        aaMode[1] = true;
-        aaMode[2] = false;
-        aaMode[3] = false;
-        break;
-    case 6:
-        aaMode[1] = true;
-        aaMode[2] = true;
-        aaMode[3] = false;
-        break;
-    case 12:
-        aaMode[1] = false;
-        aaMode[2] = true;
-        aaMode[3] = true;
-        break;
-    case 14:
-        aaMode[1] = false;
-        aaMode[2] = true;
-        aaMode[3] = true;
-        break;
+    if true//(gamepad_is_connected(i - 1))
+    {
+        gp_connections++;
+        strValue[3, i] = "Gamepad " + string(i);
+    }
 }
-
+event_user(2);
 </string>
           </argument>
         </arguments>
@@ -127,32 +107,6 @@ if (scrButtonCheckPressed(global.menuLeftButton))
             global.smoothingMode--;
             if (global.smoothingMode &lt; 0)
                 global.smoothingMode = 2;
-            break;
-        case 2:
-            global.AA--;
-            if (global.AA &lt; 0)
-               global.AA = 3;
-            if (!aaMode[global.AA])
-            {
-                event_user(3);
-                exit;
-            }
-            scrSetVsync();
-            break;
-        case 6:
-            global.enableShaders--;
-            if (global.enableShaders &lt; 0)
-               global.enableShaders = 2;
-            break;
-        case 7:
-            global.spriteStyle--;
-            if (global.spriteStyle &lt; 0)
-               global.spriteStyle = 1;
-            break;
-        case 8:
-            global.screenshakePower--;
-            if (global.screenshakePower &lt; 0)
-               global.screenshakePower = 2;
             break;
         default:
             event_user(0);
@@ -192,15 +146,20 @@ else
             <kind>1</kind>
             <string>///Read values
 ds_list_clear(values);
-ds_list_add(values, global.fullscreenMode);
-ds_list_add(values, global.smoothingMode);
-ds_list_add(values, global.AA);
-ds_list_add(values, global.vsyncMode);
-ds_list_add(values, global.particles);
-ds_list_add(values, global.delayBow);
-ds_list_add(values, global.enableShaders);
-ds_list_add(values, global.spriteStyle);
-ds_list_add(values, global.screenshakePower);
+ds_list_add(values, global.controllerIndex);
+ds_list_add(values, "");
+ds_list_add(values, global.leftButton[0]);
+ds_list_add(values, global.rightButton[0]);
+ds_list_add(values, global.upButton[0]);
+ds_list_add(values, global.downButton[0]);
+ds_list_add(values, global.jumpButton[0]);
+ds_list_add(values, global.shootButton[0]);
+ds_list_add(values, global.restartButton[0]);
+ds_list_add(values, global.skipButton[0]);
+ds_list_add(values, global.sprintButton[0]);
+ds_list_add(values, global.pauseButton[0]);
+ds_list_add(values, global.prevWeaponButton[0]);
+ds_list_add(values, global.nextWeaponButton[0]);
 </string>
           </argument>
         </arguments>
@@ -224,14 +183,7 @@ ds_list_add(values, global.screenshakePower);
           <argument>
             <kind>1</kind>
             <string>///going back
-if (global.enableShaders == 0)
-{
-    if (global.smoothingMode = 1)
-        global.smoothingMode = 0;
-    if (global.screenshakePower == 2)
-        global.screenshakePower = 1;
-}
-scrSaveConfig();
+scrSaveControls();
 objOptionsMenu.active = true;
 instance_destroy();
 </string>
@@ -260,49 +212,9 @@ instance_destroy();
 switch (select)
 {
     case 0:
-        global.fullscreenMode = !global.fullscreenMode;
-        window_set_fullscreen(global.fullscreenMode);
-        break;
-    case 1:
-        global.smoothingMode++;
-        if (global.smoothingMode &gt; 2)
-            global.smoothingMode = 0;
-        break;
-    case 2:
-        global.AA++;
-        if (global.AA &gt; 3)
-           global.AA = 0;
-        if (!aaMode[global.AA])
-        {
-            event_user(0);
-            exit;
-        }
-        scrSetVsync();
-        break;
-    case 3:
-        global.vsyncMode = !global.vsyncMode;
-        scrSetVsync();
-        break;
-    case 4:
-        global.particles = !global.particles;
-        break;
-    case 5:
-        global.delayBow = !global.delayBow;
-        break;
-    case 6:
-        global.enableShaders++;
-        if (global.enableShaders &gt; 2)
-           global.enableShaders = 0;
-        break;
-    case 7:
-        global.spriteStyle++;
-        if (global.spriteStyle &gt; 1)
-           global.spriteStyle = 0;
-        break;
-    case 8:
-        global.screenshakePower++;
-        if (global.screenshakePower &gt; 2)
-           global.screenshakePower = 0;
+        global.controllerIndex++;
+        if (global.controllerIndex &gt; 4) //gp_connections)
+            global.controllerIndex = -1;
         break;
 }
 </string>

@@ -90,7 +90,7 @@ switch (display_aa)
         aaMode[3] = true;
         break;
     case 14:
-        aaMode[1] = false;
+        aaMode[1] = true;
         aaMode[2] = true;
         aaMode[3] = true;
         break;

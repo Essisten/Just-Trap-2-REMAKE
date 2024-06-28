@@ -25,6 +25,24 @@ switch (object_index)
                 break;
         }
         break;
+    case objControlsMenu:
+        draw_set_halign(fa_right);
+        switch (i)
+        {
+            case 1:
+                break;
+            default:
+                if (global.controllerIndex == -1)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                break;
+        }
+        break;
     case objOtherMenu:
         draw_set_halign(fa_right);
         switch (i)

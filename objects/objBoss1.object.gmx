@@ -1075,8 +1075,13 @@ if (HP &lt;= 0)
             <string>sprite_index = sprite[state];
 if (HP &lt;= 0)
 {
-    shader_set(shdGrayscale);
-    shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+    if (global.enableShaders == 0)
+        image_blend = c_black;
+    else
+    {
+        shader_set(shdGrayscale);
+        shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+    }
 }
 draw_self();
 shader_reset();

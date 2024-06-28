@@ -31,7 +31,7 @@ alarm[2] = 10;
 group[0] = objAudioMenu;
 group[1] = objGraphicMenu;
 group[2] = objGameplayMenu;
-group[3] = objKeyboardControlsMenu;
+group[3] = objControlsMenu;
 group[4] = objOtherMenu;
 </string>
           </argument>

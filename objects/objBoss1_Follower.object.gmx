@@ -149,10 +149,15 @@ else
    
 if (owner.HP &lt;= 0)
 {
-    shader_set(shdGrayscale);
-    shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+    if (global.enableShaders == 0)
+        image_blend = c_black;
+    else
+    {
+        shader_set(shdGrayscale);
+        shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+    }
 }
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, 1);
+draw_self();
 shader_reset();
 </string>
           </argument>

@@ -718,7 +718,7 @@
         <object>objects\objKeyboardControlsMenu</object>
         <object>objects\objControllerMenu</object>
         <object>objects\objOtherMenu</object>
-        <object>objects\object243</object>
+        <object>objects\objControlsMenu</object>
       </objects>
     </objects>
     <objects name="Visuals">

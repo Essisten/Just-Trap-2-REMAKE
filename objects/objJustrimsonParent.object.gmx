@@ -462,7 +462,15 @@ if (objJustrimsonA.HP &lt;= 0 and objJustrimsonD.HP &lt;= 0 and objJustrimsonB.H
     draw_sprite_ext(sprJustrimsonOutline, glow_index, x, y, image_xscale, image_yscale, image_angle, glow_color, glow_thicc);
 }
 if (HP &lt;= 0)
-   shader_set(shdGrayscale);
+{
+    if (global.enableShaders == 0)
+        image_blend = c_black;
+    else
+    {
+        shader_set(shdGrayscale);
+        shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+    }
+}
 draw_self();
 shader_reset();
 var offset = 72;
