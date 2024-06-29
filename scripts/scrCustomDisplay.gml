@@ -29,16 +29,26 @@ switch (object_index)
         draw_set_halign(fa_right);
         switch (i)
         {
+            case 0:
+                scrDrawTextOutline(xSelector+xSeperation - 32,ySelector+(ySeperation*i), strValue[3, ds_list_find_value(values, i) + 1], clr, c_black);
+                break;
             case 1:
                 break;
             default:
-                if (global.controllerIndex == -1)
+                if (key_listen and select == i)
                 {
-                    
+                    scrDrawTextOutline(xSelector+xSeperation,ySelector+ySeperation*i, "Press any key", clr, c_black);
+                    break;
                 }
-                else
+                var value = ds_list_find_value(values, i);
+                var key = scrGetKeybind(value[0]);
+                if (global.controllerIndex > -1)
+                    key = scrGetControllerBind(value[1]);
+                scrDrawTextOutline(xSelector+xSeperation - 32,ySelector+ySeperation*i, key, clr, c_black);
+                if (ds_list_find_index(key_duplicates, i) != -1)
                 {
-                    
+                    draw_set_colour(c_red);
+                    draw_text(xSelector+xSeperation + 16,ySelector+ySeperation*i, "X");
                 }
                 break;
         }

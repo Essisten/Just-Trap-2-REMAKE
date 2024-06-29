@@ -31,9 +31,9 @@ alarm[0] = 1;
 xSelector = 240;
 ySelector = 64;
 xSeperation = 532;
-ySeperation = 32;
+ySeperation = 36;
 offset = 20;
-valueType[0] = 3;
+valueType[0] = -1;
 valueType[1] = -1;
 valueType[2] = -1;
 valueType[3] = -1;
@@ -50,10 +50,10 @@ valueType[13] = -1;
 values = true;
 strSelect[0] = "Device"
 strSelect[1] = "Reset controls";
-strSelect[2] = "Left";
-strSelect[3] = "Right";
-strSelect[4] = "Up";
-strSelect[5] = "Down";
+strSelect[2] = "Move Left";
+strSelect[3] = "Move Right";
+strSelect[4] = "Upwards";
+strSelect[5] = "Downwards";
 strSelect[6] = "Jump";
 strSelect[7] = "Shoot";
 strSelect[8] = "Restart";
@@ -67,21 +67,23 @@ optionsNum = array_length_1d(strSelect);
 strValue[3, 0] = "Keyboard";
 gp_num = gamepad_get_device_count();
 gp_connections = 0;
+key_listen = false;
 for (var i = 1; i &lt;= gp_num; i++)
 {
-    if true//(gamepad_is_connected(i - 1))
+    if (gamepad_is_connected(i - 1))
     {
         gp_connections++;
         strValue[3, i] = "Gamepad " + string(i);
     }
 }
+key_duplicates = ds_list_create();
 event_user(2);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="13">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -98,15 +100,137 @@ event_user(2);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>if (key_listen)
+{
+    var value = ds_list_find_value(values, select);
+    if (keyboard_check_pressed(vk_anykey))  //check if a key is being pressed and if it is, store that key
+    {
+        var keyChange = keyboard_key;
+        var oldKey = ds_list_find_value(values, select);
+        scrPlaySound(sndBoss1_Reload);
+        if (keyChange == 160 || keyChange == 161)   //check if current key pressed is either shift key
+            keyChange = 16; //set it to work for both shift keys
+        oldKey[0] = keyChange;
+        ds_list_replace(values, select, oldKey);
+        key_listen = false;
+        event_user(4);
+        event_user(2);
+    }
+    else if (scrAnyControllerButton() != -1)    //check if a controller button was pressed, exit prompt
+    {
+        var keyChange = scrAnyControllerButton();
+        var oldKey = ds_list_find_value(values, select);
+        scrPlaySound(sndBoss1_Reload);
+        oldKey[0] = keyChange;
+        ds_list_replace(values, select, oldKey);
+        key_listen = false;
+        event_user(4);
+        event_user(2);
+    }
+    
+}
+else
+    event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Find duplicate key bindings
+ds_list_clear(key_duplicates);
+for (var i = 2; i &lt; ds_list_size(values); i++)
+{
+    var key = ds_list_find_value(values, i);
+    if (global.controllerIndex == -1)
+        var results = ds_list_find_all(values, key[0], 0);
+    else
+        var results = ds_list_find_all(values, key[1], 1);
+    if (ds_list_size(results) &gt; 1)
+        ds_list_add(key_duplicates, i);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Save values
+global.leftButton = ds_list_find_value(values, 2);
+global.rightButton = ds_list_find_value(values, 3);
+global.upButton = ds_list_find_value(values, 4);
+global.downButton = ds_list_find_value(values, 5);
+global.jumpButton = ds_list_find_value(values, 6);
+global.shootButton = ds_list_find_value(values, 7);
+global.restartButton = ds_list_find_value(values, 8);
+global.skipButton = ds_list_find_value(values, 9);
+global.sprintButton = ds_list_find_value(values, 10);
+global.pauseButton = ds_list_find_value(values, 11);
+global.prevWeaponButton = ds_list_find_value(values, 12);
+global.nextWeaponButton = ds_list_find_value(values, 13);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>objControlsMenu</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Option paging
 if (scrButtonCheckPressed(global.menuLeftButton))
 {
     switch (select)
     {
-        case 1:
-            global.smoothingMode--;
-            if (global.smoothingMode &lt; 0)
-                global.smoothingMode = 2;
+        case 0:
+            global.controllerIndex--;
+            if (global.controllerIndex &lt; -1)
+                global.controllerIndex = gp_connections - 1;
             break;
         default:
             event_user(0);
@@ -148,18 +272,19 @@ else
 ds_list_clear(values);
 ds_list_add(values, global.controllerIndex);
 ds_list_add(values, "");
-ds_list_add(values, global.leftButton[0]);
-ds_list_add(values, global.rightButton[0]);
-ds_list_add(values, global.upButton[0]);
-ds_list_add(values, global.downButton[0]);
-ds_list_add(values, global.jumpButton[0]);
-ds_list_add(values, global.shootButton[0]);
-ds_list_add(values, global.restartButton[0]);
-ds_list_add(values, global.skipButton[0]);
-ds_list_add(values, global.sprintButton[0]);
-ds_list_add(values, global.pauseButton[0]);
-ds_list_add(values, global.prevWeaponButton[0]);
-ds_list_add(values, global.nextWeaponButton[0]);
+ds_list_add(values, global.leftButton);
+ds_list_add(values, global.rightButton);
+ds_list_add(values, global.upButton);
+ds_list_add(values, global.downButton);
+ds_list_add(values, global.jumpButton);
+ds_list_add(values, global.shootButton);
+ds_list_add(values, global.restartButton);
+ds_list_add(values, global.skipButton);
+ds_list_add(values, global.sprintButton);
+ds_list_add(values, global.pauseButton);
+ds_list_add(values, global.prevWeaponButton);
+ds_list_add(values, global.nextWeaponButton);
+event_user(15);
 </string>
           </argument>
         </arguments>
@@ -213,8 +338,44 @@ switch (select)
 {
     case 0:
         global.controllerIndex++;
-        if (global.controllerIndex &gt; 4) //gp_connections)
+        if (global.controllerIndex &gt; gp_connections - 1)
             global.controllerIndex = -1;
+        break;
+    case 1:
+        //default controls
+        if (global.controllerIndex == -1)
+        {
+            global.leftButton[0] = vk_left;
+            global.rightButton[0] = vk_right;
+            global.upButton[0] = vk_up;
+            global.downButton[0] = vk_down;
+            global.jumpButton[0] = vk_shift;
+            global.shootButton[0] = ord("Z");
+            global.restartButton[0] = ord("R");
+            global.skipButton[0] = vk_space;
+            global.sprintButton[0] = ord("X");
+            global.pauseButton[0] = ord("P");
+            global.prevWeaponButton[0] = ord("A");
+            global.nextWeaponButton[0] = ord("S");
+        }
+        else
+        {
+            global.leftButton[1] = gp_padl;
+            global.rightButton[1] = gp_padr;
+            global.upButton[1] = gp_padu;
+            global.downButton[1] = gp_padd;
+            global.jumpButton[1] = gp_face1;
+            global.shootButton[1] = gp_face3;
+            global.restartButton[1] = gp_face4;
+            global.skipButton[1] = gp_face2;
+            global.sprintButton[1] = gp_select;
+            global.pauseButton[1] = gp_start;
+            global.nextWeaponButton[1] = gp_shoulderr;
+            global.prevWeaponButton[1] = gp_shoulderl;
+        }
+        break;
+    default:
+        key_listen = true;
         break;
 }
 </string>

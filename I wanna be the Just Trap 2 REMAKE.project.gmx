@@ -573,6 +573,7 @@
       <script>scripts\quad.gml</script>
       <script>scripts\scrGiveMoney.gml</script>
       <script>scripts\scrShowMoney.gml</script>
+      <script>scripts\ds_list_find_all.gml</script>
     </scripts>
     <scripts name="Boss 2">
       <script>scripts\scrJustularitySkin.gml</script>
@@ -715,10 +716,8 @@
         <object>objects\objAudioMenu</object>
         <object>objects\objGraphicMenu</object>
         <object>objects\objGameplayMenu</object>
-        <object>objects\objKeyboardControlsMenu</object>
-        <object>objects\objControllerMenu</object>
-        <object>objects\objOtherMenu</object>
         <object>objects\objControlsMenu</object>
+        <object>objects\objOtherMenu</object>
       </objects>
     </objects>
     <objects name="Visuals">
