@@ -28,10 +28,8 @@
             <string>owner = objJR;
 image_speed = 0;
 color = c_white;
-snapDiv = 5;
 d = 90;
-if (!global.delayBow)
-    snapDiv = 1;
+snapDiv = 1;
 alarm[0] = 1;
 </string>
           </argument>

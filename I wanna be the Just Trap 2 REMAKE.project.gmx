@@ -306,6 +306,7 @@
       </sprites>
     </sprites>
     <sprites name="Boss2">
+      <sprite>sprites\sprJustularity_Mini_Outline</sprite>
       <sprite>sprites\sprJustularityDeath</sprite>
       <sprite>sprites\sprJustularityHP</sprite>
       <sprite>sprites\sprJustularityHP2</sprite>
@@ -373,6 +374,7 @@
       <sprite>sprites\sprBoss4_Ground</sprite>
       <sprite>sprites\sprJustination</sprite>
       <sprite>sprites\sprJustination_Mini</sprite>
+      <sprite>sprites\sprJustination_Mini_Outline</sprite>
       <sprite>sprites\sprJustinationDark</sprite>
       <sprite>sprites\sprJustinationFire</sprite>
       <sprite>sprites\sprJustinationIce</sprite>
@@ -487,7 +489,6 @@
         <sprite>sprites\sprK2_DeathBoom</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprJustrimsonE</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bAllTiles</background>
@@ -574,6 +575,7 @@
       <script>scripts\scrGiveMoney.gml</script>
       <script>scripts\scrShowMoney.gml</script>
       <script>scripts\ds_list_find_all.gml</script>
+      <script>scripts\draw_text_outlined.gml</script>
     </scripts>
     <scripts name="Boss 2">
       <script>scripts\scrJustularitySkin.gml</script>
