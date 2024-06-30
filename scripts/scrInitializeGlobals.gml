@@ -36,7 +36,7 @@ for (var i = 0; i < 6; i++) //each weapon cycle
 global.obtainedWeapons[0, 1] = true;
 global.arsenal = ds_list_create();
 ds_list_add(global.arsenal, 1);
-for (i = 0; i < 7; i++)
+for (i = 0; i < 15; i++)
 {
     global.bossClear[i] = false;
     global.saveBossClear[i] = false;

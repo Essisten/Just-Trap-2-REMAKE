@@ -44,6 +44,7 @@ b = false;
 c = 0;
 alarm[1] = 90;
 global.frozen = false;
+hide_progress = false;
 </string>
           </argument>
         </arguments>
@@ -173,6 +174,15 @@ switch (room)
             percent = 99.99;
         if (old &lt; percent)
             global.pb[2] = percent;
+        break;
+    case rFinalBoss:
+        stage = 11;
+        old = global.pb[10];
+        with (objBigKid_Head)
+            other.percent = ((maxHP * objBigKid_BG.phase + (maxHP - HP)) / (maxHP * 6)) * 100;
+        if (old &lt; percent)
+            global.pb[10] = percent;
+        hide_progress = true;
         break;
 }
 if (percent &gt; old)
@@ -318,7 +328,7 @@ if (image_index &lt; 3)
     draw_set_alpha(1);
 }
 draw_self();
-if (old &lt; percent)
+if (old &lt; percent and !hide_progress)
 {
     draw_set_font(fDefault24);
     draw_set_halign(fa_center);
