@@ -31,8 +31,14 @@ xSelector = 32;
 ySelector = 64;
 xSeperation = 160;
 ySeperation = 32;
+destX = xSelector;
+destY = ySelector;
+slideSpeed = 8;
 offset = 16;
+dest_alpha = 1;
+image_alpha = 0;
 alarm[0] = 1;
+alarm[11] = 1;
 strSelect[0] = ""
 optionsNum = 1;
 values = false;
@@ -48,6 +54,40 @@ strValue[2, 0] = "";
 strValue[2, 1] = "";
 values = ds_list_create();
 valueType[0] = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sliding out
+alarm[11] = 1;
+var xDiff = destX - xSelector;
+image_alpha = clamp(image_alpha + sign(dest_alpha - image_alpha) * 0.05, 0, 1);
+xSelector += slideSpeed * sign(xDiff);
+if (abs(xDiff) &lt; slideSpeed)
+{
+    xSelector = destX;
+    alarm[11] = -1;
+    if (!active)
+        instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -227,6 +267,8 @@ else if (scrButtonCheckPressed(global.menuLeftButton) or
           <argument>
             <kind>1</kind>
             <string>///Going back
+alarm[11] = 1;
+active = false;
 </string>
           </argument>
         </arguments>
@@ -272,12 +314,13 @@ else if (scrButtonCheckPressed(global.menuLeftButton) or
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_alpha(0.8);
+            <string>draw_set_alpha(0.8 * image_alpha);
 draw_set_colour(c_black);
 draw_rectangle(xSelector - offset, ySelector - offset, xSelector + xSeperation + offset, ySelector + ySeperation * optionsNum + offset, false);
 draw_set_font(fDefault24);
 draw_set_halign(fa_left);
-draw_set_alpha(1);
+draw_set_valign(fa_top);
+draw_set_alpha(image_alpha);
 for(i = 0; i &lt; optionsNum; i++)
 {
     clr = c_white;

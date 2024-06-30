@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-120</depth>
   <persistent>0</persistent>
   <parentName>objMenuParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,7 +28,8 @@
             <string>event_inherited();
 select = 0;
 alarm[0] = 1;
-xSelector = 240;
+destX = 240;
+xSelector = 500;
 ySelector = 64;
 xSeperation = 532;
 ySeperation = 48;
@@ -156,7 +157,10 @@ ds_list_add(values, global.bossDeathBrightness);
             <string>///going back
 scrSaveConfig();
 objOptionsMenu.active = true;
-instance_destroy();
+destX = 500;
+dest_alpha = 0;
+active = false;
+alarm[11] = 1;
 </string>
           </argument>
         </arguments>

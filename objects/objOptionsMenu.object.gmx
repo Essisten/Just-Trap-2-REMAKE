@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-120</depth>
   <persistent>0</persistent>
   <parentName>objMenuParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,12 +27,14 @@
             <kind>1</kind>
             <string>event_inherited();
 active = true;
-alarm[2] = 10;
+if (room == rOptions)
+    alarm[2] = 10;
 group[0] = objAudioMenu;
 group[1] = objGraphicMenu;
 group[2] = objGameplayMenu;
 group[3] = objControlsMenu;
 group[4] = objOtherMenu;
+xSelector = -128;
 </string>
           </argument>
         </arguments>
@@ -81,10 +83,18 @@ alarm[0] = 10;
           <argument>
             <kind>1</kind>
             <string>///go to menu
-if (instance_exists(objLightEffect))
-    alarm[1] = 1;
+if (room == rOptions)
+{
+    if (instance_exists(objLightEffect))
+        alarm[1] = 1;
+    else
+        room_goto(rTitle);
+}
 else
-    room_goto(rTitle);
+{
+    objPauseMenu.child = noone;
+    active = false;
+}
 </string>
           </argument>
         </arguments>
@@ -139,8 +149,12 @@ event_inherited();
             <string>///Back
 event_inherited();
 scrSaveConfig();
-scrCreateFade(c_black, 0.05, true);
+if (room == rOptions)
+    scrCreateFade(c_black, 0.05, true);
+destX = -128;
+dest_alpha = 0;
 alarm[1] = 19;
+alarm[11] = 1;
 </string>
           </argument>
         </arguments>

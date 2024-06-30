@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-120</depth>
   <persistent>0</persistent>
   <parentName>objMenuParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,7 +28,8 @@
             <string>event_inherited();
 select = 0;
 alarm[0] = 1;
-xSelector = 240;
+destX = 240;
+xSelector = 500;
 ySelector = 64;
 xSeperation = 532;
 ySeperation = 48;
@@ -45,13 +46,13 @@ strSelect[3] = "Music slowdown";
 optionsNum = array_length_1d(strSelect);
 event_user(2);
 
-alarm[11] = 2;
+alarm[10] = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="11">
+    <event eventtype="2" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -87,7 +88,7 @@ switch (select)
         global.soundVol = clamp(global.soundVol, 0, 100);
         break;
 }
-alarm[11] = 2;
+alarm[10] = 2;
 </string>
           </argument>
         </arguments>
@@ -170,9 +171,12 @@ ds_list_add(values, global.musicSlowdown);
           <argument>
             <kind>1</kind>
             <string>///going back
+event_inherited();
 scrSaveConfig();
 objOptionsMenu.active = true;
-instance_destroy();
+destX = 500;
+dest_alpha = 0;
+active = false;
 </string>
           </argument>
         </arguments>
