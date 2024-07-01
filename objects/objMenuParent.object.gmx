@@ -33,7 +33,7 @@ xSeperation = 160;
 ySeperation = 32;
 destX = xSelector;
 destY = ySelector;
-slideSpeed = 8;
+slideSpeed = 12;
 offset = 16;
 dest_alpha = 1;
 image_alpha = 0;
@@ -79,7 +79,7 @@ valueType[0] = -1;
             <string>///Sliding out
 alarm[11] = 1;
 var xDiff = destX - xSelector;
-image_alpha = clamp(image_alpha + sign(dest_alpha - image_alpha) * 0.05, 0, 1);
+image_alpha = clamp(image_alpha + sign(dest_alpha - image_alpha) * 0.1, 0, 1);
 xSelector += slideSpeed * sign(xDiff);
 if (abs(xDiff) &lt; slideSpeed)
 {
@@ -145,21 +145,21 @@ if (array_length_1d(valueType) == 1)
     exit;
 if (scrButtonCheckPressed(global.menuUpButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     select -= 1;
     if(select &lt; 0)
         select = optionsNum-1;
 }
 else if (scrButtonCheckPressed(global.menuDownButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     select += 1;
     if(select &gt; optionsNum-1)
         select = 0;
 }
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
-    scrPlaySound(sndBoss1_Reload);
+    scrPlaySound(sndMenuMove, 1.5);
     event_user(1);
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton) or
@@ -167,10 +167,12 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or
 {
     event_user(0);
     event_user(2);
+    scrPlaySound(sndMenuSelect);
 }
 else if (scrButtonCheckPressed(global.menuLeftButton) or
         scrButtonCheckPressed(global.menuRightButton))
 {
+    scrPlaySound(sndMenuMove);
     event_user(3);
     event_user(2);
 }

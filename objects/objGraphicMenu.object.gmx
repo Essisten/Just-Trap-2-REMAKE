@@ -39,7 +39,7 @@ valueType[1] = 5;
 valueType[2] = 3;
 valueType[3] = 0;
 valueType[4] = 0;
-valueType[5] = 0;
+valueType[5] = -1;
 valueType[6] = 6;
 valueType[7] = 1;
 valueType[8] = 4;
@@ -49,7 +49,7 @@ strSelect[1] = "Smoothing";
 strSelect[2] = "Anti-alising";
 strSelect[3] = "V. Sync";
 strSelect[4] = "Particles";
-strSelect[5] = "Fix bow";
+strSelect[5] = "Outline power";
 strSelect[6] = "Shaders";
 strSelect[7] = "Sprite style";
 strSelect[8] = "Screenshake";
@@ -140,6 +140,11 @@ if (scrButtonCheckPressed(global.menuLeftButton))
             }
             scrSetVsync();
             break;
+        case 5:
+            global.outlinePower--;
+            if (global.outlinePower &lt; 0)
+                global.outlinePower = 12;
+            break;
         case 6:
             global.enableShaders--;
             if (global.enableShaders &lt; 0)
@@ -198,7 +203,7 @@ ds_list_add(values, global.smoothingMode);
 ds_list_add(values, global.AA);
 ds_list_add(values, global.vsyncMode);
 ds_list_add(values, global.particles);
-ds_list_add(values, global.delayBow);
+ds_list_add(values, global.outlinePower);
 ds_list_add(values, global.enableShaders);
 ds_list_add(values, global.spriteStyle);
 ds_list_add(values, global.screenshakePower);
@@ -291,7 +296,9 @@ switch (select)
         global.particles = !global.particles;
         break;
     case 5:
-        global.delayBow = !global.delayBow;
+        global.outlinePower++;
+        if (global.outlinePower &gt; 12)
+            global.outlinePower = 0;
         break;
     case 6:
         global.enableShaders++;

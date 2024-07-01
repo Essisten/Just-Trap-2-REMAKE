@@ -137,3 +137,5 @@ global.currentWeapon = global.saveCurrentWeapon;
 scrSwapControls();
 room_goto(asset_get_index(global.saveRoom));
 instance_create(global.savePlayerX,global.savePlayerY,objPlayer);
+with (objPlayer)
+    scrPlayerUnsoftlock();

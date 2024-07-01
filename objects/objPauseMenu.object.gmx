@@ -149,27 +149,28 @@ if (w &lt; maxW)
     exit;
 if (scrButtonCheckPressed(global.menuUpButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     sel--;
     if (sel &lt; 0)
         sel = maxSel;
 }
 else if (scrButtonCheckPressed(global.menuDownButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     sel++;
     if (sel &gt; maxSel)
         sel = 0;
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
 {
-    scrPlaySound(sndBoss1_Reload);
+    scrPlaySound(sndMenuSelect);
     if (sel &gt; 1)
         scrCreateFade(c_black, 1 / (maxW / spd), true);
     alarm[1] = 1;
 }
 else if (scrButtonCheckPressed(global.menuBackButton) or scrButtonCheckPressed(global.pauseButton))
 {
+    scrPlaySound(sndMenuMove, 1.5);
     sel = 0;
     alarm[1] = 1;
 }

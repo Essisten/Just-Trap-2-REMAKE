@@ -320,7 +320,7 @@ if (sx[0] &lt; sMax or sx[1] &gt; 800 - sMax or sy[0] &lt; textY or sy[1] &gt; t
     exit;
 if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
 {
-    scrPlaySound(sndBoss1_Reload);
+    scrPlaySound(sndMenuSelect);
     switch (state)
     {
         case 0:
@@ -393,7 +393,7 @@ else if (scrButtonCheckPressed(global.menuBackButton))
     }
     if (state &gt; 0)
     {
-        scrPlaySound(sndBoss1_Reload);
+        scrPlaySound(sndMenuMove, 1.5);
         state--;
     }
 }
@@ -401,7 +401,7 @@ if (state &gt; 1)
 {
     if (scrButtonCheckPressed(global.menuLeftButton))
     {
-        scrPlaySound(sndBoss1_Reload, 1.5);
+        scrPlaySound(sndMenuMove);
         if (state == 2)
         {
             difSel--;
@@ -421,7 +421,7 @@ if (state &gt; 1)
     }
     else if (scrButtonCheckPressed(global.menuRightButton))
     {
-        scrPlaySound(sndBoss1_Reload, 1.5);
+        scrPlaySound(sndMenuMove);
         if (state == 2)
         {
             difSel++;
@@ -441,7 +441,7 @@ else
 {
     if (scrButtonCheckPressed(global.menuUpButton))
     {
-        scrPlaySound(sndBoss1_Reload, 1.5);
+        scrPlaySound(sndMenuMove);
         sel--;
         if (state == 0)
         {
@@ -456,7 +456,7 @@ else
     }
     else if (scrButtonCheckPressed(global.menuDownButton))
     {
-        scrPlaySound(sndBoss1_Reload, 1.5);
+        scrPlaySound(sndMenuMove);
         sel++;
         if (state == 0)
         {

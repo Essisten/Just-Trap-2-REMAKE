@@ -1,4 +1,5 @@
 ///scrJustularityAttack(num)
+dead = ((RedHP <= 0 and isRed) or (BlueHP <= 0 and !isRed) or phase == 2);
 switch (argument0)
 {
     case 0: //Red
@@ -7,7 +8,7 @@ switch (argument0)
             with (instance_create(x, y, objRock))
             {
                 speed = other.spd;
-                if (other.image_blend == c_black)
+                if (other.dead)
                     sprite_index = sprJustularityRock2;
             }
         }
@@ -44,7 +45,7 @@ switch (argument0)
             var c = instance_create(tmpX, tmpY, objMeteor);
             with (c)
             {
-                if (other.image_blend == c_black)
+                if (other.dead)
                     sprite_index = sprJustularityCoal2;
             }
             c.direction = tmpD;
@@ -54,7 +55,7 @@ switch (argument0)
         break;
     case 2:
         var b = instance_create(x, y, objJustularityBomb);
-        if (image_blend == c_black)
+        if (dead)
             b.sprite_index = sprJustularitySausage2;
         alarm[7] = 100 - global.difficulty * 30;
         break;
@@ -66,7 +67,7 @@ switch (argument0)
             {
                 speed = (global.difficulty + 2) * 3;
                 spd = speed;
-                if (other.image_blend == c_black)
+                if (other.dead)
                     sprite_index = sprJustularityPropeller2;
                 image_angle = other.image_angle;
             }
@@ -96,7 +97,7 @@ switch (argument0)
              }
          }
          objBoss2Door.alarm[5] = 100;          //gently ask the door to help out
-        objBoss2Door.black_water = (image_blend == c_black);
+        objBoss2Door.black_water = dead;
         alarm[7] = 200 - global.difficulty * 50;
         break;
     case 5:
@@ -108,7 +109,7 @@ switch (argument0)
                 speed = 4 + global.difficulty * 2;
                 image_xscale = 2;
                 image_yscale = image_xscale;
-                if (other.image_blend == c_black)
+                if (other.dead)
                     sprite_index = sprJustularityBall2;
             }
         }

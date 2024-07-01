@@ -21,5 +21,6 @@ ini_write_real("Settings","Music_slowdown", global.musicSlowdown);
 ini_write_real("Settings","Screenshake", global.screenshakePower);
 ini_write_real("Settings","AA", global.AA);
 ini_write_real("Settings","Boss_death_brightness", global.bossDeathBrightness);
+ini_write_real("Settings","Outline_power", global.outlinePower);
 
 ini_close();

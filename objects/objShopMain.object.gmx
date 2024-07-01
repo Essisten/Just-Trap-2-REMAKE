@@ -171,21 +171,21 @@ if (instance_exists(submenu))
    exit;
 if (scrButtonCheckPressed(global.menuUpButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     select--;
     if(select &lt; 0)
         select = optionsNum-1;
 }
 else if (scrButtonCheckPressed(global.menuDownButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     select++;
     if(select &gt; optionsNum-1)
         select = 0;
 }
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
-    scrPlaySound(sndBoss1_Reload);
+    scrPlaySound(sndMenuMove, 1.5);
     level--;
     if (level &lt; 1)
     {
@@ -212,7 +212,7 @@ else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed
             scrPlaySound(sndGlass, 1);
             exit;
      }
-    scrPlaySound(sndBoss1_Reload);
+    scrPlaySound(sndMenuSelect);
 }
 </string>
           </argument>

@@ -55,13 +55,13 @@ alarm[0] = 1;
           <argument>
             <kind>1</kind>
             <string>///Cool way of showing a number
+fake_reward += ceil(reward / 10);
+reward_length = string_length(string(fake_reward));
 if (fake_reward &gt;= reward)
 {
     fake_reward = reward;
    exit;
 }
-fake_reward += ceil(reward / 10);
-reward_length = string_length(string(fake_reward));
 alarm[2] = 5;
 </string>
           </argument>

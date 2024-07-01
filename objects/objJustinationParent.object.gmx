@@ -360,7 +360,10 @@ alarm[0] = 100 - global.difficulty * 30;
     }
 }
 else
+{
     image_blend = c_black;
+    image_alpha = 1;
+}
 draw_self();
 shader_reset();
 </string>

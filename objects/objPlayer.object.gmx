@@ -35,6 +35,7 @@ maxSpeed = 3;   //max horizontal speed
 maxVspeed = 9;  //max vertical speed
 HP = 1;
 maxHP = 1;
+softlock_counter = 0;
 image_speed = 0.2; //initial speed of animation
 onPlatform = false; //sets if player is currently standing on a platform
 paralyzed = false;
@@ -286,7 +287,15 @@ else
     jump = 8.5 * global.grav;
     jump2 = 7 * global.grav;
 }
-
+if (place_meeting(x, y, objBlock))
+{
+    softlock_counter++;
+    if (softlock_counter &gt; 5)
+    {
+        scrPlayerUnsoftlock();
+        softlock_counter = 0;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -1075,7 +1084,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!place_free(x+hspeed,y))
+            <string>
+if (!place_free(x+hspeed,y))
 {
     if (global.grav == 1)   //normal
     {
@@ -1104,7 +1114,6 @@ if (!place_free(x,y+vspeed))
     vspeed = 0;
     djump = 1;
 }
-
 if (!place_free(x+hspeed,y+vspeed))
    hspeed = 0;
 </string>
@@ -1191,7 +1200,10 @@ if (room == rBoss2)
             <kind>1</kind>
             <string>///draw the player
 if (paralyzed and global.enableShaders != 0)
+{
    shader_set(shdGrayscale);
+    shader_set_uniform_f(global.shdGrayscaleBrightness, 1);
+}
 var drawX = x;
 var drawY = y;
 if (global.grav == -1)      //need to draw the player a pixel off in the y-axis when flipped for some reason

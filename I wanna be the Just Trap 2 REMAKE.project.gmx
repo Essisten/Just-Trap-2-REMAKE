@@ -515,6 +515,16 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Draw">
+      <script>scripts\scrDrawTextOutline.gml</script>
+      <script>scripts\scrDrawTextOutline_Old.gml</script>
+      <script>scripts\scrCheckBossClear.gml</script>
+      <script>scripts\scrCreateFade.gml</script>
+      <script>scripts\scrShakeEffect.gml</script>
+      <script>scripts\scrShowMoney.gml</script>
+      <script>scripts\scrCustomDisplay.gml</script>
+      <script>scripts\scrDrawButtonInfo.gml</script>
+    </scripts>
     <scripts name="player">
       <script>scripts\scrPlayerJump.gml</script>
       <script>scripts\scrPlayerVJump.gml</script>
@@ -522,9 +532,9 @@
       <script>scripts\scrSetPlayerMask.gml</script>
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
-      <script>scripts\scrSwapControls.gml</script>
       <script>scripts\scrFlipGravH.gml</script>
       <script>scripts\scrSetGrav.gml</script>
+      <script>scripts\scrSwapControls.gml</script>
       <script>scripts\scrDamagePlayer.gml</script>
     </scripts>
     <scripts name="world">
@@ -546,8 +556,8 @@
         <script>scripts\scrSafeLoad.gml</script>
         <script>scripts\scrLoadControls.gml</script>
         <script>scripts\scrShaderUniforms.gml</script>
+        <script>scripts\scrPlayerUnsoftlock.gml</script>
       </scripts>
-      <script>scripts\scrDrawButtonInfo.gml</script>
       <script>scripts\scrGetControllerBind.gml</script>
       <script>scripts\scrGetKeybind.gml</script>
       <script>scripts\scrGetMusic.gml</script>
@@ -559,31 +569,24 @@
       <script>scripts\scrStopMusic.gml</script>
       <script>scripts\scrToggleMusic.gml</script>
       <script>scripts\scrPlaySound.gml</script>
-      <script>scripts\scrCustomDisplay.gml</script>
     </scripts>
     <scripts name="functions">
-      <script>scripts\scrDrawTextOutline.gml</script>
       <script>scripts\scrMakeShapes.gml</script>
       <script>scripts\scrMakeCircle.gml</script>
-      <script>scripts\scrCheckBossClear.gml</script>
-      <script>scripts\scrRefreshBulletSkin.gml</script>
-      <script>scripts\scrCreateFade.gml</script>
       <script>scripts\scrStartSlowdown.gml</script>
-      <script>scripts\scrShakeEffect.gml</script>
       <script>scripts\scrCreateShopItem.gml</script>
       <script>scripts\quad.gml</script>
       <script>scripts\scrGiveMoney.gml</script>
-      <script>scripts\scrShowMoney.gml</script>
       <script>scripts\ds_list_find_all.gml</script>
-      <script>scripts\draw_text_outlined.gml</script>
-    </scripts>
-    <scripts name="Boss 2">
-      <script>scripts\scrJustularitySkin.gml</script>
-      <script>scripts\scrJustularityAttack.gml</script>
     </scripts>
     <scripts name="Boss 1">
       <script>scripts\scrHideBoss1.gml</script>
       <script>scripts\scrAddBodyPart.gml</script>
+      <script>scripts\scrRefreshBulletSkin.gml</script>
+    </scripts>
+    <scripts name="Boss 2">
+      <script>scripts\scrJustularitySkin.gml</script>
+      <script>scripts\scrJustularityAttack.gml</script>
     </scripts>
     <scripts name="Final boss">
       <script>scripts\scrLovetrap_Attack.gml</script>

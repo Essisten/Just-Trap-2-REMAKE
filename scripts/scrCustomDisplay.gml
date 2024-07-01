@@ -1,8 +1,8 @@
 ///scrCustomDisplay()
+draw_set_halign(fa_right);
 switch (object_index)
 {
     case objAudioMenu:
-        draw_set_halign(fa_right);
         switch (i)
         {
             case 0:
@@ -25,8 +25,15 @@ switch (object_index)
                 break;
         }
         break;
+    case objGraphicMenu:
+        switch (i)
+        {
+            case 5:
+                scrDrawTextOutline(xSelector+xSeperation,ySelector+ySeperation*i,string(global.outlinePower), clr, c_black);
+                break;
+        }
+        break;
     case objControlsMenu:
-        draw_set_halign(fa_right);
         switch (i)
         {
             case 0:
@@ -54,17 +61,17 @@ switch (object_index)
         }
         break;
     case objOtherMenu:
-        draw_set_halign(fa_right);
         switch (i)
         {
             case 0:
                 scrDrawTextOutline(xSelector+xSeperation,ySelector+ySeperation*i,string(round(global.bossDeathBrightness * 100)) + "%", clr, c_black);
-                draw_set_color(clr);
-                draw_rectangle(xSelector+xSeperation - 160, ySelector+ySeperation*i,
-                            xSelector+xSeperation - 160 + (64 * global.bossDeathBrightness), ySelector+ySeperation*i + 32, false);
-                draw_set_color(c_white);
-                draw_rectangle(xSelector+xSeperation - 160, ySelector+ySeperation*i,
-                            xSelector+xSeperation - 96, ySelector+ySeperation*i + 32, true);
+                if (global.enableShaders > 0)
+                {
+                    shader_set(shdGrayscale);
+                    shader_set_uniform_f(global.shdGrayscaleBrightness, global.bossDeathBrightness);
+                }
+                draw_sprite_ext(sprDiffIcon, 5, xSelector+xSeperation - 128,ySelector+ySeperation*i - 16, 4, 4, 0, c_white, image_alpha);
+                shader_reset();
                 break;
         }
 }

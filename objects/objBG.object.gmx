@@ -155,7 +155,8 @@ alarm[1] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var r = random_range(0.3, 0.7);
+            <string>///Background flashing
+var r = random_range(0.5, 1);
 for (var i = 0; i &lt; tiles_count; i++)
 {
     tile_set_alpha(tiles[i], r);
@@ -407,7 +408,7 @@ scrHideBoss1(objJustist, true);
         clr2 = c_black;
     }
     scrDrawTextOutline(0, 0, "Justist energy: ", clr1, clr2);
-    scrDrawTextOutline(190, 0, string(objJustist.energy), clr1, clr2);
+    scrDrawTextOutline(190, 2, string(objJustist.energy), clr1, clr2);
     if (objJR.HP &lt;= 0)
     {
         clr1 = c_gray;
@@ -419,11 +420,11 @@ scrHideBoss1(objJustist, true);
         clr2 = c_teal;   
     }
     scrDrawTextOutline(0, 30, "JR energy: ", clr1, clr2);
-    scrDrawTextOutline(190, 30, string(objJR.energy), clr1, clr2);
+    scrDrawTextOutline(190, 32, string(objJR.energy), clr1, clr2);
     if (final)
     {
         draw_set_font(fBoss1_46);
-        scrDrawTextOutline(timerX, timerY, string(timer), c_white, c_white);
+        scrDrawTextOutline(timerX, timerY, string(timer), c_white, c_gray);
     }
 }
 </string>

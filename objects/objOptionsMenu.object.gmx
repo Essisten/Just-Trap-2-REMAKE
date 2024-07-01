@@ -93,7 +93,6 @@ if (room == rOptions)
 else
 {
     objPauseMenu.child = noone;
-    active = false;
 }
 </string>
           </argument>
@@ -150,11 +149,12 @@ event_inherited();
 event_inherited();
 scrSaveConfig();
 if (room == rOptions)
-    scrCreateFade(c_black, 0.05, true);
+    scrCreateFade(c_black, 0.1, true);
 destX = -128;
 dest_alpha = 0;
-alarm[1] = 19;
+alarm[1] = 5;
 alarm[11] = 1;
+active = false;
 </string>
           </argument>
         </arguments>

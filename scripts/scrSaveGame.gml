@@ -7,11 +7,9 @@ var savePosition = argument0;
 if (savePosition)
 {    
     global.saveRoom = room_get_name(room);
-    global.savePlayerX = objPlayer.x;    
-    global.savePlayerY = objPlayer.y;
     global.saveGrav = global.grav;
     global.saveCurrentWeapon = global.currentWeapon;
-    
+    /*
     //check if player is saving inside of a wall or in the ceiling when the player's position is floored to prevent save locking
     with (objPlayer)
     {
@@ -30,8 +28,10 @@ if (savePosition)
             global.savePlayerX += 1;
             global.savePlayerY += 1;
         }
-    }
+    }*/
     //floor player position to match standard engine behavior
+    global.savePlayerX = objPlayer.x;    
+    global.savePlayerY = objPlayer.y;
     global.savePlayerX = floor(global.savePlayerX);
     global.savePlayerY = floor(global.savePlayerY);
     global.saveGameClear = global.gameClear;

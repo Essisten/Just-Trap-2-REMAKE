@@ -194,26 +194,27 @@ w_id = select * (version[select]+1);
 w_index = ds_list_find_index(global.arsenal, w_id);
 if (scrButtonCheckPressed(global.menuUpButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     select -= 1;
     if(select &lt; 0)
         select = optionsNum-1;
 }
 else if (scrButtonCheckPressed(global.menuDownButton))
 {
-    scrPlaySound(sndBoss1_Reload, 1.5);
+    scrPlaySound(sndMenuMove);
     select += 1;
     if(select &gt; optionsNum-1)
         select = 0;
 }
 else if (scrButtonCheckPressed(global.menuBackButton))
 {
-    scrPlaySound(sndBoss1_Reload);
+    scrPlaySound(sndMenuMove, 1.5);
     alarm[0] = -1;
     alarm[1] = 1;
 }
 else if (scrButtonCheckPressed(global.menuAcceptButton) or scrButtonCheckPressed(global.menuOptionsButton))
 {
+    scrPlaySound(sndMenuSelect);
     if (global.obtainedWeapons[w_id])
     {
         if (w_index == -1)
@@ -284,8 +285,8 @@ if (global.unlockedWeapons[w_id])
 {
     draw_set_font(fDefault12);
     scrDrawTextOutline(weaponNameX, weaponNameY + 72 - slideOffset, "Damage: " + weapons[version[select], select].dmg, c_red, c_maroon);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 88 - slideOffset, "Range:   " + weapons[version[select], select].range, c_yellow, c_orange);
-    scrDrawTextOutline(weaponNameX, weaponNameY + 104 - slideOffset, "Speed:   " + weapons[version[select], select].spd, c_aqua, c_blue);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 92 - slideOffset, "Range:   " + weapons[version[select], select].range, c_yellow, c_orange);
+    scrDrawTextOutline(weaponNameX, weaponNameY + 112 - slideOffset, "Speed:   " + weapons[version[select], select].spd, c_aqua, c_blue);
 }
 draw_set_colour(c_white);
 draw_set_font(fDetermination14);
