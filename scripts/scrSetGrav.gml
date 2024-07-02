@@ -5,7 +5,7 @@ var dist = 14;
 var down = 10;
 var up = 14;
 djump = 1;
-if (global.gravityControls)
+if (!global.gravityControls)
 {
     scrLoadControls();
     var tmpUp = global.upButton;

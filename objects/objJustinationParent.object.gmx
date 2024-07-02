@@ -346,9 +346,7 @@ alarm[0] = 100 - global.difficulty * 30;
             <string>if (active)
 {
     image_blend = c_white;
-    if (HP &gt; 0)
-        draw_healthbar(x - 32, oldY - 90, x + 32, oldY - 86, HP, c_black, colorHP, colorHP, 0, true, true);
-    else
+    if (HP &lt;= 0)
     {
         if (global.enableShaders == 0)
             image_blend = c_black;
@@ -366,6 +364,9 @@ else
 }
 draw_self();
 shader_reset();
+if (active and HP &gt; 0)
+    draw_healthbar(x - 32, oldY - 90, x + 32, oldY - 86, HP,
+                    c_black, colorHP, colorHP, 0, true, true);
 </string>
           </argument>
         </arguments>

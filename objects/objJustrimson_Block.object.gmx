@@ -3,7 +3,7 @@
   <spriteName>sprBoss3_Platform</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-12</depth>
+  <depth>-13</depth>
   <persistent>0</persistent>
   <parentName>objMovingPlatformNoBounce</parentName>
   <maskName>&lt;undefined&gt;</maskName>

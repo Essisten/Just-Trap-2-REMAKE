@@ -57,6 +57,8 @@ darker = false;
             <kind>1</kind>
             <string>draw_set_alpha(alpha);
 draw_set_colour(color);
+xx = view_xview[0];
+yy = view_yview[0];
 draw_rectangle(xx, yy, xx + w, yy + h, false);
 draw_set_colour(c_white);
 draw_set_alpha(1);

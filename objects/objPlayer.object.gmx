@@ -1112,7 +1112,6 @@ if (!place_free(x,y+vspeed))
         if(vspeed &gt; 0) move_contact_solid(270,abs(vspeed))
     }
     vspeed = 0;
-    djump = 1;
 }
 if (!place_free(x+hspeed,y+vspeed))
    hspeed = 0;

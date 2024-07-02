@@ -47,7 +47,7 @@ for (i = 32; i &lt;= 736; i+=32)
         sprite_index = sprBoss3_Block;
         visible = true;
         image_speed = 0;
-        depth = 9;
+        depth = -20;
     }
 }
 </string>

@@ -90,9 +90,7 @@ switch (sel)
         child = instance_create(0, 0, objOptionsMenu);
         break;
     case 2:
-        global.gameStarted = false;
-        global.gamePaused = false;
-        room_goto(rTitle);
+        scrRestartGame();
         break;
     case 3:
         game_end();

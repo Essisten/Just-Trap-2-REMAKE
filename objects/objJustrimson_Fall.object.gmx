@@ -55,7 +55,7 @@ global.frozen = true;
             <kind>1</kind>
             <string>if (!instance_exists(objPlayer))
    exit;
-if (objPlayer.y &gt; 1376 and instance_exists(objClear))
+if (objPlayer.y &gt; 1376 and (instance_exists(objClear) or objWorld.alarm[2] &gt; -1))
    objPlayer.y -= 768;
 </string>
           </argument>

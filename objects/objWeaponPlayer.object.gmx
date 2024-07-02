@@ -86,7 +86,7 @@ image_angle = objPlayer.image_angle;
 image_alpha = objPlayer.image_alpha;
 image_xscale = objPlayer.xScale;
 image_yscale = global.grav;
-if (objPlayer.frozen or attacking)
+if (objPlayer.frozen or attacking or w_id == -1)
    exit;
 sprite_index = state_sprites[objPlayer.state];
 if (objPlayer.shootUpward)
