@@ -492,10 +492,7 @@ if (dead &gt;= 4)
         }
     }
     event_user(15);
-    with (objJustination)
-    {
-        alarm[5] = 300;
-    }
+    alarm[5] = 300;
 }
 </string>
           </argument>
