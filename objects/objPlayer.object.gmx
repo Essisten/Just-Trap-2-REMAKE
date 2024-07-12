@@ -1104,11 +1104,19 @@ if (!place_free(x,y+vspeed))
     if (global.grav == 1)   //normal
     {
         if(vspeed &lt;= 0)move_contact_solid(90,abs(vspeed));
-        if(vspeed &gt; 0) move_contact_solid(270,abs(vspeed));
+        if(vspeed &gt; 0)
+        {
+            move_contact_solid(270,abs(vspeed));
+            djump = 1;
+        }
     }
     else    //flipped
     {
-        if(vspeed &lt;= 0)move_contact_solid(90,abs(vspeed))
+        if(vspeed &lt;= 0)
+        {
+            move_contact_solid(90,abs(vspeed));
+            djump = 1;
+        }
         if(vspeed &gt; 0) move_contact_solid(270,abs(vspeed))
     }
     vspeed = 0;

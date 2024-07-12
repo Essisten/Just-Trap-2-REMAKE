@@ -164,7 +164,6 @@ for (var i = 0; i &lt; 1 + global.difficulty * 2; i++)
     extraBulletsCounter++;
 }
 scrPlaySound(sndShoot, 0.8);
-scrPlaySound(sndShoot, 0.8);
 </string>
           </argument>
         </arguments>
@@ -197,7 +196,6 @@ for (var i = 0; i &lt; 5 + global.difficulty * 2; i++)
     }
 }
 scrPlaySound(sndShoot, 0.8);
-scrPlaySound(sndShoot, 0.8);
 </string>
           </argument>
         </arguments>
@@ -229,7 +227,6 @@ for (var i = 0; i &lt; 3 + global.difficulty; i++)
         speed -= i * 2;
     }
 }
-scrPlaySound(sndShoot, 0.8);
 scrPlaySound(sndShoot, 0.8);
 </string>
           </argument>

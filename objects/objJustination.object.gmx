@@ -69,6 +69,30 @@ with (instance_create(x, y, objBossName))
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go easy on the player at the beginning
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="4">
       <action>
         <libid>1</libid>
@@ -225,10 +249,12 @@ alarm[2] = 5;
           <argument>
             <kind>1</kind>
             <string>///Attacking
-
+var cycles = global.difficulty + 1;
+if (alarm[5] &gt; -1 and global.difficulty &lt; 3)
+   cycles--;
 if (HP &gt; 50)
 {
-    repeat (global.difficulty + 1)
+    repeat (cycles)
     {
         with (instance_create(x, y, objCherry))
         {
@@ -245,7 +271,7 @@ if (HP &gt; 50)
 }
 else
 {
-    repeat (global.difficulty + 1)
+    repeat (cycles)
     {
         with (instance_create(0, 0, objCherry))
         {
@@ -466,6 +492,10 @@ if (dead &gt;= 4)
         }
     }
     event_user(15);
+    with (objJustination)
+    {
+        alarm[5] = 300;
+    }
 }
 </string>
           </argument>

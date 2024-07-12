@@ -28,7 +28,7 @@
             <string>stage = 1;
 vGrad = 0;
 hText = -100;
-audio_play_sound(musClear, 1, false);
+scrPlaySound(musClear);
 alarm[0] = 50;
 </string>
           </argument>

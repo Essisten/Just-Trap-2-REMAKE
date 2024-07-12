@@ -128,7 +128,7 @@ else if (HP &gt; 25)
         alarm[0] = 1;
         speed += random_range(-1, 1);
     }
-    audio_play_sound(sndShoot, 2, false);
+    scrPlaySound(sndShoot);
     shootCounter++;
 }
 else
@@ -148,7 +148,7 @@ else
         alarm[0] = 1;
         speed += random_range(-1, 1);
     }
-    audio_play_sound(sndShoot, 2, false);
+    scrPlaySound(sndShoot);
     shootCounter++;
 }
 
