@@ -116,7 +116,6 @@ switch (room)
             }
             else
             {
-                global.pb[1] = 100;
                 old = global.pb[7];
                 var bar1 = instance_find(objJustularity, 0);
                 var bar2 = instance_find(objJustularity, 1);
@@ -137,6 +136,11 @@ switch (room)
                    percent = 99.99;
                 if (global.pb[7] &lt; percent)
                     global.pb[7] = percent;
+                if (global.pb[1] &lt; 100)
+                {
+                    percent += 100 - global.pb[1];
+                    global.pb[1] = 100;
+                }
             }
         }
         else
@@ -187,6 +191,8 @@ switch (room)
 }
 if (percent &gt; old)
    scrShowMoney(view_xview[0] + view_wview[0] - 128, view_yview[0] + view_hview[0] - 32, stage, false, ceil((percent - old) * stage * (1 + global.difficulty)));
+if (percent &gt; 100 and stage == 2)
+    percent -= 100;
 </string>
           </argument>
         </arguments>

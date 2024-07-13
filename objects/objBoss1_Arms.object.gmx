@@ -41,6 +41,36 @@ reloading = false;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Start reloading
+reloading = true;
+image_index = 0;
+scrPlaySound(sndBoss1_Reload, 0.4);
+if (owner == objJustist)
+   sprite_index = sprJustist_Reload;
+else
+   sprite_index = sprJR_Reload;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -64,35 +94,6 @@ if (owner == objJustist)
    sprite_index = sprite[owner.state];
 else
    sprite_index = sprite2[owner.state];
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="12">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Start reloading
-reloading = true;
-image_index = 0;
-if (owner == objJustist)
-   sprite_index = sprJustist_Reload;
-else
-   sprite_index = sprJR_Reload;
 </string>
           </argument>
         </arguments>

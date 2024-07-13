@@ -60,7 +60,8 @@
     <instance objName="objJustularity" x="672" y="536" name="inst_4EAC6F4A" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objCard" x="800" y="0" name="inst_781815FE" locked="0" code="image_index = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBoss2HP" x="48" y="48" name="inst_2495F9AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRoomChanger" x="-40" y="416" name="inst_C1BDF848" locked="0" code="roomTo = rStageSelect;&#xA;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objRoomChanger" x="-32" y="416" name="inst_C1BDF848" locked="0" code="roomTo = rStageSelect;&#xA;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="-64" y="416" name="inst_A861C4D3" locked="0" code="" scaleX="1.5" scaleY="5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="&lt;undefined&gt;" x="32" y="416" w="32" h="160" xo="32" yo="96" id="10002867" name="inst_896F5989" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

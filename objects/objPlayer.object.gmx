@@ -1225,7 +1225,7 @@ if (global.debugShowHitbox)
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="52">
+    <event eventtype="9" enumb="104">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1243,37 +1243,13 @@ if (global.debugShowHitbox)
           <argument>
             <kind>1</kind>
             <string>if (global.debugMode)
-   scrSetGrav(4);
+   scrSetGrav(1);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="51">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.debugMode)
-   scrSetGrav(3);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="50">
+    <event eventtype="9" enumb="102">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1297,7 +1273,7 @@ if (global.debugShowHitbox)
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="49">
+    <event eventtype="9" enumb="101">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1315,7 +1291,31 @@ if (global.debugShowHitbox)
           <argument>
             <kind>1</kind>
             <string>if (global.debugMode)
-   scrSetGrav(1);
+   scrSetGrav(3);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="100">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.debugMode)
+   scrSetGrav(4);
 </string>
           </argument>
         </arguments>

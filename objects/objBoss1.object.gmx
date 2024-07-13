@@ -448,11 +448,12 @@ if (!instance_exists(objPlayer))
 event_user(4);
 if (hidden)
     return -1;
-if (global.difficulty &lt; 3)
+with (arms)
 {
-    scrPlaySound(sndBoss1_Reload, 0.4);
-    with (arms)
-         event_user(2);
+     if (global.difficulty == 3)
+        alarm[1] = 100;
+     else
+        alarm[1] = 1;
 }
 alarm[9] = warnDelay;
 </string>

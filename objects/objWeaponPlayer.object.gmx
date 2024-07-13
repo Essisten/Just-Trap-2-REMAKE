@@ -101,20 +101,30 @@ if (scrButtonCheck(global.shootButton))
 }
 else if (max_weapons &gt; 1)
 {
+    var old_w = global.currentWeapon;
     if (scrButtonCheckPressed(global.prevWeaponButton))
-    {
-        scrPlaySound(sndBoss1_Reload, 1);
         global.currentWeapon--;
-        if (global.currentWeapon &lt; 0)
-           global.currentWeapon += max_weapons;
-    }
     else if (scrButtonCheckPressed(global.nextWeaponButton))
-    {
-        scrPlaySound(sndBoss1_Reload, 1);
         global.currentWeapon++;
+    else
+    {
+        if keyboard_check_pressed(ord("1"))
+            global.currentWeapon = 0;
+        else if keyboard_check_pressed(ord("2"))
+            global.currentWeapon = 1;
+        else if keyboard_check_pressed(ord("3"))
+            global.currentWeapon = 2;
+        else if keyboard_check_pressed(ord("4"))
+            global.currentWeapon = 3;
         if (global.currentWeapon &gt;= max_weapons)
-           global.currentWeapon = 0;
+           global.currentWeapon = max_weapons - 1;
     }
+    if (global.currentWeapon &lt; 0)
+       global.currentWeapon += max_weapons;
+    if (global.currentWeapon &gt;= max_weapons)
+       global.currentWeapon = 0;
+    if (global.currentWeapon != old_w)
+        scrPlaySound(sndBoss1_Reload, 1);
 }
 image_index = w_id;
 </string>
