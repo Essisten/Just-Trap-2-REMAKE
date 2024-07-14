@@ -40,6 +40,10 @@ BG[2] = sprBigKid_GayBG;
 BG[3] = sprBigKid_SolgrynBG;
 BG[5] = sprBigKid_KamiliaBG;
 BG[6] = sprBigKid_KamiliaBG;
+if (global.spriteStyle == 1)
+{
+    BG[5] = sprBigKamilia_BG_Old;
+}
 phase = 0;
 name[0] = "The Kid";
 name[1] = "Crimson Kid";
@@ -282,10 +286,13 @@ else
     draw_set_color(color[phase]);
     draw_rectangle(x, y, x + width, y + height, false);
 }
-draw_set_font(fDefault30);
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-scrDrawTextOutline(x, y - 64, name[phase], c_white, c_gray);
+if (global.spriteStyle == 0)
+{
+    draw_set_font(fDefault30);
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    scrDrawTextOutline(x, y - 64, name[phase], c_white, c_gray);
+}
 </string>
           </argument>
         </arguments>

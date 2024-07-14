@@ -409,6 +409,8 @@
         <sprite>sprites\sprBigGeezer_Head</sprite>
         <sprite>sprites\sprBigGeezer_Noise</sprite>
         <sprite>sprites\sprBigGeezer_Face</sprite>
+        <sprite>sprites\sprBigKid_Head_Old</sprite>
+        <sprite>sprites\sprBigKid_Body_Old</sprite>
       </sprites>
       <sprites name="Blocks">
         <sprite>sprites\sprBigKid_Brick1</sprite>
@@ -474,6 +476,7 @@
         <sprite>sprites\sprBigKid_SolgrynBG2</sprite>
         <sprite>sprites\sprBigKid_SolgrynBG3</sprite>
         <sprite>sprites\sprBigKid_KamiliaBG</sprite>
+        <sprite>sprites\sprBigKamilia_BG_Old</sprite>
         <sprite>sprites\sprBigGeezer_Eyes</sprite>
         <sprite>sprites\sprGeezer_Effect</sprite>
         <sprite>sprites\sprGeezer_BG</sprite>

@@ -41,6 +41,10 @@ with (instance_create(view_xview[0] + view_wview[0], view_yview[0] + view_hview[
 {
     image_index = 5;
 }
+if (global.spriteStyle == 1)
+{
+    sprite_index = sprBigKid_Head_Old;
+}
 </string>
           </argument>
         </arguments>
@@ -336,11 +340,16 @@ switch (objBigKid_BG.phase)
     case 1:     //Crimson
          with (objBlock)
          {
-              sprite_index = sprBoss3_Block;
-              image_speed = 0;
+              if (global.spriteStyle == 0)
+              {
+                  sprite_index = sprBoss3_Block;
+                  image_speed = 0;
+              }
+              else
+                  image_blend = make_colour_hsv(0, 200, 255);
          }
          with (objSpikeParent)
-              image_blend = c_red;
+              image_blend = make_colour_hsv(0, 200, 255);
          with (objBigBow)
          {
               image_index = 1;
@@ -361,7 +370,10 @@ switch (objBigKid_BG.phase)
             sprite_index = sprBigKid_GaySpike;
          }
          with (objBlock)
+         {
              sprite_index = sprBigKid_Brick1;
+             image_blend = c_white;
+         }
          with (objBigKid_BG)
          {
             bottom_wall.image_index = 1;
@@ -391,12 +403,12 @@ switch (objBigKid_BG.phase)
          with (objSpikeParent)
             sprite_index = sprBigKid_GaySpike;
          with (objBlock)
-              visible = false;;
+              visible = false;
          instance_create(x, y, objBigGeezer_Head);
          frozen = true;
          break;
     case 5:    //Kamilia 2
-         instance_create(x, y, objK2_Face);
+        instance_create(x, y, objK2_Face);
          break;
 }
 </string>

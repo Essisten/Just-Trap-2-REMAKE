@@ -88,14 +88,17 @@ part_emitter_destroy(global.topParticleSystem, emitter);
 y = oldY + sin(degtorad(dick)) * 32;
 if (dick &gt; 360)
    dick -= 360;
-part_emitter_region(global.topParticleSystem, emitter, x, x, y, y, pt_shape_pixel, ps_distr_linear);
-part_emitter_burst(global.topParticleSystem, emitter, effect, 1);
-
-
-var offset = 16;
-part_emitter_region(global.topParticleSystem, objBigGeezer_Head.emitter,
-x - offset, x + offset, oldY - offset, oldY + offset, pt_shape_square, ps_distr_invgaussian);
-part_emitter_stream(global.topParticleSystem, objBigGeezer_Head.emitter, objBigGeezer_Head.effect, -20);
+if (global.spriteStyle == 0)
+{
+    part_emitter_region(global.topParticleSystem, emitter, x, x, y, y, pt_shape_pixel, ps_distr_linear);
+    part_emitter_burst(global.topParticleSystem, emitter, effect, 1);
+    
+    
+    var offset = 16;
+    part_emitter_region(global.topParticleSystem, objBigGeezer_Head.emitter,
+    x - offset, x + offset, oldY - offset, oldY + offset, pt_shape_square, ps_distr_invgaussian);
+    part_emitter_stream(global.topParticleSystem, objBigGeezer_Head.emitter, objBigGeezer_Head.effect, -20);
+}
 </string>
           </argument>
         </arguments>

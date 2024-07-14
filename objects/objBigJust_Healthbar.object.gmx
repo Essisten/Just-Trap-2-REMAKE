@@ -127,14 +127,17 @@ alarm[0] = 1;
         default:
             draw_set_color(c_black);
             draw_rectangle(x - border, y - border, x + width + border, y + height + border, false);
-            draw_set_color(c_red);
-            draw_rectangle(posHP, y, oldPosHP, y + height, false);
+            if (global.spriteStyle == 0)
+            {
+                draw_set_color(c_red);
+                draw_rectangle(posHP, y, oldPosHP, y + height, false);
+            }
             draw_set_color(colorHP[objBigKid_BG.phase]);
             draw_rectangle(x, y, posHP, y + height, false);
             break;
     }
 }
-if (objBigKid_BG.phase == 2)
+if (objBigKid_BG.phase == 2 and global.spriteStyle == 0)
 {
     draw_set_font(fDefault24);
     scrDrawTextOutline(view_xview[0] + 16, view_yview[0] + view_hview[0] - 32, "Deaths: " + string(global.death), c_white, c_black);

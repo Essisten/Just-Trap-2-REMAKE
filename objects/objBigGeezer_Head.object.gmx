@@ -39,14 +39,17 @@ faceX = x;
 alarm[0] = 150;
 alarm[3] = 50;
 alarm[4] = 1;
-emitter = part_emitter_create(global.topParticleSystem);
-effect = part_type_create();
-part_type_alpha2(effect, 0.9, 0);
-part_type_direction(effect, 0, 360, 1, 0);
-part_type_orientation(effect, 0, 0, 1, 0, true);
-part_type_speed(effect, 0.5, 0.5, 0, 0);
-part_type_life(effect, 112, 150);
-part_type_sprite(effect, sprGeezer_Effect, false, false, false);
+if (global.spriteStyle == 0)
+{
+    emitter = part_emitter_create(global.topParticleSystem);
+    effect = part_type_create();
+    part_type_alpha2(effect, 0.9, 0);
+    part_type_direction(effect, 0, 360, 1, 0);
+    part_type_orientation(effect, 0, 0, 1, 0, true);
+    part_type_speed(effect, 0.5, 0.5, 0, 0);
+    part_type_life(effect, 112, 150);
+    part_type_sprite(effect, sprGeezer_Effect, false, false, false);
+}
 if (!instance_exists(objBigKid_BG))
    exit;
 xx = objBigKid_BG.x;
@@ -102,8 +105,11 @@ with (objBigGeezer_BlockEffect)
      instance_destroy();
 with (objBigGeezer_Eyes)
      instance_destroy();
-part_type_destroy(global.topParticleSystem);
-part_emitter_destroy(global.topParticleSystem, emitter);
+if (global.spriteStyle == 0)
+{
+    part_type_destroy(global.topParticleSystem);
+    part_emitter_destroy(global.topParticleSystem, emitter);
+}
 </string>
           </argument>
         </arguments>
@@ -253,9 +259,12 @@ if (intro and crazy)
    alarm[2] = 1;
    alarm[5] = 100;
    intro = false;
-   part_emitter_region(global.topParticleSystem, emitter,
-x - offset, x, y, y + offset, pt_shape_square, ps_distr_invgaussian);
-   part_emitter_stream(global.topParticleSystem, emitter, effect, -20);
+   if (global.spriteStyle == 0)
+   {
+       part_emitter_region(global.topParticleSystem, emitter,
+    x - offset, x, y, y + offset, pt_shape_square, ps_distr_invgaussian);
+       part_emitter_stream(global.topParticleSystem, emitter, effect, -20);
+    }
    with (objGeezer_Text)
         event_user(0);
 }
@@ -354,7 +363,9 @@ instance_create(view_xview[0] + view_wview[0] + 64,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if (global.spriteStyle == 1)
+   exit;
+draw_self();
 if (on and !noise)
 {
     draw_sprite_ext(sprBigGeezer_Face, face_id, faceX, faceY, image_xscale, image_yscale, 0, c_white, image_alpha);
