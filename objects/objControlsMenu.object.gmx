@@ -66,16 +66,24 @@ strSelect[13] = "Next weapon";
 optionsNum = array_length_1d(strSelect);
 //Devices
 strValue[3, 0] = "Keyboard";
-gp_num = gamepad_get_device_count();
-gp_connections = 0;
+gp_num = 10;
+gp_sel = 0;
+gp_connections = ds_list_create();
+ds_list_add(gp_connections, -1);
 key_listen = false;
 for (var i = 1; i &lt;= gp_num; i++)
 {
     if (gamepad_is_connected(i - 1))
     {
-        gp_connections++;
-        strValue[3, i] = "Gamepad " + string(i);
+        ds_list_add(gp_connections, i - 1);
+        strValue[3, i] = "Gamepad " + string(ds_list_size(gp_connections) - 1);
     }
+}
+gp_sel = ds_list_find_index(gp_connections, global.controllerIndex);
+if (gp_sel == -1)
+{
+    gp_sel = 0;
+    global.controllerIndex = -1;
 }
 key_duplicates = ds_list_create();
 event_user(2);
@@ -229,9 +237,10 @@ if (scrButtonCheckPressed(global.menuLeftButton))
     switch (select)
     {
         case 0:
-            global.controllerIndex--;
-            if (global.controllerIndex &lt; -1)
-                global.controllerIndex = gp_connections - 1;
+            gp_sel--;
+            if (gp_sel &lt; 0)
+                gp_sel = ds_list_size(gp_connections) - 1;
+            global.controllerIndex = ds_list_find_value(gp_connections, gp_sel);
             break;
         default:
             event_user(0);
@@ -341,9 +350,10 @@ alarm[11] = 1;
 switch (select)
 {
     case 0:
-        global.controllerIndex++;
-        if (global.controllerIndex &gt; gp_connections - 1)
-            global.controllerIndex = -1;
+        gp_sel++;
+        if (gp_sel &gt; ds_list_size(gp_connections) - 1)
+            gp_sel = 0;
+        global.controllerIndex = ds_list_find_value(gp_connections, gp_sel);
         break;
     case 1:
         //default controls

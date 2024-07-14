@@ -84,8 +84,6 @@ else
 with (objBigBow)
      image_index = 3;
 instance_create(objBigKid_BG.x, objBigKid_BG.y, objBigJust_ViewMover);
-if (global.spriteStyle == 1)
-   instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -283,12 +281,13 @@ image_alpha = objBigKid_Head.image_alpha;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if (global.spriteStyle == 0)
+    draw_self();
 if (counter &gt; 50)
 {
     draw_set_font(fBoss1_46);
     draw_set_halign(fa_center);
-    scrDrawTextOutline(view_xview[0] + view_wview[0] / 2, 128, "To Be Continued", c_black, c_black);
+    scrDrawTextOutline(view_xview[0] + view_wview[0] / 2, 128, "To Be Continued", c_black, c_white);
 }
 </string>
           </argument>

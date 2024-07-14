@@ -39,7 +39,7 @@ faceX = x;
 alarm[0] = 150;
 alarm[3] = 50;
 alarm[4] = 1;
-if (global.spriteStyle == 0)
+if (global.spriteStyle == 0 and global.particles)
 {
     emitter = part_emitter_create(global.topParticleSystem);
     effect = part_type_create();
@@ -105,7 +105,7 @@ with (objBigGeezer_BlockEffect)
      instance_destroy();
 with (objBigGeezer_Eyes)
      instance_destroy();
-if (global.spriteStyle == 0)
+if (global.spriteStyle == 0 and global.particles)
 {
     part_type_destroy(global.topParticleSystem);
     part_emitter_destroy(global.topParticleSystem, emitter);
@@ -259,7 +259,7 @@ if (intro and crazy)
    alarm[2] = 1;
    alarm[5] = 100;
    intro = false;
-   if (global.spriteStyle == 0)
+   if (global.spriteStyle == 0 and global.particles)
    {
        part_emitter_region(global.topParticleSystem, emitter,
     x - offset, x, y, y + offset, pt_shape_square, ps_distr_invgaussian);
@@ -303,7 +303,6 @@ else
 on = true;
 objBigKid_Head.frozen = false;
 instance_create(448, 640, objGeezer_Text);
-//instance_create(288, 480, objGeezer_Text);
 instance_create(view_xview[0] + view_wview[0] + 64,
               objBigGeezer_Head.y, objBigGeezer_Eyes);
 </string>
@@ -328,7 +327,7 @@ instance_create(view_xview[0] + view_wview[0] + 64,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (scrButtonCheckPressed(global.skipButton) and !crazy)
+            <string>if ((scrButtonCheckPressed(global.skipButton) or global.spriteStyle == 1) and !crazy)
 {
     event_perform(ev_alarm, 0);
     alarm[0] = -1;
