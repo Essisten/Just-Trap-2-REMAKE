@@ -1,4 +1,11 @@
-0.5.1
+v0.5.2
+- Complete rework of settings menu.
+- Improved sound test.
+- Justination final phase transition nerfed.
+- Added coin reward for progressing on Big Just.
+- Lots of bug fixes and minor improvements.
+==================================================
+v0.5.1
 - Added visual effects for double jumping and shooting.
 - Reworked titlecards.
 - Performance improvements.
@@ -14,7 +21,7 @@ v0.5
 - Minor bug fixes.
 ==================================================
 v0.4.9.8
-- Metal bat replaced with NXC bat.
+- Metal bat replaced with CXN bat.
 - Improved portal anti-softlock trigger.
 ==================================================
 v0.4.9

@@ -39,6 +39,18 @@ if (lmao and global.difficulty &lt; 3)
         sprite_index = sprLeslie;
         glow_index = 5;
     }
+    with (objJustrimsonC)
+    {
+        sprite_index = sprKelvar;
+        glow_index = 5;
+    }
+    with (objJustrimsonD)
+    {
+        sprite_index = sprSquare;
+        glow_index = 5;
+        image_xscale = 1;
+        image_yscale = image_xscale;
+    }
 }
 for (i = 32; i &lt;= 736; i+=32)
 {
@@ -90,14 +102,20 @@ with (instance_create(objJustrimsonB.x, objJustrimsonB.y, objBossName))
 }
 with (instance_create(objJustrimsonC.x, objJustrimsonC.y, objBossName))
 {
-    name = "Surface-chan";
+    if (objJustrimsonController.lmao)
+        name = "Kelvar";
+    else
+       name = "Surface-chan";
     xflip = true;
     yflip = true;
     owner = objJustrimsonC;
 }
 with (instance_create(objJustrimsonD.x, objJustrimsonD.y, objBossName))
 {
-    name = "Flip-Flop";
+    if (objJustrimsonController.lmao)
+        name = "Square";
+    else
+       name = "Flip-Flop";
     xflip = true;
     owner = objJustrimsonD;
 }
