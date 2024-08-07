@@ -154,15 +154,20 @@ if (!instance_exists(objPlayer))
    tmp = 4;
 for (var i = 0; i &lt; tmp; i++)
 {
-    var r = irandom(ds_list_size(parts) - 1);
+    var parts_size = ds_list_size(parts);
+    var r = irandom(parts_size - 1);
     var part = ds_list_find_value(parts, r);
     if (part.HP &gt; 0)
        unlucky = 0;
-    if ((i &gt; 0 and part == objJustinationLight and ds_list_size(parts) &gt; 1 and !instance_exists(objPlayer))
-       or (unlucky &gt; 3 and part.HP &lt;= 0))
+    if (parts_size &gt; 1) //unluck protection
     {
-        i --;
-        continue;
+        if ((i &gt; 0 and part == objJustinationLight and !instance_exists(objPlayer))
+           or (unlucky &gt; 3 and part.HP &lt;= 0))
+        {
+            ds_list_delete(parts, r);
+            i --;
+            continue;
+        }
     }
     objBoss4_Effects.side[i] = part;
     ds_list_add(active_parts, part);
@@ -172,6 +177,8 @@ for (var i = 0; i &lt; tmp; i++)
         event_user(15);
     }
     ds_list_delete(parts, r);
+    if (ds_list_size(parts) == 0)
+        break;
 }
 var part1 = ds_list_find_value(active_parts, 0),
     part2 = ds_list_find_value(active_parts, 1);
@@ -184,6 +191,7 @@ for (var i = 0; i &lt; block_count; i++)
     with (blocks[i])
         event_user(0);
 }
+event_user(0);
 if (!instance_exists(objPlayer))
    exit;;
 length = min(ds_list_size(active_parts), 2);
@@ -193,7 +201,6 @@ for (var i = 0; i &lt; length; i++)
    with (spikes[i])
         event_user(0);
 }
-event_user(0);
 alarm[3] = 600;
 </string>
           </argument>
@@ -394,7 +401,12 @@ else if (HP &lt;= 50 and surprise)
             <kind>1</kind>
             <string>///Checking part's HP
 var dead = 0;
-for (var i = 0; i &lt; 4; i++)
+var parts_size = ds_list_size(parts);
+if (parts_size == 0)
+{
+    show_debug_message("Eblan");
+}
+for (var i = 0; i &lt; parts_size; i++)
 {
      var p = ds_list_find_value(parts, i);
      if (p.HP &lt;= 0)

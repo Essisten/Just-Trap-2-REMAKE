@@ -19,7 +19,7 @@ global.soundTest = ini_read_real("Settings","Sound_test", true);
 global.musicSlowdown = ini_read_real("Settings","Music_slowdown", true);
 global.screenshakePower = ini_read_real("Settings","Screenshake", 2);
 global.AA = ini_read_real("Settings","AA", 0);
-global.enableShaders = ini_read_real("Settings","Enable_surfaces", 1);
+global.enableShaders = ini_read_real("Settings","Enable_shaders", 1);
 global.bossDeathBrightness = ini_read_real("Settings","Boss_death_brightness", 0.2);
 global.outlinePower = ini_read_real("Settings","Outline_power", 4);
 ini_close();

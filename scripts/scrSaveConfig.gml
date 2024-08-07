@@ -22,5 +22,6 @@ ini_write_real("Settings","Screenshake", global.screenshakePower);
 ini_write_real("Settings","AA", global.AA);
 ini_write_real("Settings","Boss_death_brightness", global.bossDeathBrightness);
 ini_write_real("Settings","Outline_power", global.outlinePower);
+ini_write_real("Settings","Enable_shaders", global.enableShaders);
 
 ini_close();

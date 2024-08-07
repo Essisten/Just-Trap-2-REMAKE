@@ -52,7 +52,7 @@ colorHP = c_white;
             <string>///Attacking
 
 if (!instance_exists(objPlayer) or !active)
-    return -1;
+    exit;
 
 if (HP &gt; 50)
 {
