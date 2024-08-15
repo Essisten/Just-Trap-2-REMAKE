@@ -1,5 +1,4 @@
 ///scrJustularityAttack(num)
-dead = ((RedHP <= 0 and isRed) or (BlueHP <= 0 and !isRed) or phase == 2);
 switch (argument0)
 {
     case 0: //Red
@@ -43,11 +42,8 @@ switch (argument0)
                 }
             }
             var c = instance_create(tmpX, tmpY, objMeteor);
-            with (c)
-            {
-                if (other.dead)
-                    sprite_index = sprJustularityCoal2;
-            }
+            if (dead)
+                c.sprite_index = sprJustularityCoal2;
             c.direction = tmpD;
             c.image_angle = tmpD;
         }

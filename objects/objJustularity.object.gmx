@@ -552,6 +552,7 @@ if (instance_exists(objPlayer) and hspeed == 0 and vspeed == 0)
             image_xscale = -3;
     }
 }
+dead = ((RedHP &lt;= 0 and isRed) or (BlueHP &lt;= 0 and !isRed) or phase == 2);
 d += 4;
 if (phase == 1)
     isRed = y &lt; 304;
@@ -764,7 +765,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((image_blend == c_black and global.difficulty != 3) or !killable)
+            <string>if ((dead and global.difficulty != 3) or !killable)
     exit;
 scrKillPlayer();
 </string>

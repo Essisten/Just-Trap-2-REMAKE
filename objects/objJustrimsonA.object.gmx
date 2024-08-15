@@ -96,7 +96,7 @@ if (objJustrimsonB.HP &gt;= 100 and objJustrimsonC.HP &gt;= 100 and objJustrimso
 }
 var soul = instance_create(x, y, objJustrimson_Soul);
 soul.target = target;
-nohit_challenge = 0;
+nohit_challenge -= 8;
 dmg_in = 3 - global.difficulty;
 </string>
           </argument>
@@ -159,10 +159,13 @@ else if (HP &lt;= 0)
         image_blend = c_maroon;
    }
 }
-if (instance_number(objJustrimsonA_blade) &gt; 4)
+var blades = instance_number(objJustrimsonA_blade);
+if (blades &gt; 4)
 {
-   blade.direction += instance_number(objJustrimsonA_blade) * 4 * choose(-1, 1);
+   blade.direction += min(blades, 16) * 4 * choose(-1, 1);
    blade.gravity_direction = blade.direction;
+   if (blades &gt; 16)
+       nohit_challenge++;
 }
 //scrPlaySound(sndMiss, 1);
 </string>

@@ -170,7 +170,7 @@ audio_pause_sound(global.currentMusic);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>objWorld</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -747,7 +747,7 @@ if (global.debugMode &amp;&amp; room == rTitle)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.debugMode)
+            <string>if (global.debugMode and room_speed &gt; 1)
     room_speed /= 2;
 </string>
           </argument>
