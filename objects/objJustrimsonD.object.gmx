@@ -94,6 +94,7 @@ amount_angl = rot_sum;
 old_angl = image_angle;
 nohit_challenge = 0;
 dmg_in = 3 - global.difficulty;
+alarm[3] = 1;
 scrPlaySound(sndVJump, 1);
 if (image_index &lt; 2)
 {

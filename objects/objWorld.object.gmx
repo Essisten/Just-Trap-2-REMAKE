@@ -234,7 +234,7 @@ if (global.gameStarted)
     {
         if (scrButtonCheckPressed(global.pauseButton) or scrButtonCheckPressed(global.menuBackButton))
         {
-            if (!global.noPause)
+            if (true)//!global.noPause)
             {
                 global.gamePaused = true;  //set the game to paused
                 global.pauseDelay = global.pauseDelayLength; //set pause delay

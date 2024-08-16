@@ -368,6 +368,7 @@ event_perform(ev_collision, objBullet);
           <argument>
             <kind>1</kind>
             <string>///When spot change is done
+alarm[3] = 1;
 </string>
           </argument>
         </arguments>

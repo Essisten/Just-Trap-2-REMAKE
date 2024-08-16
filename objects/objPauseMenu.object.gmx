@@ -41,6 +41,7 @@ sOffsetV = 32;
 sOffsetH = 128;
 child = noone;
 alarm[0] = 1;
+audio_pause_all();
 </string>
           </argument>
         </arguments>
@@ -85,6 +86,7 @@ switch (sel)
         scrSaveConfig();
         io_clear(); //clear input states to prevent possible pause strats/exploits
         instance_destroy();
+        audio_resume_all();
         break;
     case 1:
         child = instance_create(0, 0, objOptionsMenu);

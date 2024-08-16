@@ -318,7 +318,8 @@ event_user(15);
           <argument>
             <kind>1</kind>
             <string>///going back
-scrSaveControls();
+if (!global.swapControls)
+    scrSaveControls();
 objOptionsMenu.active = true;
 destX = 500;
 dest_alpha = 0;
@@ -347,6 +348,11 @@ alarm[11] = 1;
           <argument>
             <kind>1</kind>
             <string>///Option selection
+if (global.swapControls)
+{
+    event_user(1);
+    exit;
+}
 switch (select)
 {
     case 0:
