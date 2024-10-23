@@ -34,7 +34,6 @@ for (var i = 0; i &lt; holes_count; i++)
 {
     holes[i] = instance_find(objWallHole, i);
 }
-global.noPause = true;
 spd = 1;
 phase = 0;
 once = true;

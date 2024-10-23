@@ -35,8 +35,8 @@ text[2] = "MAIN MENU";
 text[3] = "EXIT";
 maxSel = array_length_1d(text) - 1;
 sep = 48;
-textY = view_hview[0] / 2 - sep / 2 * (maxSel);
-textX = (view_wview[0] - view_xview[0]) / 2;
+textY = view_yview[0] + view_hview[0] / 2 - sep / 2 * (maxSel);
+textX = view_xview[0] + view_wview[0] / 2;
 sOffsetV = 32;
 sOffsetH = 128;
 child = noone;
@@ -200,9 +200,9 @@ else if (scrButtonCheckPressed(global.menuBackButton) or scrButtonCheckPressed(g
 draw_clear(c_black);
 draw_set_colour(c_black);
 if (surface_exists(global.pauseSurf))       //check if surface exists before drawing it
-    draw_surface(global.pauseSurf,0,0);
+    draw_surface(global.pauseSurf, view_xview[0], view_yview[0]);
 draw_set_alpha(0.4);
-draw_rectangle(-1,-1,display_get_gui_width(),display_get_gui_height(),0);    //darken the paused screen
+draw_rectangle(view_xview[0],view_yview[0],view_xview[0] + display_get_gui_width(),view_yview[0] + display_get_gui_height(),0);    //darken the paused screen
 draw_set_alpha(1);
 draw_set_blend_mode(bm_add);
 draw_rectangle_colour(view_xview[0], view_yview[0], view_xview[0] + w, view_yview[0] + view_hview[0], c_aqua, c_black, c_black, c_aqua, false);
@@ -216,7 +216,8 @@ draw_set_valign(fa_center);
 draw_set_font(fDefault30);
 draw_set_alpha(w / maxW * 0.8);
 draw_set_colour(c_black);
-draw_rectangle(textX - sOffsetH, textY - sOffsetV, textX + sOffsetH, textY + sep * (maxSel + 1.5) + sOffsetV, false);
+draw_rectangle(textX - sOffsetH,textY - sOffsetV,
+textX + sOffsetH, textY + sep * (maxSel + 1.5) + sOffsetV, false);
 
 draw_set_alpha(w / maxW);
 for (var i = 0; i &lt;= maxSel; i++)
@@ -244,8 +245,8 @@ timeText += string(floor(t));
 draw_set_color(c_white);
 draw_sprite_ext(sprDiffIcon, 5, textX - sOffsetH / 3, textY - 20 + sep * (maxSel + 1), 2, 2, 0, c_white, draw_get_alpha());
 draw_sprite(sprClock, 0, textX - sOffsetH / 3,  textY + sep * (maxSel + 1.5));
-scrDrawTextOutline(textX - sOffsetH / 3 + 16,  textY + sep * (maxSel + 1), "x" + string(global.death), c_white, c_black);
-scrDrawTextOutline(textX - sOffsetH / 3 + 16,  textY + sep * (maxSel + 1.5), timeText, c_white, c_black);
+scrDrawTextOutline(textX - sOffsetH / 3 + 16, textY + sep * (maxSel + 1), "x" + string(global.death), c_white, c_black);
+scrDrawTextOutline(textX - sOffsetH / 3 + 16,textY + sep * (maxSel + 1.5), timeText, c_white, c_black);
 draw_set_alpha(1);
 </string>
           </argument>

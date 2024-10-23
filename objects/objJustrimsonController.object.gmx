@@ -30,7 +30,6 @@ alarm[2] = 50;
 alarm[3] = 200;
 block_type = false;
 dead = false;
-global.noPause = true;
 lmao = (irandom_range(1, 100) == 1);
 if (lmao and global.difficulty &lt; 3)
 {
@@ -254,7 +253,7 @@ with (objJustrimsonParent)
     alarm[2] = -1;
     alarm[4] = 1;
     image_alpha = 1;
-    direction = point_direction(x, y, objPlayer.x, objPlayer.y) + 180;
+    direction = point_direction(x, y, 400, 300) + 180;
     speed = 2;
     circle_width = 0;
 }

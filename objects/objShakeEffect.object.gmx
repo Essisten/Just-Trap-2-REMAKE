@@ -162,7 +162,6 @@ var v_h = view_hview[0];
 draw_clear_alpha(c_black, 0);
 surface_copy(surface, view_xview[0] - old_x, view_yview[0] - old_y, application_surface);
 surface_reset_target();
-//draw_clear_alpha(c_black, 0);
 for (i = 0; i &lt; 5; i++)
 {    
     draw_surface_ext(surface, round(view_xview[0]/v_w)*v_w + (view_xview[0]-round(view_xview[0]/v_w)*v_w),

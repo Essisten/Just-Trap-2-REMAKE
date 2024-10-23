@@ -369,6 +369,7 @@
       <sprite>sprites\sprSquare</sprite>
       <sprite>sprites\sprBoss3_Platform</sprite>
       <sprite>sprites\sprJustrimsonOutline</sprite>
+      <sprite>sprites\sprBoss3_Lava</sprite>
     </sprites>
     <sprites name="Boss4">
       <sprite>sprites\sprBoss4_Ground</sprite>

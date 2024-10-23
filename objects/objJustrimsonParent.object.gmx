@@ -272,7 +272,9 @@ alarm[0] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(bullet))
+            <string>if (objJustrimsonController.dead)
+   exit;
+if (!instance_exists(bullet))
    bullet = instance_nearest(x, y, objBullet);
 if (HP &gt; 0)
    HP -= bullet.dmg * 4;
