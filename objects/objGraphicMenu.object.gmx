@@ -28,9 +28,9 @@
             <string>event_inherited();
 select = 0;
 alarm[0] = 1;
-destX = 240;
-xSelector = 500;
-ySelector = 64;
+destX = view_xview + 240;
+xSelector = view_xview + 500;
+ySelector = view_yview + 64;
 xSeperation = 532;
 ySeperation = 48;
 offset = 20;

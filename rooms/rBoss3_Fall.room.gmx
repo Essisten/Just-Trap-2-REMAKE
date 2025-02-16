@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>66</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>global.noPause = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

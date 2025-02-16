@@ -34,7 +34,7 @@ group[1] = objGraphicMenu;
 group[2] = objGameplayMenu;
 group[3] = objControlsMenu;
 group[4] = objOtherMenu;
-xSelector = -128;
+xSelector = view_xview - 128;
 </string>
           </argument>
         </arguments>

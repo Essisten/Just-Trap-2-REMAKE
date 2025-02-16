@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>owner = noone;
 select = 0;
-xSelector = 32;
-ySelector = 64;
+xSelector = view_xview + 32;
+ySelector = view_yview + 64;
 xSeperation = 160;
 ySeperation = 32;
 destX = xSelector;
