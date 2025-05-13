@@ -1,0 +1,2 @@
+scrSetGrav(2);
+

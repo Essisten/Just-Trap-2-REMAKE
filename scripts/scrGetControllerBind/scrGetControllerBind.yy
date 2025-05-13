@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrGetControllerBind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrGetControllerBind",
+  "parent":{
+    "name":"world",
+    "path":"folders/Scripts/world.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

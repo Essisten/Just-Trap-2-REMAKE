@@ -1,0 +1,2 @@
+show_message_async("Press arrow keys to move# Press Shift to jump. You can double jump in air. Holding jump button will make you jump higher.# Press Z to shoot. Holding Up key will allow you to shoot upwards.# Press A and S to switch weapon (experimental).# Press X to sprint.# You can change controls and many other things in settings. Shoot yellow SAVE boxes to save your progress.# Press F4 for fullscreen. F2 to restart the game. Esc to pause.");
+

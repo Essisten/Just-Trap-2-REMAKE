@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrParticleInit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrParticleInit",
+  "parent":{
+    "name":"Saves",
+    "path":"folders/Scripts/world/Saves.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

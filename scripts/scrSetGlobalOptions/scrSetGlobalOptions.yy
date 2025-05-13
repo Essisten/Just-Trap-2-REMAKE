@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrSetGlobalOptions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrSetGlobalOptions",
+  "parent":{
+    "name":"Saves",
+    "path":"folders/Scripts/world/Saves.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

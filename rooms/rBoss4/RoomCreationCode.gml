@@ -1,0 +1,1 @@
+scrCreateFade(c_black, 0.01, false);

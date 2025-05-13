@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrPlaySound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrPlaySound",
+  "parent":{
+    "name":"world",
+    "path":"folders/Scripts/world.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

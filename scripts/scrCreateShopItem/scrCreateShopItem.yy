@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrCreateShopItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrCreateShopItem",
+  "parent":{
+    "name":"functions",
+    "path":"folders/Scripts/functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

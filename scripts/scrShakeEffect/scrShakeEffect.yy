@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrShakeEffect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrShakeEffect",
+  "parent":{
+    "name":"Draw",
+    "path":"folders/Scripts/Draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

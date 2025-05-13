@@ -1,0 +1,23 @@
+HP = 100;
+spot = 1;
+iframes = 0;
+xdest = x;
+ydest = y;
+hspd = 8 * ((1 + global.difficulty)/2);
+vspd = 5.3 * ((1 + global.difficulty)/2);
+dick = 0;
+dick_speed = 4;
+color = c_gray;
+color2 = color;
+black = c_black;
+bm = bm_add;
+glow_thicc = 0;
+glow_index = 0;
+glow_color = c_white;
+phase_counter = 0;
+nohit_challenge = 0;
+dmg_in = 4;
+alarm[1] = 500;
+image_speed = 0;
+bullet = noone;
+

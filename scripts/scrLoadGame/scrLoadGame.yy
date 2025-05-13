@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrLoadGame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrLoadGame",
+  "parent":{
+    "name":"Saves",
+    "path":"folders/Scripts/world/Saves.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

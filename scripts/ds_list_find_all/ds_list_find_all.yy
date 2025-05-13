@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ds_list_find_all",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ds_list_find_all",
+  "parent":{
+    "name":"functions",
+    "path":"folders/Scripts/functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

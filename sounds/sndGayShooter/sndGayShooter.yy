@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sndGayShooter",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.0,
+  "name":"sndGayShooter",
+  "parent":{
+    "name":"Gay",
+    "path":"folders/Sounds/sfx/Final boss/Gay.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndGayShooter",
+  "type":1,
+  "volume":1.0,
+}

@@ -1,0 +1,21 @@
+alarm[0] = 60;
+alarm[1] = 1;
+boss = instance_find(objJustularity, 0);
+prevPlayerGrav = 3;
+redX = 66;
+redY = 130;
+blueX = 78;
+blueY = 470;
+offset = 2;
+blueOffset = 12;
+width = 12;
+sub = 0;
+phase = 1;
+music = -1;
+play = false;
+skip = false;
+HP[0] = 0;  //Red
+HP[1] = 0;  //Blue
+HP[2] = boss.maxHP[0];
+HP[3] = boss.maxHP[1];
+

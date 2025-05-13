@@ -1,0 +1,31 @@
+side[0] = 0
+side[1] = 0;
+surf[0] = surface_create(400, 608);
+surf[1] = surface_create(400, 608);
+__view_set( e__VW.SurfaceID, 1, surf[1] );
+__view_set( e__VW.SurfaceID, 2, surf[0] );
+w = 0;
+old[0] = 0;
+old[1] = 0;
+changeW[0] = 0;
+changeW[1] = 500;
+final = false;
+smoke = part_type_create();
+part_type_alpha1(smoke, 0.2);
+part_type_life(smoke, 50, 200);
+part_type_direction(smoke, 80, 100, 0, 5);
+part_type_shape(smoke, pt_shape_smoke);
+part_type_colour1(smoke, c_ltgray);
+part_type_speed(smoke, 2, 6, 0, 0);
+part_type_size(smoke, 1, 2, -0.05, 0);
+snow = part_type_create();
+part_type_alpha1(snow, 0.2);
+part_type_life(snow, 500, 900);
+part_type_direction(snow, 260, 280, 0, 0);
+part_type_shape(snow, pt_shape_snow);
+part_type_colour1(snow, c_white);
+part_type_speed(snow, 2, 6, 0, 0);
+part_type_size(snow, 0.1, 0.2, 0, 0);
+emitter[0] = -1;
+emitter[1] = -1;
+

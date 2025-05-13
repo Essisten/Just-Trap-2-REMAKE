@@ -1,0 +1,1694 @@
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrDrawTextOutline\scrDrawTextOutline.gml
+Converted description /// @description scrDrawTextOutline(x, y, string, text_color, outline_color, [outline_width=1], [detail=8])/// @param x
+/// @param  y
+/// @param  string
+/// @param  text_color
+/// @param  outline_color
+/// @param  [outline_width=1]
+/// @param  [detail=8]
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrDrawTextOutline_Old\scrDrawTextOutline_Old.gml
+Converted description /// @description scrDrawTextOutline(x,y,string,textcolor,outlinecolor)/// @param x
+/// @param y
+/// @param string
+/// @param textcolor
+/// @param outlinecolor
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrCreateFade\scrCreateFade.gml
+Converted description /// @description scrCreateFade(colour, speed, darker)/// @param colour
+/// @param  speed
+/// @param  darker
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrShakeEffect\scrShakeEffect.gml
+Converted description /// @description scrShakeEffect(mag, mag_acc, sound)/// @param mag
+/// @param  mag_acc
+/// @param  sound
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrShowMoney\scrShowMoney.gml
+Converted description /// @description scrShowMoney(x, y, stage, follow clear, reward)/// @param x
+/// @param  y
+/// @param  stage
+/// @param  follow clear
+/// @param  reward
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrCustomDisplay\scrCustomDisplay.gml
+Converted description /// @description scrCustomDisplay()
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrDrawButtonInfo\scrDrawButtonInfo.gml
+Converted description /// @description scrDrawButtonInfo(optionsText)/// @param optionsText
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSetPlayerMask\scrSetPlayerMask.gml
+Converted description /// @description sets the player's mask depending on gravity flip mode
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrKillPlayer\scrKillPlayer.gml
+Converted builtin - line 31: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 31: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrFlipGrav\scrFlipGrav.gml
+Converted description /// @description flips the current gravity
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrFlipGravH\scrFlipGravH.gml
+Converted description /// @description Enable horizontal gravity
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSetGrav\scrSetGrav.gml
+Converted description /// @description scrSetGrav(direction)/// @param direction
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSwapControls\scrSwapControls.gml
+Converted description /// @description scrSwapControls()
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrDamagePlayer\scrDamagePlayer.gml
+Converted description /// @description scrDamagePlayer(damage, do iframe)/// @param damage
+/// @param  do iframe
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrAnyControllerButton\scrAnyControllerButton.gml
+Converted description /// @description scrAnyControllerButton()
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrButtonCheck\scrButtonCheck.gml
+Converted description /// @description scrButtonCheck(buttonArray)/// @param buttonArray
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrButtonCheckPressed\scrButtonCheckPressed.gml
+Converted description /// @description scrButtonCheckPressed(buttonArray)/// @param buttonArray
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrButtonCheckReleased\scrButtonCheckReleased.gml
+Converted description /// @description scrButtonCheckReleased(buttonArray)/// @param buttonArray
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrInitializeGlobals\scrInitializeGlobals.gml
+Converted description /// @description initializes all global variables needed for the game
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSetGlobalOptions\scrSetGlobalOptions.gml
+Converted description /// @description sets configurable global options
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSaveGame\scrSaveGame.gml
+Converted description /// @description scrSaveGame(saveposition)/// @param saveposition
+String not found: ConversionLog_ConvertedString 93 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 98 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSaveConfig\scrSaveConfig.gml
+Converted description /// @description saves current config settings
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSaveControls\scrSaveControls.gml
+Converted description /// @description saves current config settings
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrLoadGame\scrLoadGame.gml
+Converted description /// @description scrLoadGame(loadfile)/// @param loadfile
+String not found: ConversionLog_ConvertedString 19 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 23 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrLoadConfig\scrLoadConfig.gml
+Converted description /// @description loads config settings, sets default config if it doesn't exist
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrParticleInit\scrParticleInit.gml
+Converted description /// @description Initializing particles
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSafeLoad\scrSafeLoad.gml
+Converted description /// @description scrSafeLoad(map, name, default value)/// @param map
+/// @param  name
+/// @param  default value
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrLoadControls\scrLoadControls.gml
+Converted description /// @description scrLoadControls()
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrShaderUniforms\scrShaderUniforms.gml
+Converted description /// @description Initialise global uniforms
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrGetControllerBind\scrGetControllerBind.gml
+Converted description /// @description scrGetControllerBind(buttonIndex)/// @param buttonIndex
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrGetKeybind\scrGetKeybind.gml
+Converted description /// @description scrGetKeybind(key)/// @param key
+String not found: ConversionLog_ConvertedString 73 "\" "\\"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrGetMusic\scrGetMusic.gml
+Converted description /// @description gets which song is supposed to be playing for the current room and plays it
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrPlayMusic\scrPlayMusic.gml
+Converted description /// @description scrPlayMusic(soundid,loops)/// @param soundid
+/// @param loops
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrResetWindowSize\scrResetWindowSize.gml
+Converted description /// @description resets the window size back to the default
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrRestartGame\scrRestartGame.gml
+Converted description /// @description restarts the game
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSetRoomCaption\scrSetRoomCaption.gml
+Converted description /// @description sets the room caption
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSetVsync\scrSetVsync.gml
+Converted description /// @description sets vsync mode depending on the current setting
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrStopMusic\scrStopMusic.gml
+Converted description /// @description stops any music currently playing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrToggleMusic\scrToggleMusic.gml
+Converted description /// @description toggles the music on and off
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrPlaySound\scrPlaySound.gml
+Converted description /// @description scrPlaySound(sound, pitch, loop)/// @param sound
+/// @param  pitch
+/// @param  loop
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrMakeShapes\scrMakeShapes.gml
+Converted description /// @description scrMakeShapes(x,y,angle,edges,numprojectiles,speed,obj)/// @param x
+/// @param y
+/// @param angle
+/// @param edges
+/// @param numprojectiles
+/// @param speed
+/// @param obj
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrMakeCircle\scrMakeCircle.gml
+Converted description /// @description scrMakeCircle(x,y,angle,numprojectiles,speed,obj)/// @param x
+/// @param y
+/// @param angle
+/// @param numprojectiles
+/// @param speed
+/// @param obj
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrStartSlowdown\scrStartSlowdown.gml
+Converted description /// @description scrStartSlowdown(time, fps)/// @param time
+/// @param  fps
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrCreateShopItem\scrCreateShopItem.gml
+Converted description /// @description scrCreateShopItem(name, description, speed, damage, range, price, requirement)/// @param name
+/// @param  description
+/// @param  speed
+/// @param  damage
+/// @param  range
+/// @param  price
+/// @param  requirement
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\quad\quad.gml
+Converted description /// @description  quad(x1, y1, x2, y2, x3, y3, x4, y4);/// @param x1
+/// @param  y1
+/// @param  x2
+/// @param  y2
+/// @param  x3
+/// @param  y3
+/// @param  x4
+/// @param  y4
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrGiveMoney\scrGiveMoney.gml
+Converted description /// @description scrGiveMoney(amount)/// @param amount
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\ds_list_find_all\ds_list_find_all.gml
+Converted description /// @description ds_list_find_all(list, value, [array index])/// @param list
+/// @param  value
+/// @param  [array index]
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrHideBoss1\scrHideBoss1.gml
+Converted description /// @description scrHideBoss1(object, show)/// @param object
+/// @param  show
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrAddBodyPart\scrAddBodyPart.gml
+Converted description /// @description scrAddBodyPart(part, owner)/// @param part
+/// @param  owner
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrRefreshBulletSkin\scrRefreshBulletSkin.gml
+Converted description /// @description scrRefreshBulletSkin(bullet)/// @param bullet
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrJustularitySkin\scrJustularitySkin.gml
+Converted description /// @description scrJustularitySkin(skin)/// @param skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrJustularityAttack\scrJustularityAttack.gml
+Converted description /// @description scrJustularityAttack(num)/// @param num
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrLovetrap_Attack\scrLovetrap_Attack.gml
+Converted builtin - line 14: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 30: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 12: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 21: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Big Just: LoveTrap phase
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrCrimson_Attack\scrCrimson_Attack.gml
+Converted builtin - line 28: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 29: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 45: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 11: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 28: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 32: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 39: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 56: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 39: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Big Just: Crimson phase
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrGay_Attack\scrGay_Attack.gml
+Converted builtin - line 23: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 33: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 46: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 23: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description Big Just: Gay phase
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrSolgryn_Attack\scrSolgryn_Attack.gml
+Converted builtin - line 34: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 34: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 49: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Big Just: Solgryn phase
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrGeezer_Attack\scrGeezer_Attack.gml
+Converted builtin - line 21: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 25: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 33: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 37: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 17: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 29: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 21: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 25: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 33: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description Big Just: Geezer phase
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\scripts\scrK2_Attack\scrK2_Attack.gml
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 17: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 77: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 18: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 79: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 17: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 77: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 6: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 18: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Kamilia 2 phase
+
+Unknown Shader Type 'HLSL9' for shader '__SMOOTH_sh_pxUpscale'
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fDefault30\fDefault30.gms1.png
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fDefault24\fDefault24.gms1.png
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fDefault18\fDefault18.gms1.png
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fDefault12\fDefault12.gms1.png
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fBoss1_46\fBoss1_46.gms1.png
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fDetermination14\fDetermination14.gms1.png
+GameMaker Studio 1 font texture has been backed up at C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\fonts\fGeezer30\fGeezer30.gms1.png
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSave\Other_10.gml
+Converted description /// @description save the game
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWarpStart\Collision_dfb3c295-0426-418e-99b2-ed8205d9db56.gml
+String not found: ConversionLog_ConvertedString 3 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 15 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 16 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWarp\Alarm_0.gml
+Converted description /// @description To prevent stucking in portal
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWarp\Other_10.gml
+Converted description /// @description Particle starting
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWarpNext\Collision_b8ce0834-2ca4-4e76-a986-53003edca0d4.gml
+Converted description /// @description go to the next room
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWarpAutosaveNext\Collision_53997366-ad53-4af7-b6e1-23f4abdb0989.gml
+Converted description /// @description go to the next room and autosave
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayerKiller\Alarm_11.gml
+Converted description /// @description Parry cooldown
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objCherryPersistant\Other_0.gml
+Converted description /// @description Cancel destroying
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objKillable\Other_11.gml
+Converted description /// @description Response to an attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objKillable\Other_10.gml
+Converted description /// @description Action on death
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objTitleMenu\Alarm_2.gml
+Converted builtin - line 1: background_alpha[0] = 0.7 + random_range(0, 0.2) -> __background_set( e__BG.Alpha, 0, 0.7 + random_range(0, 0.2) )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objTitleMenu\Alarm_1.gml
+Converted description /// @description Sliding up
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objTitleMenu\Alarm_0.gml
+Converted description /// @description Sliding in
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objDifficultyMenu\Create_0.gml
+String not found: ConversionLog_ConvertedString 21 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 31 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 35 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objDifficultyMenu\Alarm_0.gml
+Converted builtin - line 1: background_alpha[0] = 0.6 + random_range(0, 0.2) -> __background_set( e__BG.Alpha, 0, 0.6 + random_range(0, 0.2) )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objDifficultyMenu\Step_0.gml
+String not found: ConversionLog_ConvertedString 79 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 84 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 127 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 128 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMainMenu\Create_0.gml
+String not found: ConversionLog_ConvertedString 50 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 58 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 62 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMainMenu\Alarm_3.gml
+Converted description /// @description Save menu slides away
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMainMenu\Alarm_2.gml
+Converted description /// @description Save menu slide in
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMainMenu\Other_10.gml
+Converted description /// @description Start new game
+String not found: ConversionLog_ConvertedString 6 "Data\save" "Data\\save"
+String not found: ConversionLog_ConvertedString 7 "Data\save" "Data\\save"
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPauseMenu\Create_0.gml
+Converted builtin - line 12: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 11: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 12: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 11: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPauseMenu\Alarm_1.gml
+Converted description /// @description Option selected
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPauseMenu\Draw_0.gml
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 11: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 11: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 7: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 7: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 11: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 11: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 11: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 11: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 10: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 11: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSoundTest\Alarm_4.gml
+Converted description /// @description Less precise step event
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSoundTest\Alarm_3.gml
+Converted description /// @description Play the sound repeatedly
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSoundTest\Alarm_2.gml
+Converted description /// @description Time to go
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSoundTest\Alarm_1.gml
+Converted description /// @description Smooth appearance
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSoundTest\Alarm_0.gml
+Converted description /// @description Warn appears
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Create_0.gml
+Converted builtin - line 4: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Alarm_11.gml
+Converted description /// @description Sliding out
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Alarm_0.gml
+Converted description /// @description There should go menu options
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Other_14.gml
+Converted description /// @description Save values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Other_13.gml
+Converted description /// @description Option paging
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Other_12.gml
+Converted description /// @description Read values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Other_11.gml
+Converted description /// @description Going back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMenuParent\Other_10.gml
+Converted description /// @description Option selected
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOptionsMenu\Create_0.gml
+Converted builtin - line 11: view_xview -> __view_get( e__VW.XView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOptionsMenu\Alarm_2.gml
+Converted builtin - line 2: background_alpha[0] = 0.5 + random_range(0, 0.2) -> __background_set( e__BG.Alpha, 0, 0.5 + random_range(0, 0.2) )
+Converted description /// @description Background flashing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOptionsMenu\Alarm_1.gml
+Converted description /// @description go to menu
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOptionsMenu\Alarm_0.gml
+Converted description /// @description Options
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOptionsMenu\Other_11.gml
+Converted description /// @description Back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOptionsMenu\Other_10.gml
+Converted description /// @description Opening a group of settings
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objAudioMenu\Create_0.gml
+Converted builtin - line 5: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_yview -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objAudioMenu\Alarm_10.gml
+Converted description /// @description Less precise step event
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objAudioMenu\Other_13.gml
+Converted description /// @description Option paging
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objAudioMenu\Other_12.gml
+Converted description /// @description Read values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objAudioMenu\Other_11.gml
+Converted description /// @description going back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objAudioMenu\Other_10.gml
+Converted description /// @description Option selection
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGraphicMenu\Create_0.gml
+Converted builtin - line 5: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_yview -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGraphicMenu\Other_13.gml
+Converted description /// @description Option paging
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGraphicMenu\Other_12.gml
+Converted description /// @description Read values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGraphicMenu\Other_11.gml
+Converted description /// @description going back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGraphicMenu\Other_10.gml
+Converted description /// @description Option selection
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameplayMenu\Create_0.gml
+Converted builtin - line 5: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_yview -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameplayMenu\Other_13.gml
+Converted description /// @description Option paging
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameplayMenu\Other_12.gml
+Converted description /// @description Read values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameplayMenu\Other_11.gml
+Converted description /// @description going back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameplayMenu\Other_10.gml
+Converted description /// @description Option selection
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objControlsMenu\Create_0.gml
+Converted builtin - line 5: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_yview -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objControlsMenu\Other_25.gml
+Converted description /// @description Find duplicate key bindings
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objControlsMenu\Other_14.gml
+Converted description /// @description Save values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objControlsMenu\Other_12.gml
+Converted description /// @description Read values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objControlsMenu\Other_11.gml
+Converted description /// @description going back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objControlsMenu\Other_10.gml
+Converted description /// @description Option selection
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOtherMenu\Create_0.gml
+Converted builtin - line 5: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_yview -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOtherMenu\Alarm_10.gml
+Converted description /// @description Less precise step event
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOtherMenu\Other_13.gml
+Converted description /// @description Option paging
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOtherMenu\Other_12.gml
+Converted description /// @description Read values
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOtherMenu\Other_11.gml
+Converted description /// @description going back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objOtherMenu\Other_10.gml
+Converted description /// @description Option selection
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMoneyShower\Alarm_2.gml
+Converted description /// @description Cool way of showing a number
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMoneyShower\Alarm_1.gml
+Converted description /// @description Showing the reward
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMoneyShower\Alarm_0.gml
+Converted description /// @description Start showing the reward
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objMoneyShower\Step_0.gml
+Converted builtin - line 8: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 9: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 9: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBossName\Alarm_2.gml
+Converted description /// @description Hidding
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBossName\Alarm_1.gml
+Converted description /// @description Showing up
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBossName\Alarm_0.gml
+Converted description /// @description After init
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShowLabel\Alarm_1.gml
+Converted description /// @description fading
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShowLabel\Alarm_0.gml
+Converted description /// @description showing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShakeEffect\Create_0.gml
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 8: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 6: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 6: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShakeEffect\Destroy_0.gml
+Converted builtin - line 5: view_xview[0] = old_x -> __view_set( e__VW.XView, 0, old_x )
+Converted builtin - line 6: view_yview[0] = old_y -> __view_set( e__VW.YView, 0, old_y )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShakeEffect\Alarm_0.gml
+Converted description /// @description Destruction
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShakeEffect\Step_0.gml
+Converted builtin - line 6: view_xview[0] = old_x + floor(xFollow/view_wview[0])*view_wview[0] + random_range(-shake_mag,shake_mag) -> __view_set( e__VW.XView, 0, old_x + floor(xFollow/view_wview[0])*view_wview[0] + random_range(-shake_mag,shake_mag) )
+Converted builtin - line 7: view_yview[0] = old_y + floor(yFollow/view_hview[0])*view_hview[0] + random_range(-shake_mag,shake_mag) -> __view_set( e__VW.YView, 0, old_y + floor(yFollow/view_hview[0])*view_hview[0] + random_range(-shake_mag,shake_mag) )
+Converted builtin - line 6: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 6: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShakeEffect\Draw_0.gml
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 14: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 14: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 14: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 18: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 18: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 18: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 15: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 15: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 15: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 19: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 19: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 19: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 7: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 8: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Thanks to Just and Kelvar <3
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objLightEffect\Create_0.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 2: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objLightEffect\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objCard\Alarm_0.gml
+Converted description /// @description Hiding
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objCard\Step_0.gml
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 16: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 17: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 1: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 5: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 16: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 17: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objCard\Other_10.gml
+Converted builtin - line 2: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 8: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 8: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 4: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 8: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description fuck go back
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objClear\Alarm_0.gml
+Converted description /// @description Show the reward
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objClear\Draw_0.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 11: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 11: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 5: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 11: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Alarm_3.gml
+Converted description /// @description happil 2 slowdown
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Alarm_2.gml
+Converted description /// @description Spawning clear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Alarm_1.gml
+Converted description /// @description return to previous window position/size (after using display_reset)/// @param after using display_reset
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Alarm_0.gml
+Converted description /// @description pause current music when it's done fading out
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Step_0.gml
+Converted description /// @description game checks
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Other_10.gml
+Converted description /// @description fade current music out
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Other_4.gml
+Converted description /// @description room checks
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Other_2.gml
+Converted description /// @description initialize everything
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWorld\Draw_64.gml
+Converted description /// @description draw debug overlay
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objCamera\Other_10.gml
+Converted builtin - line 14: view_xview[0] = floor(xFollow/view_wview[0])*view_wview[0] -> __view_set( e__VW.XView, 0, floor(xFollow/view_wview[0])*view_wview[0] )
+Converted builtin - line 15: view_yview[0] = floor(yFollow/view_hview[0])*view_hview[0] -> __view_set( e__VW.YView, 0, floor(yFollow/view_hview[0])*view_hview[0] )
+Converted description /// @description snap view to the section of the room that the player's in
+Converted builtin - line 14: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 14: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 15: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 15: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBeatenBosses\Create_0.gml
+Converted builtin - line 15: background_blend[0] = make_colour_hsv(global.hubColor, 220, 255) -> __background_set( e__BG.Blend, 0, make_colour_hsv(global.hubColor, 220, 255) )
+Converted builtin - line 10: background_alpha[1] = 0.99 -> __background_set( e__BG.Alpha, 1, 0.99 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBeatenBosses\Alarm_0.gml
+Converted builtin - line 4: background_blend[0] = make_colour_hsv(global.hubColor, 220, 255) -> __background_set( e__BG.Blend, 0, make_colour_hsv(global.hubColor, 220, 255) )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBeatenBosses\Step_2.gml
+Converted builtin - line 1: background_alpha[1] -> __background_get( e__BG.Alpha, 1 )
+Converted builtin - line 17: background_alpha[1] = tmp -> __background_set( e__BG.Alpha, 1, tmp )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBeatenBosses\Other_11.gml
+Converted builtin - line 11: background_index[1] -> __background_get( e__BG.Index, 1 )
+Converted builtin - line 15: background_index[1] -> __background_get( e__BG.Index, 1 )
+Converted builtin - line 19: background_index[1] -> __background_get( e__BG.Index, 1 )
+Converted builtin - line 23: background_index[1] -> __background_get( e__BG.Index, 1 )
+Converted builtin - line 27: background_index[1] -> __background_get( e__BG.Index, 1 )
+Converted builtin - line 12: background_index[1] = bBoss1 -> __background_set( e__BG.Index, 1, bBoss1 )
+Converted builtin - line 16: background_index[1] = bBoss2_BG -> __background_set( e__BG.Index, 1, bBoss2_BG )
+Converted builtin - line 20: background_index[1] = bBoss3_BG2 -> __background_set( e__BG.Index, 1, bBoss3_BG2 )
+Converted builtin - line 24: background_index[1] = bBoss4 -> __background_set( e__BG.Index, 1, bBoss4 )
+Converted builtin - line 28: background_index[1] = bFinalBoss_BG -> __background_set( e__BG.Index, 1, bFinalBoss_BG )
+Converted builtin - line 6: background_alpha[1] -> __background_get( e__BG.Alpha, 1 )
+Converted description /// @description Changing tiles transparency
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBeatenBosses\Other_10.gml
+Converted description /// @description Hiding other tiles
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBeatenBosses\Draw_0.gml
+Converted builtin - line 13: background_alpha[1] -> __background_get( e__BG.Alpha, 1 )
+Converted builtin - line 14: background_alpha[1] -> __background_get( e__BG.Alpha, 1 )
+Converted builtin - line 28: background_alpha[1] -> __background_get( e__BG.Alpha, 1 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayer\Alarm_1.gml
+Converted description /// @description I-framing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayer\Alarm_0.gml
+Converted description /// @description Back to normal
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayer\Collision_84f3c3b4-2503-4255-aae4-c1bcb50d6893.gml
+Converted description /// @description Paralyze the player
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayer\Other_0.gml
+Converted description /// @description bruh
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayer\Draw_0.gml
+Converted description /// @description draw the player
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBow\Step_2.gml
+Converted description /// @description snap to the player after he moves this frame
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBow\Step_0.gml
+Converted description /// @description snap to the player before he moves this frame
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBow\Other_10.gml
+Converted description /// @description stay with the player
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBlood\Collision_94be8e11-6b9e-4568-b970-3c847f20506b.gml
+Converted description /// @description do nothing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBlood\Collision_8e2963df-2ffb-47ee-a249-e4b06bed43eb.gml
+Converted description /// @description snap to the block
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameOver\Create_0.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 149: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 149: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 149: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 149: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameOver\Step_0.gml
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 7: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 7: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGameOver\Draw_0.gml
+Converted builtin - line 27: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 27: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 28: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 28: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 19: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 27: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 28: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 2: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 19: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 20: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 1: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 19: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 19: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 20: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 20: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWeaponPlayer\Other_11.gml
+Converted description /// @description Reloading
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWeaponPlayer\Other_10.gml
+Converted description /// @description Shoot them up!
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBullet\Alarm_0.gml
+Converted description /// @description Slow destroying
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayerHP\Alarm_2.gml
+Converted description /// @description Slowly update
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayerHP\Alarm_1.gml
+Converted description /// @description Disappearing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPlayerHP\Alarm_0.gml
+Converted description /// @description Appearing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShopMain\Alarm_2.gml
+Converted description /// @description Epic sliding out
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShopMain\Alarm_1.gml
+Converted description /// @description Epic sliding in
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShopMain\Alarm_0.gml
+Converted description /// @description Go to the hub
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShopWeapon\Alarm_1.gml
+Converted description /// @description Epic sliding out
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objShopWeapon\Alarm_0.gml
+Converted description /// @description Epic sliding in
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustReflection_Eyes\Alarm_0.gml
+Converted description /// @description Start blinking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Alarm_2.gml
+Converted description /// @description Final timer
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Alarm_1.gml
+Converted description /// @description Music slowdown
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Alarm_0.gml
+Converted description /// @description Background flashing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Other_14.gml
+Converted description /// @description New timer position
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Other_12.gml
+Converted description /// @description Phase 3
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Other_11.gml
+Converted description /// @description Phase 2
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBG\Other_10.gml
+Converted description /// @description Phase 1
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWallHole\Alarm_1.gml
+Converted description /// @description Restoring hole collision
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWallHole\Other_11.gml
+Converted description /// @description Throwing bricks
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objWallHole\Other_10.gml
+Converted description /// @description Breaking wall
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1Bullet\Alarm_1.gml
+Converted description /// @description Check the bullet type
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1Bullet\Alarm_0.gml
+Converted description /// @description aiming
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBulletJR\Other_10.gml
+Converted description /// @description Skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBulletJustist\Other_10.gml
+Converted description /// @description Skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBrick\Alarm_0.gml
+Converted description /// @description Destroying
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_10.gml
+Converted description /// @description Real walking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_9.gml
+Converted description /// @description Real attacking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_8.gml
+Converted description /// @description Healing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_7.gml
+Converted description /// @description Revive
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_6.gml
+Converted description /// @description Showing and hiding
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_4.gml
+Converted description /// @description Attacking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_3.gml
+Converted description /// @description Turning off I-framing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_2.gml
+Converted description /// @description I-framing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_1.gml
+Converted description /// @description Walking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Alarm_0.gml
+Converted description /// @description Fly or walk
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Other_23.gml
+Converted description /// @description Spawning extra bullets
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Other_22.gml
+Converted description /// @description Attack 2
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Other_21.gml
+Converted description /// @description Attack 1
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Other_14.gml
+Converted description /// @description Resetting alarm[4]
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Other_11.gml
+Converted description /// @description Resetting alarm[1]
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1\Other_10.gml
+Converted description /// @description Resetting alarm[0]
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJR\Alarm_5.gml
+Converted description /// @description Attack 2. It requires real time shooting
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJR\Alarm_1.gml
+Converted description /// @description Walking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJR\Alarm_0.gml
+Converted description /// @description Fly or walk
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJR\Other_23.gml
+Converted description /// @description Spawning extra bullets
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJR\Other_22.gml
+Converted description /// @description Attack 2
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJR\Other_21.gml
+Converted description /// @description Attack 1
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustist\Alarm_1.gml
+Converted description /// @description Walking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustist\Alarm_0.gml
+Converted description /// @description Fly or walk
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustist\Other_23.gml
+Converted description /// @description Spawning extra bullets
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustist\Other_22.gml
+Converted description /// @description Attack 2
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustist\Other_21.gml
+Converted description /// @description Attack 1
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1_Arms\Alarm_1.gml
+Converted description /// @description Start reloading
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1_Follower\Alarm_0.gml
+Converted description /// @description Apply skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1_Follower\Step_2.gml
+Converted description /// @description snap to the player before he moves this frame
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss1_Follower\Other_10.gml
+Converted description /// @description stay with the player
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Alarm_5.gml
+Converted description /// @description no problem bro
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Alarm_4.gml
+Converted description /// @description Play sound
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Alarm_3.gml
+Converted description /// @description Battle is over
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Alarm_2.gml
+Converted description /// @description Phase 2 started
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Alarm_1.gml
+Converted description /// @description Close the door
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Alarm_0.gml
+Converted description /// @description Open the door
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2Door\Other_10.gml
+Converted description /// @description Ending
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2HP\Alarm_1.gml
+Converted description /// @description Freeze player
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2HP\Alarm_0.gml
+Converted description /// @description Start animation
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss2HP\Other_10.gml
+Converted description /// @description Update HP
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_7.gml
+Converted description /// @description throw stars
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_6.gml
+Converted description /// @description first meme
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_5.gml
+Converted description /// @description Stop spinning
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_4.gml
+Converted description /// @description meme
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_3.gml
+Converted description /// @description Play sound for final aim
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_2.gml
+Converted description /// @description Remember player position
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_1.gml
+Converted description /// @description Real time shooting
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objViridian\Alarm_0.gml
+Converted description /// @description Die
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objRock\Other_10.gml
+Converted description /// @description Explosion
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPropeller\Alarm_2.gml
+Converted description /// @description Change direction #2
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPropeller\Alarm_1.gml
+Converted description /// @description Change direction #1
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustularityWater\Alarm_0.gml
+Converted description /// @description Hiiiii
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Alarm_4.gml
+Converted description /// @description Disappear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Alarm_3.gml
+Converted description /// @description Smooth animation
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Alarm_2.gml
+Converted description /// @description Movivng
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Alarm_1.gml
+Converted description /// @description Changing spot
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Alarm_0.gml
+Converted description /// @description I-framing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Other_11.gml
+Converted description /// @description When spot change is done
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonParent\Other_10.gml
+Converted description /// @description My honest reaction
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonA\Alarm_11.gml
+Converted description /// @description Temporary skin change
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 20: unexpected syntax error
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 20: malformed variable reference got new
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 20: unexpected terminal operator new
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 21: unexpected syntax error
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 21: unexpected terminal operator new
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 21: unexpected terminal operator new
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 28: unexpected syntax error
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 28: unexpected terminal operator new
+ERROR: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml - 29: unexpected syntax error
+Too many errors - GML not processed : C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC\Other_11.gml
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonD\Alarm_11.gml
+Converted description /// @description My main goal is to blow up
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonD\Alarm_10.gml
+Converted description /// @description Real gravity change
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonD\Alarm_2.gml
+Converted description /// @description Movivng
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonController\Alarm_3.gml
+Converted description /// @description Show names with delay
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonController\Alarm_2.gml
+Converted description /// @description Spawning blocks
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonController\Alarm_1.gml
+Converted description /// @description Stop pulling out the spikes
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonController\Alarm_0.gml
+Converted description /// @description Pull out the spikes
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonController\Other_10.gml
+Converted description /// @description The ending
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonA_blade\Alarm_1.gml
+Converted description /// @description Allow destruction
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonA_blade\Step_0.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimson_Block\Alarm_1.gml
+Converted description /// @description Disappear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimson_Block\Alarm_0.gml
+Converted description /// @description Appear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimson_Water\Alarm_1.gml
+Converted description /// @description Disappear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimson_Water\Alarm_0.gml
+Converted description /// @description Appear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Laser\Alarm_3.gml
+Converted description /// @description Circle fade
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Laser\Alarm_2.gml
+Converted description /// @description Configure
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Laser\Alarm_1.gml
+Converted builtin - line 10: view_xview[0] = 0 -> __view_set( e__VW.XView, 0, 0 )
+Converted builtin - line 11: view_yview[0] = 0 -> __view_set( e__VW.YView, 0, 0 )
+Converted description /// @description Release laser
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Laser\Alarm_0.gml
+Converted description /// @description Stop aiming
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_LaserBeam\Alarm_0.gml
+Converted description /// @description Fading
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Halo\Alarm_0.gml
+Converted description /// @description Smooth appearance
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Halo\Step_0.gml
+Converted description /// @description you are filled with determination !!
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonB_Halo\Other_25.gml
+Converted description /// @description Swap controls
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC_Center\Alarm_1.gml
+Converted description /// @description They can go
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonC_Cherry\Collision_c72d5852-b749-4fcd-9a1e-43e04e3d0b08.gml
+Converted description /// @description Wtf you made them disown me :(
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimson_Soul\Alarm_1.gml
+Converted description /// @description Disappear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimson_Soul\Alarm_0.gml
+Converted description /// @description Appear
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonD_Star\Alarm_0.gml
+Converted builtin - line 2: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 3: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 2: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Destroy after time
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustrimsonD_Star\Other_25.gml
+Converted description /// @description Explosion
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationParent\Alarm_11.gml
+Converted description /// @description Fading away
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationParent\Alarm_10.gml
+Converted description /// @description Turning off godmode
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationParent\Alarm_9.gml
+Converted description /// @description I-framing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationParent\Other_25.gml
+Converted description /// @description Activating
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Alarm_5.gml
+Converted description /// @description Go easy on the player at the beginning
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Alarm_4.gml
+Converted builtin - line 3: background_colour = make_colour_rgb(temp, temp, temp) -> __background_set_colour( make_colour_rgb(temp, temp, temp) )
+Converted description /// @description Changing BG
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Alarm_3.gml
+Converted description /// @description Changing active parts
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Alarm_2.gml
+Converted description /// @description Changing pitch
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Alarm_0.gml
+Converted description /// @description Attacking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Collision_1974bbaf-3114-4542-888c-8c793b9f2c10.gml
+Converted builtin - line 14: background_alpha[0] = 1 -> __background_set( e__BG.Alpha, 0, 1 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Other_11.gml
+Converted builtin - line 79: view_visible[1] = false -> __view_set( e__VW.Visible, 1, false )
+Converted builtin - line 80: view_visible[2] = false -> __view_set( e__VW.Visible, 2, false )
+Converted description /// @description Checking part's HP
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustination\Other_10.gml
+Converted description /// @description Restoring array of available parts
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationDark\Alarm_0.gml
+Converted description /// @description Attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationIce\Alarm_0.gml
+Converted description /// @description Attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objJustinationLight\Alarm_0.gml
+Converted description /// @description Attacking
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Spike\Alarm_0.gml
+Converted description /// @description Cooldown
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Spike\Other_10.gml
+Converted description /// @description Selecting skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Ground\Alarm_0.gml
+Converted description /// @description Enabling
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Ground\Other_10.gml
+Converted description /// @description Changing skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Effects\Create_0.gml
+Converted builtin - line 5: view_surface_id[1] = surf[1] -> __view_set( e__VW.SurfaceID, 1, surf[1] )
+Converted builtin - line 6: view_surface_id[2] = surf[0] -> __view_set( e__VW.SurfaceID, 2, surf[0] )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Effects\Other_10.gml
+Converted description /// @description Creating emitters
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBoss4_Effects\Draw_0.gml
+Converted builtin - line 34: view_visible[2] = false -> __view_set( e__VW.Visible, 2, false )
+Converted builtin - line 35: view_visible[1] = false -> __view_set( e__VW.Visible, 1, false )
+Converted builtin - line 49: view_surface_id[2] = surf[0] -> __view_set( e__VW.SurfaceID, 2, surf[0] )
+Converted builtin - line 166: view_surface_id[1] = surf[1] -> __view_set( e__VW.SurfaceID, 1, surf[1] )
+Converted description /// @description Drawing final
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objCrimsonCherry\Alarm_0.gml
+Converted description /// @description now I can die peacefully
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_GayShooter\Alarm_0.gml
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 1: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGayBullet\Alarm_0.gml
+Converted description /// @description Cool effect
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGayTornado\Alarm_0.gml
+Converted description /// @description Attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objKitty\Alarm_1.gml
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 2: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Stop and bounce
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPirhanaPlant\Alarm_2.gml
+Converted description /// @description Firing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPirhanaPlant\Alarm_1.gml
+Converted description /// @description Start firing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objPirhanaPlant\Alarm_0.gml
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 2: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Stop
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSolgryn_Water\Alarm_0.gml
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Stop when on top
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objSolgryn_Spider\Destroy_0.gml
+Converted description /// @description Shut up
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Octopus\Alarm_1.gml
+Converted description /// @description Dead
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Octopus\Alarm_0.gml
+Converted description /// @description Stop when we need
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Rock\Alarm_0.gml
+Converted description /// @description Rotate
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Hammer\Step_0.gml
+Converted builtin - line 9: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 9: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_GreenDude\Alarm_2.gml
+Converted description /// @description Aim
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_GreenDude\Alarm_1.gml
+Converted description /// @description Fly
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_GreenDude\Alarm_0.gml
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Slide out
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_GreenDude\Other_0.gml
+Converted builtin - line 1: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_GreenDude2\Alarm_1.gml
+Converted builtin - line 2: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description Fly
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_GreenDude2\Other_0.gml
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Bat\Alarm_0.gml
+Converted description /// @description Aim
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Bomb\Other_10.gml
+Converted description /// @description Explode
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_PeriodicAttack\Alarm_0.gml
+Converted description /// @description spinning circle mini attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Sphere\Alarm_1.gml
+Converted description /// @description Periodic attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Sphere\Alarm_0.gml
+Converted description /// @description Switch color
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Sphere\Collision_c3a442a0-d66b-45ac-ba27-e3553f240a91.gml
+Converted description /// @description Do an explosion
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Sphere\Other_11.gml
+Converted description /// @description Counter-attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Sphere\Other_10.gml
+Converted description /// @description Death
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_BG\Alarm_2.gml
+Converted description /// @description Post-create
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_BG\Alarm_1.gml
+Converted description /// @description Stop moving spikes
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_BG\Alarm_0.gml
+Converted description /// @description Start moving spikes
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_BG\Other_10.gml
+Converted description /// @description Show name
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigJust_Healthbar\Alarm_0.gml
+Converted description /// @description Slow red health fade
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigJust_Healthbar\Draw_0.gml
+Converted builtin - line 26: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 28: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 30: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 26: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 28: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 28: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 26: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 28: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Head\Create_0.gml
+Converted builtin - line 13: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 13: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 13: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 13: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Head\Alarm_1.gml
+Converted description /// @description Change phase later
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Head\Alarm_0.gml
+Converted description /// @description iframe
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Head\Other_12.gml
+Converted description /// @description Sync HP
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Head\Other_11.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Attack
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Head\Other_10.gml
+Converted builtin - line 12: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 12: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 18: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 72: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 12: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 12: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Phase changed
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Body\Alarm_0.gml
+Converted description /// @description Shooting big bullets
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Body\Other_10.gml
+Converted description /// @description Change skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigKid_Bullet\Other_10.gml
+Converted description /// @description Change skin
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigJust_ViewMover\Alarm_3.gml
+Converted description /// @description Moving the healthbar
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigJust_ViewMover\Alarm_2.gml
+Converted description /// @description Stop the new spikes
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigJust_ViewMover\Alarm_1.gml
+Converted builtin - line 43: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 80: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 100: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 123: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 27: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 43: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 87: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 93: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 41: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 80: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 100: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 123: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 27: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 43: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 87: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 93: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Stretch the box
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigJust_ViewMover\Alarm_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 13: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_xview[0] -= 4 -> __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) - (4) )
+Converted builtin - line 9: view_xview[0] = 0 -> __view_set( e__VW.XView, 0, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 14: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 16: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 6: view_yview[0] -= 4 -> __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) - (4) )
+Converted builtin - line 10: view_yview[0] = 0 -> __view_set( e__VW.YView, 0, 0 )
+Converted builtin - line 13: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 14: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Move the view
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Create_0.gml
+Converted builtin - line 48: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 50: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 46: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 46: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 46: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Alarm_5.gml
+Converted description /// @description Stop being insane
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Alarm_4.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 3: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Create block effect
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Alarm_3.gml
+Converted description /// @description Make noise
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Alarm_2.gml
+Converted description /// @description Face moving on screen
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Alarm_1.gml
+Converted description /// @description stop noise
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_Head\Alarm_0.gml
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description Boot up
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objBigGeezer_BG\Create_0.gml
+Converted builtin - line 1: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGeezer_Text\Alarm_2.gml
+Converted description /// @description Move crazy text
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGeezer_Text\Alarm_1.gml
+Converted description /// @description Next line
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGeezer_Text\Alarm_0.gml
+Converted description /// @description Write the text
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objGeezer_Text\Other_10.gml
+Converted description /// @description Turn crazy
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objStickyKeys\Destroy_0.gml
+Converted description /// @description Switch phase
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Controller\Create_0.gml
+Converted builtin - line 3: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Controller\Alarm_3.gml
+Converted builtin - line 8: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 8: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description tf you mean "no surface" ?
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Controller\Alarm_2.gml
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Stop freezing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Controller\Alarm_1.gml
+Converted builtin - line 5: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Freezing
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Controller\Alarm_0.gml
+Converted description /// @description Slowdown
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Controller\Draw_0.gml
+Converted builtin - line 11: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 14: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 15: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 11: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 14: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 15: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 15: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 15: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond\Alarm_1.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Dragging
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond\Alarm_0.gml
+Converted description /// @description Showing up
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond\Mouse_0.gml
+Converted description /// @description Drag
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond\Other_10.gml
+Converted description /// @description Close
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Close\Alarm_0.gml
+Converted description /// @description Look really focused
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objNoRespond_Button\Alarm_0.gml
+Converted description /// @description Look really focused
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Face\Create_0.gml
+Converted builtin - line 38: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 38: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Face\Alarm_4.gml
+Converted description /// @description Why the long face?
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Face\Alarm_3.gml
+Converted description /// @description Explode
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Face\Alarm_2.gml
+Converted builtin - line 33: background_colour = c_white -> __background_set_colour( c_white )
+Converted description /// @description Start death scene
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Face\Alarm_1.gml
+Converted builtin - line 6: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 6: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 6: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 6: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Spawn spheres
+
+Converting GML script: C:\Users\Essisten\Documents\Projects\Just-Trap-2-REMAKE\mvc\objects\objK2_Face\Draw_0.gml
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 7: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Missing audiogroup for sound: 'sndVJump' - setting to default audio group
+Missing audiogroup for sound: 'sndBulletBounce' - setting to default audio group
+Missing audiogroup for sound: 'sndShoot' - setting to default audio group
+Missing audiogroup for sound: 'sndWallJump' - setting to default audio group
+Missing audiogroup for sound: 'sndDJump' - setting to default audio group
+Missing audiogroup for sound: 'sndJump' - setting to default audio group
+Missing audiogroup for sound: 'sndDeath' - setting to default audio group
+Missing audiogroup for sound: 'sndShotgunShoot' - setting to default audio group
+Missing audiogroup for sound: 'sndBatDeflect' - setting to default audio group
+Missing audiogroup for sound: 'sndBatDeflect2' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Bomb' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Damage' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Charge' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Water' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Shoot' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Death' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss2_Fire' - setting to default audio group
+Missing audiogroup for sound: 'sndLaughV1' - setting to default audio group
+Missing audiogroup for sound: 'sndLaughV2' - setting to default audio group
+Missing audiogroup for sound: 'sndVoiceV1' - setting to default audio group
+Missing audiogroup for sound: 'sndVoiceV2' - setting to default audio group
+Missing audiogroup for sound: 'sndVoiceV3' - setting to default audio group
+Missing audiogroup for sound: 'sndVoiceV4' - setting to default audio group
+Missing audiogroup for sound: 'sndShootV' - setting to default audio group
+Missing audiogroup for sound: 'sndWarningV' - setting to default audio group
+Missing audiogroup for sound: 'sndWarpV' - setting to default audio group
+Missing audiogroup for sound: 'sndAppearV' - setting to default audio group
+Missing audiogroup for sound: 'sndDoor' - setting to default audio group
+Missing audiogroup for sound: 'sndCrunchy' - setting to default audio group
+Missing audiogroup for sound: 'sndMiss' - setting to default audio group
+Missing audiogroup for sound: 'sndWater' - setting to default audio group
+Missing audiogroup for sound: 'sndAngelLaser' - setting to default audio group
+Missing audiogroup for sound: 'sndAngelLaser2' - setting to default audio group
+Missing audiogroup for sound: 'sndJustrimsonRage' - setting to default audio group
+Missing audiogroup for sound: 'sndBlockChange' - setting to default audio group
+Missing audiogroup for sound: 'sndBossHit' - setting to default audio group
+Missing audiogroup for sound: 'sndBreak' - setting to default audio group
+Missing audiogroup for sound: 'sndCherry' - setting to default audio group
+Missing audiogroup for sound: 'sndGlass' - setting to default audio group
+Missing audiogroup for sound: 'sndItem' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss1' - setting to default audio group
+Missing audiogroup for sound: 'sndHeal' - setting to default audio group
+Missing audiogroup for sound: 'sndBoss1_Reload' - setting to default audio group
+Missing audiogroup for sound: 'sndMonster1' - setting to default audio group
+Missing audiogroup for sound: 'sndMenuMove' - setting to default audio group
+Missing audiogroup for sound: 'sndMenuSelect' - setting to default audio group
+Missing audiogroup for sound: 'sndSpikeTrap' - setting to default audio group
+Missing audiogroup for sound: 'sndSpike' - setting to default audio group
+Missing audiogroup for sound: 'sndGeezerStatic' - setting to default audio group
+Missing audiogroup for sound: 'sndStickyKeys' - setting to default audio group
+Missing audiogroup for sound: 'sndGayShooter' - setting to default audio group
+Missing audiogroup for sound: 'sndGayShooting' - setting to default audio group
+Missing audiogroup for sound: 'sndGayFireball' - setting to default audio group
+Missing audiogroup for sound: 'sndGayReporter' - setting to default audio group
+Missing audiogroup for sound: 'sndGayBilly1' - setting to default audio group
+Missing audiogroup for sound: 'sndGayBilly2' - setting to default audio group
+Missing audiogroup for sound: 'sndGayBilly3' - setting to default audio group
+Missing audiogroup for sound: 'sndGayBilly4' - setting to default audio group
+Missing audiogroup for sound: 'sndGayBilly5' - setting to default audio group
+Missing audiogroup for sound: 'sndGayBillyDeath' - setting to default audio group
+Missing audiogroup for sound: 'sndSolgrynShoot' - setting to default audio group
+Missing audiogroup for sound: 'sndSolgrynWater' - setting to default audio group
+Missing audiogroup for sound: 'sndHadoken' - setting to default audio group
+Missing audiogroup for sound: 'sndSolgrynLaser' - setting to default audio group
+Missing audiogroup for sound: 'sndSolgryn_Spider' - setting to default audio group
+Missing audiogroup for sound: 'sndK2_Shoot' - setting to default audio group
+Missing audiogroup for sound: 'sndK2_Shoot2' - setting to default audio group
+Missing audiogroup for sound: 'sndK2_Laser' - setting to default audio group
+Missing audiogroup for sound: 'sndK2_Ball' - setting to default audio group
+Missing audiogroup for sound: 'sndK2_Boom' - setting to default audio group
+Missing audiogroup for sound: 'musOnDeath' - setting to default audio group
+Missing audiogroup for sound: 'musClear' - setting to default audio group
+Missing audiogroup for sound: 'musStageSelect' - setting to default audio group
+Missing audiogroup for sound: 'musStage1' - setting to default audio group
+Missing audiogroup for sound: 'musStage4' - setting to default audio group
+Missing audiogroup for sound: 'musStage2A' - setting to default audio group
+Missing audiogroup for sound: 'musStage2B' - setting to default audio group
+Missing audiogroup for sound: 'musStage2C' - setting to default audio group
+Missing audiogroup for sound: 'musStage2D' - setting to default audio group
+Missing audiogroup for sound: 'musTitleA' - setting to default audio group
+Missing audiogroup for sound: 'musTitleB' - setting to default audio group
+Missing audiogroup for sound: 'musOnDeath2' - setting to default audio group
+Missing audiogroup for sound: 'musStage3A' - setting to default audio group
+Missing audiogroup for sound: 'musStage3B' - setting to default audio group
+Missing audiogroup for sound: 'musStage6' - setting to default audio group
+Imported layer depths for room(s) 'rStageSelect, rBoss2' were not adequately spaced. Unless updated this will have undefined results in game.
+Game speed set to 50
+Added compatibility script 'action\action_bounce.gml'
+Added compatibility script 'action\action_if_variable.gml'
+Added compatibility script 'action\action_kill_object.gml'
+Added compatibility script 'background\__background_get.gml'
+Added compatibility script 'background\__background_get_element.gml'
+Added compatibility script 'background\__background_get_internal.gml'
+Added compatibility script 'background\__background_set.gml'
+Added compatibility script 'background\__background_set_colour.gml'
+Added compatibility script 'background\__background_set_element.gml'
+Added compatibility script 'background\__background_set_internal.gml'
+Added compatibility script 'draw\draw_enable_alphablend.gml'
+Added compatibility script 'draw\draw_set_blend_mode.gml'
+Added compatibility script 'draw\draw_set_blend_mode_ext.gml'
+Added compatibility script 'instance\instance_create.gml'
+Added compatibility script 'object\object_get_depth.gml'
+Added compatibility script 'sound\sound_isplaying.gml'
+Added compatibility script 'sound\sound_stop_all.gml'
+Added compatibility script 'texture\texture_set_interpolation.gml'
+Added compatibility script 'texture\texture_set_repeat.gml'
+Added compatibility script 'tile\tile_get_ids_at_depth.gml'
+Added compatibility script 'tile\tile_set_alpha.gml'
+Added compatibility script 'view\__view_get.gml'
+Added compatibility script 'view\__view_set.gml'
+Added compatibility script 'view\__view_set_internal.gml'
+Added compatibility script 'action\__init_action.gml'
+Added compatibility script 'background\__init_background.gml'
+Added compatibility script 'view\__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script 'background\__background_get_colour_element.gml'
+Added compatibility script '__global_object_depths.gml'

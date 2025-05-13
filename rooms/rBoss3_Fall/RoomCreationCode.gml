@@ -1,0 +1,1 @@
+global.noPause = true;

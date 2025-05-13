@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrShaderUniforms",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrShaderUniforms",
+  "parent":{
+    "name":"Saves",
+    "path":"folders/Scripts/world/Saves.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

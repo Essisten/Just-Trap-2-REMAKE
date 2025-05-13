@@ -1,0 +1,2 @@
+/// @description Cancel destroying
+

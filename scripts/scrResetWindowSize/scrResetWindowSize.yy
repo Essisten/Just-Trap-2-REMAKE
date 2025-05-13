@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrResetWindowSize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrResetWindowSize",
+  "parent":{
+    "name":"world",
+    "path":"folders/Scripts/world.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,11 @@
+if (follow)
+{
+    if (!instance_exists(objClear))
+    {
+       instance_destroy();
+       exit;
+    }
+    x = __view_get( e__VW.XView, 0 ) + objClear.hText;
+    y = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) / 2 + 64;
+}
+

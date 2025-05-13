@@ -1,0 +1,2 @@
+direction += change_dir;
+

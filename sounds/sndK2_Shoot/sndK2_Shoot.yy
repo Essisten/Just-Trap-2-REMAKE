@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sndK2_Shoot",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":320,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.0,
+  "name":"sndK2_Shoot",
+  "parent":{
+    "name":"K2",
+    "path":"folders/Sounds/sfx/Final boss/K2.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":22050,
+  "soundFile":"sndK2_Shoot",
+  "type":0,
+  "volume":0.44,
+}

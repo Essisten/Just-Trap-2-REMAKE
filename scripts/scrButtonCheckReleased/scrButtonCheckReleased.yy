@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrButtonCheckReleased",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrButtonCheckReleased",
+  "parent":{
+    "name":"controls",
+    "path":"folders/Scripts/world/controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

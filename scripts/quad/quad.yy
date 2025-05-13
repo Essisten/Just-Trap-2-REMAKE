@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"quad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"quad",
+  "parent":{
+    "name":"functions",
+    "path":"folders/Scripts/functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

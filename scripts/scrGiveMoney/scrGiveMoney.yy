@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrGiveMoney",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrGiveMoney",
+  "parent":{
+    "name":"functions",
+    "path":"folders/Scripts/functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

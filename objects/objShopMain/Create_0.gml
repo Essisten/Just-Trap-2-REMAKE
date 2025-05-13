@@ -1,0 +1,28 @@
+select = 0;
+level = 1;
+dick = 0;
+main[0] = "Weapons";
+main[1] = "Advices";
+main[2] = "Goods";
+main[3] = "Leave";
+unlocked[0] = true;
+unlocked[1] = false;
+unlocked[2] = false;
+unlocked[3] = true;
+global.noPause = true;
+submenu = noone;
+lineSeperation = 48;
+optionsNum = array_length_1d(main);
+boxStartX = 540;
+boxStartY = 250;
+boxEndX = 770;
+boxEndY = boxStartY + lineSeperation * (optionsNum);
+lineCenter = boxStartX + (boxEndX - boxStartX) / 2;
+selectBoxOffset = 4;
+slideOffset = 160;
+alarm[1] = 1;
+image_alpha = 0;
+draw_set_font(fDefault24);
+coinX = 800 - (string_width(string_hash_to_newline(string(global.coins)))) - 64;
+coinY = 560;
+

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"musStage3B",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":3,
+  "conversionMode":0,
+  "duration":0.0,
+  "name":"musStage3B",
+  "parent":{
+    "name":"music",
+    "path":"folders/Sounds/music.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"musStage3B",
+  "type":1,
+  "volume":1.0,
+}

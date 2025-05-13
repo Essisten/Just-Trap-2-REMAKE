@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"musStage2D",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":3,
+  "conversionMode":0,
+  "duration":0.0,
+  "name":"musStage2D",
+  "parent":{
+    "name":"music",
+    "path":"folders/Sounds/music.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"musStage2D",
+  "type":1,
+  "volume":1.0,
+}
