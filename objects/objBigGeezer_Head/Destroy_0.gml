@@ -6,7 +6,7 @@ with (objBigGeezer_Eyes)
      instance_destroy();
 if (global.spriteStyle == 0 and global.particles)
 {
-    part_type_destroy(global.topParticleSystem);
+    part_system_clear(global.topParticleSystem);
     part_emitter_destroy(global.topParticleSystem, emitter);
 }
 

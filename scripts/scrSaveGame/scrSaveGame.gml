@@ -40,65 +40,62 @@ function scrSaveGame(argument0) {
 	}
 
 	//create a map for save data
-	var saveMap = ds_map_create();
+	var save_map = ds_map_create();
 
-	ds_map_add(saveMap,"death",global.death);
-	ds_map_add(saveMap,"time",global.time);
-	ds_map_add(saveMap,"timeMicro",global.timeMicro);
-	ds_map_add(saveMap,"difficulty",global.difficulty);
-	ds_map_add(saveMap,"saveRoom",global.saveRoom);
-	ds_map_add(saveMap,"savePlayerX",global.savePlayerX);
-	ds_map_add(saveMap,"savePlayerY",global.savePlayerY);
-	ds_map_add(saveMap,"saveGrav",global.saveGrav);
-	ds_map_add(saveMap,"gravH",global.gravH);
-	ds_map_add(saveMap, "currentWeapon", global.currentWeapon);
-	ds_map_add(saveMap, "coins", global.coins);
-	ds_map_add(saveMap, "superCoins", global.fakeCoins);
+	ds_map_add(save_map,"death",global.death);
+	ds_map_add(save_map,"time",global.time);
+	ds_map_add(save_map,"timeMicro",global.timeMicro);
+	ds_map_add(save_map,"difficulty",global.difficulty);
+	ds_map_add(save_map,"saveRoom",global.saveRoom);
+	ds_map_add(save_map,"savePlayerX",global.savePlayerX);
+	ds_map_add(save_map,"savePlayerY",global.savePlayerY);
+	ds_map_add(save_map,"saveGrav",global.saveGrav);
+	ds_map_add(save_map,"gravH",global.gravH);
+	ds_map_add(save_map, "currentWeapon", global.currentWeapon);
+	ds_map_add(save_map, "coins", global.coins);
+	ds_map_add(save_map, "superCoins", global.fakeCoins);
 
-	for (var i = 0; i < array_length_1d(global.bossClear); i++)
+	for (var i = 0; i < array_length(global.bossClear); i++)
 	{
-	    ds_map_add(saveMap,"bossClear["+string(i)+"]", global.bossClear[i]);
-	    ds_map_add(saveMap,"clearAmount["+string(i)+"]", global.clearAmount[i]);
+	    ds_map_add(save_map,"bossClear["+string(i)+"]", global.bossClear[i]);
+	    ds_map_add(save_map,"clearAmount["+string(i)+"]", global.clearAmount[i]);
 	}
     
-	ds_map_add(saveMap,"saveGameClear",global.saveGameClear);
+	ds_map_add(save_map,"saveGameClear",global.saveGameClear);
 
-	for (var i = 0; i < array_length_1d(global.tutorial); i++)
-	    ds_map_add(saveMap,"tutorial["+string(i)+"]", global.tutorial[i]);
+	for (var i = 0; i < array_length(global.tutorial); i++)
+	    ds_map_add(save_map,"tutorial["+string(i)+"]", global.tutorial[i]);
     
-	for (var i = 0; i < array_length_1d(global.pb); i++)
-	    ds_map_add(saveMap,"pb["+string(i)+"]", global.pb[i]);
-	for (var i = 0; i < array_length_1d(global.skip); i++)
-	    ds_map_add(saveMap,"skip["+string(i)+"]", global.skip[i]);
-	for (var i = 0; i < 6; i++) //each weapon cycle
+	for (var i = 0; i < array_length(global.pb); i++)
+	    ds_map_add(save_map,"pb["+string(i)+"]", global.pb[i]);
+	for (var i = 0; i < array_length(global.skip); i++)
+	    ds_map_add(save_map,"skip["+string(i)+"]", global.skip[i]);
+	for (var i = 0; i < 12; i++) //each weapon cycle
 	{
-	    for (var k = 0; k < 2; k++) //each type cycle
-	    {
-	        ds_map_add(saveMap, "unlockedWeapons["+string(k)+","+string(i)+"]", global.unlockedWeapons[k, i]);
-	        ds_map_add(saveMap, "obtainedWeapons["+string(k)+","+string(i)+"]", global.obtainedWeapons[k, i]);
-	    }
+	    ds_map_add(save_map, "unlockedWeapons["+string(i)+"]", global.unlockedWeapons[i]);
+	    ds_map_add(save_map, "obtainedWeapons["+string(i)+"]", global.obtainedWeapons[i]);
 	}
 	var tmp = ds_list_size(global.arsenal);
 	if (tmp == 0)
 	   ds_list_add(global.arsenal, 1);
 	for (var i = 0; i < tmp; i++)
 	{
-	    ds_map_add(saveMap, "arsenal["+string(i)+"]", ds_list_find_value(global.arsenal, i));
+	    ds_map_add(save_map, "arsenal["+string(i)+"]", ds_list_find_value(global.arsenal, i));
 	}
 	//add md5 hash to verify saves and make them harder to hack
-	ds_map_add(saveMap,"mapMd5",md5_string_unicode(json_encode(saveMap)+global.md5StrAdd));
+	ds_map_add(save_map,"mapMd5",md5_string_unicode(json_encode(save_map)+global.md5StrAdd));
 
 	//save the map to a file
 	if (global.extraSaveProtection) //use ds_map_secure function
 	{
-	    ds_map_secure_save(saveMap, global.dir + "Data\\save"+string(global.savenum));
+	    ds_map_secure_save(save_map, global.dir + "Data\\save"+string(global.savenum));
 	}
 	else    //use text file
 	{
 	    //open the save file
 	    var f = file_text_open_write(global.dir + "Data\\save"+string(global.savenum));
 	    //write map to the save file with base64 encoding
-	    file_text_write_string(f,base64_encode(json_encode(saveMap)));
+	    file_text_write_string(f,base64_encode(json_encode(save_map)));
     
 	    file_text_close(f);
 	}
@@ -137,7 +134,7 @@ function scrSaveGame(argument0) {
 
 
 	//destroy the map
-	ds_map_destroy(saveMap);
+	ds_map_destroy(save_map);
 
 
 

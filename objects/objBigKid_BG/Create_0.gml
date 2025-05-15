@@ -35,7 +35,7 @@ part_type_size(gay_effect, 1, 1, 0, 0);
 part_type_sprite(gay_effect, sprGayBullet_Effect, false, false, false);
 emitter = part_emitter_create(global.topParticleSystem);
 solgryn_effect = part_type_create();
-part_type_blend(solgryn_effect, bm_add);
+part_type_blend(solgryn_effect, true);
 part_type_sprite(solgryn_effect, sprSolgryn_ShootEffect, true, true, false);
 part_type_alpha2(solgryn_effect, 0.8, 0.2);
 part_type_life(solgryn_effect, 30, 30);

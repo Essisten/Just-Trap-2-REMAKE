@@ -3,7 +3,7 @@
   "%Name":"Main",
   "name":"Main",
   "option_author":"Essisten",
-  "option_collision_compatibility":false,
+  "option_collision_compatibility":true,
   "option_copy_on_write_enabled":false,
   "option_draw_colour":4294967295,
   "option_gameguid":"{19AB1700-16F8-19AB-F016-AB19E816AB19}",

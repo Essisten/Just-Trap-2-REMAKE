@@ -1,12 +1,12 @@
 {
   "$GMShader":"",
-  "%Name":"__SMOOTH_sh_pxUpscale",
-  "name":"__SMOOTH_sh_pxUpscale",
+  "%Name":"sh_pxUpscale",
+  "name":"sh_pxUpscale",
   "parent":{
     "name":"Shaders",
     "path":"folders/Shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",
-  "type":2,
+  "type":3,
 }

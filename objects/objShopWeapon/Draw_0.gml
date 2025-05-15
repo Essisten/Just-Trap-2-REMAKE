@@ -54,7 +54,7 @@ else
     scrDrawTextOutline(weaponNameX, weaponNameY + 160 - slideOffset, weapons[version[select], select].require, c_red, c_maroon);
 dick += 2;
 draw_set_colour(c_white);
-draw_set_valign(fa_center);
+draw_set_valign(fa_middle);
 if (global.unlockedWeapons[w_id])
 {
     if (w_id == 0)
@@ -71,13 +71,11 @@ for (var i = 0; i < optionsNum; i++)
 {
     var ident = i * (version[i] + 1);
     var index = ds_list_find_index(global.arsenal, ident);
-    var color;
+    var color = c_gray;
     if (index > -1)
        color = c_green;
     else if (global.obtainedWeapons[ident])
        color = c_white;
-    else
-       color = c_gray;
     scrDrawTextOutline(lineCenter + slideOffset, boxStartY + selectBoxOffset * 2 + lineSeperation * (i), weapons[version[select], i].name, color, c_black);
 }
 

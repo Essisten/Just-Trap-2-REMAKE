@@ -1,38 +1,34 @@
 if (global.smoothingMode != 1 or global.enableShaders == 0)
     exit;
-var __SMOOTH_windowWidth = window_get_width();
-var __SMOOTH_windowHeight = window_get_height();
+var windowWidth = window_get_width();
+var windowHeight = window_get_height();
 
-texture_set_repeat(false);
+var aspectRatio = windowWidth / windowHeight;
+var aspectRatioRatio = aspectRatio / (800/608);
 
-draw_enable_alphablend(false);
+var pixelScaling = (aspectRatioRatio < 1 && windowWidth mod 800 != 0) || (aspectRatioRatio > 1 && windowHeight mod 608 != 0) || (windowWidth mod 800 != 0 && windowHeight mod 608 != 0);
 
-if(__SMOOTH_windowWidth mod 800 != 0 || __SMOOTH_windowHeight mod 608 != 0){
-    var __SMOOTH_aspectRatio = __SMOOTH_windowWidth / __SMOOTH_windowHeight;
-    var __SMOOTH_aspectRatioRatio = __SMOOTH_aspectRatio / (800/608);
-    
-    texture_set_interpolation(true);
-    //shader_set(__SMOOTH_sh_pxUpscale);
-    
-    if(__SMOOTH_aspectRatioRatio < 1){
-        var __SMOOTH_canvasHeight = __SMOOTH_windowWidth*608/800;
-        var __SMOOTH_vertOutPixels = (__SMOOTH_windowHeight - __SMOOTH_canvasHeight) / 2;
-        shader_set_uniform_f(__SMOOTH_u_texelsPerPixel, 800./__SMOOTH_windowWidth, 608./__SMOOTH_canvasHeight);
-        draw_surface_stretched(application_surface, 0, __SMOOTH_vertOutPixels, __SMOOTH_windowWidth, __SMOOTH_canvasHeight);
-    }
-    else{
-        var __SMOOTH_canvasWidth = __SMOOTH_windowHeight*800/608;
-        var __SMOOTH_horOutPixels = (__SMOOTH_windowWidth - __SMOOTH_canvasWidth) / 2;
-        shader_set_uniform_f(__SMOOTH_u_texelsPerPixel, 800./__SMOOTH_canvasWidth, 608./__SMOOTH_windowHeight);
-        draw_surface_stretched(application_surface, __SMOOTH_horOutPixels, 0, __SMOOTH_canvasWidth, __SMOOTH_windowHeight);
-    }
-    
-    shader_reset();
-    texture_set_interpolation(false);
+if(pixelScaling){
+    gpu_set_texfilter(true);
+    shader_set(sh_pxUpscale);
+}  
+
+if(aspectRatioRatio < 1){
+    var canvasHeight = windowWidth*608/800;
+    var vertOutPixels = (windowHeight - canvasHeight) / 2;
+    shader_set_uniform_f(u_texelsPerPixel, 800./windowWidth, 608./canvasHeight);
+    draw_surface_stretched(application_surface, 0, vertOutPixels, windowWidth, canvasHeight);
 }
 else{
-    draw_surface(application_surface,0,0);
+    var canvasWidth = windowHeight*800/608;
+    var horOutPixels = (windowWidth - canvasWidth) / 2;
+    shader_set_uniform_f(u_texelsPerPixel, 800./canvasWidth, 608./windowHeight);
+    draw_surface_stretched(application_surface, horOutPixels, 0, canvasWidth, windowHeight);
 }
 
-draw_enable_alphablend(true);
+if(pixelScaling){
+    shader_reset();
+    gpu_set_texfilter(false);
+}
 
+gpu_set_blendenable(true);

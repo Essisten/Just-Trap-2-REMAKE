@@ -9,10 +9,7 @@ weaponNameX = 232;
 weaponNameY = 32;
 weaponDescriptionX = 420;
 weaponDescriptionY = 32;
-for (var i = 0; i < 6; i++)
-{
-    version[i] = 0;
-}
+version = array_create(6, 0);
 weapons[0, 0] = scrCreateShopItem("CXN Bat",
 @"The CXN is end loaded, has an optimized handle flex specially built to perform perfectly with the 13 inch composite barrel. Get your CXN Slowpitch Bat today, right here at CheapBats.com!
 #    Due to Just's lack of strength, the damage of this weapon is simply negligible. However, it's capable of reflecting most enemy projectiles.",
@@ -45,15 +42,15 @@ weapons[0, 3] = scrCreateShopItem("Machine gun",
 "far",
 800,
 "");
-var v_amount = array_height_2d(weapons);
+var v_amount = array_length(weapons[0]);
 for (var k = 0; k < v_amount; k++)
 {
-    var w_amount = array_length_2d(weapons, 0);
+    var w_amount = array_length(weapons);
     for (var i = 0; i < w_amount; i++)
     {
-        if (global.unlockedWeapons[i + k * v_amount])
+        if (global.unlockedWeapons[k + i * (w_amount - 1)])
            continue;
-        with (weapons[k, i])
+        with (weapons[i, k])
         {
             name = "???";
             description = "";
@@ -61,7 +58,7 @@ for (var k = 0; k < v_amount; k++)
     }
 }
 lineSeperation = 48;
-optionsNum = array_length_1d(weapons);
+optionsNum = array_length(weapons);
 boxStartX = 300;
 boxStartY = 250;
 boxEndX = 540;
@@ -71,4 +68,6 @@ selectBoxOffset = 4;
 slideOffset = 160;
 alarm[0] = 1;
 image_alpha = 0;
-
+w_id = 0;
+w_index = 0;
+ars_size = 0;

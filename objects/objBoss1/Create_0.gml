@@ -27,6 +27,7 @@ nextFlying = flying;
 warnDelay = 80 - global.difficulty * 20;
 hit = 0;
 bro = objJustist;
+arms = noone;
 color1 = c_red;
 color2 = c_maroon;
 event_user(0);
