@@ -1,4 +1,3 @@
-with (other) {
 event_inherited();
 select = 0;
 alarm[0] = 1;
@@ -22,7 +21,7 @@ valueType[10] = -1;
 valueType[11] = -1;
 valueType[12] = -1;
 valueType[13] = -1;
-values = true;
+values = ds_list_create();
 strSelect[0] = "Device"
 strSelect[1] = "Reset controls";
 strSelect[2] = "Move Left";
@@ -37,7 +36,7 @@ strSelect[10] = "Sprint";
 strSelect[11] = "Pause";
 strSelect[12] = "Previous weapon";
 strSelect[13] = "Next weapon";
-optionsNum = array_length_1d(strSelect);
+optionsNum = array_length(strSelect);
 //Devices
 strValue[3, 0] = "Keyboard";
 gp_num = 10;
@@ -61,5 +60,3 @@ if (gp_sel == -1)
 }
 key_duplicates = ds_list_create();
 event_user(2);
-
-}

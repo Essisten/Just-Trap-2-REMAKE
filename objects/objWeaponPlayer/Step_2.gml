@@ -4,7 +4,7 @@ if (!instance_exists(objPlayer))
    instance_destroy();
    exit;
 }
-for (i = 0; i < array_length(CD); i++)
+for (var i = 0; i < array_length(CD); i++)
 {
     if (CD[i] > 0)
        CD[i]--;

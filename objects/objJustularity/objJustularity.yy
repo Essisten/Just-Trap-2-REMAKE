@@ -60,6 +60,9 @@
     "name":"sprJustularityIdleBlue",
     "path":"sprites/sprJustularityIdleBlue/sprJustularityIdleBlue.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"sprJustularityMask",
+    "path":"sprites/sprJustularityMask/sprJustularityMask.yy",
+  },
   "visible":true,
 }

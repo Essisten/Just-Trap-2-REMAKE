@@ -88,14 +88,14 @@ function scrLoadGame(argument0) {
 	            ds_list_add(global.arsenal, weapon);
 	        }
 	        //load md5 string from the save map
-	        var map_md5 = ds_map_find_value(save_map,"map_md5");
+	        var map_md5 = ds_map_find_value(save_map,"mapMd5");
         
 	        //check if md5 is not a string in case the save was messed with or got corrupted
 	        if (!is_string(map_md5))
 	            map_md5 = "";   //make it a string for the md5 comparison
         
 	        //generate md5 string to compare with
-	        ds_map_delete(save_map,"map_md5");
+	        ds_map_delete(save_map,"mapMd5");
 	        var a = json_encode(save_map)+global.md5StrAdd;
 	        var gen_md5 = md5_string_unicode(json_encode(save_map)+global.md5StrAdd);
 	        if (map_md5 != gen_md5)   //check if md5 hash is invalid

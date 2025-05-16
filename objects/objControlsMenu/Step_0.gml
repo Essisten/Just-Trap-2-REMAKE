@@ -6,8 +6,8 @@ if (key_listen)
         scrPlaySound(sndMenuSelect);
         var keyChange = keyboard_key;
         var oldKey = ds_list_find_value(values, select);
-        if (keyChange == 160 || keyChange == 161)   //check if current key pressed is either shift key
-            keyChange = 16; //set it to work for both shift keys
+        if (keyChange == vk_lshift || keyChange == vk_rshift)   //check if current key pressed is either shift key
+            keyChange = vk_shift; //set it to work for both shift keys
         oldKey[0] = keyChange;
         ds_list_replace(values, select, oldKey);
         key_listen = false;
