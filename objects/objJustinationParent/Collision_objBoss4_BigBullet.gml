@@ -1,6 +1,6 @@
 if (!instance_exists(bullet))
    bullet = instance_nearest(x, y, objBoss4_BigBullet);
-if (!instance_exists(bullet) or bullet.target != self or !active)
+if (!instance_exists(bullet) or bullet.target.id != self.id or !active)
    exit;
 if (godmode)
 {

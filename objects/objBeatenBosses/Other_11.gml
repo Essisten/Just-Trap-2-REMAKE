@@ -1,5 +1,5 @@
 /// @description Changing tiles transparency
-var l = array_length_1d(tiles[sel]);
+var l = array_length(tiles[sel]);
 var temp = tiles[sel];
 for (var i = 0; i < l; i++)
 {
