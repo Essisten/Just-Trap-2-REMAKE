@@ -62,8 +62,17 @@ function scrSaveGame(argument0) {
 	{
 	    ds_map_add(save_map, "arsenal["+string(i)+"]", ds_list_find_value(global.arsenal, i));
 	}
+	var keys = array_create(0);
+	keys = ds_map_keys_to_array(save_map, keys);
+	for (var i = 0; i < array_length(keys); i++)
+	{
+		if (!is_bool(save_map[?keys[i]]))
+			continue;
+		save_map[?keys[i]] = real(save_map[?keys[i]]);
+	}
 	//add md5 hash to verify saves and make them harder to hack
-	ds_map_add(save_map,"mapMd5",md5_string_unicode(json_encode(save_map)+global.md5StrAdd));
+	var a = json_encode(save_map)+global.md5StrAdd;
+	ds_map_add(save_map,"mapMd5",md5_string_unicode(a));
 
 	//save the map to a file
 	if (global.extraSaveProtection) //use ds_map_secure function
@@ -76,10 +85,8 @@ function scrSaveGame(argument0) {
 	    var f = file_text_open_write(global.dir + "Data\\save"+string(global.savenum));
 	    //write map to the save file with base64 encoding
 	    file_text_write_string(f,base64_encode(json_encode(save_map)));
-    
 	    file_text_close(f);
 	}
-
 
 
 

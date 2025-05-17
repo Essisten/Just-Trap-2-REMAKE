@@ -2,6 +2,42 @@
 /// @param load_file
 ///loads the game
 ///argument0 - sets whether or not to read the save file when loading the game
+function save_file(file, data, encode) {
+	var saved = (encode) ?
+		base64_encode(data) :
+		data;
+		
+	var buffer = buffer_create(string_byte_length(saved), buffer_fixed, 1);
+	buffer_write(buffer, buffer_text, saved);
+	
+	if (encode) {
+		var temp = buffer;
+		buffer = buffer_compress(buffer, 0, buffer_tell(buffer));
+		buffer_delete(temp);
+	}
+	
+	buffer_save(buffer, file);
+	buffer_delete(buffer);
+}
+
+function load_file(file, decode) {
+	var buffer = buffer_load(file);
+	
+	if (decode) {
+		var temp = buffer;
+		buffer = buffer_decompress(buffer);
+		buffer_delete(temp);
+	}
+	
+	var data = buffer_read(buffer, buffer_text);
+	buffer_delete(buffer);
+	
+	var loaded = (decode) ?
+		base64_decode(data) :
+		data;
+		
+	return loaded;
+}
 function scrLoadGame(argument0) {
 
 	var load_file = argument0;
@@ -97,7 +133,7 @@ function scrLoadGame(argument0) {
 	        //generate md5 string to compare with
 	        ds_map_delete(save_map,"mapMd5");
 	        var a = json_encode(save_map)+global.md5StrAdd;
-	        var gen_md5 = md5_string_unicode(json_encode(save_map)+global.md5StrAdd);
+	        var gen_md5 = md5_string_unicode(a);
 	        if (map_md5 != gen_md5)   //check if md5 hash is invalid
 	            save_valid = false;
 	        //destroy the map
