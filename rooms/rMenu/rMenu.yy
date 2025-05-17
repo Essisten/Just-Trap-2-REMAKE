@@ -20,7 +20,7 @@
   "name":"rMenu",
   "parent":{
     "name":"init",
-    "path":"folders/Rooms/init.yy",
+    "path":"folders/Objects/world/init.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

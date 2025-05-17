@@ -14,9 +14,9 @@ else if (global.selectedBoss == 0 and tmp > 0)
     
 if (tmp != tmp2)
 {
-    __background_set( e__BG.Alpha, 1, tmp );
     if (sel != 0)
         event_user(1);
+    __background_set( e__BG.Alpha, 1, tmp );
 }
 
 

@@ -19,10 +19,13 @@ function scrInitializeGlobals() {
 	global.coins = 0;
 	global.fakeCoins = 0;
 	global.currentWeapon = 0;
-	global.unlockedWeapons = array_create(12, false);
-	global.obtainedWeapons = array_create(12, false);
-	global.unlockedWeapons[0] = true;
-	global.obtainedWeapons[0] = true;
+	global.unlockedWeapons = array_create(6, true);
+	global.obtainedWeapons = array_create(6, true);
+	repeat (6)
+	{
+		array_push(global.unlockedWeapons, false);
+		array_push(global.obtainedWeapons, false);
+	}
 	global.arsenal = ds_list_create();
 	ds_list_add(global.arsenal, 1);
 	global.bossClear = array_create(15, false);

@@ -33,6 +33,7 @@ if (final)
             instance_destroy();
             __view_set( e__VW.Visible, 2, false );
             __view_set( e__VW.Visible, 1, false );
+			draw_set_blend_mode(bm_normal);
             exit;
         }
     }

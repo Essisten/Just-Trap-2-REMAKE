@@ -42,15 +42,15 @@ weapons[0, 3] = scrCreateShopItem("Machine gun",
 "far",
 800,
 "");
-var v_amount = array_length(weapons[0]);
-for (var k = 0; k < v_amount; k++)
+var w_amount = array_length(weapons);
+for (var k = 0; k < w_amount; k++)
 {
-    var w_amount = array_length(weapons);
-    for (var i = 0; i < w_amount; i++)
+    var v_amount = array_length(weapons[0]);
+    for (var i = 0; i < v_amount; i++)
     {
-        if (global.unlockedWeapons[k + i * (w_amount - 1)])
+        if (global.unlockedWeapons[i + k * (w_amount - 1)])
            continue;
-        with (weapons[i, k])
+        with (weapons[k, i])
         {
             name = "???";
             description = "";
@@ -58,7 +58,7 @@ for (var k = 0; k < v_amount; k++)
     }
 }
 lineSeperation = 48;
-optionsNum = array_length(weapons);
+optionsNum = array_length(weapons[0]);
 boxStartX = 300;
 boxStartY = 250;
 boxEndX = 540;
