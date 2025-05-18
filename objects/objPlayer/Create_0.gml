@@ -39,4 +39,8 @@ if (global.autosave) //save the game if currently set to autosave
 }
 if (!instance_exists(objWeaponPlayer))
    instance_create(x, y, objWeaponPlayer);
-
+momentumH = 0;
+momentumV = 0;
+vspd = 0;
+hspd = 0;
+slowdown_spd = 0.2;

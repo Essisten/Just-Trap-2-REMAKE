@@ -3,16 +3,12 @@ var L = (scrButtonCheck(global.leftButton) || (global.directionalTapFix && scrBu
 var R = (scrButtonCheck(global.rightButton) || (global.directionalTapFix && scrButtonCheckPressed(global.rightButton)));
 
 var h = 0;
-
-if (!frozen)    //don't move if frozen
+if (!frozen)    //check if frozen before doing anything
 {
     if (R)
         h = 1;
     else if (L)
         h = -1;
-}
-if (!frozen)    //check if frozen before doing anything
-{
     if (scrButtonCheckPressed(global.jumpButton))
         scrPlayerJump();
     if (scrButtonCheckReleased(global.jumpButton))
@@ -592,4 +588,11 @@ else
         yprevious = y;
     }
 }
-
+if (abs(momentumH) - slowdown_spd <= 0)
+	momentumH = 0;
+hspeed += momentumH;
+momentumH -= sign(momentumH) * slowdown_spd;
+if (abs(momentumV) - slowdown_spd <= 0)
+	momentumV = 0;
+vspeed += momentumV;
+momentumV -= sign(momentumV) * slowdown_spd;

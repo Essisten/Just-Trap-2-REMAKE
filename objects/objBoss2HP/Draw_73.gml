@@ -1,6 +1,6 @@
 if (HP[2] > 0)
 {
-	if (phase == 2)
+	if (phase == 2 and global.currentMusicID == musStage2D)
 	{
 		draw_set_colour(c_red);
 		offset += 2;
@@ -12,7 +12,7 @@ if (HP[2] > 0)
 }
 if (HP[3] > 0)
 {
-	if (phase == 2)
+	if (phase == 2 and global.currentMusicID == musStage2D)
 	{
 		draw_set_colour(c_aqua);
 		offset += 2;

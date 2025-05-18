@@ -149,10 +149,10 @@ function __global_object_depths() {
 	global.__objectDepths[141] = -1; // objBoss1_Follower
 	global.__objectDepths[142] = -1; // objBoss1Bow
 	global.__objectDepths[143] = 100000; // objBoss2Door
-	global.__objectDepths[144] = 100030; // objBoss2HP
+	global.__objectDepths[144] = 10000; // objBoss2HP
 	global.__objectDepths[145] = 0; // objBoss2Warning
 	global.__objectDepths[146] = 100010; // objViridian
-	global.__objectDepths[147] = 0; // objStarV
+	global.__objectDepths[147] = -100; // objStarV
 	global.__objectDepths[148] = 100030; // objJustularityStarCenter
 	global.__objectDepths[149] = 0; // objTornado
 	global.__objectDepths[150] = 100030; // objRock

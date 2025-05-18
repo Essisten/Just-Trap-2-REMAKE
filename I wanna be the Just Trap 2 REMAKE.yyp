@@ -487,6 +487,7 @@
     {"id":{"name":"scrStartSlowdown","path":"scripts/scrStartSlowdown/scrStartSlowdown.yy",},},
     {"id":{"name":"scrStopMusic","path":"scripts/scrStopMusic/scrStopMusic.yy",},},
     {"id":{"name":"scrSwapControls","path":"scripts/scrSwapControls/scrSwapControls.yy",},},
+    {"id":{"name":"scrThrowPlayer","path":"scripts/scrThrowPlayer/scrThrowPlayer.yy",},},
     {"id":{"name":"scrToggleMusic","path":"scripts/scrToggleMusic/scrToggleMusic.yy",},},
     {"id":{"name":"sound_isplaying","path":"scripts/sound_isplaying/sound_isplaying.yy",},},
     {"id":{"name":"sound_stop_all","path":"scripts/sound_stop_all/sound_stop_all.yy",},},

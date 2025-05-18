@@ -2,9 +2,9 @@ alarm[0] = 60;
 alarm[1] = 1;
 boss = instance_find(objJustularity, 0);
 prevPlayerGrav = 3;
-redX = 66;
+redX = 60;
 redY = 130;
-blueX = 78;
+blueX = 72;
 blueY = 478;
 offset = 2;
 blueOffset = 12;
@@ -18,4 +18,4 @@ HP[0] = 0;  //Red
 HP[1] = 0;  //Blue
 HP[2] = boss.maxHP[0];
 HP[3] = boss.maxHP[1];
-
+hidden = false;
