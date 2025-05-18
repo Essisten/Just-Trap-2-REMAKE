@@ -2,7 +2,7 @@
 optionsNum = array_length(strSelect);
 if (array_length(valueType) == 1)
 {
-    for (i = 0; i < optionsNum; i++)
+    for (var i = 0; i < optionsNum; i++)
     {
         valueType[i] = -1;
     }

@@ -1,8 +1,27 @@
-draw_set_colour(c_black);
 if (HP[2] > 0)
+{
+	if (phase == 2)
+	{
+		draw_set_colour(c_red);
+		offset += 2;
+		draw_rectangle(redX - offset, redY - offset, redX + width + offset, redY + HP[2] * 1.28 + offset, false);
+		offset -= 2;
+	}
+	draw_set_colour(c_black);
     draw_rectangle(redX - offset, redY - offset, redX + width + offset, redY + HP[2] * 1.28 + offset, false);
+}
 if (HP[3] > 0)
-    draw_rectangle(blueX - offset - blueOffset, blueY - offset, blueX + width + offset - blueOffset, blueY + HP[3] * -1.28 - offset, false);
+{
+	if (phase == 2)
+	{
+		draw_set_colour(c_aqua);
+		offset += 2;
+		draw_rectangle(blueX - offset - blueOffset, blueY + offset, blueX + width + offset - blueOffset, blueY + HP[3] * -1.28 - offset, false);
+		offset -= 2;
+	}
+	draw_set_colour(c_black);
+    draw_rectangle(blueX - offset - blueOffset, blueY + offset, blueX + width + offset - blueOffset, blueY + HP[3] * -1.28 - offset, false);
+}
 draw_set_colour(c_white);
 
 if (phase == 2)

@@ -13,7 +13,7 @@ dest_alpha = 1;
 image_alpha = 0;
 alarm[0] = 1;
 alarm[11] = 1;
-strSelect[0] = ""
+strSelect = array_create(1);
 optionsNum = 1;
 values = false;
 active = true;
@@ -27,6 +27,6 @@ strValue[1, 1] = "Old";
 strValue[2, 0] = "";
 strValue[2, 1] = "";
 values = ds_list_create();
-valueType[0] = -1;
+valueType = [-1];
 
 }

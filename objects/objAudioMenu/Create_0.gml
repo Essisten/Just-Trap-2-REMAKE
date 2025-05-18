@@ -17,7 +17,7 @@ strSelect[0] = "Music"
 strSelect[1] = "Sounds";
 strSelect[2] = "Sound test";
 strSelect[3] = "Music slowdown";
-optionsNum = array_length_1d(strSelect);
+optionsNum = array_length(strSelect);
 event_user(2);
 
 alarm[10] = 2;

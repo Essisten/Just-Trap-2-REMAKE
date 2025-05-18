@@ -1,4 +1,9 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"rInit","order":1,"path":"rooms/rInit/rInit.yy",},
+    {"name":"rMenu","order":2,"path":"rooms/rMenu/rMenu.yy",},
+    {"name":"rOptions","order":3,"path":"rooms/rOptions/rOptions.yy",},
+    {"name":"rTitle","order":4,"path":"rooms/rTitle/rTitle.yy",},
+  ],
 }

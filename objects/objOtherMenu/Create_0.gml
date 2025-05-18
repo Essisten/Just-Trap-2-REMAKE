@@ -14,7 +14,7 @@ valueType[2] = 0;
 valueType[3] = 0;
 values = true;
 strSelect[0] = "Dead boss brightness";
-optionsNum = array_length_1d(strSelect);
+optionsNum = array_length(strSelect);
 event_user(2);
 
 alarm[10] = 2;
