@@ -5,6 +5,7 @@ surf[1] = surface_create(400, 608);
 __view_set( e__VW.SurfaceID, 1, surf[1] );
 __view_set( e__VW.SurfaceID, 2, surf[0] );
 w = 0;
+w2 = 0;
 old[0] = 0;
 old[1] = 0;
 changeW[0] = 0;

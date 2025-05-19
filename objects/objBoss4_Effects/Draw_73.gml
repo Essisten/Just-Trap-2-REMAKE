@@ -3,14 +3,16 @@ if (final)
 {
     draw_set_blend_mode_ext(bm_inv_dest_color, bm_inv_dest_color);
     draw_set_colour(c_white);
-    draw_rectangle(400 - w, 0, 400 + w, 608, false);
+	draw_set_circle_precision(32);
+	draw_circle(405, 216, w, false);
+	draw_circle(405, 216, w2, false);
     if (instance_exists(objJustination))
     {
-        if (w < 500)
+        if (w < 600)
             w += 4;
         else
         {
-            w = 500;
+            w = 600;
             with (objBoss4_Spike)
             {
                 kill = true;
@@ -20,11 +22,11 @@ if (final)
     }
     else
     {
-        if (w > 0)
-            w -= 4;
+        if (w2 < 600)
+            w2 += 4;
         else
         {
-            w = 0;
+            w2 = 600;
             with (objBoss4_Spike)
             {
                 kill = true;
