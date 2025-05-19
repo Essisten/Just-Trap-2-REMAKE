@@ -2,8 +2,8 @@ side[0] = 0
 side[1] = 0;
 surf[0] = surface_create(400, 608);
 surf[1] = surface_create(400, 608);
-__view_set( e__VW.SurfaceID, 1, surf[1] );
 __view_set( e__VW.SurfaceID, 2, surf[0] );
+__view_set( e__VW.SurfaceID, 1, surf[1] );
 w = 0;
 w2 = 0;
 old[0] = 0;

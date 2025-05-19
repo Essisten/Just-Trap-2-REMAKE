@@ -27,7 +27,7 @@ strSelect[5] = "Outline power";
 strSelect[6] = "Shaders";
 strSelect[7] = "Sprite style";
 strSelect[8] = "Screenshake";
-optionsNum = array_length_1d(strSelect);
+optionsNum = array_length(strSelect);
 //Anti-alising
 strValue[3, 0] = "Off";
 strValue[3, 1] = "x2";
@@ -35,8 +35,8 @@ strValue[3, 2] = "x4";
 strValue[3, 3] = "x8";
 //Screenshake
 strValue[4, 0] = "Off";
-strValue[4, 1] = "Normal";
-strValue[4, 2] = "Strong";
+strValue[4, 1] = "Fast";
+strValue[4, 2] = "Fancy";
 //Smoothing
 strValue[5, 0] = "Disabled";
 strValue[5, 1] = "New";

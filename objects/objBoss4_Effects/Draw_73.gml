@@ -47,34 +47,20 @@ if (final)
         }
     }
     draw_set_blend_mode(bm_normal);
+	exit;
 }
 
-with (objBoss4_Effects) {
-///Left side
-if (final)
-    return -1;
-if (!surface_exists(surf[0]))
-{
-    surf[0] = surface_create(400, 608);
-    __view_set( e__VW.SurfaceID, 2, surf[0] );
-}
-
-if (side[0] != old[0])
-{
-    changeW[0] = max(0, changeW[0] - 8);
-    if (changeW[0] == 0)
-    {
-        old[0] = side[0];
-        part_emitter_destroy(global.portalParticleSystem, emitter[0]);
-    }
-}
-else
-    changeW[0] = min(500, changeW[0] + 8);
-    
-surface_set_target(surf[0]);
+view_set_visible(2, false);
 switch (old[0])
 {
     case objJustinationDark:
+		view_set_visible(2, true);
+		if (!surface_exists(surf[0]))
+		{
+		    surf[0] = surface_create(400, 608);
+		    __view_set( e__VW.SurfaceID, 2, surf[0] );
+		}
+		surface_set_target(surf[0]);
         draw_clear_alpha(c_white, 0);
         draw_set_blend_mode(bm_subtract);
         var color = c_black;
@@ -111,9 +97,10 @@ switch (old[0])
             var rad = 200 * (changeW[0] / 500) * (0.9 + sin(degtorad(objJustinationDark.image_angle)) * 0.1);
             draw_ellipse_colour(xx - rad, yy - rad, xx + rad, yy + rad, c_red, color, false);
         }
+		surface_reset_target();
+		draw_surface(surf[0], 0, 0);
         break;
     case objJustinationLight:
-        draw_clear_alpha(c_black, 0);
         draw_set_blend_mode(bm_add);
         var c = 150 + global.difficulty * 20;
         var color = make_colour_rgb(c, c, c);
@@ -124,7 +111,6 @@ switch (old[0])
         draw_rectangle_colour(-149 + changeW[0], 0, -100 + changeW[0], 608, color, c_black, c_black, color, false);
         break;
     case objJustinationFire:
-        draw_clear_alpha(c_black, 0);
         if (!part_emitter_exists(global.portalParticleSystem, emitter[0]) and objJustinationFire.HP > 0 and global.particles)
         {
             emitter[0] = part_emitter_create(global.portalParticleSystem);
@@ -139,7 +125,6 @@ switch (old[0])
         draw_rectangle_colour(0, 0, -100 + changeW[0], 608, c_maroon, c_black, c_black, c_maroon, false);
         break;
     case objJustinationIce:
-        draw_clear_alpha(c_black, 0);
         if (!part_emitter_exists(global.portalParticleSystem, emitter[0]) and objJustinationIce.HP > 0 and global.particles)
         {
             emitter[0] = part_emitter_create(global.portalParticleSystem);
@@ -158,41 +143,20 @@ switch (old[0])
         draw_set_blend_mode(bm_add);
         draw_rectangle_colour(0, 0, -100 + changeW[0], 608, c_teal, c_black, c_black, c_teal, false);
         break;
-    default:
-        draw_clear_alpha(c_black, 0);
-        break;
-}
-surface_reset_target();
-draw_surface(surf[0], 0, 0);
-draw_set_blend_mode(bm_normal);
-
 }
 ///Right side
-if (final)
-    return -1;
-if (!surface_exists(surf[1]))
-{
-    surf[1] = surface_create(400, 608);
-    __view_set( e__VW.SurfaceID, 1, surf[1] );
-}
-
-if (side[1] != old[1])
-{
-    changeW[1] = min(500, changeW[1] + 8);
-    if (changeW[1] == 500)
-    {
-        old[1] = side[1];
-        part_emitter_destroy(global.saveParticleSystem, emitter[1]);
-    }
-}
-else
-    changeW[1] = max(0, changeW[1] - 8);
-
-surface_set_target(surf[1]);
 var xsurf = 400;
+view_set_visible(1, false);
 switch (old[1])
 {
     case objJustinationDark:
+		view_set_visible(1, true);
+		if (!surface_exists(surf[1]))
+		{
+		    surf[1] = surface_create(400, 608);
+		    __view_set( e__VW.SurfaceID, 1, surf[1] );
+		}
+		surface_set_target(surf[1]);
         draw_clear_alpha(c_white, 0);
         draw_set_blend_mode(bm_subtract);
         var color = c_black;
@@ -200,7 +164,7 @@ switch (old[1])
         if (objJustinationDark.HP <= 0)
             color = make_colour_rgb(color2, color2, color2);
         draw_set_colour(color);
-        draw_rectangle(50 + changeW[1], 0, 400, 608, false);
+        draw_rectangle(0 + changeW[1], 0, 400, 608, false);
         draw_rectangle_colour(0, 0, 49 + changeW[1], 608, c_white, color, color, c_white, false);
         color2 /= 20;
         color = make_colour_rgb(color2, color2, color2);
@@ -228,20 +192,20 @@ switch (old[1])
             var rad = 160 * abs((-changeW[1] + 500) / 500) * (0.9 + sin(degtorad(objJustinationFire.dick)) * 0.1);
             draw_ellipse_colour(xx - rad * 2, yy - rad, xx + rad * 2, yy + rad, c_red, color, false);
         }
+		surface_reset_target();
+		draw_surface(surf[1], xsurf, 0);
         break;
     case objJustinationLight:
-        draw_clear_alpha(c_black, 0);
         draw_set_blend_mode(bm_add);
         var c = 150 + global.difficulty * 20;
         var color = make_colour_rgb(c, c, c);
         if (objJustinationLight.HP <= 0)
             color = make_colour_rgb(c/2, c/2, c/2);
         draw_set_colour(color);
-        draw_rectangle(50 + changeW[1], 0, 400 + changeW[1], 608, false);
-        draw_rectangle_colour(0 + changeW[1], 0, 49 + changeW[1], 608, c_black, color, color, c_black, false);
+        draw_rectangle(450 + changeW[1], 0, 800 + changeW[1], 608, false);
+        draw_rectangle_colour(400 + changeW[1], 0, 449 + changeW[1], 608, c_black, color, color, c_black, false);
         break;
     case objJustinationFire:
-        draw_clear_alpha(c_black, 0);
         if (!part_emitter_exists(global.saveParticleSystem, emitter[1]) and objJustinationFire.HP > 0 and global.particles)
         {
             emitter[1] = part_emitter_create(global.saveParticleSystem);
@@ -253,10 +217,9 @@ switch (old[1])
                 part_type_speed(smoke, 5, 15, 0, 0);
         }
         draw_set_blend_mode(bm_add);
-        draw_rectangle_colour(0 + changeW[1], 0, 400 + changeW[1], 608, c_black, c_maroon, c_maroon, c_black, false);
+        draw_rectangle_colour(400 + changeW[1], 0, 800 + changeW[1], 608, c_black, c_maroon, c_maroon, c_black, false);
         break;
     case objJustinationIce:
-        draw_clear_alpha(c_black, 0);
         if (!part_emitter_exists(global.saveParticleSystem, emitter[1]) and objJustinationIce.HP > 0 and global.particles)
         {
             emitter[1] = part_emitter_create(global.saveParticleSystem);
@@ -273,13 +236,8 @@ switch (old[1])
             }
         }
         draw_set_blend_mode(bm_add);
-        draw_rectangle_colour(0 + changeW[1], 0, 400 + changeW[1], 608, c_black, c_teal, c_teal, c_black, false);
-        break;
-    default:
-        draw_clear_alpha(c_black, 0);
+        draw_rectangle_colour(400 + changeW[1], 0, 800 + changeW[1], 608, c_black, c_teal, c_teal, c_black, false);
         break;
 }
-surface_reset_target();
-draw_surface(surf[1], xsurf, 0);
 draw_set_blend_mode(bm_normal);
 
