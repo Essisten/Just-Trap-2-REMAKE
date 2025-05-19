@@ -4,8 +4,15 @@ if (final)
     draw_set_blend_mode_ext(bm_inv_dest_color, bm_inv_dest_color);
     draw_set_colour(c_white);
 	draw_set_circle_precision(32);
-	draw_circle(405, 216, w, false);
-	draw_circle(405, 216, w2, false);
+	if (w2 < 600)
+	{
+		if (w < 600)
+			draw_circle(405, 216, w, false);
+		else
+			draw_rectangle(-32, -32, 832, 640, false);
+		if (w2 > 0)
+			draw_circle(405, 216, w2, false);
+	}
     if (instance_exists(objJustination))
     {
         if (w < 600)
