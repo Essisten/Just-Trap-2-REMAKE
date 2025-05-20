@@ -8,9 +8,10 @@ switch (select)
 {
     case 0:
         gp_sel++;
-        if (gp_sel > ds_list_size(gp_connections) - 1)
+        if (gp_sel > ds_list_size(global.gp_connections) - 1)
             gp_sel = 0;
-        global.controllerIndex = ds_list_find_value(gp_connections, gp_sel);
+        global.controllerIndex = ds_list_find_value(global.gp_connections, gp_sel);
+		global.controllerMode = (global.controllerIndex != -1);
         break;
     case 1:
         //default controls

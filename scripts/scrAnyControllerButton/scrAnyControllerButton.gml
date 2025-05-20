@@ -25,15 +25,31 @@ function scrAnyControllerButton() {
 	list[18] = gp_axisrh;
 	list[19] = gp_axisrv;
 
-
-	for (var i = 0; i < array_length_1d(list); i++)
+	for (var k = 0; k <  ds_list_size(global.gp_connections); k++)
 	{
-	    if (gamepad_button_check_pressed(global.controllerIndex, list[i]))
-	        return list[i];
+		for (var i = 0; i < array_length(list); i++)
+		{
+			var gp_id = global.gp_connections[|k];
+		    if (gamepad_button_check_pressed(gp_id, list[i]))
+			{
+				global.controllerIndex = gp_id;
+		        return list[i];
+			}
+		}
 	}
-
 	return -1;
+}
 
-
-
+/// @description Refreshes the list of connected devices
+function UpdateControllers()
+{
+	ds_list_clear(global.gp_connections);
+	ds_list_add(global.gp_connections, -1);
+	for (var i = 0; i < 10; i++)
+	{
+	    if (gamepad_is_connected(i))
+	    {
+	        ds_list_add(global.gp_connections, i);
+	    }
+	}
 }

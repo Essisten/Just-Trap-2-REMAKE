@@ -7,8 +7,8 @@ if (scrButtonCheckPressed(global.menuLeftButton))
         case 0:
             gp_sel--;
             if (gp_sel < 0)
-                gp_sel = ds_list_size(gp_connections) - 1;
-            global.controllerIndex = ds_list_find_value(gp_connections, gp_sel);
+                gp_sel = ds_list_size(global.gp_connections) - 1;
+            global.controllerIndex = ds_list_find_value(global.gp_connections, gp_sel);
             break;
         default:
             event_user(0);

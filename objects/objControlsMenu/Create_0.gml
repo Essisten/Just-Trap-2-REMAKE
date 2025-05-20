@@ -41,18 +41,16 @@ optionsNum = array_length(strSelect);
 strValue[3, 0] = "Keyboard";
 gp_num = 10;
 gp_sel = 0;
-gp_connections = ds_list_create();
-ds_list_add(gp_connections, -1);
 key_listen = false;
-for (var i = 1; i <= gp_num; i++)
+UpdateControllers();
+for (var i = 0; i < gp_num; i++)
 {
-    if (gamepad_is_connected(i - 1))
+    if (gamepad_is_connected(i))
     {
-        ds_list_add(gp_connections, i - 1);
-        strValue[3, i] = "Gamepad " + string(ds_list_size(gp_connections) - 1);
+        strValue[3, i + 1] = "Gamepad " + string(ds_list_size(global.gp_connections) - 1);
     }
 }
-gp_sel = ds_list_find_index(gp_connections, global.controllerIndex);
+gp_sel = ds_list_find_index(global.gp_connections, global.controllerIndex);
 if (gp_sel == -1)
 {
     gp_sel = 0;

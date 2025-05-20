@@ -1,11 +1,10 @@
 if (key_listen)
 {
-    var value = ds_list_find_value(values, select);
+    var oldKey = ds_list_find_value(values, select);
     if (keyboard_check_pressed(vk_anykey))  //check if a key is being pressed and if it is, store that key
     {
         scrPlaySound(sndMenuSelect);
         var keyChange = keyboard_key;
-        var oldKey = ds_list_find_value(values, select);
         if (keyChange == vk_lshift || keyChange == vk_rshift)   //check if current key pressed is either shift key
             keyChange = vk_shift; //set it to work for both shift keys
         oldKey[0] = keyChange;
@@ -17,7 +16,6 @@ if (key_listen)
     else if (scrAnyControllerButton() != -1)    //check if a controller button was pressed, exit prompt
     {
         var keyChange = scrAnyControllerButton();
-        var oldKey = ds_list_find_value(values, select);
         scrPlaySound(sndBoss1_Reload);
         oldKey[0] = keyChange;
         ds_list_replace(values, select, oldKey);

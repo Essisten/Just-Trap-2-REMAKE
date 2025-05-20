@@ -68,6 +68,7 @@ function scrInitializeGlobals() {
 	global.controllerMode = false;  //keeps track of whether to use keyboard or controller
 	global.controllerDelay = -1;    //handles delay between switching between keyboard/controller so that the player can't use both at the same time
 
+	global.gp_connections = ds_list_create();
 	randomize();    //make sure the game starts with a random seed for RNG
 
 

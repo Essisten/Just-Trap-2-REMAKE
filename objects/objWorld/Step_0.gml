@@ -8,7 +8,7 @@ else if (global.smoothingMode == 0)
     texture_set_interpolation(false);
 
 //controller checks
-if (global.controllerEnabled && global.controllerIndex != -1)
+if (global.controllerEnabled)
 {
     if (!global.controllerMode)  //check if we should switch to controller mode
     {
@@ -191,3 +191,4 @@ if (keyboard_check_pressed(vk_f5) && !global.gamePaused)    //reset window size
     scrResetWindowSize();
 }
 
+UpdateControllers();
