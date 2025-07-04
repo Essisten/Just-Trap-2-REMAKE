@@ -130,10 +130,11 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"Readme(ENG).txt","CopyToMask":-1,"filePath":"datafiles/ENG","name":"Readme(ENG).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Updates(ENG).txt","CopyToMask":-1,"filePath":"datafiles/ENG","name":"Updates(ENG).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"GAME UPDATER.bat","CopyToMask":-1,"filePath":"datafiles","name":"GAME UPDATER.bat","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Readme(OLD, KOREAN).txt","CopyToMask":-1,"filePath":"datafiles","name":"Readme(OLD, KOREAN).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Readme(RUS).txt","CopyToMask":-1,"filePath":"datafiles/RUS","name":"Readme(RUS).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Updates(RUS).txt","CopyToMask":-1,"filePath":"datafiles/RUS","name":"Updates(RUS).txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"Updater.bat","CopyToMask":-1,"filePath":"datafiles","name":"Updater.bat","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"unzip.vbs","CopyToMask":-1,"filePath":"datafiles","name":"unzip.vbs","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
