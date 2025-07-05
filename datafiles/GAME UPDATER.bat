@@ -28,7 +28,7 @@ if "%local_version%"=="" (
 )
 
 :: Use PowerShell to get the latest release version from GitHub
-powershell -Command "$response = Invoke-RestMethod -Uri 'https://api.github.com/repos/%github_repo%/releases/latest'; $response.tag_name -match 'v?([0-9.]+)' | Out-Null; $matches[1]" > "%temp%\latest_version.txt"
+powershell -Command "$wc = New-Object System.Net.WebClient; $wc.Headers.Add('User-Agent', 'PowerShell'); $response = $wc.DownloadString('https://api.github.com/repos/%github_repo%/releases/latest'); if ($response -match '\"tag_name\":\"v?([0-9.]+)\"') { $matches[1] } else { '0.0.0.0' }" > "%temp%\latest_version.txt"
 
 :: Read the latest version from a temporary file
 set /p latest_version= < "%temp%\latest_version.txt"
@@ -41,7 +41,7 @@ if "%local_version%" LSS "%latest_version%" (
     echo Downloading the latest version...
 
     :: Use PowerShell to download the file
-    powershell -Command "Invoke-WebRequest -Uri '%download_url%' -OutFile '%zip_path%'"
+    powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%download_url%', '%zip_path%')"
 
     :: Use VBScript to unzip the downloaded file
     cscript //nologo "unzip.vbs" "%zip_path%" "%~dp0"
@@ -52,5 +52,5 @@ if "%local_version%" LSS "%latest_version%" (
 ) else (
     echo The executable is already up to date.
 )
-wait
+pause
 endlocal
