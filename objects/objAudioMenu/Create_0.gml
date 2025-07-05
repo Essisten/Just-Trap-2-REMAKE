@@ -1,4 +1,3 @@
-with (other) {
 event_inherited();
 select = 0;
 alarm[0] = 1;
@@ -12,14 +11,10 @@ valueType[0] = -1;
 valueType[1] = -1;
 valueType[2] = 0;
 valueType[3] = 0;
-values = true;
 strSelect[0] = "Music"
 strSelect[1] = "Sounds";
 strSelect[2] = "Sound test";
 strSelect[3] = "Music slowdown";
 optionsNum = array_length(strSelect);
 event_user(2);
-
 alarm[10] = 2;
-
-}

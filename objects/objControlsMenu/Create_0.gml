@@ -21,7 +21,6 @@ valueType[10] = -1;
 valueType[11] = -1;
 valueType[12] = -1;
 valueType[13] = -1;
-values = ds_list_create();
 strSelect[0] = "Device"
 strSelect[1] = "Reset controls";
 strSelect[2] = "Move Left";

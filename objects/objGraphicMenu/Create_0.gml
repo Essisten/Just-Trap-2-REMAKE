@@ -1,4 +1,3 @@
-with (other) {
 event_inherited();
 select = 0;
 alarm[0] = 1;
@@ -17,7 +16,6 @@ valueType[5] = -1;
 valueType[6] = 6;
 valueType[7] = 1;
 valueType[8] = 4;
-values = true;
 strSelect[0] = "Fullscreen"
 strSelect[1] = "Smoothing";
 strSelect[2] = "Anti-alising";
@@ -69,7 +67,4 @@ switch (display_aa)
         aaMode[2] = true;
         aaMode[3] = true;
         break;
-}
-
-
 }

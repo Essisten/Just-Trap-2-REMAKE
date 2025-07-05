@@ -1,4 +1,3 @@
-with (other) {
 owner = noone;
 select = 0;
 xSelector = __view_get( e__VW.XView, 0 ) + 32;
@@ -28,5 +27,3 @@ strValue[2, 0] = "";
 strValue[2, 1] = "";
 values = ds_list_create();
 valueType = [-1];
-
-}

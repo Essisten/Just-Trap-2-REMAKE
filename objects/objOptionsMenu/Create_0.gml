@@ -1,4 +1,3 @@
-with (other) {
 event_inherited();
 active = true;
 if (room == rOptions)
@@ -9,5 +8,3 @@ group[2] = objGameplayMenu;
 group[3] = objControlsMenu;
 group[4] = objOtherMenu;
 xSelector = __view_get( e__VW.XView, 0 ) - 128;
-
-}
