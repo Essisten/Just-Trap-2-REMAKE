@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 :: Set the variables using relative paths
 set "script_dir=%~dp0"
 set "exe_name=I wanna be the Just Trap 2 REMAKE.exe"
-set "zip_name=I_wanna_be_the_Just_Trap_2_REMAKE.zip"
+set "zip_name=Windows.zip"
 set "exe_path=%script_dir%%exe_name%"
 set "zip_path=%script_dir%%zip_name%"
 set "github_repo=Essisten/Just-Trap-2-REMAKE"
