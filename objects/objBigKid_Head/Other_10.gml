@@ -29,15 +29,17 @@ switch (objBigKid_BG.phase)
          with (objBlock)
          {
               if (global.spriteStyle == 0)
-              {
                   sprite_index = sprBoss3_Block;
-                  image_speed = 0;
-              }
               else
                   image_blend = make_colour_hsv(0, 200, 255);
          }
          with (objSpikeParent)
-              image_blend = make_colour_hsv(0, 200, 255);
+		 {
+              if (global.spriteStyle == 0)
+				image_blend = c_red;
+			else
+				image_blend = make_colour_hsv(0, 200, 255);
+		 }
          with (objBigBow)
          {
               image_index = 1;
