@@ -7,8 +7,8 @@ if (HP <= 0)
     {
         kill = false;
     }
-    global.swapControls = false;
-    scrSwapControls();
+	with (objPlayer)
+		instance_create(x, y, objInvertControlsWarning);
     global.frozen = true;
     alarm[4] = -1;
     __background_set( e__BG.Alpha, 0, 1 );

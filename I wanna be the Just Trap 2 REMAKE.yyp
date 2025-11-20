@@ -244,6 +244,7 @@
     {"id":{"name":"objGravityRight","path":"objects/objGravityRight/objGravityRight.yy",},},
     {"id":{"name":"objGravityUp","path":"objects/objGravityUp/objGravityUp.yy",},},
     {"id":{"name":"objHealBullet","path":"objects/objHealBullet/objHealBullet.yy",},},
+    {"id":{"name":"objInvertControlsWarning","path":"objects/objInvertControlsWarning/objInvertControlsWarning.yy",},},
     {"id":{"name":"objJR","path":"objects/objJR/objJR.yy",},},
     {"id":{"name":"objJumpRefresher","path":"objects/objJumpRefresher/objJumpRefresher.yy",},},
     {"id":{"name":"objJustination","path":"objects/objJustination/objJustination.yy",},},

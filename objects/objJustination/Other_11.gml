@@ -26,8 +26,8 @@ if (dead >= 4)
 {
     alarm[4] = 20;
     active = true;
-    global.swapControls = true;
-    scrSwapControls();
+	with (objPlayer)
+		instance_create(x, y, objInvertControlsWarning);
     alarm[3] = -1;
     repeat (4)
         ds_list_add(parts, instance_create(x + random_range(-128, 128), y + random_range(-128, 128), objJustinationPiece));
