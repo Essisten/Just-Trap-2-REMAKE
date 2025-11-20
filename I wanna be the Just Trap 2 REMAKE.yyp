@@ -321,6 +321,7 @@
     {"id":{"name":"objParalyzer","path":"objects/objParalyzer/objParalyzer.yy",},},
     {"id":{"name":"objPauseMenu","path":"objects/objPauseMenu/objPauseMenu.yy",},},
     {"id":{"name":"objPirhanaPlant","path":"objects/objPirhanaPlant/objPirhanaPlant.yy",},},
+    {"id":{"name":"objPixelation","path":"objects/objPixelation/objPixelation.yy",},},
     {"id":{"name":"objPlatform","path":"objects/objPlatform/objPlatform.yy",},},
     {"id":{"name":"objPlatformLight","path":"objects/objPlatformLight/objPlatformLight.yy",},},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},},

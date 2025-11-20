@@ -2,6 +2,7 @@
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"objInvertControlsWarning","order":1,"path":"objects/objInvertControlsWarning/objInvertControlsWarning.yy",},
+    {"name":"objPixelation","order":2,"path":"objects/objPixelation/objPixelation.yy",},
     {"name":"rInit","order":1,"path":"rooms/rInit/rInit.yy",},
     {"name":"rMenu","order":2,"path":"rooms/rMenu/rMenu.yy",},
     {"name":"rOptions","order":3,"path":"rooms/rOptions/rOptions.yy",},

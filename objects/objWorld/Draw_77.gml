@@ -9,7 +9,7 @@ var aspectRatioRatio = aspectRatio / (800/608);
 var pixelScaling = (aspectRatioRatio < 1 && windowWidth mod 800 != 0) || (aspectRatioRatio > 1 && windowHeight mod 608 != 0) || (windowWidth mod 800 != 0 && windowHeight mod 608 != 0);
 
 if(pixelScaling){
-    gpu_set_texfilter(true);
+	gpu_set_texfilter(true);
     shader_set(sh_pxUpscale);
 }  
 
