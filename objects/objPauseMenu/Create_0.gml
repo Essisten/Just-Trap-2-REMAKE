@@ -16,4 +16,3 @@ child = noone;
 alarm[0] = 1;
 if (room != rStageSelect)
     audio_pause_all();
-
