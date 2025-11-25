@@ -2,7 +2,7 @@ draw_set_alpha(1);
 draw_clear(c_black);
 draw_set_colour(c_black);
 if (surface_exists(global.pauseSurf))       //check if surface exists before drawing it
-    draw_surface(global.pauseSurf, __view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ));
+	DrawFullResolution(global.pauseSurf);
 draw_set_alpha(0.4);
 draw_rectangle(__view_get( e__VW.XView, 0 ),__view_get( e__VW.YView, 0 ),__view_get( e__VW.XView, 0 ) + display_get_gui_width(),__view_get( e__VW.YView, 0 ) + display_get_gui_height(),0);    //darken the paused screen
 draw_set_alpha(1);

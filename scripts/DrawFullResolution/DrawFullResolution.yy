@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"DrawFullResolution",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DrawFullResolution",
+  "parent":{
+    "name":"world",
+    "path":"folders/Scripts/world.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

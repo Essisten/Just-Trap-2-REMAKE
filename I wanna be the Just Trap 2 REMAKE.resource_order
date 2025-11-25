@@ -7,6 +7,7 @@
     {"name":"rMenu","order":2,"path":"rooms/rMenu/rMenu.yy",},
     {"name":"rOptions","order":3,"path":"rooms/rOptions/rOptions.yy",},
     {"name":"rTitle","order":4,"path":"rooms/rTitle/rTitle.yy",},
+    {"name":"DrawFullResolution","order":1,"path":"scripts/DrawFullResolution/DrawFullResolution.yy",},
     {"name":"scrThrowPlayer","order":1,"path":"scripts/scrThrowPlayer/scrThrowPlayer.yy",},
   ],
 }

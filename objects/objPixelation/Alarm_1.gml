@@ -5,5 +5,6 @@ if (p <= 0)
 	instance_destroy();
 	exit;
 }
-p -= 4;
 alarm[1] = 1;
+if (!global.gamePaused)
+	p -= 4;

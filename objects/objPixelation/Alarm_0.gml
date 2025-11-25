@@ -5,4 +5,5 @@ if (p > 180)
 	exit;
 }
 alarm[0] = 1;
-p += 4;
+if (!global.gamePaused)
+	p += 4;
