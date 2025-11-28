@@ -1,5 +1,5 @@
 /// @description Decrease distortion
-if (p <= 0)
+if (p > 25)
 {
 	application_surface_draw_enable(true);
 	instance_destroy();
@@ -7,4 +7,4 @@ if (p <= 0)
 }
 alarm[1] = 1;
 if (!global.gamePaused)
-	p -= 4;
+	p++;

@@ -60,11 +60,11 @@ if (global.gameStarted)
             {
                 global.gamePaused = true;  //set the game to paused
                 global.pauseDelay = global.pauseDelayLength; //set pause delay
+                global.pauseSurf = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));
+				application_surface_draw_enable(true);
+				surface_copy(global.pauseSurf,0,0, application_surface);
                 instance_deactivate_all(true);  //deactivate everything
-                instance_activate_object(objPixelation);
                 instance_create(0, 0, objPauseMenu);
-                global.pauseSurf = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));    //create new surface
-                surface_copy(global.pauseSurf,0,0,application_surface);             //copy current screen to it
             }
         }
     }
