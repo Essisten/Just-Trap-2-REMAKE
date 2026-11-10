@@ -1,0 +1,11 @@
+I don't want to admit it, but I really don't feel like continuing to work on this game. Back in the day, updates came much more often, but times have changed. Now I have no desire to do anything. Iwanna fangames have completely stopped interesting me. 
+
+This project was originally meant to be a test to check and improve my skills in GameMaker. But somehow it turned into a serious project. The first version of the game was made during winter break, featuring 2 redesigned bosses: JR&Justist and Justination. Over time, tweaks were added and the project just kept going... and going...
+
+I can't confidently say I won't come back to it. After all, even Just returned to his creation after 10 years of absence. But for now... I give all players full permission to look into the game's code, modify it, add to it, and continue it. You can even create a separate branch for your version on GitHub. The only request: don't forget about this project.
+
+One of my goals was to show people that Happil fangames aren't just trash thrown together, that they can actually be good. And it seems like we’ve achieved that. Together. I’m talking about every creator of these fangames who put their heart and time into their creations.  
+
+If you’re reading this, it means this game caught your interest. You were waiting for an update or just downloaded it. Either way, thank you.  
+Thank you for being with me.  
+Have fun and create more.
